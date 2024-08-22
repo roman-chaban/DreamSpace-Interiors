@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <main className={poppins.className}>Hello Project!</main>;
+  return <main className={poppins.className}></main>;
 }
