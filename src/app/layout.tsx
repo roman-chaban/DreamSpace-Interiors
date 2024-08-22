@@ -1,5 +1,8 @@
-import { inter } from '@/fonts/basic-fonts';
 import type { Metadata } from 'next';
+import '@/styles/main/main.scss';
+import { Footer } from '@/components/layout/Footer/Footer';
+import { Header } from '@/components/layout/Header/Header';
+import { inter } from '@/fonts/basic-fonts';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -13,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
