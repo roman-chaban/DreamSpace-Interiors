@@ -58,6 +58,7 @@
 }
 
 .closeButton {
+  cursor: pointer;
   position: absolute;
   right: 10px;
   display: flex;
@@ -65,4 +66,8 @@
   background: transparent;
   border: none;
   padding: 0;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  &:hover {
+    transform: scale(1.20);
+  }
 }

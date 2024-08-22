@@ -1,0 +1,56 @@
+@use '../../../styles/colors/colors' as color;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+
+.hero {
+  height: 100%;
+  display: flex;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include container;
+  max-width: 1080px;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+}
+
+.heroTitle {
+  margin: 0;
+  font-weight: 500;
+  line-height: 106%;
+  letter-spacing: -0.03em;
+  font-size: size.$font-size-72px;
+  position: relative;
+  width: 100%;
+  max-width: 643px;
+}
+
+.titleMark {
+  position: absolute;
+  right: 115px;
+  display: inline-block;
+  color: color.$color-dark-gray;
+}
+
+.titleMark:nth-child(2) {
+  right: 175px;
+}
+
+.heroSubTitle {
+  margin: 0;
+  font-weight: 400;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-16px;
+  line-height: 162%;
+}
+
+.heroSubTitle > span {
+  color: color.$color-darker-gray;
+  font-weight: 600;
+}

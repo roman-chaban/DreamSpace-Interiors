@@ -1,10 +1,20 @@
-import type { FC } from 'react';
+'use client';
+
+import { useState, type FC } from 'react';
 import styles from './TopBarMenu.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
 
 export const TopBarMenu: FC = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+
+  const handleCloseTopBarMenu = () => {
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
+
   return (
     <div className={styles.topBarMenu}>
       <ul className={styles.topBarItems}>
@@ -29,7 +39,12 @@ export const TopBarMenu: FC = () => {
           />
         </li>
       </ul>
-      <Button type="button" className={styles.closeButton}>
+      <Button
+        type="button"
+        title='Hide banner'
+        className={styles.closeButton}
+        onClick={handleCloseTopBarMenu}
+      >
         <Image
           src="/icons/nav/close.svg"
           alt="Close icon"

@@ -15,6 +15,10 @@
   max-width: 1120px;
 }
 
+.headerLogo {
+  padding-left: 30px;
+}
+
 .headerLogo > .headerLogoIcon {
   display: flex;
   line-height: 100%;
@@ -59,6 +63,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-right: 30px;
 }
 
 .circleIcon {

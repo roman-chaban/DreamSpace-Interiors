@@ -6,6 +6,7 @@ interface ButtonProps {
   className: string;
   children: ReactNode;
   onClick?: () => void;
+  title?: string;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -14,9 +15,16 @@ export const Button: FC<ButtonProps> = ({
   className,
   children,
   onClick,
+  title,
 }) => {
   return (
-    <button type={type} id={id} className={className} onClick={onClick}>
+    <button
+      title={title}
+      type={type}
+      id={id}
+      className={className}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
