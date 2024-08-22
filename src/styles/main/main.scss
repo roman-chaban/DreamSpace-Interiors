@@ -3,3 +3,10 @@
 @use '../abstracts/keyframes';
 @use '../base/normalize';
 @use '../colors/colors';
+
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}

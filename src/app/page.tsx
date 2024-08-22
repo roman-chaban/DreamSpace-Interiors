@@ -1,5 +1,6 @@
 import { poppins } from '@/fonts/basic-fonts';
 import { Metadata } from 'next';
+import styles from './Home.module.scss';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <main className={poppins.className}></main>;
+  return <main className={`${poppins.className} ${styles.main}`}></main>;
 }
