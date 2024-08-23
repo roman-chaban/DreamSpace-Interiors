@@ -28,7 +28,11 @@
 .topBarItem:nth-child(2) {
   font-weight: 600;
   line-height: 157%;
-  font-size: size.$font-size-14px;
+  font-size: clamp(
+    #{size.$font-size-12px},
+    0.7143rem + 0.1786vw,
+    #{size.$font-size-14px}
+  );
   color: color.$color-darker-gray;
 }
 
@@ -68,6 +72,6 @@
   padding: 0;
   transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   &:hover {
-    transform: scale(1.20);
+    transform: scale(1.2);
   }
 }

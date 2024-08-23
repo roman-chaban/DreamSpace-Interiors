@@ -8,22 +8,22 @@
 }
 
 .headerContainer {
-  @include container(18px 0);
+  @include container;
+  padding-block: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1120px;
-}
-
-.headerLogo {
-  padding-left: 30px;
 }
 
 .headerLogo > .headerLogoIcon {
   display: flex;
   line-height: 100%;
   font-weight: 500;
-  font-size: size.$font-size-24px;
+  font-size: clamp(
+    #{size.$font-size-16px},
+    0.8571rem + 0.7143vw,
+    #{size.$font-size-24px}
+  );
   position: relative;
   max-width: 105px;
   margin: 0;
@@ -46,6 +46,7 @@
   align-items: center;
   gap: 40px;
   padding-left: 0;
+  margin: 0;
 }
 
 .listItem {
@@ -63,7 +64,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding-right: 30px;
 }
 
 .circleIcon {

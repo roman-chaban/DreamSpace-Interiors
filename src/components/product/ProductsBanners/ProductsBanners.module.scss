@@ -1,0 +1,19 @@
+@use '../../../styles/abstracts/mixins' as *;
+
+.banners {
+  margin-block-start: 40px;
+  display: flex;
+}
+
+.bannersContainer {
+  @include container;
+  display: flex;
+  gap: 24px;
+}
+
+.otherBannersItems {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

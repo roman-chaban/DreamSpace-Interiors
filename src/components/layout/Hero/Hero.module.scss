@@ -9,10 +9,10 @@
 
 .heroContainer {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 32px;
   @include container;
-  max-width: 1080px;
 }
 
 .heroContent {
@@ -25,28 +25,30 @@
   font-weight: 500;
   line-height: 106%;
   letter-spacing: -0.03em;
-  font-size: size.$font-size-72px;
+  font-size: clamp(
+    #{size.$font-size-40px},
+    1.9286rem + 2.8571vw,
+    #{size.$font-size-72px}
+  );
   position: relative;
   width: 100%;
   max-width: 643px;
 }
 
 .titleMark {
-  position: absolute;
-  right: 115px;
   display: inline-block;
   color: color.$color-dark-gray;
-}
-
-.titleMark:nth-child(2) {
-  right: 175px;
 }
 
 .heroSubTitle {
   margin: 0;
   font-weight: 400;
   color: color.$color-dark-gray;
-  font-size: size.$font-size-16px;
+  font-size: clamp(
+    #{size.$font-size-14px},
+    0.8393rem + 0.1786vw,
+    #{size.$font-size-16px}
+  );
   line-height: 162%;
 }
 
