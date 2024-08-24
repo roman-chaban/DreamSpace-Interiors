@@ -1,0 +1,71 @@
+@use '../../colors/colors' as color;
+@use '../../abstracts/globals' as size;
+@use '../../abstracts/mixins' as *;
+
+.signIn {
+  height: 100vh;
+}
+
+.signInContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include container;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.signBanner {
+  background: url(/images/auth/authBanner.svg) no-repeat;
+  width: 100%;
+  max-width: 738px;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center 0;
+  aspect-ratio: 6 / 9;
+}
+
+.elegantTitle {
+  width: fit-content;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  font-size: size.$font-size-24px;
+  line-height: 100%;
+  font-weight: 500;
+  position: relative;
+  margin: 0;
+  margin-top: 32px;
+  padding: 0;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #6c7275;
+    border-radius: 50%;
+    right: -5px;
+    bottom: 3px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .signBanner {
+    aspect-ratio: 5 / 9;
+  }
+}
+
+@media (max-width: 1024px) {
+  .signInContainer {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .signBanner {
+    max-width: 100%;
+    max-height: 50vh;
+    background-size: cover;
+    background-position: 0;
+  }
+}

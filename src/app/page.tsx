@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import styles from './Home.module.scss';
 import { Hero } from '@/components/layout/Hero/Hero';
 import { ProductBanners } from '@/components/product/ProductsBanners/ProductsBanners';
+import { Header } from '@/components/layout/Header/Header';
+import { Footer } from '@/components/layout/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -13,8 +15,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={`${poppins.className} ${styles.main}`}>
+      <Header />
       <Hero />
       <ProductBanners />
+      <Footer />
     </main>
   );
 }

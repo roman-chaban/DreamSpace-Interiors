@@ -1,9 +1,9 @@
 import React, { CSSProperties, FC, ChangeEvent } from 'react';
 
 interface InputProps {
-  type: 'text' | 'email';
+  type: string;
   className?: string;
-  id: string;
+  id?: string;
   style?: CSSProperties;
   value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -11,6 +11,7 @@ interface InputProps {
   disabled?: boolean;
   ariaLabel?: string;
   name: string;
+  checked?: boolean;
 }
 
 export const Input: FC<InputProps> = ({
@@ -24,6 +25,7 @@ export const Input: FC<InputProps> = ({
   placeholder = '',
   disabled = false,
   ariaLabel = '',
+  checked,
 }) => {
   return (
     <input
@@ -37,6 +39,7 @@ export const Input: FC<InputProps> = ({
       placeholder={placeholder}
       disabled={disabled}
       aria-label={ariaLabel}
+      checked={checked}
     />
   );
 };

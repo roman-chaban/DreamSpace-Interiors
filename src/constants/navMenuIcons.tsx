@@ -13,7 +13,7 @@ export const navMenuIcons: NavMenuIcons = [
     id: 1,
     icon: (
       <Image
-        src="icons/header-nav/search.svg"
+        src="/icons/header-nav/search.svg"
         alt="Search icon"
         width={24}
         height={24}
@@ -24,10 +24,11 @@ export const navMenuIcons: NavMenuIcons = [
     id: 2,
     icon: (
       <Image
-        src="icons/header-nav/user-circle.svg"
-        alt="Search icon"
+        src="/icons/header-nav/user-circle.svg"
+        alt="User icon"
         width={24}
         height={24}
+        className={styles.dropDownIcon}
       />
     ),
   },
@@ -35,8 +36,8 @@ export const navMenuIcons: NavMenuIcons = [
     id: 3,
     icon: (
       <Image
-        src="icons/header-nav/shopping bag.svg"
-        alt="Search icon"
+        src="/icons/header-nav/shopping%20bag.svg"
+        alt="Shopping bag icon"
         width={24}
         height={24}
       />

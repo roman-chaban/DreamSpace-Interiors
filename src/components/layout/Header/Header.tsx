@@ -1,15 +1,20 @@
 'use client';
 
-import { Fragment, type FC } from 'react';
+import { Fragment, type FC, useState } from 'react';
 import styles from './Header.module.scss';
 import { TopBarMenu } from '../TopBarMenu/TopBarMenu';
 import { NavItem, navMenuItems } from '@/constants/navMenuItems';
 import Link from 'next/link';
 import { NavIcon, navMenuIcons } from '@/constants/navMenuIcons';
 import { usePathname } from 'next/navigation';
+import { NavPaths } from '@/enums/navPaths';
+import { Login, Logout } from 'grommet-icons';
 
 export const Header: FC = () => {
   const pathname = usePathname();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
     <header className={styles.header}>
@@ -38,8 +43,32 @@ export const Header: FC = () => {
         </nav>
         <div className={styles.headerSubNav}>
           {navMenuIcons.map((icon: NavIcon) => (
-            <Fragment key={icon.id}>{icon.icon}</Fragment>
+            <Fragment key={icon.id}>
+              {icon.id === 2 ? (
+                <div className={styles.userIcon} onClick={toggleDropdown}>
+                  {icon.icon}
+                </div>
+              ) : (
+                icon.icon
+              )}
+            </Fragment>
           ))}
+          <div
+            className={`${styles.dropdownMenu} ${
+              dropdownOpen ? styles.open : ''
+            }`}
+          >
+            <ul className={styles.dropDownList}>
+              <li className={styles.dropDownListItem}>
+                <Login style={{ width: 18, height: 18 }} color="#343839" />
+                <Link href={NavPaths.SIGNIN}>Sign In</Link>
+              </li>
+              <li className={styles.dropDownListItem}>
+                <Logout style={{ width: 18, height: 18 }} color="#343839" />
+                <Link href={NavPaths.SIGNUP}>Sign Up</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
