@@ -84,3 +84,10 @@
     right: 30px;
   }
 }
+
+@media only screen and (max-width: 380px) {
+  .topBarMenu {
+    justify-content: start;
+    padding-left: 32px;
+  }
+}
