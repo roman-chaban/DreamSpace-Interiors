@@ -1,9 +1,9 @@
 'use client';
 
-
 import { AuthForm } from '@/components/layout/AuthForm/AuthForm';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import styles from '@/styles/pagesStyles/Auth/Auth.module.scss';
+import { FormClose } from 'grommet-icons';
 
 export default function SignUp() {
   const { isResize } = useScreenResize(1024);

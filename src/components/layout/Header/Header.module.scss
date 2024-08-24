@@ -100,7 +100,7 @@
   padding: 20px 10px;
   position: absolute;
   top: 95px;
-  right: 196px;
+  right: 105px;
   z-index: 2000;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
@@ -150,11 +150,33 @@
   content: '';
   position: absolute;
   top: -9px;
-  right: 50px;
+  right: 82.5px;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid color.$color-white;
   transform: rotate(0deg);
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .headerContainer {
+    padding-inline: 100px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerContainer {
+    padding-inline: 50px;
+  }
+  .headerNav > .headerMenu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .headerContainer {
+    padding-inline: 32px;
+  }
 }

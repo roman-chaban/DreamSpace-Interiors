@@ -8,14 +8,15 @@
 
 .signInContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   @include container;
+  max-width: 100%;
   padding: 0;
   min-height: 100vh;
 }
 
 .signBanner {
+  position: relative;
   background: url(/images/auth/authBanner.svg) no-repeat;
   width: 100%;
   max-width: 738px;
@@ -50,6 +51,7 @@
     bottom: 3px;
   }
 }
+
 
 @media (max-width: 1080px) {
   .signBanner {

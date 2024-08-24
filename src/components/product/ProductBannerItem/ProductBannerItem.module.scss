@@ -52,3 +52,57 @@
     bottom: 0;
   }
 }
+
+@media only screen and (max-width: 1060px) {
+  .bannerTitles {
+    top: 25px;
+    left: 25px;
+    gap: 6px;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-26px;
+  }
+}
+
+@media only screen and (max-width: 665px) {
+  .firstBannerItem {
+    aspect-ratio: 3 / 3;
+  }
+  .bannerItem {
+    position: relative;
+  }
+  .bannerTitles {
+    position: absolute;
+    top: 45%;
+  }
+  .firstBannerTitle {
+    left: 48px;
+    top: 30px;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-34px;
+  }
+  .bannerItem {
+    border-radius: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  .bannerTitles {
+    top: 30%;
+    right: 10%;
+  }
+  .firstBannerTitle {
+    top: 5%;
+  }
+  .bannerItem {
+    border-radius: 0;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-28px;
+  }
+  .firstBannerItem {
+    background: url(../../../../public/images/banner/primaryBannerSmall.svg)
+      no-repeat center center !important;
+  }
+}

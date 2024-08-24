@@ -56,3 +56,64 @@
   color: color.$color-darker-gray;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 1200px) {
+  .heroContainer {
+    padding-inline: 100px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .heroContainer {
+    padding-inline: 50px;
+  }
+}
+
+@media only screen and (max-width: 835px) {
+  .heroTitle {
+    font-size: size.$font-size-44px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .heroContainer {
+    padding-inline: 32px;
+    align-items: start;
+  }
+  .heroContent {
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+  }
+  .heroTitle {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 582px) {
+  .heroContainer {
+    padding-inline: 0;
+  }
+  .heroContent {
+    padding-inline: 32px;
+  }
+  .heroSubTitle {
+    font-size: size.$font-size-16px;
+    max-width: 320px;
+  }
+  .heroTitle {
+    font-size: size.$font-size-50px;
+  }
+}
+
+@media only screen and (max-width: 582px) {
+  .heroTitle {
+    font-size: size.$font-size-44px;
+  };
+}
+
+@media only screen and (max-width: 395px) {
+  .heroTitle {
+    font-size: size.$font-size-38px;
+  };
+}

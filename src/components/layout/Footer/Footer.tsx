@@ -1,14 +1,23 @@
+'use client';
+
 import type { FC } from 'react';
 import styles from './Footer.module.scss';
 import { Input } from '@/components/ui/Input/Input';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { FooterNav } from '../FooterNav/FooterNav';
+import { useScreenResize } from '@/hooks/useScreenResize';
 
 export const Footer: FC = () => {
+  const { isResize } = useScreenResize(580);
+
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerBanner}>
+    <footer className={`${styles.footer} ${isResize && styles.bgLight}`}>
+      <div
+        className={`${styles.footerBanner} ${
+          isResize ? styles.bgTransparent : ''
+        }`}
+      >
         <div className={styles.footerJoinBlock}>
           <div className={styles.footerJoinBlockTitles}>
             <h4 className={styles.joinTitle}>Join Our Newsletter</h4>
@@ -22,6 +31,7 @@ export const Footer: FC = () => {
               width={24}
               height={24}
               alt="Email Icon"
+              className={styles.emailIcon}
             />
             <Input
               id="email"

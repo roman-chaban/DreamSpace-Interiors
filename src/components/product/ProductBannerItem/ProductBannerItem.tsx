@@ -8,6 +8,7 @@ interface ProductBannerItemProps {
   link: string;
   href: string;
   backgroundPath: string;
+  isFirst?: boolean;
 }
 
 export const ProductBannerItem: FC<ProductBannerItemProps> = ({
@@ -15,13 +16,25 @@ export const ProductBannerItem: FC<ProductBannerItemProps> = ({
   backgroundPath,
   href,
   link = 'Shop now',
+  isFirst,
 }) => {
   return (
     <div
-      style={{ backgroundImage: `url(${backgroundPath})`, width: '100%' }}
-      className={styles.bannerItem}
+      style={{
+        backgroundImage: `url(${
+          isFirst ? 'images/banner/primaryBanner.svg' : backgroundPath
+        })`,
+        width: '100%',
+      }}
+      className={`${styles.bannerItem} ${
+        isFirst ? styles.firstBannerItem : ''
+      }`}
     >
-      <div className={styles.bannerTitles}>
+      <div
+        className={`${styles.bannerTitles} ${
+          isFirst ? styles.firstBannerTitle : ''
+        }`}
+      >
         <h3 className={styles.bannerTitle}>{title}</h3>
         <Link href={href} className={styles.bannerLink}>
           {link}
@@ -36,4 +49,3 @@ export const ProductBannerItem: FC<ProductBannerItemProps> = ({
     </div>
   );
 };
-

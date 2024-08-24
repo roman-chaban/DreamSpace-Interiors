@@ -36,7 +36,7 @@ export const Hero: FC = () => {
           <SwiperSlide>
             <Image
               priority
-              src="images/slider/slider-banner.svg"
+              src="images/slider/secondSlider-banner.svg"
               alt="Slide Image"
               width={1120}
               height={536}

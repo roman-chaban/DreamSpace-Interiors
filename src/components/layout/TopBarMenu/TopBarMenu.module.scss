@@ -75,3 +75,12 @@
     transform: scale(1.2);
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .topBarItem:nth-child(3) {
+    display: none;
+  }
+  .closeButton {
+    right: 30px;
+  }
+}

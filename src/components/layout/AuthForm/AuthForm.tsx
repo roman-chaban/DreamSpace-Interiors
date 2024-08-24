@@ -6,6 +6,9 @@ import styles from './AuthForm.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import Image from 'next/image';
 import { CheckBox } from '@/components/ui/CheckBox/CheckBox';
+import { FormClose } from 'grommet-icons';
+import Link from 'next/link';
+import { NavPaths } from '@/enums/navPaths';
 
 interface AuthFormProps {
   title: string;
@@ -136,6 +139,12 @@ export const AuthForm: FC<AuthFormProps> = ({
           {buttonLabel}
         </Button>
       </div>
+      <Link title="Go home" href={NavPaths.HOME}>
+        <FormClose
+          className={styles.closeIcon}
+          style={{ width: 32, height: 32 }}
+        />
+      </Link>
     </form>
   );
 };

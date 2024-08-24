@@ -11,6 +11,7 @@ export const ProductBanners: FC = () => {
           backgroundPath="images/banner/primaryBanner.svg"
           title="Living Room"
           link="Shop now"
+          isFirst
         />
         <div className={styles.otherBannersItems}>
           <ProductBannerItem

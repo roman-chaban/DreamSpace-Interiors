@@ -187,6 +187,7 @@
 }
 
 .copyrightItemBlock {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -214,9 +215,156 @@
   color: color.$color-gray;
 }
 
-
 .footerSocial {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bgTransparent {
+  background: color.$color-footer-bg;
+  aspect-ratio: 4 / 3;
+}
+
+.bgLight {
+  background: color.$color-darkest-gray;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footerInformation {
+    padding-inline: 100px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .footerInformation {
+    padding-inline: 50px;
+  }
+  .footerJoinBlockTitles {
+    align-items: center;
+  }
+  .joinTitle {
+    font-size: size.$font-size-34px;
+  }
+}
+
+@media only screen and (max-width: 835px) {
+  .footerNav {
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+    &::after {
+      top: 110px;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .footerContainer {
+    margin-block: 25px;
+    gap: 10px;
+  }
+  .footerJoinBlock {
+    gap: 20px;
+  }
+  .joinSubTitle {
+    font-size: size.$font-size-12px;
+  }
+
+  .footerInformation {
+    padding-inline: 32px;
+  }
+  .footerBanner {
+    aspect-ratio: 25 / 9;
+  }
+  .footerCopyrightBlock {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+  }
+  .copyrightItemBlock {
+    justify-content: space-between;
+  }
+  .signUp {
+    max-width: 350px;
+  }
+  .signUpInput {
+    max-width: 250px;
+  }
+  .emailIcon {
+    max-width: 18px;
+    max-height: 18px;
+  }
+  .signUpInput {
+    &::placeholder {
+      font-size: size.$font-size-14px;
+    }
+  }
+  .signUp {
+    font-size: size.$font-size-14px;
+  }
+}
+
+@media only screen and (max-width: 551px) {
+  .footerContainer {
+    margin-block: 195px;
+  }
+  .footerBanner {
+    aspect-ratio: 15 / 9;
+  }
+  .footerNav {
+    align-items: center;
+    &::after {
+      top: 373px;
+    }
+  }
+  .footerNavLogo {
+    flex-direction: column;
+    gap: 33px;
+  }
+  .navLogoSubtitle::before {
+    display: none;
+  }
+  .navLogo {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 24px;
+    justify-content: center;
+    font-size: size.$font-size-24px;
+  }
+  .navLogo::before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    top: 32px;
+    transform: rotate(90deg);
+    height: 24px;
+    background: color.$color-dark-gray;
+  }
+  .navMenu {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footerCopyrightBlock {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .copyrightItemBlock {
+    flex-direction: column-reverse;
+  }
+  .navLogoSubtitle {
+    color: color.$color-gray;
+  }
+  .footerJoinBlockTitles {
+    max-width: 311px;
+  }
+  .joinTitle {
+    font-size: size.$font-size-28px;
+  }
+  .joinSubTitle {
+    font-size: size.$font-size-14px;
+    text-align: center;
+    text-align-last: center;
+  }
 }
