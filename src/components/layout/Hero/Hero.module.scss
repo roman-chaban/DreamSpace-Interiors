@@ -57,7 +57,7 @@
   font-weight: 600;
 }
 
-@media only screen and (max-width: 1200px) {
+@include toDesktop {
   .heroContainer {
     padding-inline: 100px;
   }
@@ -109,11 +109,11 @@
 @media only screen and (max-width: 582px) {
   .heroTitle {
     font-size: size.$font-size-44px;
-  };
+  }
 }
 
 @media only screen and (max-width: 395px) {
   .heroTitle {
     font-size: size.$font-size-38px;
-  };
+  }
 }

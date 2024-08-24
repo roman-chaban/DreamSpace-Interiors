@@ -1,6 +1,43 @@
 @mixin container() {
   width: 100%;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1800px;
   padding: 0 160px;
+}
+
+
+@mixin toDesktop {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin toLargeTablet {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin toTablet {
+  @media only screen and (max-width: 835px) {
+    @content;
+  }
+}
+
+@mixin toSmallTablet {
+  @media only screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin toMobile {
+  @media only screen and (max-width: 582px) {
+    @content;
+  }
+}
+
+@mixin toSmallMobile {
+  @media only screen and (max-width: 395px) {
+    @content;
+  }
 }
