@@ -143,7 +143,7 @@
   padding: 20px 10px;
   position: absolute;
   top: 95px;
-  right: 105px;
+  right: 165px;
   z-index: 2000;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
@@ -226,6 +226,12 @@
 
   .headerSubNav {
     gap: 15px;
+  }
+  .dropdownMenu {
+    right: 100px;
+  }
+  .dropdownMenu::before  {
+    right: 77.5px;
   }
 }
 

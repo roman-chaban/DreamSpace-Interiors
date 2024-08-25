@@ -11,8 +11,9 @@ import { NavPaths } from '@/enums/navPaths';
 import { Login, Logout } from 'grommet-icons';
 import { Burger } from '../Burger/Burger';
 import { useScrollObserver } from '@/hooks/useScrollObserver';
+import dynamic from 'next/dynamic';
 
-export const Header: FC = () => {
+const Header: FC = () => {
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isBurgerActive, setIsBurgerActive] = useState(false);
@@ -27,7 +28,11 @@ export const Header: FC = () => {
       className={`${styles.header} ${isScrolledNav ? styles.active : ''}`}
     >
       <TopBarMenu />
-      <div className={`${styles.headerContainer} ${isScrolledNav ? styles.activeBorder : ''}`}>
+      <div
+        className={`${styles.headerContainer} ${
+          isScrolledNav ? styles.activeBorder : ''
+        }`}
+      >
         <div className={styles.headerLogo}>
           <button
             className={styles.burgerButton}
@@ -88,3 +93,5 @@ export const Header: FC = () => {
     </header>
   );
 };
+
+export default dynamic(() => Promise.resolve(Header), { ssr: false });

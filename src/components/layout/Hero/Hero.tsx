@@ -60,9 +60,8 @@ export const Hero: FC = () => {
             Simply Better <span className={styles.titleMark}>.</span>
           </h1>
           <p className={styles.heroSubTitle}>
-            <span className={styles.subTitleMark}>3legant</span>
-            is a gift & decorations store based in HCMC, Vietnam. Est since
-            2019.{' '}
+            <span className={styles.subTitleMark}>3legant</span> is a gift &
+            decorations store based in HCMC, Vietnam. Est since 2019.{' '}
           </p>
         </div>
       </div>
