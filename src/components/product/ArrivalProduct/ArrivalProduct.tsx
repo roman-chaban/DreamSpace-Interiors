@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import styles from './ArrivalProduct.module.scss';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
+import { Favorite } from 'grommet-icons';
 
 interface ArrivalProductProps {
   product: Product;
@@ -15,12 +16,17 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
         className={styles.productItemImage}
         style={{ backgroundImage: `url(${product.imageUrl})` }}
       >
-        <Button type='button' className={styles.addButton}>Add to cart</Button>
+        <Button type="button" className={styles.addButton}>
+          Add to cart
+        </Button>
         <div className={styles.productDiscount}>
           <span className={styles.newTitle}>{product.discountedTitle}</span>
           <span className={styles.discountTitle}>
             {product.discountPercentage}
           </span>
+          <Button type='button' className={styles.favoriteIcon}>
+            <Favorite style={{ width: 18, height: 18}} />
+          </Button>
         </div>
       </div>
       <div className={styles.productInfo}>

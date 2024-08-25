@@ -17,6 +17,7 @@ export const navMenuIcons: NavMenuIcons = [
         alt="Search icon"
         width={24}
         height={24}
+        className={styles.hiddenIcon}
       />
     ),
   },
@@ -40,6 +41,7 @@ export const navMenuIcons: NavMenuIcons = [
         alt="Shopping bag icon"
         width={24}
         height={24}
+        className={styles.hiddenIcon}
       />
     ),
   },

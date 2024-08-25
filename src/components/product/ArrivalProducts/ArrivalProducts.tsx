@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
 import Image from 'next/image';
+import { inter } from '@/fonts/basic-fonts';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
@@ -20,7 +21,7 @@ export const ArrivalProducts: FC = () => {
   }, []);
 
   return (
-    <section className={styles.products}>
+    <section className={`${styles.products} ${inter.className}`}>
       <div className={styles.productsContainer}>
         <div className={styles.arrivalsNav}>
           <h3 className={styles.arrivalTitle}>New Arrivals</h3>

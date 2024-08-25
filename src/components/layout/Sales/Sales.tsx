@@ -2,10 +2,11 @@ import type { FC } from 'react';
 import styles from './Sales.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { inter } from '@/fonts/basic-fonts';
 
 export const Sales: FC = () => {
   return (
-    <section className={styles.sales}>
+    <section className={`${styles.sales} ${inter.className}`}>
       <div className={styles.salesContainer}>
         <picture className={styles.salesImage}>
           <Image

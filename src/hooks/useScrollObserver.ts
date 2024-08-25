@@ -2,28 +2,34 @@ import { useEffect, useState } from 'react';
 
 export const useScrollObserver = () => {
   const [isScrolledNav, setIsScrolledNav] = useState<boolean>(() => {
-    return JSON.parse(localStorage.getItem('isScrolledNav') || 'false');
+    if (typeof window !== 'undefined') {
+      const savedState = localStorage.getItem('isScrolledNav');
+      return savedState ? JSON.parse(savedState) : window.scrollY > 50;
+    }
+    return false;
   });
 
   useEffect(() => {
-    const handleScrolledNav = () => {
-      if (window.scrollY > 0) {
-        setIsScrolledNav(true);
-      } else {
-        setIsScrolledNav(false);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const scrolled = window.scrollY > 50;
+        setIsScrolledNav(scrolled);
+        try {
+          localStorage.setItem('isScrolledNav', JSON.stringify(scrolled));
+        } catch (error) {
+          console.error('Error saving to localStorage', error);
+        }
+      };
 
-    window.addEventListener('scroll', handleScrolledNav);
+      handleScroll();
 
-    return () => {
-      window.removeEventListener('scroll', handleScrolledNav);
-    };
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('isScrolledNav', JSON.stringify(isScrolledNav));
-  }, [isScrolledNav]);
 
   return { isScrolledNav };
 };

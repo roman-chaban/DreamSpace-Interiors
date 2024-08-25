@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import styles from '@/components/layout/Footer/Footer.module.scss';
 
 export interface SocialItem {
   id: number;
@@ -14,6 +14,7 @@ export const footerSocialItems: SocialItems = [
     icon: (
       <Link href={''}>
         <svg
+          className={styles.socialIconMedium}
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -40,6 +41,7 @@ export const footerSocialItems: SocialItems = [
     icon: (
       <Link href={''}>
         <svg
+          className={styles.socialIconMedium}
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -62,6 +64,7 @@ export const footerSocialItems: SocialItems = [
     icon: (
       <Link href={''}>
         <svg
+          className={styles.socialIconMedium}
           width="24"
           height="24"
           viewBox="0 0 24 24"

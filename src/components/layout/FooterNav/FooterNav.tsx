@@ -36,7 +36,7 @@ export const FooterNav: FC = () => {
         </div>
         <div className={styles.footerSocial}>
           {footerSocialItems.map((icon) => (
-            <Fragment key={icon.id}>{icon.icon}</Fragment>
+            <span className={styles.socialIcon} key={icon.id}>{icon.icon}</span>
           ))}
         </div>
       </div>

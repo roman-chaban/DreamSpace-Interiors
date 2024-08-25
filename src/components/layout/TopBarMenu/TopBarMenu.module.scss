@@ -59,6 +59,15 @@
   font-size: size.$font-size-14px;
   color: color.$color-primary;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.arrowIcon {
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  &:hover {
+    transform: translateX(8px);
+  }
 }
 
 .closeButton {

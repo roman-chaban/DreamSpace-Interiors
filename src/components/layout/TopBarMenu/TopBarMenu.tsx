@@ -36,6 +36,7 @@ export const TopBarMenu: FC = () => {
             alt="Arrow right icon"
             width={18}
             height={18}
+            className={styles.arrowIcon}
           />
         </li>
       </ul>

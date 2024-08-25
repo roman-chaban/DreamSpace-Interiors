@@ -7,18 +7,24 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { FooterNav } from '../FooterNav/FooterNav';
 import { useScreenResize } from '@/hooks/useScreenResize';
+import { inter, poppins } from '@/fonts/basic-fonts';
+import { MailOption } from 'grommet-icons';
 
 export const Footer: FC = () => {
   const { isResize } = useScreenResize(580);
 
   return (
-    <footer className={`${styles.footer} ${isResize && styles.bgLight}`}>
+    <footer
+      className={`${styles.footer} ${isResize && styles.bgLight} ${
+        inter.className
+      }`}
+    >
       <div
         className={`${styles.footerBanner} ${
           isResize ? styles.bgTransparent : ''
         }`}
       >
-        <div className={styles.footerJoinBlock}>
+        <div className={` ${poppins.className} ${styles.footerJoinBlock}`}>
           <div className={styles.footerJoinBlockTitles}>
             <h4 className={styles.joinTitle}>Join Our Newsletter</h4>
             <p className={styles.joinSubTitle}>
@@ -26,13 +32,7 @@ export const Footer: FC = () => {
             </p>
           </div>
           <label htmlFor="email" className={styles.signUp}>
-            <Image
-              src="/images/footer/icons/email.svg"
-              width={24}
-              height={24}
-              alt="Email Icon"
-              className={styles.emailIcon}
-            />
+            <MailOption />
             <Input
               id="email"
               name="email"
