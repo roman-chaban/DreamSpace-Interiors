@@ -5,6 +5,10 @@
 .header {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 50;
 }
 
 .headerContainer {
@@ -198,6 +202,17 @@
   transform: rotate(0deg);
 }
 
+.active {
+  background: color.$color-light-gray;
+  transition: background 0.8s ease;
+  padding-block: 0;
+}
+
+.activeBorder {
+  border-top: 2px solid color.$color-dropdown-border;
+  transition: border-top-color 0.8s ease;
+}
+
 @media only screen and (min-width: 1024px) {
   .burgerButton {
     display: none;
@@ -207,6 +222,10 @@
 @media only screen and (max-width: 1200px) {
   .headerContainer {
     padding-inline: 100px;
+  }
+
+  .headerSubNav {
+    gap: 15px;
   }
 }
 

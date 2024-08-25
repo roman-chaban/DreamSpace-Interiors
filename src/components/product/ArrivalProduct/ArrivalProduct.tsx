@@ -2,6 +2,7 @@ import { Product } from '@/types/products';
 import type { FC } from 'react';
 import styles from './ArrivalProduct.module.scss';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button/Button';
 
 interface ArrivalProductProps {
   product: Product;
@@ -14,6 +15,7 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
         className={styles.productItemImage}
         style={{ backgroundImage: `url(${product.imageUrl})` }}
       >
+        <Button type='button' className={styles.addButton}>Add to cart</Button>
         <div className={styles.productDiscount}>
           <span className={styles.newTitle}>{product.discountedTitle}</span>
           <span className={styles.discountTitle}>
