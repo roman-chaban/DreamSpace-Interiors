@@ -21,6 +21,7 @@ export const Header: FC = () => {
       <TopBarMenu />
       <div className={styles.headerContainer}>
         <div className={styles.headerLogo}>
+          <button className={styles.burgerButton}></button>
           <h4 className={styles.headerLogoIcon}>3legant</h4>
         </div>
         <nav className={styles.headerNav}>

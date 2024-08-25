@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer/Footer';
 import { Values } from '@/components/layout/Values/Values';
 import { Sales } from '@/components/layout/Sales/Sales';
 import { Articles } from '@/components/layout/Articles/Articles';
+import { ArrivalProducts } from '@/components/product/ArrivalProducts/ArrivalProducts';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -21,6 +22,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ProductBanners />
+      <ArrivalProducts />
       <Values />
       <Sales />
       <Articles />

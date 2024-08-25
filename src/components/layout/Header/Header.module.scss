@@ -49,6 +49,45 @@
   margin: 0;
 }
 
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.burgerButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 3px;
+  background: color.$color-black;
+  border: none;
+  border-radius: 20px;
+}
+
+.burgerButton::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  width: 24px;
+  height: 3px;
+  background: color.$color-black;
+  border-radius: 20px;
+}
+
+.burgerButton::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 24px;
+  height: 3px;
+  background: color.$color-black;
+  border-radius: 20px;
+}
+
 .listItem {
   list-style-type: none;
 }
@@ -159,6 +198,11 @@
   transform: rotate(0deg);
 }
 
+@media only screen and (min-width: 1024px) {
+  .burgerButton {
+    display: none;
+  }
+}
 
 @media only screen and (max-width: 1200px) {
   .headerContainer {

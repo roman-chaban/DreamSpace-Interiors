@@ -1,0 +1,124 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.productItem {
+  width: 100%;
+  max-width: 262px;
+  height: 433px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.productItemImage {
+  width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  aspect-ratio: 4 / 5;
+}
+
+.productDiscount {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  top: 16px;
+  left: 16px;
+}
+
+.newTitle {
+  width: 100%;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: color.$color-black;
+  background: color.$color-white;
+  border-radius: 4px;
+  padding: 4px 14px;
+  max-width: 67px;
+  height: 24px;
+}
+
+.discountTitle {
+  width: 100%;
+  border-radius: 4px;
+  padding: 4px 14px;
+  max-width: 71px;
+  height: 24px;
+  background: color.$color-success;
+  color: color.$color-white;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.starsFill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.productPrices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.productTitle {
+  font-weight: 600;
+  line-height: 162%;
+  color: color.$color-black;
+}
+
+.price {
+  line-height: 157%;
+  font-weight: 600;
+  font-size: size.$font-size-14px;
+  color: color.$color-product-title;
+}
+
+.discount {
+  line-height: 157%;
+  text-decoration: line-through;
+  font-size: size.$font-size-14px;
+  color: color.$color-dark-gray;
+}
+
+@media (max-width: 1200px) {
+  .productItem {
+    max-width: 235px;
+  }
+
+  .newTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: size.$font-size-12px;
+    max-width: 45px;
+  }
+  .discountTitle {
+    font-size: size.$font-size-10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 45px;
+  }
+  .productDiscount {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+

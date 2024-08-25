@@ -1,0 +1,210 @@
+[
+    {
+        "productId": 1,
+        "title": "Loveseat Sofa",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/Loveseat.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$199.00",
+        "discountedPrice": "$400.00"
+    },
+    {
+        "productId": 2,
+        "title": "Table Lamp",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/TableLamp.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$24.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 3,
+        "title": "Luxury Sofa",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/LuxurySofa.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$299.00",
+        "discountedPrice": "$500.00"
+    },
+    {
+        "productId": 4,
+        "title": "Cozy Sofa",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/CozySofa.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$299.00",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 5,
+        "title": "White Drawer Unit",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/WhiteDrawerUnit.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$89.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 6,
+        "title": "Black Tray Table",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/BlackTrailChair.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$19.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 7,
+        "title": "Table Lamp",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/TableLampSecond.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$29.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 8,
+        "title": "Black Brow Side Table",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/BlackBrowSideTable.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$39.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 9,
+        "title": "Light Beige Pillow",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/LightBeigePillow.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$9.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 10,
+        "title": "Table Lamp",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/TableLampTertiary.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$49.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 11,
+        "title": "Bamboo Basket",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/BambooBasket.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$10.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 12,
+        "title": "Off-white Pillow",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/Off-whitePillow.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$7.99",
+        "discountedPrice": ""
+    },
+    {
+        "productId": 13,
+        "title": "Toasted",
+        "discountedTitle": "new",
+        "discountPercentage": "-50%",
+        "imageUrl": "/products/image/Toasted.svg",
+        "rating": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ],
+        "originalPrice": "$224.99",
+        "discountedPrice": ""
+    }
+]
