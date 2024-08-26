@@ -1,0 +1,184 @@
+@use '../../../styles/colors/colors' as color;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+
+.sidebar {
+  width: 100%;
+  max-width: 262px;
+}
+
+.sidebarContainer {
+  max-width: 262px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filterTitle {
+  font-size: size.$font-size-20px;
+  color: color.$color-product-title;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.categories,
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categoriesTitle,
+.priceTitle {
+  font-weight: 600;
+  line-height: 162%;
+  color: color.$color-product-title;
+}
+
+.roomsTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 150px;
+  overflow: auto;
+  & > .title {
+    cursor: pointer;
+  }
+}
+
+.roomsTitles::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.roomsTitles::-webkit-scrollbar-track {
+  background: color.$color-scroll-bar-thumb;
+  border-radius: 100px;
+}
+
+.roomsTitles::-webkit-scrollbar-thumb {
+  background: color.$color-dark-gray;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.allRoomsTitle {
+  color: color.$color-product-title;
+}
+
+.title,
+.allPriceTitle {
+  line-height: 157%;
+  font-weight: 600;
+  font-size: size.$font-size-14px;
+  color: color.$color-rooms-title;
+}
+
+.title {
+  display: flex;
+  justify-content: start;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.priceTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.priceTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkboxPrice {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid color.$color-dark-gray;
+  border-radius: 4px;
+  background-color: color.$color-white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+
+  appearance: none;
+  outline: none;
+
+  &:checked {
+    background-color: color.$color-black;
+    border-color: transparent;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-image: url('/sidebar/arrow-checkbox.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(0) translate(-50%, -50%);
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  &:checked::after {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1280px) {
+  .sidebar,
+  .sidebarContainer {
+    max-width: 200px;
+  }
+
+  .title {
+    font-size: size.$font-size-13px;
+  }
+  .allRoomsTitle {
+    font-size: size.$font-size-12px;
+  }
+  .checkboxPrice {
+    max-width: 18px;
+    max-height: 18px;
+    &::after {
+      max-width: 17px;
+      max-height: 17px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .sidebar,
+  .sidebarContainer {
+    max-width: 225px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

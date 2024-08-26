@@ -1,6 +1,6 @@
 import { poppins } from '@/fonts/basic-fonts';
 import { Metadata } from 'next';
-import styles from './Home.module.scss';
+import styles from '@/styles/pagesStyles/Home/Home.module.scss';
 import { Hero } from '@/components/layout/Hero/Hero';
 import { ProductBanners } from '@/components/product/ProductsBanners/ProductsBanners';
 import Header from '@/components/layout/Header/Header';

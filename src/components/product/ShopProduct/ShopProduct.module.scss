@@ -1,0 +1,213 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.productItem {
+  width: 100%;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.productItemImage {
+  width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  aspect-ratio: 3 / 5;
+  padding: 16px;
+  transition: all 0.3s ease;
+  &:hover .addButton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.productDiscount {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  top: 16px;
+  left: 16px;
+}
+
+.newTitle {
+  width: 100%;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: color.$color-black;
+  background: color.$color-white;
+  border-radius: 4px;
+  padding: 4px 14px;
+  max-width: 67px;
+  height: 24px;
+}
+
+.discountTitle {
+  width: 100%;
+  border-radius: 4px;
+  padding: 4px 14px;
+  max-width: 71px;
+  height: 24px;
+  background: color.$color-success;
+  color: color.$color-white;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.favoriteIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  background: color.$color-white;
+  position: absolute;
+  right: 30px;
+  top: -3px;
+  border: none;
+  cursor: pointer;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.starsFill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.productPrices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.productTitle {
+  font-weight: 600;
+  line-height: 162%;
+  color: color.$color-black;
+}
+
+.price {
+  line-height: 157%;
+  font-weight: 600;
+  font-size: size.$font-size-14px;
+  color: color.$color-product-title;
+}
+
+.discount {
+  line-height: 157%;
+  text-decoration: line-through;
+  font-size: size.$font-size-14px;
+  color: color.$color-dark-gray;
+}
+
+.addButton {
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  text-align: center;
+  font-weight: 500;
+  color: color.$color-white;
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  transform: translateX(-50%) translateY(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 6px 24px;
+  height: 35px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04);
+  background: color.$color-black;
+  font-size: size.$font-size-14px;
+  cursor: pointer;
+  max-width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: all 0.3s ease,
+    background 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  &:hover {
+    background: color.$color-success;
+  }
+}
+
+@media (max-width: 1200px) {
+  .productItem {
+    max-width: 235px;
+  }
+
+  .newTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: size.$font-size-12px;
+    max-width: 45px;
+  }
+  .discountTitle {
+    font-size: size.$font-size-10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 45px;
+  }
+  .productDiscount {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .addButton {
+    max-width: 180px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+    .addButton {
+      max-width: 120px;
+      font-size: size.$font-size-12px;
+      padding: 4px 12px;
+      max-height: 30px;
+      left: 10px;
+      bottom: 6px;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .productItem {
+    max-height: 281px;
+  }
+  .productItemImage {
+    aspect-ratio: 4 / 5;
+  }
+  .productDiscount {
+    flex-direction: column;
+  }
+  .productTitle {
+    font-size: size.$font-size-14px;
+  }
+  .price , .discount {
+    font-size: size.$font-size-12px;
+  }
+}

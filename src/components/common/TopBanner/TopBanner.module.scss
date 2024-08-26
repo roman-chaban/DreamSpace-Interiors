@@ -1,0 +1,100 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.banner {
+  width: 100%;
+  background-size: cover !important;
+  background-position: center center !important;
+  aspect-ratio: 25 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bannerNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bannerLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: size.$font-size-14px;
+  color: color.$color-product-title;
+  line-height: 171%;
+}
+
+.bannerLink:nth-child(1) {
+  gap: 4px;
+  color: color.$color-banner-link;
+}
+
+.bannerTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.bannerTitle {
+  font-weight: 500;
+  font-size: size.$font-size-50px;
+  color: color.$color-brand;
+  line-height: 107%;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.bannerSubTitle {
+  margin: 0;
+  line-height: 160%;
+  font-size: size.$font-size-20px;
+  color: color.$color-brand;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bannerTitles {
+    gap: 16px;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-46px;
+  }
+  .bannerSubTitle {
+    font-size: size.$font-size-18px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .banner {
+    gap: 18px;
+    aspect-ratio: 18 / 9;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-38px;
+  }
+  .bannerSubTitle {
+    size: size.$font-size-14px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .banner {
+    gap: 14px;
+    aspect-ratio: 9 / 9;
+    background-image: url('/banner/bannerSmall.svg') !important;
+    padding: 12px;
+  }
+  .bannerTitle {
+    font-size: size.$font-size-34px;
+  }
+  .bannerSubTitle {
+    size: size.$font-size-10px;
+    max-width: 225px;
+    text-align-last: center;
+  }
+}
