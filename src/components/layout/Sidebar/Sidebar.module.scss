@@ -8,6 +8,8 @@
 }
 
 .sidebarContainer {
+  position: sticky;
+  top: 115px;
   max-width: 262px;
   display: flex;
   flex-direction: column;
@@ -64,7 +66,23 @@
 
 .roomsTitles::-webkit-scrollbar-thumb {
   background: color.$color-dark-gray;
-  height: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.price::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.price::-webkit-scrollbar-track {
+  background: color.$color-scroll-bar-thumb;
+  border-radius: 100px;
+}
+
+.price::-webkit-scrollbar-thumb {
+  background: color.$color-dark-gray;
+  height: 40px;
   border-radius: 10px;
 }
 
@@ -174,6 +192,16 @@
   .sidebar,
   .sidebarContainer {
     max-width: 225px;
+  }
+  .sidebarContainer {
+    top: 50px;
+  }
+  .price {
+    overflow: auto;
+    max-height: 150px;
+  }
+  .priceTitles {
+    margin-right: 13px;
   }
 }
 

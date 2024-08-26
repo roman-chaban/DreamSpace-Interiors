@@ -1,27 +1,56 @@
+'use client';
+
 import { TopBanner } from '@/components/common/TopBanner/TopBanner';
 import { Footer } from '@/components/layout/Footer/Footer';
 import Header from '@/components/layout/Header/Header';
 import { Sidebar } from '@/components/layout/Sidebar/Sidebar';
 import { ShopProducts } from '@/components/product/ShopProducts/ShopProducts';
+import { shopNavItems } from '@/constants/shopNav';
+import { useChangePageTitle } from '@/hooks/useChangePageTitle';
 import styles from '@/styles/pagesStyles/Shop/Shop.module.scss';
 import { params } from '@/types/params';
+import { useState, ReactNode, Suspense } from 'react';
+import Loading from '../loading';
 
 export default function Shop() {
+  useChangePageTitle('DreamSpace Interiors | Shop');
+  const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
+  const handleSelectTab = (id: number) => setSelectedTab(id);
+
+  const contentMap: Record<number, ReactNode> = {
+    1: (
+      <>
+        <Sidebar />
+        <ShopProducts
+          items={shopNavItems}
+          selectedItemId={selectedTab}
+          onSelectContent={handleSelectTab}
+        />
+      </>
+    ),
+    2: (
+      <ShopProducts
+        items={shopNavItems}
+        selectedItemId={selectedTab}
+        onSelectContent={handleSelectTab}
+      />
+    ),
+  };
+
+  const renderContent = () => contentMap[selectedTab] || contentMap[1];
+
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <main className={styles.shopMain}>
         <section className={styles.shop}>
           <div className={styles.shopContainer}>
             <TopBanner params={params} />
-            <div className={styles.shopContent}>
-              <Sidebar />
-              <ShopProducts />
-            </div>
+            <div className={styles.shopContent}>{renderContent()}</div>
           </div>
         </section>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }

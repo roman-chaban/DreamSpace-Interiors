@@ -26,7 +26,8 @@
 .productsGrid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
   gap: 24px;
 }
 
@@ -81,9 +82,15 @@
   border: 1.5px solid color.$color-gray;
   width: 46px;
   height: 40px;
+  transition: background 1s ease-in-out, border-color 1s ease-in-out;
 }
+
 .shopNavItem:not(:last-child) {
   border-right: none;
+}
+
+.active {
+  background: color.$color-light-gray;
 }
 
 .navTitle {
@@ -91,6 +98,17 @@
   line-height: 160%;
   color: color.$color-brand;
   font-size: size.$font-size-20px;
+}
+
+.loadingTitle {
+  font-weight: 500;
+  font-size: size.$font-size-28px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .productsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media only screen and (max-width: 1200px) {
