@@ -156,6 +156,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .blogList {
+    padding-block-end: 100px;
+  }
   .articlesContainer {
     padding-inline: 100px;
   }
@@ -205,12 +208,19 @@
   .overlay {
     font-size: size.$font-size-18px;
   }
+  .blogList {
+    padding-block-end: 50px;
+  }
+  .showMoreContainer {
+    padding-block-start: 50px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .articlesContainer {
     padding-inline: 32px;
   }
+  
   .itemTitle {
     font-size: size.$font-size-16px;
   }

@@ -1,12 +1,17 @@
+'use client';
+
+
 import type { FC } from 'react';
 import styles from './TopBanner.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { NavPaths } from '@/enums/navPaths';
+import { useScreenResize } from '@/hooks/useScreenResize';
 
 interface TopBannerProps {
   params: {
     bannerImage: string;
+    smallBannerImage: string;
     bannerLinks: {
       home: string;
       anotherLink: string;
@@ -17,10 +22,12 @@ interface TopBannerProps {
 }
 
 export const TopBanner: FC<TopBannerProps> = ({ params }) => {
+  const { isResize } = useScreenResize(500);
   return (
     <div
       className={styles.banner}
-      style={{ background: `url(${params.bannerImage})` }}
+      style={{ backgroundImage: isResize ? `url(${params.smallBannerImage})` : `url(${params.bannerImage})` }}
+
     >
       <div className={styles.bannerNav}>
         <Link className={styles.bannerLink} href={NavPaths.HOME}>

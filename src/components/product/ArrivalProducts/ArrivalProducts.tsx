@@ -10,6 +10,7 @@ import { Pagination, Navigation, Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
+import './ArrivalSwiper.scss';
 import Image from 'next/image';
 import { inter } from '@/fonts/basic-fonts';
 
