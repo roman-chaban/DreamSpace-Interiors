@@ -4,6 +4,15 @@
 @use '../base/normalize';
 @use '../colors/colors';
 
+*,
+*::before,
+*::after {
+  button:focus {
+    outline: none;
+    border: none;
+  }
+}
+
 .layout {
   display: flex;
   flex-direction: column;

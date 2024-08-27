@@ -1,14 +1,14 @@
 'use client';
 
-import { Fragment, useRef, type FC } from 'react';
+import { useRef, type FC } from 'react';
 import styles from './Burger.module.scss';
 import Image from 'next/image';
 import { Input } from '@/components/ui/Input/Input';
 import { NavItem, navMenuItems } from '@/constants/navMenuItems';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
-import { footerSocialItems } from '@/constants/footerSocial';
 import { Github, Instagram, Linkedin } from 'grommet-icons';
+import { useBodyOverFlow } from '@/hooks/useBodyOverflow';
 
 interface BurgerProps {
   onClose: () => void;
@@ -18,8 +18,11 @@ interface BurgerProps {
 export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
   const burgerMenuRef = useRef<HTMLDivElement>(null);
 
+
+  useBodyOverFlow(isActive);
+
   return (
-    <div>
+    <div className={styles.burger}>
       <nav
         ref={burgerMenuRef}
         className={`${styles.burgerMenu} ${isActive ? styles.active : ''}`}

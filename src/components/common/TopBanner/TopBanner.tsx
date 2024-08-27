@@ -9,7 +9,7 @@ interface TopBannerProps {
     bannerImage: string;
     bannerLinks: {
       home: string;
-      shop: string;
+      anotherLink: string;
     };
     title: string;
     subTitle: string;
@@ -33,7 +33,7 @@ export const TopBanner: FC<TopBannerProps> = ({ params }) => {
           />{' '}
         </Link>
         <Link className={styles.bannerLink} href={NavPaths.SHOP}>
-          {params.bannerLinks.shop}
+          {params.bannerLinks.anotherLink}
         </Link>
       </div>
       <div className={styles.bannerTitles}>

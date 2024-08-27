@@ -3,7 +3,7 @@ import styles from './Articles.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArticleListItem, articlesList } from '@/constants/articlesList';
-import { Meta } from 'grommet-icons';
+import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 
 export const Articles: FC = () => {
   return (
@@ -24,36 +24,21 @@ export const Articles: FC = () => {
         </div>
         <div className={styles.articlesList}>
           {articlesList.map((item: ArticleListItem) => (
-            <div className={styles.articlesItem} key={item.id}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={357}
-                  height={325}
-                  className={styles.itemImage}
-                />
-                <div className={styles.overlay}>
-                  <Meta color='white' className={styles.metaIcon} />
-                  Buy one or buy a few and make every space where you sit more
-                  convenient. Light and easy to move around with removable tray
-                  top, handy for serving snacks.
-                </div>
-              </div>
-              <div className={styles.articleTitles}>
-                <h4 className={styles.itemTitle}>{item.title}</h4>
-                <Link className={styles.itemLink} href="">
-                  Read More
-                  <Image
-                    src="/images/articles/arrow-right.svg"
-                    alt="Arrow Right Icon"
-                    width={20}
-                    height={20}
-                    className={styles.rightIcon}
-                  />
-                </Link>
-              </div>
-            </div>
+            <ArticleItem
+              item={item}
+              key={item.id}
+              classNames={{
+                articlesItem: styles.articlesItem,
+                imageContainer: styles.imageContainer,
+                itemImage: styles.itemImage,
+                overlay: styles.overlay,
+                metaIcon: styles.metaIcon,
+                articleTitles: styles.articleTitles,
+                itemTitle: styles.itemTitle,
+                itemLink: styles.itemLink,
+                rightIcon: styles.rightIcon,
+              }}
+            />
           ))}
         </div>
       </div>

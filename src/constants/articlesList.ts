@@ -3,6 +3,7 @@ export interface ArticleListItem {
   image: string;
   title: string;
   link: string;
+  dateTime?: string;
 }
 
 export type ArticlesList = ArticleListItem[];

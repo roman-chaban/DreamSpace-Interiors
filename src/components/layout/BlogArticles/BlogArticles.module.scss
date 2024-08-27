@@ -1,0 +1,237 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.blogList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 25px;
+  padding-block: 40px 200px;
+}
+
+.showMoreContainer {
+  grid-column: span 3;
+  display: flex;
+  justify-content: center;
+  padding-block-start: 80px;
+}
+
+.blogListItem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.itemImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: color.$color-white;
+  display: flex;
+  font-size: size.$font-size-14px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  line-height: 140%;
+}
+
+.imageContainer:hover .overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.metaIcon {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
+
+.itemImage {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.blogTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itemTitle {
+  line-height: 140%;
+  font-weight: 500;
+  font-size: size.$font-size-20px;
+  color: color.$color-darkest-gray;
+}
+
+.dateTitle {
+  font-size: size.$font-size-14px;
+  color: color.$color-dark-gray;
+  line-height: 167%;
+  font-weight: 500;
+}
+
+.itemLink {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  gap: 4px;
+  color: color.$color-black;
+  text-decoration: none;
+  font-size: clamp(
+    #{size.$font-size-14px},
+    0.8393rem + 0.1786vw,
+    #{size.$font-size-16px}
+  );
+  font-weight: 500;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: color.$color-black;
+    bottom: 0;
+  }
+}
+
+.showMoreButton {
+  color: color.$color-black;
+  border: 1.5px solid color.$color-black;
+  background: transparent;
+  border-radius: 80px;
+  padding: 6px 20px;
+  width: 100%;
+  max-width: 163px;
+  height: 40px;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.5s ease-in 0s,
+    color 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  &:hover {
+    background: color.$color-black;
+    color: color.$color-white;
+    border: 1.5px solid color.$color-white;
+  }
+}
+
+.largeIcon {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+@media only screen and (max-width: 1335px) {
+  .itemTitle {
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .articlesContainer {
+    padding-inline: 100px;
+  }
+  .itemTitle {
+    font-size: size.$font-size-18px;
+  }
+  .itemLink {
+    font-size: size.$font-size-13px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .articlesContainer {
+    padding-inline: 50px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .blogList {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .showMoreContainer {
+    grid-column: span 1;
+  }
+  .itemTitle {
+    font-size: size.$font-size-24px;
+    max-width: 100%;
+  }
+  .itemLink {
+    font-size: size.$font-size-18px;
+  }
+  .itemImage {
+    aspect-ratio: 4 / 2.5;
+    border-radius: 20px;
+  }
+  .dateTitle {
+    font-size: size.$font-size-16px;
+  }
+  .overlay {
+    font-size: size.$font-size-24px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay {
+    font-size: size.$font-size-18px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .articlesContainer {
+    padding-inline: 32px;
+  }
+  .itemTitle {
+    font-size: size.$font-size-16px;
+  }
+  .itemLink,
+  .articlesLink {
+    font-size: size.$font-size-14px;
+  }
+  .articlesTitle {
+    font-size: size.$font-size-34px;
+  }
+  .rightIcon {
+    max-width: 16px;
+    max-height: 16px;
+  }
+  .overlay {
+    font-size: size.$font-size-10px;
+    line-height: 120%;
+  }
+  .metaIcon {
+    left: 5px;
+    top: 5px;
+    font-size: size.$font-size-18px;
+  }
+}

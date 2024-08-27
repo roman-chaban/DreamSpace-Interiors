@@ -75,7 +75,6 @@
 .itemImage {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .overlay {
@@ -190,6 +189,9 @@
   .itemImage {
     aspect-ratio: 4 / 2.5;
   }
+  .overlay {
+    font-size: size.$font-size-30px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -210,7 +212,7 @@
     max-width: 16px;
     max-height: 16px;
   }
-  .overlay  {
+  .overlay {
     font-size: size.$font-size-10px;
     line-height: 120%;
   }
