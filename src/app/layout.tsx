@@ -3,6 +3,7 @@ import '@/styles/main/main.scss';
 import { Footer } from '@/components/layout/Footer/Footer';
 import Header from '@/components/layout/Header/Header';
 import { inter } from '@/fonts/basic-fonts';
+import ScrollProgress from '@/components/ui/ScrollProgress/ScrollProgress';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ScrollProgress />
         <div className="layout">{children}</div>
       </body>
     </html>

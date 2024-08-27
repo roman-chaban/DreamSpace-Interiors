@@ -261,7 +261,6 @@
   position: absolute;
   top: calc(100% + 5px);
   left: 0;
-  width: 100%;
   margin: 5px 0 0;
   padding: 0;
   list-style: none;
@@ -276,7 +275,7 @@
 
 .dropDownListItem {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 14px;
   color: color.$color-dark-gray;
   text-decoration: none;
   line-height: 1.71;
