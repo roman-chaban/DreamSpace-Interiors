@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { CheckBox } from '@/components/ui/CheckBox/CheckBox';
-import styles from './CheckBoxWrapper.module.scss';
+import styles from './CheckboxWrapper.module.scss';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface CheckBoxWrapperProps {
