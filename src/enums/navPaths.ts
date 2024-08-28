@@ -5,4 +5,5 @@ export const NavPaths = {
   CONTACT: '/contactUs',
   SIGNIN: '/auth/signin',
   SIGNUP: '/auth/signup',
+  BLOG: '/blog',
 };

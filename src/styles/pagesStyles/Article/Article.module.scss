@@ -1,0 +1,36 @@
+@use '../../abstracts/mixins' as *;
+
+
+.main {
+    margin-top: 120px;
+}
+
+
+.articleContainer {
+    display: flex;
+    flex-direction: column;
+    @include container;
+    gap: 56px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .articleContainer {
+        padding-inline: 100px;
+        gap: 35px;
+    } 
+}
+
+@media (max-width: 1000px) {
+    .articleContainer {
+        padding-inline: 50px;
+    }
+}
+
+@media (max-width: 720px) {
+    .articleContainer {
+        padding-inline: 32px;
+    }
+}
+

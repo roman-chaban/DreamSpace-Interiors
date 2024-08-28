@@ -15,6 +15,7 @@ export interface ArticleItemProps {
     title: string;
     link?: string;
     dateTime?: string;
+    dynamicPath: string;
   };
   classNames: {
     articlesItem: string;
@@ -37,25 +38,27 @@ export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
   return (
     <div className={classNames.articlesItem} key={item.id}>
       <div className={classNames.imageContainer}>
-        <Image
-          priority
-          src={item.image}
-          alt={item.title}
-          width={357}
-          height={325}
-          className={classNames.itemImage}
-        />
-        <div className={classNames.overlay}>
-          <Meta
-            color="white"
-            className={`${classNames.metaIcon} ${
-              isResize ? classNames.largeIcon : ''
-            }`}
+        <Link href={`/blog/article/${item.dynamicPath}`}>
+          <Image
+            priority
+            src={item.image}
+            alt={item.title}
+            width={357}
+            height={325}
+            className={classNames.itemImage}
           />
-          Buy one or buy a few and make every space where you sit more
-          convenient. Light and easy to move around with removable tray top,
-          handy for serving snacks.
-        </div>
+          <div className={classNames.overlay}>
+            <Meta
+              color="white"
+              className={`${classNames.metaIcon} ${
+                isResize ? classNames.largeIcon : ''
+              }`}
+            />
+            Buy one or buy a few and make every space where you sit more
+            convenient. Light and easy to move around with removable tray top,
+            handy for serving snacks.
+          </div>
+        </Link>
       </div>
       <div className={classNames.articleTitles}>
         <h4 className={classNames.itemTitle}>{item.title}</h4>

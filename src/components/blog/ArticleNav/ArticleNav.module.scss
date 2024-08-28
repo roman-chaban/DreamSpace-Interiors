@@ -1,0 +1,42 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.articleNav {
+  display: flex;
+}
+
+.articleNavContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  line-height: 171%;
+  color: color.$color-banner-link;
+  font-size: size.$font-size-14px;
+}
+
+.navTitle {
+  font-size: size.$font-size-14px;
+  color: color.$color-product-title;
+  font-weight: 500;
+  line-height: 171%;
+}
+
+.goBackLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: size.$font-size-14px;
+  color: color.$color-banner-link;
+  line-height: 171%;
+  font-weight: 500;
+  text-decoration: none;
+}

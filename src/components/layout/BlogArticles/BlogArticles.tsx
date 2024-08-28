@@ -1,13 +1,22 @@
-import type { FC } from 'react';
+'use client';
+
+import { useEffect, useState, type FC } from 'react';
 import styles from './BlogArticles.module.scss';
-import { BlogArticle, blogList } from '@/constants/blogArticles';
+import { BlogArticle } from '@/constants/blogArticles';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { Button } from '@/components/ui/Button/Button';
+import blogArticles from '@/services/blogArticles/blogArticles.json';
 
 export const BlogArticles: FC = () => {
+  const [articles, setArticles] = useState<BlogArticle[]>(blogArticles);
+
+  useEffect(() => {
+    setArticles(articles);
+  }, [articles]);
+
   return (
     <div className={styles.blogList}>
-      {blogList.map((item: BlogArticle) => (
+      {articles.map((item: BlogArticle) => (
         <ArticleItem
           item={item}
           key={item.id}

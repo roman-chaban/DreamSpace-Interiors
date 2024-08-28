@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "image": "/images/articles/primary-image.svg",
+    "title": "7 ways to decor your home",
+    "dateTime": "November 29, 2023",
+    "dynamicPath": "7-ways-to-decor-your-home",
+    "category": "Article",
+    "articleAuthor": "Henrik Annemark",
+    "articleBlock": [
+      {
+        "articleId": 1,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/images/articles/secondary-image.svg",
+    "title": "Kitchen organization",
+    "dateTime": "December 5, 2023",
+    "dynamicPath": "Kitchen-organization",
+    "category": "Article",
+    "articleAuthor": "Eva Johansson",
+     "articleBlock": [
+      {
+        "articleId": 2,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/images/articles/tertiary-image.svg",
+    "title": "Decor your bedroom",
+    "dateTime": "August 16, 2024",
+    "dynamicPath": "Decor-your-bedroom",
+    "category": "Article",
+    "articleAuthor": "Lars Svensson",
+     "articleBlock": [
+      {
+        "articleId": 3,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/images/articles/four-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Maja Lindström",
+     "articleBlock": [
+      {
+        "articleId": 4,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/images/articles/five-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Oskar Eriksson",
+     "articleBlock": [
+      {
+        "articleId": 5,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "/images/articles/six-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Sofia Bergström",
+     "articleBlock": [
+      {
+        "articleId": 6,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "/images/articles/seven-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Viktor Andersson",
+     "articleBlock": [
+      {
+        "articleId": 7,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "/images/articles/eight-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Elin Karlsson",
+    "articleBlock": [
+      {
+        "articleId": 8,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "/images/articles/nine-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Fredrik Olsson",
+     "articleBlock": [
+      {
+        "articleId": 9,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "/images/articles/primary-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Emma Gustavsson",
+     "articleBlock": [
+      {
+        "articleId": 10,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "/images/articles/four-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Erik Nilsson",
+     "articleBlock": [
+      {
+        "articleId": 11,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "/images/articles/eight-image.svg",
+    "title": "Modern texas home is beautiful and completely kid-friendly",
+    "dateTime": "September 1, 2024",
+    "dynamicPath": "Modern-texas-home-is-beautiful-and-completely-kid-friendly",
+    "category": "Article",
+    "articleAuthor": "Karin Pettersson",
+     "articleBlock": [
+      {
+        "articleId": 12,
+        "image": "/images/articles/articleBlock/primary-image.svg",
+        "title": "A cleaning hub with built-in ventilation",
+        "secondTitle": "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        "subTitle": "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        "secondBlock": [
+          {
+            "primaryImage": "/images/articles/articleBlock/secondary-image.svg",
+            "secondaryImage": "/images/articles/articleBlock/tertiary-image.svg",
+            "blockInfo": {
+              "title": "Storage with a calming effect",
+              "secondTitle": "Kit your clutter for easy access",
+              "subTitle": "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+              "secondSubTitle": "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice."
+            }
+          }
+        ],
+        "tertiaryBlock": [
+          { 
+            "primaryImage": "/images/articles/articleBlock/four-image.svg",
+            "title": "",
+            "blockInfo": {
+              "title": "An ecosystem of towels",
+              "secondTitle": "Make your mop disappear",
+              "subTitle": "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+              "secondSubTitle": "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
