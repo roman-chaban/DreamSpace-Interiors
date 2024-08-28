@@ -1,0 +1,40 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+
+
+.formInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+
+.formLabelsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+.signTitle {
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    color: color.$color-black;
+    font-size: size.$font-size-40px;
+  }
+  
+  .signSubTitle {
+    line-height: 162%;
+    color: color.$color-dark-gray;
+  }
+
+
+.signButton {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: color.$color-success;
+  }

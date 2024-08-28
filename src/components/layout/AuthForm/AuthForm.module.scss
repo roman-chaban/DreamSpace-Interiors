@@ -37,27 +37,6 @@
   color: color.$color-dark-gray;
 }
 
-.formLabel {
-  width: 100%;
-  max-width: 456px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid color.$color-gray;
-}
-
-.formInput {
-  width: 100%;
-  font-weight: 500;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding-bottom: 8px;
-  height: 40px;
-  line-height: 162%;
-  color: color.$color-dark-gray;
-  caret-color: color.$color-dark-gray;
-}
 
 .signButton {
   background: transparent;
@@ -161,6 +140,7 @@
   background: color.$color-black;
   color: color.$color-white;
   border: none;
+  cursor: pointer;
 }
 
 .rememberForgotBlock {
@@ -187,7 +167,7 @@
     margin-bottom: 150px;
   }
   .primaryButton {
-    max-width: 1000%;
+    max-width: 100%;
   }
 
 }

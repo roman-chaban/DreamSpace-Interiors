@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, ChangeEvent } from 'react';
+import React, { CSSProperties, FC, ChangeEvent, forwardRef } from 'react';
 
 interface InputProps {
   type: string;
@@ -14,7 +14,7 @@ interface InputProps {
   checked?: boolean;
 }
 
-export const Input: FC<InputProps> = ({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   type,
   id,
   className = '',
@@ -26,9 +26,10 @@ export const Input: FC<InputProps> = ({
   disabled = false,
   ariaLabel = '',
   checked,
-}) => {
+}, ref) => {
   return (
     <input
+      ref={ref}
       id={id}
       name={name}
       type={type}
@@ -42,4 +43,6 @@ export const Input: FC<InputProps> = ({
       checked={checked}
     />
   );
-};
+});
+
+Input.displayName = 'Input';

@@ -1,14 +1,16 @@
 'use client';
 
-import { FC, useState, ChangeEvent, Fragment } from 'react';
-import { Input } from '@/components/ui/Input/Input';
-import styles from './AuthForm.module.scss';
+import { FC } from 'react';
 import { Button } from '@/components/ui/Button/Button';
-import Image from 'next/image';
-import { CheckBox } from '@/components/ui/CheckBox/CheckBox';
-import { FormClose } from 'grommet-icons';
 import Link from 'next/link';
 import { NavPaths } from '@/enums/navPaths';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { FormClose } from 'grommet-icons';
+import styles from './AuthForm.module.scss';
+import { FormTitle } from '@/components/authUi/FormTitle/FormTitle';
+import { TextInput } from '@/components/authUi/TextInput/TextInput';
+import { PasswordInput } from '@/components/authUi/PasswordInput/PasswordInput';
+import { CheckBoxWrapper } from '@/components/authUi/CheckboxWrapper/CheckboxWrapper';
 
 interface AuthFormProps {
   title: string;
@@ -16,129 +18,104 @@ interface AuthFormProps {
   buttonLabel: string;
 }
 
+interface IAuthForm {
+  yourName: string;
+  userName: string;
+  email: string;
+  password: string;
+  agreeToTerms: boolean;
+}
+
 export const AuthForm: FC<AuthFormProps> = ({
   title,
   subTitle,
   buttonLabel,
 }) => {
-  const [formData, setFormData] = useState({
-    yourName: '',
-    userName: '',
-    email: '',
-    password: '',
-    agreeToTerms: false,
+  const { register, formState, handleSubmit } = useForm<IAuthForm>({
+    defaultValues: {
+      email: '',
+      userName: '',
+      yourName: '',
+      password: '',
+      agreeToTerms: false,
+    },
+    mode: 'onChange',
   });
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const submitForm: SubmitHandler<IAuthForm> = (data) => {
+    console.log(data.password);
   };
 
-  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      agreeToTerms: checked,
-    }));
-  };
+  const requiredFieldMessage = 'This field is required';
 
   return (
-    <form className={styles.authForm}>
-      <div className={styles.formInfo}>
-        <h3 className={styles.signTitle}>{title}</h3>
-        <div className={styles.signSubTitle}>
-          {subTitle}
-          <Button type="button" className={styles.signButton}>
-            {buttonLabel}
-          </Button>
-        </div>
-      </div>
+    <form
+      className={styles.authForm}
+      autoComplete="off"
+      onSubmit={handleSubmit(submitForm)}
+    >
+      <FormTitle title={title} subTitle={subTitle} buttonLabel={buttonLabel} />
 
       <div className={styles.formLabelsBlock}>
         {buttonLabel === 'Sign Up' && (
-          <Fragment>
-            <label htmlFor="yourName" className={styles.formLabel}>
-              <Input
-                type="text"
-                id="yourName"
-                name="yourName"
-                placeholder="Your name"
-                value={formData.yourName}
-                onChange={handleInputChange}
-                className={styles.formInput}
-              />
-            </label>
-            <label htmlFor="userName" className={styles.formLabel}>
-              <Input
-                type="text"
-                id="userName"
-                name="userName"
-                placeholder="Username"
-                value={formData.userName}
-                onChange={handleInputChange}
-                className={styles.formInput}
-              />
-            </label>
-          </Fragment>
+          <>
+            <TextInput
+              id="yourName"
+              type="text"
+              placeholder="Your name"
+              register={register('yourName', {
+                required: requiredFieldMessage,
+              })}
+            />
+            <TextInput
+              id="userName"
+              type="text"
+              placeholder="Username"
+              register={register('userName', {
+                required: requiredFieldMessage,
+              })}
+            />
+          </>
         )}
-        <label htmlFor="email" className={styles.formLabel}>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email address"
-            value={formData.email}
-            onChange={handleInputChange}
-            className={styles.formInput}
-          />
-        </label>
-        <label htmlFor="password" className={styles.formLabel}>
-          <Input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleInputChange}
-            className={styles.formInput}
-          />
-          <Image
-            src="/icons/eye.svg"
-            alt="Eye Icon"
-            width={24}
-            height={24}
-            className={styles.passwordIcon}
-          />
-        </label>
-        <div className={styles.authCheckBox}>
-          <CheckBox
-            name="agreeToTerms"
-            checked={formData.agreeToTerms}
-            onChange={handleCheckboxChange}
-            className={styles.formCheckBox}
-          />
-          {buttonLabel === 'Sign In' ? (
-            <div className={styles.rememberForgotBlock}>
-              <span className={styles.authCheckBoxSubTitle}>Remember me</span>
-              <strong className={styles.subTitleMarkForgot}>
-                Forgot password?
-              </strong>
-            </div>
-          ) : (
-            <span className={styles.authCheckBoxSubTitle}>
-              I agree with{' '}
-              <strong className={styles.subTitleMark}>Privacy Policy</strong>{' '}
-              and <strong className={styles.subTitleMark}>Terms of Use</strong>
-            </span>
-          )}
-        </div>
+
+        <TextInput
+          id="email"
+          type="email"
+          placeholder="Email address"
+          register={register('email', {
+            required: requiredFieldMessage,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: 'This email is not valid',
+            },
+          })}
+        />
+        {formState.errors.email?.message && (
+          <span>{formState.errors.email?.message}</span>
+        )}
+
+        <PasswordInput
+          id="password"
+          placeholder="Password"
+          register={register('password', { required: requiredFieldMessage })}
+        />
+
+        <CheckBoxWrapper
+          label={
+            buttonLabel === 'Sign In'
+              ? 'Remember me'
+              : 'I agree with Privacy Policy and Terms of Use'
+          }
+          register={register('agreeToTerms', {
+            required: requiredFieldMessage,
+          })}
+        />
+
         <Button type="submit" className={styles.primaryButton}>
           {buttonLabel}
         </Button>
       </div>
+
       <Link title="Go home" href={NavPaths.HOME}>
         <FormClose
           className={styles.closeIcon}
