@@ -10,17 +10,14 @@ import { Sales } from '@/components/layout/Sales/Sales';
 import { Articles } from '@/components/layout/Articles/Articles';
 import { ArrivalProducts } from '@/components/product/ArrivalProducts/ArrivalProducts';
 import { valuesItems } from '@/constants/valuesItems';
-import { ClassNames } from '@/components/layout/ValueItem/ValueItem';
 
-export const classNames: ClassNames = {
-  classNames: {
-    item: styles.item,
-    itemContainer: styles.itemContainer,
-    itemIcon: styles.itemIcon,
-    itemTitles: styles.itemTitles,
-    itemSubTitle: styles.itemSubTitle,
-    itemTitle: styles.itemTitle,
-  },
+const classNames = {
+  item: styles.item,
+  itemContainer: styles.itemContainer,
+  itemIcon: styles.itemIcon,
+  itemTitles: styles.itemTitles,
+  itemSubTitle: styles.itemSubTitle,
+  itemTitle: styles.itemTitle,
 };
 
 export const metadata: Metadata = {
@@ -36,7 +33,7 @@ export default function Home() {
       <Hero />
       <ProductBanners />
       <ArrivalProducts />
-      <Values container={styles.valuesContainer} values={valuesItems} classNames={classNames.classNames} />
+      <Values container={styles.valuesContainer} values={valuesItems} classNames={classNames} />
       <Sales
         image="/images/sales/sales-banner.svg"
         title="SALE UP TO 35% OFF"
