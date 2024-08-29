@@ -1,0 +1,51 @@
+@use '../../../styles/colors/colors' as color;
+
+.loader {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: transparent transparent transparent color.$color-success;
+  animation: spin 1s infinite linear;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.loaderContainer::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: color.$color-success transparent transparent transparent;
+  animation: spin 1.5s infinite linear reverse;
+}
+
+.loaderContainer::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: transparent color.$color-success transparent transparent;
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
