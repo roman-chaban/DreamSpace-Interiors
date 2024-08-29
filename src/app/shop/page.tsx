@@ -50,7 +50,7 @@ export default function Shop() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer isVisible />
     </Suspense>
   );
 }
