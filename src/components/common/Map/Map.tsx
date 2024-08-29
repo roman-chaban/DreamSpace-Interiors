@@ -3,6 +3,7 @@ import React, { useCallback, useRef } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import styles from './Map.module.scss';
 import { defaultOptions } from './defaultOptions/defaultOptions';
+import { MapLoader } from './MapLoader/MapLoader';
 
 const containerStyle = {
   width: '100%',
@@ -48,7 +49,7 @@ export const Map: FC<MapProps> = ({ center }) => {
             <></>
           </GoogleMap>
         ) : (
-          <div>Loading...</div>
+          <MapLoader />
         )}
       </div>
     </div>
