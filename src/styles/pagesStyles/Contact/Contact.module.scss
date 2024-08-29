@@ -1,0 +1,39 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/globals' as size;
+@use '../../colors/colors' as color;
+
+.main {
+  margin-top: 120px;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  @include container;
+}
+
+@media (max-width: 1200px) {
+  .contactContainer {
+    padding-inline: 100px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .contactContainer {
+    padding-inline: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  .contactContainer {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contactContainer {
+    gap: 24px;
+  }
+}

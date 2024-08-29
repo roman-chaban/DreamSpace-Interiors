@@ -1,0 +1,36 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.contactNav {
+  > .navContainer {
+    display: flex;
+    align-items: center;
+    > .navMenu {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      gap: 16px;
+    }
+  }
+}
+
+.navListItem {
+  color: color.$color-product-title;
+  font-size: size.$font-size-14px;
+  font-weight: 500;
+  line-height: 171%;
+  list-style-type: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: color.$color-banner-link;
+  font-size: size.$font-size-14px;
+  text-decoration: none;
+  line-height: 171%;
+  font-weight: 500;
+}

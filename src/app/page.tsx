@@ -9,6 +9,19 @@ import { Values } from '@/components/layout/Values/Values';
 import { Sales } from '@/components/layout/Sales/Sales';
 import { Articles } from '@/components/layout/Articles/Articles';
 import { ArrivalProducts } from '@/components/product/ArrivalProducts/ArrivalProducts';
+import { valuesItems } from '@/constants/valuesItems';
+import { ClassNames } from '@/components/layout/ValueItem/ValueItem';
+
+export const classNames: ClassNames = {
+  classNames: {
+    item: styles.item,
+    itemContainer: styles.itemContainer,
+    itemIcon: styles.itemIcon,
+    itemTitles: styles.itemTitles,
+    itemSubTitle: styles.itemSubTitle,
+    itemTitle: styles.itemTitle,
+  },
+};
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -23,10 +36,18 @@ export default function Home() {
       <Hero />
       <ProductBanners />
       <ArrivalProducts />
-      <Values />
-      <Sales />
+      <Values container={styles.valuesContainer} values={valuesItems} classNames={classNames.classNames} />
+      <Sales
+        image="/images/sales/sales-banner.svg"
+        title="SALE UP TO 35% OFF"
+        secondTitle="HUNDREDS of New lower prices!"
+        subTitle="It’s more affordable than ever to give every room in your home a
+              stylish makeover"
+        linkPath="Shop Now"
+        className={{ blockInfo: '' }}
+      />
       <Articles />
-      <Footer />
+      <Footer isVisible />
     </main>
   );
 }

@@ -7,10 +7,10 @@ import { NavPaths } from '@/enums/navPaths';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FormClose } from 'grommet-icons';
 import styles from './AuthForm.module.scss';
-import { FormTitle } from '@/components/authUi/FormTitle/FormTitle';
-import { TextInput } from '@/components/authUi/TextInput/TextInput';
-import { PasswordInput } from '@/components/authUi/PasswordInput/PasswordInput';
-import { CheckBoxWrapper } from '@/components/authUi/CheckboxWrapper/CheckboxWrapper';
+import { FormTitle } from '@/components/auth/FormTitle/FormTitle';
+import { TextInput } from '@/components/auth/TextInput/TextInput';
+import { PasswordInput } from '@/components/auth/PasswordInput/PasswordInput';
+import { CheckBoxWrapper } from '@/components/auth/CheckboxWrapper/CheckboxWrapper';
 
 interface AuthFormProps {
   title: string;
@@ -31,7 +31,11 @@ export const AuthForm: FC<AuthFormProps> = ({
   subTitle,
   buttonLabel,
 }) => {
-  const { register, formState, handleSubmit } = useForm<IAuthForm>({
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<IAuthForm>({
     defaultValues: {
       email: '',
       userName: '',
@@ -43,7 +47,7 @@ export const AuthForm: FC<AuthFormProps> = ({
   });
 
   const submitForm: SubmitHandler<IAuthForm> = (data) => {
-    console.log(data.password);
+    console.log(data);
   };
 
   const requiredFieldMessage = 'This field is required';
@@ -85,14 +89,12 @@ export const AuthForm: FC<AuthFormProps> = ({
           register={register('email', {
             required: requiredFieldMessage,
             pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
               message: 'This email is not valid',
             },
           })}
         />
-        {formState.errors.email?.message && (
-          <span>{formState.errors.email?.message}</span>
-        )}
+        {errors.email?.message && <span>{errors.email?.message}</span>}
 
         <PasswordInput
           id="password"

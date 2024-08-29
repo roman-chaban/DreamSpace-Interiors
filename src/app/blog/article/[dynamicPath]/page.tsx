@@ -26,7 +26,7 @@ export default function Article({ params: { dynamicPath } }: ArticleProps) {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer isVisible />
     </>
   );
 }

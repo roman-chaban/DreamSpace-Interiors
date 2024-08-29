@@ -9,6 +9,8 @@ interface TextInputProps {
   placeholder: string;
   className?: string;
   register: UseFormRegisterReturn;
+  labelText?: string;
+  labelClassName?: string;
 }
 
 export const TextInput: FC<TextInputProps> = ({
@@ -17,8 +19,11 @@ export const TextInput: FC<TextInputProps> = ({
   placeholder,
   className,
   register,
+  labelText,
+  labelClassName,
 }) => (
-  <label htmlFor={id} className={styles.formLabel}>
+  <label htmlFor={id} className={`${styles.formLabel} ${labelClassName}`}>
+    {labelText}
     <Input
       type={type}
       id={id}

@@ -89,6 +89,12 @@
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  .salesUpItems {
+    padding-inline: 30px;
+  }
+}
+
 @media only screen and (max-width: 1100px) {
   .salesInfoBlock {
     max-height: 400px;
@@ -135,6 +141,7 @@
   .salesUpItems {
     margin-left: 25px;
     max-width: 295px;
+    padding-inline: 0;
   }
 
   .saleUpTitle {
@@ -145,5 +152,21 @@
   }
   .saleLink {
     font-size: size.$font-size-16px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .saleTitle {
+    font-size: size.$font-size-20px;
+  }
+  .saleSubTitle {
+    font-size: size.$font-size-14px;
+  }
+  .salesUpItems {
+    margin-left: 0;
+  }
+  .salesInfoBlock {
+    max-height: 311px;
+    padding: 16px;
   }
 }

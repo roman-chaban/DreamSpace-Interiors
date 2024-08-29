@@ -1,0 +1,52 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.contactTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactTitle {
+  margin: 0;
+  font-weight: 500;
+  color: color.$color-black;
+  font-size: size.$font-size-54px;
+  line-height: 107%;
+  letter-spacing: -0.02em;
+  width: 100%;
+  max-width: 755px;
+}
+
+.contactSubTitle {
+  line-height: 162%;
+  color: color.$color-black;
+  width: 100%;
+  max-width: 834px;
+  margin: 0;
+}
+
+
+@media (max-width: 750px) {
+  .contactTitle {
+    font-size: size.$font-size-40px;
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .contactTitle {
+    font-size: size.$font-size-30px;
+  }
+  .contactSubTitle {
+    font-size: size.$font-size-14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .contactTitle {
+    font-size: size.$font-size-28px;
+  }
+}

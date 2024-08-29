@@ -1,0 +1,121 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+.contactUs {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactUsContainer {
+  @include container;
+  margin-top: 48px;
+}
+
+.contactUsTitle {
+  text-align: center;
+  font-weight: 500;
+  color: color.$color-product-title;
+  font-size: size.$font-size-40px;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.contactValuesContainer {
+  @include container;
+  padding-inline: 0;
+  padding-block: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contactItem {
+  width: 100%;
+  background: color.$color-light-gray;
+}
+
+.contactItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  padding: 16px 32px;
+  max-width: 357px;
+  height: 156px;
+}
+
+.contactItemIcon {
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.contactItemTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactItemSubTitle {
+  font-weight: 600;
+  line-height: 162%;
+  text-align: center;
+  color: color.$color-black;
+  margin: 0;
+  width: 100%;
+  max-width: 280px;
+}
+
+.contactItemTitle {
+  font-weight: 700;
+  line-height: 100%;
+  color: color.$color-dark-gray;
+  text-transform: uppercase;
+}
+
+.FormMapContainer {
+  display: flex;
+  gap: 28px;
+  padding-bottom: 80px;
+}
+
+.contactUsValuesContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .contactUsContainer {
+    padding-inline: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contactUsContainer {
+    padding-inline: 50px;
+  }
+  .contactValuesContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .contactItem {
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+  }
+  .FormMapContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 750px) {
+  .contactUsContainer {
+    padding-inline: 32px;
+  }
+}

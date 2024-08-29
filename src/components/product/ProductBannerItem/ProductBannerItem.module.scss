@@ -86,6 +86,7 @@
     font-size: size.$font-size-34px;
   }
   .bannerItem {
+    aspect-ratio: 12/ 9;
     border-radius: 1.2rem;
   }
 }
@@ -93,19 +94,18 @@
 @media only screen and (max-width: 385px) {
   .bannerTitles {
     top: 30%;
-    right: 10%;
+    left: 10px;
   }
   .firstBannerTitle {
     top: 5%;
-  }
-  .bannerItem {
-    border-radius: 0;
+    font-size: size.$font-size-18px;
   }
   .bannerTitle {
-    font-size: size.$font-size-28px;
+    font-size: size.$font-size-22px;
   }
   .firstBannerItem {
     background: url(../../../../public/images/banner/primaryBannerSmall.svg)
       no-repeat center center !important;
+    aspect-ratio: 5 / 6;
   }
 }

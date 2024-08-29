@@ -21,7 +21,7 @@ export default function Blog() {
           <BlogArticles />
         </section>
       </main>
-      <Footer />
+      <Footer isVisible />
     </section>
   );
 }

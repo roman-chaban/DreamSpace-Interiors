@@ -1,26 +1,36 @@
 import { Value } from '@/constants/valuesItems';
 import Image from 'next/image';
 import type { FC } from 'react';
-import styles from '@/components/layout/Values/Values.module.scss';
 
 interface ValueItemProps {
   item: Value;
 }
 
-export const ValueItem: FC<ValueItemProps> = ({ item }) => {
+export interface ClassNames {
+  classNames: {
+    item: string;
+    itemContainer: string;
+    itemIcon: string;
+    itemTitles: string;
+    itemTitle: string;
+    itemSubTitle: string;
+  }
+}
+
+export const ValueItem: FC<ValueItemProps & ClassNames> = ({ item, classNames }) => {
   return (
-    <div className={styles.item}>
-      <div className={styles.itemContainer}>
+    <div className={classNames.item}>
+      <div className={classNames.itemContainer}>
         <Image
-          className={styles.itemIcon}
+          className={classNames.itemIcon}
           src={item.icon}
           alt={item.title}
           width={48}
           height={48}
         />
-        <div className={styles.itemTitles}>
-          <h4 className={styles.itemTitle}>{item.title}</h4>
-          <p className={styles.itemSubTitle}>{item.subTitle}</p>
+        <div className={classNames.itemTitles}>
+          <h4 className={classNames.itemTitle}>{item.title}</h4>
+          <p className={classNames.itemSubTitle}>{item.subTitle}</p>
         </div>
       </div>
     </div>
