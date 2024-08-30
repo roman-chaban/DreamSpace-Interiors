@@ -3,71 +3,49 @@
 @use '../../abstracts/mixins' as *;
 
 .signIn {
+  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.banner {
+  width: 100%;
+  max-width: 720px;
   height: 100vh;
 }
 
 .signInContainer {
-  display: flex;
-  align-items: center;
-  @include container;
-  max-width: 100%;
-  padding: 0;
-  min-height: 100vh;
-}
-
-.signBanner {
-  position: relative;
-  background: url(/images/auth/authBanner.svg) no-repeat;
   width: 100%;
-  max-width: 738px;
-  display: flex;
-  justify-content: center;
-  background-size: cover;
-  background-position: center 0;
-  aspect-ratio: 6 / 9;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.elegantTitle {
-  width: fit-content;
-  display: flex;
-  height: fit-content;
-  justify-content: center;
-  font-size: size.$font-size-24px;
-  line-height: 100%;
-  font-weight: 500;
-  position: relative;
-  margin: 0;
-  margin-top: 32px;
-  padding: 0;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #6c7275;
-    border-radius: 50%;
-    right: -5px;
-    bottom: 3px;
-  }
+.signInBanner {
+  width: 100%;
+  max-width: 730px;
+  height: 100vh;
+  max-height: 1080px;
+  background: url('/images/auth/authBanner.svg') no-repeat left center;
+  background-size: contain;
 }
 
-
-@media (max-width: 1080px) {
-  .signBanner {
-    aspect-ratio: 5 / 9;
-  }
-}
-
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
   .signInContainer {
-    flex-direction: column;
-    justify-content: start;
+    grid-template-columns: 400px 1fr;
   }
-  .signBanner {
-    max-width: 100%;
-    max-height: 50vh;
+}
+
+
+@media only screen and (max-width: 780px) {
+  .signInContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .signInBanner {
     background-size: cover;
-    background-position: 0;
+    max-height: 700px;
+    background-position: center center;
   }
 }

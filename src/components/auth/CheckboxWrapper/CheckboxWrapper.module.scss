@@ -3,71 +3,78 @@
 @use '../../../styles/colors/colors' as color;
 
 .customCheckbox {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    margin-bottom: 8px;
-  }
-  
-  .checkboxInput {
-    opacity: 0;
-    position: absolute;
-    width: 0;
-    height: 0;
-    pointer-events: none;
-  }
-  
-  .formCheckBox {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    transition: background-color 0.3s, border-color 0.3s;
-    position: relative;
-    margin-right: 10px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    left: -1.5px;
-    bottom: 1.5px;
-  }
-  
-  .checkboxInput:checked + .formCheckBox {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .checkboxInput:checked + .formCheckBox::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 2px;
-    width: 7px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-  
-  .checkboxLabel {
-    font-size: 16px;
-    color: #333;
-    line-height: 20px;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-  }
-  
-  .authCheckBox {
-    display: flex;
-    align-items: center;
-  }
-  
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.checkboxInput {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.formCheckBox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
+  margin-right: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  left: -1.5px;
+  bottom: -2.5px;
+}
+
+.checkboxInput:checked + .formCheckBox {
+  background-color: color.$color-primary;
+  border-color: color.$color-primary;
+}
+
+.checkboxInput:checked + .formCheckBox::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxLabel {
+  font-size: 16px;
+  color: #333;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.authCheckBox {
+  display: flex;
+  align-items: end;
+}
+
+.authCheckBoxSubTitle {
+  position: relative;
+  bottom: 5.5px;
+  color: color.$color-dark-gray;
+}
+
+@media only screen and (max-width: 1100px) {
   .authCheckBoxSubTitle {
-    position: relative;
-    bottom: 5.5px;
-    color: color.$color-dark-gray;
+    font-size: size.$font-size-14px;
   }
+}
+
