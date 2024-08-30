@@ -2,7 +2,7 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 
-.signiN {
+.signUp {
   width: 100%;
   height: 100%;
   display: flex;
@@ -12,7 +12,15 @@
   padding-inline: 50px;
 }
 
-.signInTitle {
+.signUpContainer {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.signUpTitle {
   color: color.$color-black;
   font-size: size.$font-size-40px;
   font-weight: 500;
@@ -21,13 +29,13 @@
   margin: 0;
 }
 
-.signInInfoBlock {
+.signUpInfoBlock {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.signInTitles {
+.signUpTitles {
   display: flex;
   align-items: center;
   gap: 3px;
@@ -53,6 +61,12 @@
   gap: 32px;
 }
 
+.termsBlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .submitFormButton {
   font-size: size.$font-size-16px;
   background: color.$color-black;
@@ -68,40 +82,23 @@
   cursor: pointer;
 }
 
-.signInContainer {
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.termsBlock {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .forgotTitle {
-  font-size: size.$font-size-16px;
-  font-weight: 600;
+  color: color.$color-dark-gray;
   line-height: 162%;
 }
 
-
-.errorMessage {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: color.$color-error;
+.forgotTitleBold {
+  color: color.$color-black;
 }
 
-
 @media only screen and (max-width: 1110px) {
-  .signInInfoBlock {
+  .signForm {
+    gap: 24px;
+  }
+  .signUpInfoBlock {
     gap: 14px;
   }
-  .signInTitle {
+  .signUpTitle {
     font-size: size.$font-size-32px;
   }
   .accountTitle,
@@ -118,5 +115,6 @@
 @media only screen and (max-width: 780px) {
   .signForm {
     padding-block-end: 40px;
+    gap: 24px;
   }
 }
