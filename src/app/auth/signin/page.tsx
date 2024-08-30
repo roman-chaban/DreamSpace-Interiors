@@ -2,6 +2,9 @@
 
 import { SignInForm } from '@/components/auth/SingInForm/SignInForm';
 import styles from '@/styles/pagesStyles/Auth/Auth.module.scss';
+import type { Metadata } from 'next';
+
+
 
 export default function SignIn() {
   return (

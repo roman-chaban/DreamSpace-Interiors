@@ -4,7 +4,11 @@ import styles from './SignInForm.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { TextInput } from '../TextInput/TextInput';
 import { CheckBoxWrapper } from '../CheckboxWrapper/CheckboxWrapper';
-import { Alert } from 'grommet-icons';
+import { Alert, Close } from 'grommet-icons';
+import { PasswordInput } from '../PasswordInput/PasswordInput';
+import Link from 'next/link';
+import { NavPaths } from '@/enums/navPaths';
+import { CloseButton } from '../CloseButton/CloseButton';
 
 interface SignInForm {
   email: string;
@@ -37,6 +41,7 @@ export const SignInForm: FC = () => {
 
   return (
     <div className={styles.signiN}>
+      <CloseButton />
       <div className={styles.signInContainer}>
         <div className={styles.signInInfoBlock}>
           <h1 className={styles.signInTitle}>Sign In</h1>
@@ -75,8 +80,7 @@ export const SignInForm: FC = () => {
               {errors.email.message}
             </span>
           )}
-          <TextInput
-            type="password"
+          <PasswordInput
             placeholder="Password"
             id="password"
             register={{
@@ -101,7 +105,6 @@ export const SignInForm: FC = () => {
                 },
               }),
             }}
-            className={styles.passwordInput}
           />
           {errors.password && (
             <span className={styles.errorMessage}>

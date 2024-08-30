@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TextInput } from '../TextInput/TextInput';
 import { CheckBoxWrapper } from '../CheckboxWrapper/CheckboxWrapper';
+import { CloseButton } from '../CloseButton/CloseButton';
 
 interface SignUpForm {
   yourName: string;
@@ -39,16 +40,17 @@ export const SignUpForm: FC = () => {
 
   return (
     <div className={styles.signUp}>
+      <CloseButton />
       <div className={styles.signUpContainer}>
         <div className={styles.signUpInfoBlock}>
-          <h1 className={styles.signInTitle}>Sign In</h1>
+          <h1 className={styles.signInTitle}>Sign Up</h1>
           <div className={styles.signInTitles}>
             <span className={styles.accountTitle}>
-              Don&apos;t have an account yet?
+              Already have an account?
             </span>
             <Button type="button" className={styles.signUpButton}>
               {' '}
-              Sign Up
+              Sign In
             </Button>
           </div>
         </div>
