@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   z-index: 50;
-  transition: transform 0.4s ease-in-out; 
+  transition: transform 0.4s ease-in-out;
 }
 
 .hidden {
@@ -299,7 +299,11 @@
 .iconArrow {
   transition: transform 0.3s ease-in-out !important;
 }
- 
+
+.cartLink {
+  display: flex;
+  align-items: center;
+}
 
 @keyframes dropdown-slide {
   0% {

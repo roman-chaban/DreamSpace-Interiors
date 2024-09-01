@@ -6,4 +6,5 @@ export const NavPaths = {
   SIGNIN: '/auth/signin',
   SIGNUP: '/auth/signup',
   BLOG: '/blog',
+  CART: '/cart',
 };

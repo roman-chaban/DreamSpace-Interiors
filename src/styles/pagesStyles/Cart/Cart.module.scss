@@ -1,0 +1,73 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/globals' as size;
+@use '../../colors/colors' as color;
+
+.cart {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-inline: 0;
+  margin-top: 120px;
+  position: relative;
+}
+
+.goBackLink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  position: absolute;
+  padding-inline-start: 160px;
+  color: color.$color-banner-link;
+  font-size: size.$font-size-14px;
+  line-height: 171%;
+}
+
+.productsSummaryBlock {
+  display: flex;
+  gap: 64px;
+  justify-content: space-between;
+}
+
+.productsRowReverse {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 160px;
+}
+
+@media (max-width: 1200px) {
+  .productsRowReverse,
+  .goBackLink {
+    padding-inline: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .productsCartSummary,
+  .productsRowReverse {
+    flex-direction: column;
+  }
+  .productsSummaryBlock {
+    flex-direction: column;
+  }
+  .productsRowReverse {
+    flex-direction: column;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .productsRowReverse,
+  .goBackLink {
+    padding-inline: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  .productsRowReverse,
+  .goBackLink {
+    padding-inline: 32px;
+  }
+}

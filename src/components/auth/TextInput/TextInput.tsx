@@ -32,13 +32,20 @@ export const TextInput: FC<TextInputProps> = ({
       className={className || styles.formInput}
       {...register}
     />
-    {type === 'password' && (
+    {type === 'password' ? (
       <Image
         src="/icons/eye.svg"
         alt="Eye Icon"
         width={24}
         height={24}
         className={styles.eyeIcon}
+      />
+    ) : (
+      <Image
+        src="/icons/coupon-icon.svg"
+        width={24}
+        height={24}
+        alt="Coupon Icon"
       />
     )}
   </label>

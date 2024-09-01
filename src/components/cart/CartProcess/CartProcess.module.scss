@@ -1,0 +1,102 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.cartProcess {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.title {
+  margin: 0;
+  font-size: size.$font-size-50px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 107%;
+  letter-spacing: -0.02em;
+}
+
+.process {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.processItem {
+  display: flex;
+  width: 100%;
+  max-width: 256px;
+  cursor: pointer;
+  align-items: center;
+  gap: 17px;
+  padding-block-end: 26px;
+  > .processCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 8px 17px;
+    width: 42px;
+    height: 42px;
+    color: color.$color-white;
+    background: color.$color-process-circle;
+    line-height: 162%;
+    font-weight: 600;
+    text-align: center;
+  }
+  > .processTitle {
+    font-weight: 600;
+    font-size: size.$font-size-16px;
+    line-height: 162%;
+    color: color.$color-process-circle;
+  }
+}
+
+.cartProcess .processItem .processCircle.active {
+  background: color.$color-process-title;
+}
+
+.cartProcess .processItem .processTitle.activeTitle {
+  color: color.$color-process-title;
+}
+
+.process .activeBorder {
+  border-bottom: 2px solid color.$color-process-title;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+@media (max-width: 1100px) {
+  .process {
+    gap: 64px;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1000px) {
+  .process {
+    padding-inline-start: 50px;
+    justify-content: start;
+  }
+  .process::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .process {
+    padding-inline-start: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: size.$font-size-40px;
+  }
+}

@@ -1,0 +1,79 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.coupon {
+  margin-bottom: 92px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.couponContainer {
+  max-width: 424px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.couponTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.couponTitle {
+  color: color.$color-black;
+  font-weight: 500;
+  font-size: size.$font-size-20px;
+  line-height: 140%;
+}
+
+.couponSubTitle {
+  margin: 0;
+  font-size: size.$font-size-16px;
+  line-height: 162%;
+}
+
+.couponInputBlock {
+  display: flex;
+  padding-inline: 16px;
+  padding-block: 12px;
+  align-items: center;
+  border: 1.8px solid color.$color-dark-gray !important;
+}
+
+.couponLabel {
+  border-bottom: none !important;
+  justify-content: start !important;
+  flex-direction: row-reverse !important;
+  gap: 5px;
+}
+
+.formInput {
+  width: 100%;
+  max-width: fit-content;
+  border: none;
+  outline: none;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  font-size: size.$font-size-16px;
+  caret-color: color.$color-dark-gray;
+  color: color.$color-dark-gray;
+  &:focus {
+    outline: color.$color-success;
+  }
+}
+
+.applyButton {
+  color: color.$color-black;
+  font-size: size.$font-size-16px;
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  padding-inline: 0;
+}
+
