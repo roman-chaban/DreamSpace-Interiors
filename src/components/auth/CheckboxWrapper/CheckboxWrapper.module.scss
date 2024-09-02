@@ -43,11 +43,11 @@
 .checkboxInput:checked + .formCheckBox::after {
   content: '';
   position: absolute;
-  left: 5px;
-  top: 2px;
+  left: 4.5px;
+  top: 1px;
   width: 7px;
   height: 12px;
-  border: solid white;
+  border: solid color.$color-white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -77,4 +77,3 @@
     font-size: size.$font-size-14px;
   }
 }
-

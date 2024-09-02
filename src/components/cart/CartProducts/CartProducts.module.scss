@@ -45,6 +45,9 @@
   .productsMenu > .menuListItem:nth-child(1) {
     margin-inline-end: 20px;
   }
+  .cartProducts > .productsMenu {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1024px) {

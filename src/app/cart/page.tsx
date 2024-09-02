@@ -27,10 +27,6 @@ export default function Cart() {
         )}
         <CartProcess />
         <Box className={styles.productsRowReverse}>
-          <div className={styles.productsSummaryBlock}>
-            <CartProducts />
-            <CartSummary />
-          </div>
           <Coupon />
         </Box>
       </section>

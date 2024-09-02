@@ -1,0 +1,69 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+
+
+.formContainer {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formTitle {
+  font-weight: 500;
+  font-size: size.$font-size-20px;
+  line-height: 140%;
+  color: color.$color-brand;
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-size: size.$font-size-12px;
+  color: color.$color-dark-gray;
+}
+
+.input {
+  width: 100%;
+  padding-inline: 16px;
+  border-radius: 4px;
+  min-height: 40px;
+  border: 1.5px solid color.$color-input-border-secondary;
+  caret-color: color.$color-dark-gray;
+  color: color.$color-dark-gray;
+  &:focus {
+    outline: 1.5px solid color.$color-success;
+    border: none;
+  }
+  &::placeholder {
+    font-size: size.$font-size-16px;
+    line-height: 162%;
+  }
+}
+
+.addressBlock {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+
+@media (max-width: 1200px) {
+  .formContainer {
+    padding: 30px 20px;
+  }
+  .formTitle {
+    font-size: size.$font-size-18px;
+  }
+
+  .input::placeholder {
+    font-size: size.$font-size-10px;
+  }
+}

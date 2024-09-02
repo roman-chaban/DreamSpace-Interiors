@@ -2,6 +2,11 @@
 
 import { useState, type FC } from 'react';
 import styles from './CartProcess.module.scss';
+import { CartProducts } from '../CartProducts/CartProducts';
+import { CartSummary } from '../CartSummary/CartSummary';
+import { ContactInformation } from '@/components/layout/ContactInformation/ContactInformation';
+import { ShippingAddress } from '@/components/layout/ShippingAddress/ShippingAddress';
+import { Payment } from '@/components/layout/Payment/Payment';
 
 interface StepItemProps {
   stepNumber: number;
@@ -38,7 +43,33 @@ const StepItem: FC<StepItemProps> = ({
 };
 
 export const CartProcess: FC = () => {
-  const [activeTab, setActiveTab] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<number>(2);
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 1:
+        return (
+          <div className={styles.productsSummaryBlock}>
+            <CartProducts />
+            <CartSummary />
+          </div>
+        );
+      case 2:
+        return (
+          <div
+            className={`${styles.productsSummaryBlock} ${styles.processForms}`}
+          >
+            <ContactInformation />
+            <ShippingAddress />
+            <Payment />
+          </div>
+        );
+      case 3:
+        return 3;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className={styles.cartProcess}>
@@ -63,6 +94,11 @@ export const CartProcess: FC = () => {
           onClick={() => setActiveTab(3)}
         />
       </div>
+      <div className={styles.content}>{renderContent()}</div>
     </div>
   );
+};
+
+const OrderComplete: FC = () => {
+  return <div>Order Complete - Thank you for your purchase!</div>;
 };
