@@ -26,22 +26,30 @@
   line-height: 140%;
 }
 
+.checkoutButtonBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid color.$color-dark-gray;
+  min-height: 52px;
+  padding: 13px 16px;
+  border-radius: 4px;
+  > .summaryButton {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+    width: 100%;
+    max-width: 365px;
+    background: transparent;
+    border: none;
+  }
+}
+
 .summaryCheckoutButtons {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  > .summaryButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1.5px solid color.$color-black;
-    border-radius: 4px;
-    padding: 13px 16px;
-    width: 100%;
-    max-width: 365px;
-    height: 52px;
-    background: transparent;
-  }
 }
 
 .subTotalTitle {
@@ -74,11 +82,64 @@
   border: none;
 }
 
+.radio {
+  display: none;
+}
+
+.radio + span {
+  position: relative;
+  padding-left: 2em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.radio + span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid color.$color-product-title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: color.$color-white;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.radio:checked + span::before {
+  border-color: color.$color-product-title;
+  background: color.$color-white;
+}
+
+.radio:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: color.$color-product-title;
+}
+
 @media (max-width: 1024px) {
   .cartSummary > .summaryContainer {
     max-width: 100%;
   }
   .summaryCheckoutButtons > .summaryButton {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .summaryButton,
+  .price {
+    font-weight: 600;
+    font-size: size.$font-size-14px;
   }
 }

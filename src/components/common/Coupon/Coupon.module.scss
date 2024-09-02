@@ -77,3 +77,13 @@
   padding-inline: 0;
 }
 
+@media (max-width: 400px) {
+  .couponTitle {
+    font-size: size.$font-size-16px;
+  }
+
+  .couponSubTitle {
+    font-size: size.$font-size-14px;
+    color: color.$color-dark-gray;
+  }
+}

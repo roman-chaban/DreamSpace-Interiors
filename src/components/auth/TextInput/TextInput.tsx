@@ -7,7 +7,7 @@ import Image from 'next/image';
 interface TextInputProps {
   id: string;
   type: string;
-  placeholder: string;
+  placeholder?: string;
   className?: string;
   register: UseFormRegisterReturn;
   labelText?: string;
