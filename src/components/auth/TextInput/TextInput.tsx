@@ -27,7 +27,7 @@ export const TextInput: FC<TextInputProps> = ({
   const iconAlt = type === 'password' ? 'Eye Icon' : null;
 
   return (
-    <>
+    <div className={styles.formLabelBlock}>
       <Input
         type={type}
         id={id}
@@ -46,6 +46,6 @@ export const TextInput: FC<TextInputProps> = ({
           className={styles.icon}
         />
       )}
-    </>
+    </div>
   );
 };

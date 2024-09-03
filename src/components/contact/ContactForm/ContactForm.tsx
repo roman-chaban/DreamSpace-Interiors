@@ -30,7 +30,6 @@ export const ContactForm: FC = () => {
         className={styles.contactFormInput}
         register={{ ...register('yourName', {}) }}
       />
-
       <TextInput
         type="email"
         id="email"

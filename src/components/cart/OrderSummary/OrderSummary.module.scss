@@ -1,0 +1,162 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.orderSummary {
+  width: 100%;
+  max-width: 413px;
+  height: 862px;
+  border: 1.5px solid color.$color-dark-gray;
+  border-radius: 6px;
+}
+
+.orderSummaryContainer {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+}
+
+.orderMain {
+  flex: 1 1 auto;
+}
+
+.orderFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.summaryTitle {
+  font-weight: 500;
+  line-height: 121%;
+  letter-spacing: -0.02em;
+  font-size: size.$font-size-28px;
+  color: color.$color-product-title;
+}
+
+.applyBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.input[type='text'] {
+  width: 100%;
+  border: 1.5px solid color.$color-input-border-secondary;
+  border-radius: 6px;
+  padding: 0px 16px;
+  max-width: 258px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: color.$color-input-border-secondary;
+  caret-color: color.$color-input-border-secondary;
+  &:focus {
+    outline: 2px solid color.$color-success;
+  }
+  &::placeholder {
+    color: color.$color-input-border-secondary;
+    font-size: size.$font-size-14px;
+  }
+}
+
+.apply {
+  border-radius: 8px;
+  background: color.$color-black;
+  width: 100%;
+  max-width: 95px;
+  min-height: 52px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: color.$color-white;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.orderFields {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.discountField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-end: 13px;
+  border-bottom: 1.5px solid color.$color-gray;
+}
+
+.fieldItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  > .itemTitle {
+    line-height: 162%;
+    color: color.$color-black;
+    font-weight: 400;
+  }
+}
+
+.discountHeading {
+  line-height: 162%;
+  font-weight: 600;
+  color: color.$color-success;
+}
+
+.shippingField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-end: 13px;
+  border-bottom: 1.5px solid color.$color-gray;
+  > .shippingTitle {
+    line-height: 162%;
+    color: color.$color-black;
+    font-weight: 400;
+  }
+  > .freeTitle {
+    line-height: 162%;
+    font-weight: 600;
+    color: color.$color-black;
+  }
+}
+
+.subtotalField,
+.totalField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-end: 13px;
+  border-bottom: 1.5px solid color.$color-gray;
+}
+
+.subtotalTitle {
+  line-height: 162%;
+  font-weight: 400;
+  color: color.$color-black;
+}
+
+.totalTitle {
+  line-height: 140%;
+  font: {
+    size: size.$font-size-20px;
+    weight: 600;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .orderSummary {
+    max-width: 100%;
+  }
+}

@@ -71,10 +71,18 @@
 }
 
 .productsSummaryBlock {
-  padding-inline: 160px;
+  padding-inline: 16%;
   width: 100%;
+  display: grid;
+  grid-template-columns: 60.89% 39.11%;
+  column-gap: 6.4%;
+  justify-items: end;
+}
+
+.productsSummary {
   display: flex;
   flex-direction: column;
+  @include container;
   gap: 80px;
 }
 
@@ -84,13 +92,16 @@
 }
 
 .processForms {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-block-end: 160px;
+  gap: 24px;
 }
 
 @media (max-width: 1200px) {
-  .productsSummaryBlock {
+  .productsSummaryBlock,
+  .productsSummary {
     padding-inline: 100px;
   }
 }
@@ -112,6 +123,11 @@
     flex-direction: column;
     gap: 40px;
   }
+  .productsSummaryBlock {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    margin-block-end: 90px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -119,7 +135,8 @@
     padding-inline-start: 50px;
     justify-content: start;
   }
-  .productsSummaryBlock {
+  .productsSummaryBlock,
+  .productsSummary {
     padding-inline: 50px;
   }
   .process::-webkit-scrollbar {
@@ -128,9 +145,19 @@
 }
 
 @media (max-width: 750px) {
-  .process,
-  .productsSummaryBlock {
+  .process {
     padding-inline-start: 32px;
+  }
+  .productsSummaryBlock {
+    padding-inline: 32px;
+    gap: 24px;
+  }
+  .productsSummary {
+    padding-inline: 32px;
+    gap: 24px;
+  }
+  .processForms {
+    margin-block-end: 80px;
   }
 }
 

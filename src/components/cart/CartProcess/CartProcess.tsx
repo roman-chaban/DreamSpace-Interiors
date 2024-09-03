@@ -9,6 +9,8 @@ import { ShippingAddress } from '@/components/layout/ShippingAddress/ShippingAdd
 import { Payment } from '@/components/layout/Payment/Payment';
 import { CartItemStep } from '../CartItemStep/CartItemStep';
 import { Coupon } from '@/components/common/Coupon/Coupon';
+import { OrderSummary } from '../OrderSummary/OrderSummary';
+import { OrderComplete } from '../OrderComplete/OrderComplete';
 
 export const CartProcess: FC = () => {
   const [activeTab, setActiveTab] = useState<number>(2);
@@ -17,7 +19,7 @@ export const CartProcess: FC = () => {
     switch (activeTab) {
       case 1:
         return (
-          <div className={styles.productsSummaryBlock}>
+          <div className={styles.productsSummary}>
             <div className={styles.productsCartBlock}>
               <CartProducts />
               <CartSummary />
@@ -27,16 +29,17 @@ export const CartProcess: FC = () => {
         );
       case 2:
         return (
-          <div
-            className={`${styles.productsSummaryBlock} ${styles.processForms}`}
-          >
-            <ContactInformation />
-            <ShippingAddress />
-            <Payment />
+          <div className={styles.productsSummaryBlock}>
+            <div className={styles.processForms}>
+              <ContactInformation />
+              <ShippingAddress />
+              <Payment />
+            </div>
+            <OrderSummary />
           </div>
         );
       case 3:
-        return 3;
+        return <OrderComplete />;
       default:
         return null;
     }

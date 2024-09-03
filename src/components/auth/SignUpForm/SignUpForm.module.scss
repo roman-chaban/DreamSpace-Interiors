@@ -91,6 +91,19 @@
   color: color.$color-black;
 }
 
+.emailInput,
+.passwordInput,
+.yourNameInput,
+.userNameInput {
+  width: 100%;
+  border: none;
+  max-width: 456px;
+  height: 40px;
+  &:focus {
+    outline: none;
+  }
+}
+
 @media only screen and (max-width: 1110px) {
   .signForm {
     gap: 24px;

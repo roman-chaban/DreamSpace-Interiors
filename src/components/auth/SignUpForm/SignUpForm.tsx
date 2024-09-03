@@ -63,12 +63,14 @@ export const SignUpForm: FC = () => {
             placeholder="Your name"
             id="yourName"
             register={{ ...register('yourName', {}) }}
+            className={styles.yourNameInput}
           />
           <TextInput
             type="text"
             placeholder="User name"
             id="userName"
             register={{ ...register('userName', {}) }}
+            className={styles.userNameInput}
           />
           <TextInput
             type="email"
