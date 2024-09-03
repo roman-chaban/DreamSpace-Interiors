@@ -18,8 +18,9 @@
 
 .visible {
   transform: translateY(0);
-  background: color.$color-gray;
 }
+
+
 .headerContainer {
   @include container;
   padding-block: 18px;

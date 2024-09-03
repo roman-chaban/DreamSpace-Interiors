@@ -22,11 +22,11 @@ export const ContactForm: FC = () => {
   return (
     <form autoComplete="off" className={styles.contactForm}>
       <TextInput
-        labelText="  Full Name"
+        labelText="Full Name"
         type="text"
         id="yourName"
         placeholder="Your Name"
-        labelClassName={styles.contactFormLabel}
+        labelClassName={styles.label}
         className={styles.contactFormInput}
         register={{ ...register('yourName', {}) }}
       />
@@ -37,7 +37,7 @@ export const ContactForm: FC = () => {
         labelText="Email address"
         placeholder="Your Email"
         className={styles.contactFormInput}
-        labelClassName={styles.contactFormLabel}
+        labelClassName={styles.label}
         register={{ ...register('email', {}) }}
       />
       <label htmlFor="message" className={styles.contactFormLabel}>

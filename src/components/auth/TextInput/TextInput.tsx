@@ -23,26 +23,19 @@ export const TextInput: FC<TextInputProps> = ({
   labelText,
   labelClassName,
 }) => {
-  let iconSrc: string | null = null;
-  let iconAlt: string | null = null;
-
-  if (type === 'password') {
-    iconSrc = '/icons/eye.svg';
-    iconAlt = 'Eye Icon';
-  } else if (type !== 'password') {
-    iconSrc = '/icons/coupon-icon.svg';
-    iconAlt = 'Coupon Icon';
-  }
+  const iconSrc = type === 'password' ? '/icons/eye.svg' : null;
+  const iconAlt = type === 'password' ? 'Eye Icon' : null;
 
   return (
-    <label htmlFor={id} className={`${styles.formLabel} ${labelClassName}`}>
-      {labelText}
+    <>
       <Input
         type={type}
         id={id}
         placeholder={placeholder}
         className={className || styles.formInput}
         {...register}
+        labelText={labelText}
+        labelClassName={labelClassName}
       />
       {iconSrc && iconAlt && (
         <Image
@@ -53,6 +46,6 @@ export const TextInput: FC<TextInputProps> = ({
           className={styles.icon}
         />
       )}
-    </label>
+    </>
   );
 };
