@@ -5,6 +5,7 @@ import styles from './Coupon.module.scss';
 import { TextInput } from '@/components/auth/TextInput/TextInput';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/Button/Button';
+import Image from 'next/image';
 
 interface CouponProps {
   couponCode: string;
@@ -24,14 +25,22 @@ export const Coupon: FC = () => {
           </p>
         </div>
         <div className={styles.couponInputBlock}>
-          <TextInput
-            placeholder="Coupon Code"
-            type="text"
-            id="coupon"
-            className={styles.formInput}
-            labelClassName={styles.couponLabel}
-            register={{ ...register('couponCode', {}) }}
-          />
+          <div className={styles.couponLabel}>
+            <TextInput
+              placeholder="Coupon Code"
+              type="text"
+              id="coupon"
+              className={styles.formInput}
+              labelClassName={styles.couponLabel}
+              register={{ ...register('couponCode', {}) }}
+            />
+            <Image
+              src="/icons/coupon-icon.svg"
+              width={24}
+              height={24}
+              alt="Coupon Icon"
+            />
+          </div>
           <Button type="button" className={styles.applyButton}>
             Apply
           </Button>

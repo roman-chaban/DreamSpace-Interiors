@@ -25,14 +25,12 @@ export const Payment: FC = () => {
 
   return (
     <FormBox
-      styles={{
-        $width: '100%',
-        $maxWidth: '643px',
-        $borderRadius: '4px',
-        $display: 'flex',
-        $maxHeight: '468px',
-        $direction: 'column',
-      }}
+      $width={'100%'}
+      $maxWidth={'643px'}
+      $borderRadius={'4px'}
+      $display={'flex'}
+      $maxHeight={'468px'}
+      $direction={'column'}
       className={styles.paymentForm}
       onSubmit={handleSubmit(onSubmit)}
     >

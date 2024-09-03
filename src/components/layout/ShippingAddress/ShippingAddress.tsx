@@ -28,12 +28,10 @@ export const ShippingAddress: FC = () => {
   };
   return (
     <FormBox
-      styles={{
-        $width: '100%',
-        $maxWidth: '643px',
-        $borderRadius: '4px',
-        $maxHeight: '643px',
-      }}
+      $width={'100%'}
+      $maxWidth={'643px'}
+      $borderRadius={'4px'}
+      $maxHeight={'643px'}
       className={styles.shippingAddressForm}
       onSubmit={handleSubmit(handleSubmitContactForm)}
     >

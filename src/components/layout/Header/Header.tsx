@@ -19,6 +19,7 @@ const classNames = {
   list: styles.dropDownList,
   listItem: styles.dropDownListItem,
   link: styles.dropDownLink,
+  icon: styles.iconArrow,
 };
 
 const Header: FC = () => {
@@ -44,7 +45,7 @@ const Header: FC = () => {
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsScrollingUp(false);
       } else {
-        setIsScrollingUp(true); 
+        setIsScrollingUp(true);
       }
 
       setLastScrollY(currentScrollY);
@@ -57,7 +58,9 @@ const Header: FC = () => {
 
   return (
     <header
-      className={`${styles.header} ${isScrollingUp ? styles.visible : styles.hidden}`}
+      className={`${styles.header} ${
+        isScrollingUp ? styles.visible : styles.hidden
+      }`}
     >
       <TopBarMenu />
       <div className={styles.headerContainer}>
@@ -67,7 +70,9 @@ const Header: FC = () => {
             onClick={toggleBurgerMenu}
             aria-label="Toggle menu"
           ></button>
-          <h4 className={styles.headerLogoIcon}>3legant</h4>
+          <h4 className={styles.headerLogoIcon}>
+            <Link href={NavPaths.HOME} className={styles.logoLink}>3legant</Link>
+          </h4>
         </div>
         <nav className={styles.headerNav}>
           <ul className={styles.headerMenu}>

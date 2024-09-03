@@ -98,6 +98,8 @@
 }
 
 .signUpButton {
+  position: absolute;
+  right: 0;
   color: color.$color-dark-gray;
   background: transparent;
   border: none;
@@ -415,13 +417,13 @@
 }
 
 @media only screen and (max-width: 330px) {
-    .copyrightTitle {
-      font-size: size.$font-size-9px;
-    }
-    .signUp {
-      max-width: 250px;
-    }
-    .signUpInput {
-      max-width: 150px;
-    }
+  .copyrightTitle {
+    font-size: size.$font-size-9px;
+  }
+  .signUp {
+    max-width: 250px;
+  }
+  .signUpInput {
+    max-width: 150px;
+  }
 }

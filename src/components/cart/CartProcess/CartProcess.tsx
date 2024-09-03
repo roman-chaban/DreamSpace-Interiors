@@ -7,40 +7,8 @@ import { CartSummary } from '../CartSummary/CartSummary';
 import { ContactInformation } from '@/components/layout/ContactInformation/ContactInformation';
 import { ShippingAddress } from '@/components/layout/ShippingAddress/ShippingAddress';
 import { Payment } from '@/components/layout/Payment/Payment';
-
-interface StepItemProps {
-  stepNumber: number;
-  title: string;
-  isActive: boolean;
-  onClick: () => void;
-}
-
-const StepItem: FC<StepItemProps> = ({
-  stepNumber,
-  title,
-  isActive,
-  onClick,
-}) => {
-  return (
-    <div
-      className={`${styles.processItem} ${isActive ? styles.activeBorder : ''}`}
-      onClick={onClick}
-    >
-      <div
-        className={`${styles.processCircle} ${isActive ? styles.active : ''}`}
-      >
-        {stepNumber}
-      </div>
-      <h4
-        className={`${styles.processTitle} ${
-          isActive ? styles.activeTitle : ''
-        }`}
-      >
-        {title}
-      </h4>
-    </div>
-  );
-};
+import { CartItemStep } from '../CartItemStep/CartItemStep';
+import { Coupon } from '@/components/common/Coupon/Coupon';
 
 export const CartProcess: FC = () => {
   const [activeTab, setActiveTab] = useState<number>(2);
@@ -50,8 +18,11 @@ export const CartProcess: FC = () => {
       case 1:
         return (
           <div className={styles.productsSummaryBlock}>
-            <CartProducts />
-            <CartSummary />
+            <div className={styles.productsCartBlock}>
+              <CartProducts />
+              <CartSummary />
+            </div>
+            <Coupon />
           </div>
         );
       case 2:
@@ -75,19 +46,19 @@ export const CartProcess: FC = () => {
     <div className={styles.cartProcess}>
       <h1 className={styles.title}>Cart</h1>
       <div className={styles.process}>
-        <StepItem
+        <CartItemStep
           stepNumber={1}
           title="Shopping cart"
           isActive={activeTab === 1}
           onClick={() => setActiveTab(1)}
         />
-        <StepItem
+        <CartItemStep
           stepNumber={2}
           title="Checkout details"
           isActive={activeTab === 2}
           onClick={() => setActiveTab(2)}
         />
-        <StepItem
+        <CartItemStep
           stepNumber={3}
           title="Order complete"
           isActive={activeTab === 3}
@@ -97,8 +68,4 @@ export const CartProcess: FC = () => {
       <div className={styles.content}>{renderContent()}</div>
     </div>
   );
-};
-
-const OrderComplete: FC = () => {
-  return <div>Order Complete - Thank you for your purchase!</div>;
 };

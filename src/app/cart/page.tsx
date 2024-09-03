@@ -1,10 +1,6 @@
 'use client';
 
 import { CartProcess } from '@/components/cart/CartProcess/CartProcess';
-import { CartProducts } from '@/components/cart/CartProducts/CartProducts';
-import { CartSummary } from '@/components/cart/CartSummary/CartSummary';
-import { Box } from '@/components/common/Box/Box';
-import { Coupon } from '@/components/common/Coupon/Coupon';
 import PageLayout from '@/components/common/PageLayout/PageLayout';
 import { NavPaths } from '@/enums/navPaths';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
@@ -26,9 +22,6 @@ export default function Cart() {
           </Link>
         )}
         <CartProcess />
-        <Box className={styles.productsRowReverse}>
-          <Coupon />
-        </Box>
       </section>
     </PageLayout>
   );

@@ -7,6 +7,7 @@ import { ShopProduct } from '../ShopProduct/ShopProduct';
 import { Button } from '@/components/ui/Button/Button';
 import { ShopNav } from '@/components/common/ShopNav/ShopNav';
 import { ShopNavItems } from '@/constants/shopNav';
+import { Loader } from '@/components/ui/Loader/Loader';
 
 export interface ShopProductsProps {
   items: ShopNavItems;
@@ -50,7 +51,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
       <Suspense fallback={<>Products Loading...</>}>
         <div className={styles.productsGrid}>
           {loading ? (
-            <h2 className={styles.loadingTitle}>🌀 Loading...</h2>
+            <Loader />
           ) : (
             products.map((product) => (
               <ShopProduct product={product} key={product.productId} />

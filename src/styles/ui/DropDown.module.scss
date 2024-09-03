@@ -4,6 +4,9 @@
 
 
 
+
+
+
 .dropDownIcon {
   margin-left: 10px;
   transition: transform 0.3s ease-in-out;
@@ -11,8 +14,10 @@
   align-items: center;
 }
 
+.icon {
+  transition: transform 0.3s ease-in-out;
+}
+
 .open {
   transform: rotate(-180deg);
-  display: flex;
-  align-items: center;
 }

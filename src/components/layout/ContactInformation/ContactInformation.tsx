@@ -29,11 +29,9 @@ export const ContactInformation: FC = () => {
 
   return (
     <FormBox
-      styles={{
-        $width: '100%',
-        $maxWidth: '643px',
-        $borderRadius: '4px',
-      }}
+      $width={'100%'}
+      $maxWidth={'643px'}
+      $borderRadius={'4px'}
       className={styles.contactForm}
       onSubmit={handleSubmit(handleSubmitContactForm)}
     >

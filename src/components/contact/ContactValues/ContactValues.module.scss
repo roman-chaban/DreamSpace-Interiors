@@ -4,6 +4,8 @@
 
 .contactValues {
   height: 100%;
+  width: 100%;
+  background: color.$color-light-gray;
 }
 
 .container {
@@ -13,7 +15,6 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  background: color.$color-light-gray;
 }
 
 .item {
@@ -27,6 +28,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
@@ -90,7 +92,8 @@
 }
 
 @media (max-width: 435px) {
-  .itemContainer, .itemTitles {
+  .itemContainer,
+  .itemTitles {
     align-items: center;
   }
   .container {

@@ -71,16 +71,22 @@
 }
 
 .productsSummaryBlock {
-  display: flex;
-  gap: 64px;
-  justify-content: space-between;
   padding-inline: 160px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.productsCartBlock {
+  display: flex;
+  gap: 64px;
 }
 
 .processForms {
   display: flex;
   flex-direction: column;
+  margin-block-end: 160px;
 }
 
 @media (max-width: 1200px) {
@@ -102,6 +108,10 @@
 }
 
 @media (max-width: 1024px) {
+  .productsCartBlock {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1000px) {
