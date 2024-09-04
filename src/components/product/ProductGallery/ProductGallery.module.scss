@@ -1,0 +1,66 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.galleryMainImage {
+  position: relative;
+  width: 100%;
+  max-width: 547px;
+  height: 728px;
+  background: color.$color-light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.discountTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.discountedTitle {
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 79px;
+  height: 34px;
+  background: color.$color-white;
+  font-weight: 700;
+  font-size: size.$font-size-18px;
+  line-height: 100%;
+  text-align: center;
+  padding: 8px 18px;
+  text-transform: uppercase;
+}
+
+.discountPercentage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 8px 18px;
+  width: 100%;
+  max-width: 79px;
+  height: 34px;
+  color: color.$color-white;
+  font-weight: 700;
+  font-size: size.$font-size-18px;
+  background: color.$color-success;
+}

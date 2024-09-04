@@ -17,6 +17,7 @@
 .productInformation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 64px;
 }
 
 @media (max-width: 1200px) {
