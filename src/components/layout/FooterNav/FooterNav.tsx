@@ -1,6 +1,7 @@
 import styles from '@/components/layout/Footer/Footer.module.scss';
 import { footerNav, NavItem } from '@/constants/footerNav';
 import { footerSocialItems } from '@/constants/footerSocial';
+import { paymentIcons } from '@/constants/payments';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
@@ -24,19 +25,28 @@ export const FooterNav: FC = () => {
           ))}
         </ul>
       </nav>
-      <div className={styles.footerCopyrightBlock}>
-        <div className={styles.copyrightItemBlock}>
-          <h5 className={styles.copyrightTitle}>
-            Copyright © 2024 3legant. All rights reserved
-          </h5>
-          <div className={styles.policyTermsItemBlock}>
-            <span className={styles.privacy}>Privacy Policy</span>
-            <span className={styles.terms}>Terms of Use</span>
+      <div className={styles.copyPayments}>
+        <div className={styles.footerCopyrightBlock}>
+          <div className={styles.copyrightItemBlock}>
+            <h5 className={styles.copyrightTitle}>
+              Copyright © 2024 3legant. All rights reserved
+            </h5>
+            <div className={styles.policyTermsItemBlock}>
+              <span className={styles.privacy}>Privacy Policy</span>
+              <span className={styles.terms}>Terms of Use</span>
+            </div>
+          </div>
+          <div className={styles.footerSocial}>
+            {footerSocialItems.map((icon) => (
+              <span className={styles.socialIcon} key={icon.id}>
+                {icon.icon}
+              </span>
+            ))}
           </div>
         </div>
-        <div className={styles.footerSocial}>
-          {footerSocialItems.map((icon) => (
-            <span className={styles.socialIcon} key={icon.id}>{icon.icon}</span>
+        <div className={styles.paymentsIconsBlock}>
+          {paymentIcons.map((icon) => (
+            <Fragment key={icon.iconId}>{icon.icon}</Fragment>
           ))}
         </div>
       </div>

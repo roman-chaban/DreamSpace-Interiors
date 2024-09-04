@@ -13,7 +13,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$199.00",
-        "discountedPrice": "$400.00"
+        "discountedPrice": "$400.00",
+        "reviewsCount": "10",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+        "measurements": "17 1/2x20 5/8",
+        "sku": 120,
+        "category": "Loveseat Sofa"
     },
     {
         "productId": 2,
@@ -29,7 +34,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$24.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "12",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+        "sku": 84,
+        "category": "Table Lamp"
     },
     {
         "productId": 3,
@@ -45,7 +55,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$299.00",
-        "discountedPrice": "$500.00"
+        "discountedPrice": "$500.00",
+        "reviewsCount": "29",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 204,
+        "category": "Luxury Sofa"
     },
     {
         "productId": 4,
@@ -61,7 +76,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$299.00",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "88",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+        "sku": 45,
+        "category": "Cozy Sofa"
     },
     {
         "productId": 5,
@@ -77,7 +97,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$89.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "23",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 45,
+        "category": "White Drawer Unit"
     },
     {
         "productId": 6,
@@ -93,7 +118,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$19.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "138",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 80,
+        "category": "Black Tray Table"
     },
     {
         "productId": 7,
@@ -109,7 +139,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$29.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "71",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+        "sku": 80,
+        "category": "Table Lamp"
     },
     {
         "productId": 8,
@@ -125,7 +160,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$39.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "45",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 32,
+        "category": "Black Brow Side Table"
     },
     {
         "productId": 9,
@@ -141,7 +181,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$9.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "19",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 117,
+        "category": "Light Beige Pillow"
     },
     {
         "productId": 10,
@@ -157,7 +202,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$49.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "65",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 90,
+        "category": "Table Lamp"
     },
     {
         "productId": 11,
@@ -173,7 +223,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$10.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "210",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 210,
+        "category": "Bamboo Basket"
     },
     {
         "productId": 12,
@@ -189,7 +244,12 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$7.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "76",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+         "sku": 50,
+        "category": "Off-white Pillow"
     },
     {
         "productId": 13,
@@ -205,6 +265,11 @@
             "/products/icon/star-fill.svg"
         ],
         "originalPrice": "$224.99",
-        "discountedPrice": ""
+        "discountedPrice": "",
+        "reviewsCount": "100",
+        "subTitle": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+         "measurements": "17 1/2x20 5/8",
+          "sku": 25,
+        "category": "Toasted"
     }
 ]

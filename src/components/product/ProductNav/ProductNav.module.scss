@@ -1,0 +1,27 @@
+@use '../../../styles/colors/colors' as color;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: color.$color-banner-link;
+  font-size: size.$font-size-14px;
+  font-weight: 500;
+  line-height: 171%;
+  text-decoration: none;
+}
+
+.productItem {
+  color: color.$color-product-title;
+  font-size: size.$font-size-14px;
+  font-weight: 500;
+  line-height: 171%;
+  order: 2;
+}

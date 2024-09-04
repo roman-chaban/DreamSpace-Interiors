@@ -1,0 +1,36 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/globals' as size;
+@use '../../colors/colors' as color;
+
+.product {
+  min-height: 100vh;
+  margin-block-start: 120px;
+}
+
+.product > .productContainer {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.productInformation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .product > .productContainer {
+    padding-inline: 100px;
+  }
+}
+@media (max-width: 1000px) {
+  .product > .productContainer {
+    padding-inline: 50px;
+  }
+}
+@media (max-width: 750px) {
+  .product > .productContainer {
+    padding-inline: 32ppx;
+  }
+}

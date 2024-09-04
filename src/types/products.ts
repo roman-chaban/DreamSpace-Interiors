@@ -7,6 +7,11 @@ export interface Product {
     rating: string[];
     originalPrice: string;
     discountedPrice: string;
+    reviewsCount: string;
+    subTitle: string;
+    measurements: string;
+    sku: number;
+    category: string;
 };
 
 

@@ -1,0 +1,209 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.productInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ratingReviewsBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ratingStars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.reviewsCount {
+  color: color.$color-black;
+  font-size: size.$font-size-12px;
+  line-height: 167%;
+  margin-block-end: -3px;
+}
+
+.title {
+  font-size: size.$font-size-40px;
+  color: color.$color-black;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.subTitle {
+  margin: 0;
+  line-height: 162%;
+  color: color.$color-dark-gray;
+  width: 100%;
+  max-width: 508px;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block-end: 24px;
+  border-bottom: 1.5px solid color.$color-gray;
+  > .originalPrice {
+    color: color.$color-product-title;
+    font-size: size.$font-size-28px;
+    font-weight: 500;
+    line-height: 121%;
+    letter-spacing: -0.02em;
+  }
+  > .discountedPrice {
+    color: color.$color-dark-gray;
+    font-size: size.$font-size-20px;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: line-through;
+  }
+}
+
+.offerBlock {
+  padding-block-end: 24px;
+  border-bottom: 1.5px solid color.$color-gray;
+}
+
+.offerTitle {
+  font-weight: 400;
+  font-size: size.$font-size-16px;
+  color: color.$color-darker-gray;
+  line-height: 162%;
+}
+
+.discountTimeBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.timeCapture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: color.$color-black;
+  background: color.$color-gray;
+  font-size: size.$font-size-34px;
+  line-height: 112%;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.timeLabel {
+  line-height: 167%;
+  font-size: size.$font-size-12px;
+  color: color.$color-dark-gray;
+}
+
+.measurementsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.measurementsTitle {
+  font-weight: 600;
+  size: size.$font-size-16px;
+  color: color.$color-dark-gray;
+  line-height: 162%;
+}
+
+.measurementsParams {
+  line-height: 160%;
+  font-size: size.$font-size-20px;
+  color: color.$color-brand;
+  margin: 0;
+}
+
+.addButtonsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-block-end: 24px;
+  border-bottom: 1.5px solid color.$color-gray;
+}
+
+.wishlistBlock {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.counterBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  border-radius: 8px;
+  max-width: 127px;
+  min-height: 52px;
+  background: color.$color-dropdown-header;
+}
+
+.counterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: size.$font-size-24px;
+  color: color.$color-black;
+  font-weight: 400;
+  padding-block: 0;
+  cursor: pointer;
+  width: 100%;
+  max-width: 20px;
+  padding: 0;
+}
+
+.productItemNumber {
+  font-weight: 600;
+  font-size: size.$font-size-16px;
+  line-height: 162%;
+  width: 20px;
+  text-align: center;
+}
+
+.categoryBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skuTitle,
+.categoryTitle {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  font-weight: 400;
+  color: color.$color-black;
+  font-size: size.$font-size-16px;
+  line-height: 167%;
+}
+
+.titleMark {
+  width: 100%;
+  max-width: 100px;
+  display: block;
+  font-size: size.$font-size-16px;
+  line-height: 167%;
+  color: color.$color-dark-gray;
+}

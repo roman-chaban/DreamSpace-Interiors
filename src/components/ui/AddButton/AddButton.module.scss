@@ -1,0 +1,20 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+.addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  max-width: 508px;
+  min-height: 52px;
+  border: none;
+  background: color.$color-black;
+  font-weight: 500;
+  font-size: size.$font-size-18px;
+  color: color.$color-white;
+  line-height: 178%;
+  letter-spacing: -0.02em;
+}
