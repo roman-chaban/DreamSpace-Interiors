@@ -239,3 +239,20 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 460px) {
+  .title {
+    font-size: size.$font-size-40px;
+  }
+  .subTitle {
+    font-size: size.$font-size-16px;
+  }
+  .discountTimeBlock {
+    gap: 16px;
+  }
+  .timeBlock {
+    max-width: 60px;
+    max-height: 60px;
+    font-size: size.$font-size-28px;
+  }
+}

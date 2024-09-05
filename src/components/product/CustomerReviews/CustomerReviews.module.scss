@@ -48,6 +48,7 @@
 .areaBlock {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border: 2px solid color.$color-gray;
   border-radius: 16px;
@@ -115,4 +116,26 @@
   letter-spacing: -0.03em;
   cursor: pointer;
   margin: 0 auto;
+}
+
+.writeButtonSmall {
+  border-radius: 100px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  background: color.$color-black;
+  padding: 0;
+}
+
+@media (max-width: 560px) {
+  .reviewsTitle {
+    font-size: size.$font-size-22px;
+  }
+  .areaBlock {
+    padding-block: 10px;
+  }
 }

@@ -12,6 +12,7 @@ import { ReviewComment } from '@/types/reviews-comments';
 import { FeedbackPanel } from '@/components/layout/FeedbackPanel/FeedbackPanel';
 import { CommentsLoader } from '@/components/ui/CommentsLoader/CommentsLoader';
 import { useCallback, useState } from 'react';
+import { useScreenResize } from '@/hooks/useScreenResize';
 
 export type CustomerReviewsType = {
   product: Product;
@@ -24,6 +25,8 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
   const handleTabSelect = useCallback((selectedTab: string) => {
     console.log(`Selected Tab: ${selectedTab}`);
   }, []);
+
+  const { isResize } = useScreenResize(470);
 
   const { data, error, loading } = useFetching<ReviewComment[]>({
     url: '/reviews/reviews.json',
@@ -58,9 +61,20 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
         </div>
         <div className={styles.areaBlock}>
           <Textarea name="" id="" className={styles.reviewsArea} />
-          <Button type="button" className={styles.writeButton}>
-            Write Review
-          </Button>
+          {isResize ? (
+            <Button type="button" className={styles.writeButtonSmall}>
+              <Image
+                src="/images/feedback-profile/arrow-right.svg"
+                alt="Arrow right icon"
+                width={12}
+                height={12}
+              />
+            </Button>
+          ) : (
+            <Button type="button" className={styles.writeButton}>
+              Write Review
+            </Button>
+          )}
         </div>
       </div>
       <article className={styles.commentsSection}>

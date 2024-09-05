@@ -37,6 +37,7 @@
   position: absolute;
   top: 24px;
   left: 24px;
+  z-index: 30;
 }
 
 .discountedTitle {
@@ -96,4 +97,25 @@
   .gallery {
     max-width: 500px;
   }
+}
+
+@media (max-width: 560px) {
+  .gallery {
+    max-width: 400px;
+  }
+  .galleryMainImage {
+    max-height: 470px;
+  }
+}
+
+@media (max-width: 455px) {
+  .gallery {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+      max-width: 300px;
+    }
 }

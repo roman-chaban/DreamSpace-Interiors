@@ -36,9 +36,22 @@
   }
 }
 
-
 @media (max-width: 600px) {
-  .tabItem , .active {
+  .tabItem,
+  .active {
     font-size: size.$font-size-16px;
+  }
+}
+
+@media (max-width: 510px) {
+  .tabsContainer {
+    gap: 20px;
+    align-items: start;
+    flex-direction: column;
+    border-bottom: none;
+  }
+  .tabItem,
+  .active {
+    font-size: size.$font-size-18px;
   }
 }
