@@ -17,4 +17,7 @@
   font-size: size.$font-size-18px;
   line-height: 178%;
   letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
 }

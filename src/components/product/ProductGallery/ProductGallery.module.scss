@@ -2,6 +2,11 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 
+.gallery {
+  width: 100%;
+  max-width: 700px;
+}
+
 .galleryMainImage {
   position: relative;
   width: 100%;
@@ -22,6 +27,7 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 4px;
+  margin: 0 auto;
 }
 
 .discountTitles {
@@ -63,4 +69,31 @@
   font-weight: 700;
   font-size: size.$font-size-18px;
   background: color.$color-success;
+}
+
+@media (max-width: 1150px) {
+  .galleryMainImage {
+    max-width: 400px;
+    max-height: 690px;
+    border-radius: 4px;
+  }
+  .discountTitles {
+    top: 18px;
+    left: 18px;
+  }
+  .discountedTitle,
+  .discountPercentage {
+    font-size: size.$font-size-14px;
+    max-width: 65px;
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .galleryMainImage {
+    max-width: 100%;
+  }
+  .gallery {
+    max-width: 500px;
+  }
 }

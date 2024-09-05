@@ -9,5 +9,5 @@ export interface ReviewComment {
   comment: string;
   like: string;
   reply: string;
-  ratingStars: RatingStar[];
+  ratingStars: { star: string }[];
 }

@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/Button/Button';
 import { useFetching } from '@/hooks/useFetching';
 import { ReviewComment } from '@/types/reviews-comments';
 import { FeedbackPanel } from '@/components/layout/FeedbackPanel/FeedbackPanel';
+import { CommentsLoader } from '@/components/ui/CommentsLoader/CommentsLoader';
+import { useCallback, useState } from 'react';
 
 export type CustomerReviewsType = {
   product: Product;
@@ -18,13 +20,18 @@ export type CustomerReviewsType = {
 const tabs = ['Additional Info', 'Questions', 'Reviews'];
 
 export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
-  const handleTabSelect = (selectedTab: string) => {
+  const [visibleCommentsCount, setVisibleCommentsCount] = useState<number>(5);
+  const handleTabSelect = useCallback((selectedTab: string) => {
     console.log(`Selected Tab: ${selectedTab}`);
-  };
+  }, []);
 
   const { data, error, loading } = useFetching<ReviewComment[]>({
     url: '/reviews/reviews.json',
   });
+
+  const handleLoadMore = () => {
+    setVisibleCommentsCount((prevCount) => prevCount + 5);
+  };
 
   return (
     <div className={styles.reviews}>
@@ -56,14 +63,26 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
           </Button>
         </div>
       </div>
-      <div className={styles.commentsSection}>
-        {loading && <p>Loading comments...</p>}
-        {error && <p>Error loading comments: {error}</p>}
+      <article className={styles.commentsSection}>
+        <h3 className={styles.commentsTitle}>{data?.length} Reviews</h3>
+        {loading && <CommentsLoader />}
+        {error && <p>Error loading comments: Something went wrong!</p>}
         {data &&
-          data.map((comment) => (
-            <FeedbackPanel key={comment.commentId} comment={comment} />
-          ))}
-      </div>
+          data
+            .slice(0, visibleCommentsCount)
+            .map((comment) => (
+              <FeedbackPanel key={comment.commentId} comment={comment} />
+            ))}
+        {visibleCommentsCount < (data?.length || 0) && (
+          <Button
+            type="button"
+            onClick={handleLoadMore}
+            className={styles.loadMoreButton}
+          >
+            Load more
+          </Button>
+        )}
+      </article>
     </div>
   );
 };

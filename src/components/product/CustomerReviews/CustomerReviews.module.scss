@@ -46,13 +46,13 @@
 }
 
 .areaBlock {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border: 2px solid color.$color-gray;
   border-radius: 16px;
   padding: 16px 16px 16px 24px;
-  width: 100%;
-  max-width: 1120px;
+  max-width: 100%;
   min-height: 72px;
   &:hover {
     border: none;
@@ -85,4 +85,34 @@
   font-weight: 500;
   line-height: 175%;
   letter-spacing: -0.03em;
+}
+
+.commentsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.commentsTitle {
+  font-weight: 500;
+  color: color.$color-brand;
+  font-size: size.$font-size-28px;
+  line-height: 121%;
+  letter-spacing: -0.02em;
+}
+
+.loadMoreButton {
+  border-radius: 80px;
+  width: 100%;
+  max-width: 158px;
+  min-height: 40px;
+  border: 1.5px solid color.$color-black;
+  background: transparent;
+  font-weight: 500;
+  color: color.$color-black;
+  font-size: size.$font-size-16px;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  margin: 0 auto;
 }

@@ -17,4 +17,7 @@
   color: color.$color-white;
   line-height: 178%;
   letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
 }

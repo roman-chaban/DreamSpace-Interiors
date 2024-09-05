@@ -1,0 +1,34 @@
+.swiper {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullets {
+  display: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+
+.swiper-button-prev::before, .swiper-button-next::before {
+    max-width: 18px;
+    max-height: 18px;
+}

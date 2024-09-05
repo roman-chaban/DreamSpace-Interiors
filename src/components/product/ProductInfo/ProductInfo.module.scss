@@ -207,3 +207,35 @@
   line-height: 167%;
   color: color.$color-dark-gray;
 }
+
+@media (max-width: 1150px) {
+  .title {
+    font-size: size.$font-size-38px;
+  }
+  .subTitle {
+    text-align: justify;
+    font-size: size.$font-size-14px;
+  }
+  .prices,
+  .offerBlock {
+    padding-block-end: 12px;
+  }
+  .prices > .originalPrice {
+    font-size: size.$font-size-26px;
+  }
+  .discountTimeBlock {
+    gap: 10px;
+  }
+  .timeBlock {
+    max-width: 50px;
+    max-height: 50px;
+    font-size: size.$font-size-24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .counterBlock {
+    max-width: 200px;
+    gap: 40px;
+  }
+}

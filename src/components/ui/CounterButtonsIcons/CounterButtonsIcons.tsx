@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import styles from '@/components/product/ProductInfo/ProductInfo.module.scss';
 
 interface CounterButtonIcon {
   minusIcon: JSX.Element;
@@ -8,6 +8,7 @@ interface CounterButtonIcon {
 export const counterButtonIcons: CounterButtonIcon = {
   minusIcon: (
     <svg
+      className={styles.counterIcon}
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -25,6 +26,7 @@ export const counterButtonIcons: CounterButtonIcon = {
   ),
   plusIcon: (
     <svg
+      className={styles.counterIcon}
       width="14"
       height="14"
       viewBox="0 0 14 14"
