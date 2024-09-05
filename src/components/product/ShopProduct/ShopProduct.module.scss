@@ -4,7 +4,7 @@
 
 .productItem {
   width: 100%;
-  height: 390px;
+  height: 425px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -20,7 +20,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 4 / 5;
   padding: 16px;
   transition: all 0.3s ease;
   &:hover .addButton {

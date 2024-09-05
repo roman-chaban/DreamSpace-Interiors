@@ -32,7 +32,7 @@ export const paymentIcons: PaymentIcons = [
           width={42}
           height={16}
           alt="American express icon"
-          className={styles.icon}
+          className={`${styles.icon} ${styles.rightIcon}`}
         />
       </span>
     ),
