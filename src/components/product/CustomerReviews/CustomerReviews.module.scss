@@ -1,0 +1,88 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.reviewsInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.reviewsRatingBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewsTitle {
+  font-weight: 500;
+  color: color.$color-process-title;
+  font-size: size.$font-size-28px;
+  line-height: 121%;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.starsFill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviewsRatingTitle {
+  font-size: size.$font-size-12px;
+  color: color.$color-black;
+  font-weight: 400;
+  line-height: 167%;
+  margin-block-end: -3px;
+}
+
+.areaBlock {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid color.$color-gray;
+  border-radius: 16px;
+  padding: 16px 16px 16px 24px;
+  width: 100%;
+  max-width: 1120px;
+  min-height: 72px;
+  &:hover {
+    border: none;
+    border: 2px solid color.$color-success;
+  }
+}
+
+.reviewsArea {
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: size.$font-size-18px;
+  color: color.$color-darker-gray;
+  caret-color: color.$color-darker-gray;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.writeButton {
+  border-radius: 80px;
+  width: 100%;
+  max-width: 176px;
+  height: 40px;
+  border: none;
+  background: color.$color-black;
+  color: color.$color-white;
+  font-size: size.$font-size-16px;
+  font-weight: 500;
+  line-height: 175%;
+  letter-spacing: -0.03em;
+}

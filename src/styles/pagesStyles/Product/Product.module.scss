@@ -2,8 +2,11 @@
 @use '../../abstracts/globals' as size;
 @use '../../colors/colors' as color;
 
-.product {
+.main {
   min-height: 100vh;
+}
+
+.product {
   margin-block-start: 120px;
 }
 
@@ -11,7 +14,8 @@
   @include container;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
+  margin-block-end: 40px;
 }
 
 .productInformation {
