@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ScrollProgress />
-        <div className="layout">{children}</div>x{' '}
+        <div className="layout">{children}</div>
       </body>
     </html>
   );

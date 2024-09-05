@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import { CustomerReviewsTabsNav } from '../CustomerReviewsTabsNav/CustomerReviewsTabsNav';
 import { Product } from '@/types/products';
@@ -5,6 +7,9 @@ import styles from './CustomerReviews.module.scss';
 import Image from 'next/image';
 import { Textarea } from '@/components/ui/Textarea/Textarea';
 import { Button } from '@/components/ui/Button/Button';
+import { useFetching } from '@/hooks/useFetching';
+import { ReviewComment } from '@/types/reviews-comments';
+import { FeedbackPanel } from '@/components/layout/FeedbackPanel/FeedbackPanel';
 
 export type CustomerReviewsType = {
   product: Product;
@@ -16,6 +21,11 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
   const handleTabSelect = (selectedTab: string) => {
     console.log(`Selected Tab: ${selectedTab}`);
   };
+
+  const { data, error, loading } = useFetching<ReviewComment[]>({
+    url: '/reviews/reviews.json',
+  });
+
   return (
     <div className={styles.reviews}>
       <CustomerReviewsTabsNav onTabSelect={handleTabSelect} tabs={tabs} />
@@ -45,6 +55,14 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
             Write Review
           </Button>
         </div>
+      </div>
+      <div className={styles.commentsSection}>
+        {loading && <p>Loading comments...</p>}
+        {error && <p>Error loading comments: {error}</p>}
+        {data &&
+          data.map((comment) => (
+            <FeedbackPanel key={comment.commentId} comment={comment} />
+          ))}
       </div>
     </div>
   );

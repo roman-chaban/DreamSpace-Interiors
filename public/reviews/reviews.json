@@ -1,0 +1,947 @@
+[
+    {
+        "commentId": 1,
+        "author": "Sofia Harvetz",
+        "authorImage": "",
+        "comment": "The item is okay, but it didn’t meet my expectations. It’s a bit overpriced for what it is.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 2,
+        "author": "John Doe",
+        "authorImage": "",
+        "comment": "The product exceeded my expectations. It works perfectly and the quality is top-notch. Highly recommend!",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 3,
+        "author": "Jane Smith",
+        "authorImage": "",
+        "comment": "I had some issues with delivery, but the product itself is fantastic. Worth the wait!",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg"
+        ]
+    },
+    {
+        "commentId": 4,
+        "author": "Michael Johnson",
+        "authorImage": "",
+        "comment": "The product is good but could use some improvements. Overall, a decent purchase.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 5,
+        "author": "Emily Davis",
+        "authorImage": "",
+        "comment": "Excellent value for money. I am very satisfied with this product and will buy again.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 6,
+        "author": "David Brown",
+        "authorImage": "",
+        "comment": "Not as expected. The product didn't meet my standards and had some defects.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 7,
+        "author": "Lisa Green",
+        "authorImage": "",
+        "comment": "Good quality for the price. I’m happy with my purchase and would recommend it to others.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg"
+        ]
+    },
+    {
+        "commentId": 8,
+        "author": "Tom Wilson",
+        "authorImage": "",
+        "comment": "The item arrived on time and is exactly as described. Very pleased with the purchase.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 9,
+        "author": "Mary Johnson",
+        "authorImage": "",
+        "comment": "The product is decent but the customer service could be improved.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 10,
+        "author": "James Smith",
+        "authorImage": "",
+        "comment": "I love this product! It works just as advertised and is very high quality.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 11,
+        "author": "Nina Brown",
+        "authorImage": "",
+        "comment": "Not worth the price. I expected more based on the description.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 12,
+        "author": "Oliver Adams",
+        "authorImage": "",
+        "comment": "Great product! It has made a big difference. Highly recommended for anyone looking for quality.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 13,
+        "author": "Emma Roberts",
+        "authorImage": "",
+        "comment": "The product is fine, but it took too long to arrive. Overall, a mixed experience.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 14,
+        "author": "Liam Martinez",
+        "authorImage": "",
+        "comment": "Absolutely love it! The quality is superb and it arrived ahead of schedule.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 15,
+        "author": "Sophia Lewis",
+        "authorImage": "",
+        "comment": "The item is okay, but it didn’t meet my expectations. It’s a bit overpriced for what it is.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 16,
+        "author": "Daniel Scott",
+        "authorImage": "",
+        "comment": "Wonderful product and excellent customer service. I’m very pleased with my purchase.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 17,
+        "author": "Olivia Turner",
+        "authorImage": "",
+        "comment": "It’s a nice product but arrived damaged. The return process was smooth though.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 18,
+        "author": "Ethan Walker",
+        "authorImage": "",
+        "comment": "Fantastic! It does exactly what I need and more. Will definitely be purchasing again.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 19,
+        "author": "Ava Nelson",
+        "authorImage": "",
+        "comment": "Decent quality, but I had some issues with the sizing. Customer support was helpful in resolving it.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 20,
+        "author": "Matthew King",
+        "authorImage": "",
+        "comment": "Great purchase! The quality is impressive, and it arrived quickly.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 21,
+        "author": "Isabella Wright",
+        "authorImage": "",
+        "comment": "It’s okay but not as good as I expected. I was hoping for a higher quality based on reviews.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 22,
+        "author": "Lucas Hill",
+        "authorImage": "",
+        "comment": "Amazing product! Exceeded all my expectations. I’m very satisfied.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 23,
+        "author": "Charlotte Green",
+        "authorImage": "",
+        "comment": "I’m happy with my purchase but had some minor issues with the setup.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 24,
+        "author": "James Turner",
+        "authorImage": "",
+        "comment": "The quality is great, but the product didn’t match the description exactly.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 25,
+        "author": "Amelia Young",
+        "authorImage": "",
+        "comment": "Fantastic quality and great value for money. I’m very pleased with the product.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 26,
+        "author": "Alexander Davis",
+        "authorImage": "",
+        "comment": "Good product, but I had some issues with the delivery. Otherwise, it’s fine.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 27,
+        "author": "Mia Lewis",
+        "authorImage": "",
+        "comment": "The product is good but could be improved. It does its job, but there are some drawbacks.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 28,
+        "author": "Ethan Martinez",
+        "authorImage": "",
+        "comment": "Great quality and fast shipping. I’m happy with my purchase and will buy again.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 29,
+        "author": "Avery Thomas",
+        "authorImage": "",
+        "comment": "The item is okay but didn’t meet my expectations in terms of quality.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 30,
+        "author": "Benjamin Roberts",
+        "authorImage": "",
+        "comment": "Awesome product! It works as described and the quality is excellent.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 31,
+        "author": "Harper Walker",
+        "authorImage": "",
+        "comment": "Good product overall, but there were a few issues with the assembly instructions.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 32,
+        "author": "Logan Adams",
+        "authorImage": "",
+        "comment": "The product is nice but didn’t arrive on time. Quality is good, though.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 33,
+        "author": "Ella Brown",
+        "authorImage": "",
+        "comment": "Very satisfied with the purchase. The product is exactly as described and high quality.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 34,
+        "author": "Mason Wilson",
+        "authorImage": "",
+        "comment": "The product is fine, but I expected a bit more based on the reviews.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 35,
+        "author": "Chloe Scott",
+        "authorImage": "",
+        "comment": "Great quality and service. I’m very happy with my purchase and would recommend it.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 36,
+        "author": "Jack Thompson",
+        "authorImage": "",
+        "comment": "The product arrived damaged, but customer service resolved the issue quickly.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 37,
+        "author": "Samantha Turner",
+        "authorImage": "",
+        "comment": "Excellent product! It’s well-made and serves its purpose perfectly.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 38,
+        "author": "Henry Carter",
+        "authorImage": "",
+        "comment": "The product is decent, but I had some issues with the shipping process.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 39,
+        "author": "Zoe Harris",
+        "authorImage": "",
+        "comment": "Very pleased with this purchase. The quality is excellent and it arrived on time.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 40,
+        "author": "Eli Walker",
+        "authorImage": "",
+        "comment": "Good product but had a small issue with one of the components. Customer support was helpful.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 41,
+        "author": "Lily Allen",
+        "authorImage": "",
+        "comment": "This product is fantastic! It’s exactly what I needed and works perfectly.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 42,
+        "author": "Sebastian Young",
+        "authorImage": "",
+        "comment": "The quality is great, but the packaging was damaged upon arrival.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 43,
+        "author": "Mia Brown",
+        "authorImage": "",
+        "comment": "Decent quality but not exactly what I was looking for. Overall, it’s okay.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 44,
+        "author": "Ryan Harris",
+        "authorImage": "",
+        "comment": "I’m very happy with this product. It works well and is very durable.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 45,
+        "author": "Emma Wilson",
+        "authorImage": "",
+        "comment": "Great value for money. The product is high quality and does exactly what I need.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 46,
+        "author": "Jack White",
+        "authorImage": "",
+        "comment": "The product is fine but had some minor defects. The customer service was helpful in sorting it out.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 47,
+        "author": "Olivia Thompson",
+        "authorImage": "",
+        "comment": "I’m very satisfied with this product. It’s well-made and works as expected.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 48,
+        "author": "David Davis",
+        "authorImage": "",
+        "comment": "The product is good, but the delivery was delayed. Quality is decent.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 49,
+        "author": "Aden Clark",
+        "authorImage": "",
+        "comment": "Great product and fast shipping. I’m very happy with the purchase.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 50,
+        "author": "Evelyn Allen",
+        "authorImage": "",
+        "comment": "The product is good, but it didn’t quite meet my expectations. Some improvements are needed.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 51,
+        "author": "Liam Martin",
+        "authorImage": "",
+        "comment": "Fantastic quality. I am very pleased with this purchase and would recommend it to others.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 52,
+        "author": "Ella Miller",
+        "authorImage": "",
+        "comment": "Good quality but the product was not as described. Customer service was helpful though.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 53,
+        "author": "James Harris",
+        "authorImage": "",
+        "comment": "The product is fine. It works but has some minor issues. Overall, it’s acceptable.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 54,
+        "author": "Harper Lewis",
+        "authorImage": "",
+        "comment": "Great purchase! The quality is impressive and it does exactly what I needed.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 55,
+        "author": "Sebastian Clark",
+        "authorImage": "",
+        "comment": "The product arrived damaged but was replaced quickly. The quality is good.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 56,
+        "author": "Mia Walker",
+        "authorImage": "",
+        "comment": "Okay product but it didn’t fully meet my expectations. The quality is average.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 57,
+        "author": "Jackson Scott",
+        "authorImage": "",
+        "comment": "Very happy with this product. It’s well-made and works as advertised.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 58,
+        "author": "Grace Turner",
+        "authorImage": "",
+        "comment": "The product quality is good, but the shipping was delayed. Customer service was helpful.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 59,
+        "author": "Aden White",
+        "authorImage": "",
+        "comment": "Good product overall but not without its issues. The quality could be improved.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 60,
+        "author": "Sophia Martin",
+        "authorImage": "",
+        "comment": "Excellent product! It works perfectly and I’m very satisfied with the purchase.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    },
+    {
+        "commentId": 61,
+        "author": "Noah Green",
+        "authorImage": "",
+        "comment": "Good value for money. The product is decent, though it could use some improvements.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 62,
+        "author": "Ella Davis",
+        "authorImage": "",
+        "comment": "The product is fine but had a few minor issues. The quality is acceptable.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-half.svg",
+            "/products/icon/star-empty.svg",
+            "/products/icon/star-empty.svg"
+        ]
+    },
+    {
+        "commentId": 63,
+        "author": "Lucas Young",
+        "authorImage": "",
+        "comment": "Great quality product. It exceeded my expectations and I’m very happy with it.",
+        "like": "Like",
+        "reply": "Reply",
+        "ratingStars": [
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg",
+            "/products/icon/star-fill.svg"
+        ]
+    }
+]
