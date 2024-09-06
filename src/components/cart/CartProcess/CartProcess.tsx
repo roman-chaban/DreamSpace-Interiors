@@ -11,35 +11,69 @@ import { CartItemStep } from '../CartItemStep/CartItemStep';
 import { Coupon } from '@/components/common/Coupon/Coupon';
 import { OrderSummary } from '../OrderSummary/OrderSummary';
 import { OrderComplete } from '../OrderComplete/OrderComplete';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const CartProcess: FC = () => {
   const [activeTab, setActiveTab] = useState<number>(2);
+
+  const tabVariants = {
+    initial: { y: 10, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    exit: { y: -10, opacity: 0 },
+  };
 
   const renderContent = () => {
     switch (activeTab) {
       case 1:
         return (
-          <div className={styles.productsSummary}>
+          <motion.div
+            key="tab1"
+            variants={tabVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+            className={styles.productsSummary}
+          >
             <div className={styles.productsCartBlock}>
               <CartProducts />
               <CartSummary />
             </div>
             <Coupon />
-          </div>
+          </motion.div>
         );
       case 2:
         return (
-          <div className={styles.productsSummaryBlock}>
+          <motion.div
+            key="tab2"
+            variants={tabVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+            className={styles.productsSummaryBlock}
+          >
             <div className={styles.processForms}>
               <ContactInformation />
               <ShippingAddress />
               <Payment />
             </div>
             <OrderSummary />
-          </div>
+          </motion.div>
         );
       case 3:
-        return <OrderComplete />;
+        return (
+          <motion.div
+            key="tab3"
+            variants={tabVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+          >
+            <OrderComplete />
+          </motion.div>
+        );
       default:
         return null;
     }
@@ -68,7 +102,11 @@ export const CartProcess: FC = () => {
           onClick={() => setActiveTab(3)}
         />
       </div>
-      <div className={styles.content}>{renderContent()}</div>
+      <div className={styles.content}>
+        <AnimatePresence mode="wait">
+          {renderContent()}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

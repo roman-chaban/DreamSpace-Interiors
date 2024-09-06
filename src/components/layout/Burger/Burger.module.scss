@@ -2,7 +2,6 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 
-
 .burger {
   background: color.$color-white;
   width: 100%;
@@ -19,10 +18,8 @@
   background-color: color.$color-white;
   padding: 24px;
   z-index: 1000;
-  transform: scale(0.5);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,52 +29,7 @@
 
 .burgerMenu.active {
   visibility: visible;
-  opacity: 1;
   pointer-events: auto;
-  transform: scale(1);
-  animation: bounceIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.burgerMenu:not(.active) {
-  animation: bounceOut 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes bounceOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-}
-
-.burgerMenu.active::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.burgerMenu.active::-webkit-scrollbar-track {
-  background: color.$color-white;
 }
 
 .burgerHeader {
@@ -100,7 +52,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.18);
   }
@@ -188,8 +140,7 @@
   color: color.$color-black;
   text-decoration: none;
   display: block;
-  transition: all 1.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  will-change: transform;
+  transition: transform 0.3s ease;
   &:hover {
     transform: translateX(10px);
     font-weight: 600;
@@ -249,7 +200,7 @@
   text-align: center;
   font-weight: 500;
   cursor: pointer;
-  transition: background 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: background 0.3s ease;
   &:hover {
     background: color.$color-success;
   }

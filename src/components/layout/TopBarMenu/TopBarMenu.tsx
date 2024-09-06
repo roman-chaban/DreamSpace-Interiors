@@ -5,6 +5,8 @@ import styles from './TopBarMenu.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
+import { motion } from 'framer-motion';
+import { animation } from '@/animations/topBar/topBar';
 
 export const TopBarMenu: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -17,7 +19,12 @@ export const TopBarMenu: FC = () => {
 
   return (
     <div className={styles.topBarMenu}>
-      <ul className={styles.topBarItems}>
+      <motion.ul
+        initial={animation.initial}
+        animate={animation.animate}
+        transition={animation.transition}
+        className={styles.topBarItems}
+      >
         <li className={styles.topBarItem}>
           <Image
             src="/icons/nav/ticket-percent.svg"
@@ -39,10 +46,10 @@ export const TopBarMenu: FC = () => {
             className={styles.arrowIcon}
           />
         </li>
-      </ul>
+      </motion.ul>
       <Button
         type="button"
-        title='Hide banner'
+        title="Hide banner"
         className={styles.closeButton}
         onClick={handleCloseTopBarMenu}
       >

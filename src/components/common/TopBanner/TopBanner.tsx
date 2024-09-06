@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { NavPaths } from '@/enums/navPaths';
 import { useScreenResize } from '@/hooks/useScreenResize';
 
+
 interface TopBannerProps {
   params: {
     bannerImage: string;

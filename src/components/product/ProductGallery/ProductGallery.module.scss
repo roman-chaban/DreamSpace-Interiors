@@ -115,7 +115,13 @@
 }
 
 @media (max-width: 400px) {
-    .gallery {
-      max-width: 300px;
-    }
+  .gallery {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .gallery, .galleryMainImage {
+    max-width: 265px;
+  }
 }

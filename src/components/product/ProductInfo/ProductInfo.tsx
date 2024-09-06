@@ -88,7 +88,7 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
             </button>
           </div>
           <WishlistButton type="button">
-            <Favorite color="plain" style={{ width: 25 }} /> Wishlist
+            <Favorite color="plain" style={{ width: 25 }} className={styles.heartIcon} /> Wishlist
           </WishlistButton>
         </div>
         <AddButton type="button">Add to Cart</AddButton>

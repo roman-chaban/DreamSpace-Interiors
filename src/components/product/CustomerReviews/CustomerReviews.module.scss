@@ -139,3 +139,10 @@
     padding-block: 10px;
   }
 }
+
+
+@media (max-width: 375px) {
+  .reviewsTitle {
+    font-size: size.$font-size-28px;
+  }
+}

@@ -12,6 +12,7 @@ import { Login, Logout, FormDown } from 'grommet-icons';
 import { Burger } from '../Burger/Burger';
 import dynamic from 'next/dynamic';
 import DropDown from '@/components/ui/DropDown/DropDown';
+import { motion } from 'framer-motion';
 
 const classNames = {
   container: styles.dropDownContainer,
@@ -79,7 +80,7 @@ const Header: FC = () => {
             {navMenuItems.map((item: NavItem) => {
               const isActiveLink = pathname === item.href;
               return (
-                <li key={item.id} className={styles.listItem}>
+                <motion.li whileHover={{scale: 1.1 }} transition={{duration: 0.5}} key={item.id} className={styles.listItem}>
                   {item.label === 'Product' ? (
                     <DropDown
                       classNames={classNames}
@@ -97,7 +98,7 @@ const Header: FC = () => {
                       {item.label}
                     </Link>
                   )}
-                </li>
+                </motion.li>
               );
             })}
           </ul>

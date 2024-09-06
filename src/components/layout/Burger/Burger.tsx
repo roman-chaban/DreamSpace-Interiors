@@ -9,6 +9,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
 import { Github, Instagram, Linkedin } from 'grommet-icons';
 import { useBodyOverFlow } from '@/hooks/useBodyOverflow';
+import { motion } from 'framer-motion';
+import { menuVariants } from '@/animations/burger/burger';
 
 interface BurgerProps {
   onClose: () => void;
@@ -18,14 +20,17 @@ interface BurgerProps {
 export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
   const burgerMenuRef = useRef<HTMLDivElement>(null);
 
-
   useBodyOverFlow(isActive);
 
   return (
     <div className={styles.burger}>
-      <nav
+      <motion.nav
         ref={burgerMenuRef}
         className={`${styles.burgerMenu} ${isActive ? styles.active : ''}`}
+        initial="hidden"
+        animate={isActive ? 'visible' : 'hidden'}
+        exit="exit"
+        variants={menuVariants}
       >
         <div className={styles.burgerHeader}>
           <div className={styles.burgerLogo}>
@@ -108,7 +113,7 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
             </Link>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </div>
   );
 };
