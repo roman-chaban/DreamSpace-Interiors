@@ -6,13 +6,7 @@ import { useForm } from 'react-hook-form';
 import Image from 'next/image';
 import { Input } from '@/components/ui/Input/Input';
 import { Button } from '@/components/ui/Button/Button';
-
-type PaymentFormValues = {
-  paymentMethod: string;
-  cardNumber: string;
-  date: string;
-  cvcCode: string;
-};
+import { PaymentFormValues } from '@/types/payment-values';
 
 export const Payment: FC = () => {
   const { register, handleSubmit, watch } = useForm<PaymentFormValues>();

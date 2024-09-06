@@ -29,6 +29,12 @@
   background: color.$color-white;
 }
 
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .headerLogo > .headerLogoIcon .logoLink {
   display: flex;
   line-height: 100%;
@@ -40,10 +46,9 @@
   );
   position: relative;
   max-width: 105px;
-  margin: 0;
-  padding: 0;
   color: color.$color-brand;
   text-decoration: none;
+
   &::after {
     content: '';
     display: block;
@@ -61,14 +66,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  padding-left: 0;
   margin: 0;
-}
-
-.headerLogo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
 .burgerButton {
@@ -82,26 +80,24 @@
   background: color.$color-black;
   border: none;
   border-radius: 20px;
-}
 
-.burgerButton::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  width: 24px;
-  height: 3px;
-  background: color.$color-black;
-  border-radius: 20px;
-}
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background: color.$color-black;
+    border-radius: 20px;
+  }
 
-.burgerButton::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  width: 24px;
-  height: 3px;
-  background: color.$color-black;
-  border-radius: 20px;
+  &::before {
+    top: 5px;
+  }
+
+  &::after {
+    top: -5px;
+  }
 }
 
 .listItem {
@@ -137,172 +133,12 @@
   font-weight: 600;
 }
 
-.userIcon {
+.userIcon,
+.dropDownIcon {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.dropDownIcon {
-  position: relative;
-}
-
-.dropdownMenu {
-  display: flex;
-  width: 100%;
-  max-width: 150px;
-  position: absolute;
-  top: 95px;
-  right: 165px;
-  z-index: 2000;
-  background: color.$color-footer-bg;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  opacity: 0;
-  transform: rotateX(-10deg);
-  transform-origin: top;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-.dropdownMenu.open {
-  opacity: 1;
-  transform: rotateX(0deg);
-  visibility: visible;
-  width: 100%;
-  max-width: 150px;
-  padding: 0;
-}
-
-.userDropDown {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  border-radius: 15px;
-}
-
-.dropDownList {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.dropDownListItem {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  list-style-type: none;
-}
-
-.dropDownListItem > a {
-  width: 100%;
-  font-weight: 500;
-  color: color.$color-darker-gray;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.dropDownListItem > a:hover {
-  color: color.$color-success;
-  transform: translateX(5px);
-  text-decoration: underline;
-}
-
-.dropdownMenu::before {
-  content: '';
-  position: absolute;
-  top: -9px;
-  right: 82.5px;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid color.$color-footer-bg;
-  transform: rotate(0deg);
-}
-
-.active {
-  background: color.$color-light-gray;
-  transition: background 0.8s ease;
-  padding-block: 0;
-}
-
-.activeBorder {
-  border-top: 2px solid color.$color-dropdown-border;
-  transition: border-top-color 0.8s ease;
-}
-
-.dropDownContainer {
-  position: relative;
-  width: fit-content;
-  font-size: 16px;
-  color: color.$color-dropdown-container;
-}
-
-.dropDownHeader {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  color: color.$color-dark-gray;
-  text-decoration: none;
-  line-height: 1.71;
-  font-weight: 500;
-  background: transparent;
-  border: none;
-  border-radius: 4px;
-  height: 20px;
-  gap: 5px;
-  &:focus {
-    outline: none;
-  }
-}
-
-.dropDownList {
-  width: 100%;
-  max-width: 300px;
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
-  margin: 5px 0 0;
-  padding: 0;
-  list-style: none;
-  background-color: color.$color-white;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  max-height: 200px;
-  overflow-y: auto;
-  animation: dropdown-slide 0.3s ease forwards;
-}
-
-.dropDownListItem {
-  max-width: 300px;
-  padding: 8px 14px;
-  color: color.$color-dark-gray;
-  text-decoration: none;
-  line-height: 1.71;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  &:hover,
-  &:focus {
-    background-color: lighten(color.$color-dark-gray, 40%);
-    color: darken(color.$color-dark-gray, 10%);
-    cursor: pointer;
-  }
-
-  &:focus {
-    outline: none;
-    background-color: lighten(color.$color-dark-gray, 40%);
-  }
-}
-
-.iconArrow {
-  transition: transform 0.3s ease-in-out !important;
 }
 
 .cartLink {
@@ -310,15 +146,42 @@
   align-items: center;
 }
 
-@keyframes dropdown-slide {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dropDownContainer {
+  position: relative;
+}
+
+.dropDownMenu {
+  width: 110px;
+  position: absolute;
+  padding: 0;
+  bottom: -55px;
+  list-style-type: none;
+  background-color: color.$color-white;
+  border: 1px solid color.$color-dropdown-border;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.dropDownListItem {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropDownButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: color.$color-dark-gray;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dropDownLink {
+  text-decoration: none;
+  color: color.$color-success;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -335,19 +198,13 @@
   .headerSubNav {
     gap: 15px;
   }
-  .dropdownMenu {
-    right: 101.5px;
-  }
-  .dropdownMenu::before {
-    right: 74.5px;
-    top: -10px;
-  }
 }
 
 @media only screen and (max-width: 1024px) {
   .headerContainer {
     padding-inline: 50px;
   }
+
   .headerNav > .headerMenu {
     display: none;
   }
@@ -363,6 +220,7 @@
   .hiddenIcon {
     display: none;
   }
+
   .headerSubNav {
     gap: 10px;
   }

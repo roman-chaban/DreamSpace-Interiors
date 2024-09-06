@@ -1,20 +1,8 @@
 import type { FC } from 'react';
 import styles from './Values.module.scss';
-import { Value, valuesItems } from '@/constants/valuesItems';
-import { ClassNames, ValueItem } from '../ValueItem/ValueItem';
-
-export interface ValuesProps {
-  values: Value[];
-  classNames: {
-    item: string;
-    itemContainer: string;
-    itemIcon: string;
-    itemTitles: string;
-    itemTitle: string;
-    itemSubTitle: string;
-  };
-  container: string;
-}
+import { Value } from '@/constants/valuesItems';
+import { ValueItem } from '../ValueItem/ValueItem';
+import { ValuesProps } from '@/types/values';
 
 export const Values: FC<ValuesProps> = ({ values, classNames, container }) => {
   return (

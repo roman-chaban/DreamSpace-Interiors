@@ -5,13 +5,9 @@ import styles from './ContactInformation.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Input } from '@/components/ui/Input/Input';
 import { FormBox } from '@/components/containers/FormBox/FormBox';
+import { FormValues } from '@/types/form-values';
 
-interface FormValues {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-}
+
 
 export const ContactInformation: FC = () => {
   const { register, handleSubmit } = useForm<FormValues>({

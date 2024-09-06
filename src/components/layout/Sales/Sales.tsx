@@ -3,17 +3,8 @@ import styles from './Sales.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { inter } from '@/fonts/basic-fonts';
+import { SalesProps } from '@/types/sales';
 
-interface SalesProps {
-  image: string;
-  title?: string;
-  secondTitle?: string;
-  subTitle: string;
-  linkPath: string;
-  className: {
-    blockInfo?: string;
-  };
-}
 
 export const Sales: FC<SalesProps> = ({
   image,

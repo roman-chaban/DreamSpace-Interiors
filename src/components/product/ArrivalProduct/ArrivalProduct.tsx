@@ -13,25 +13,23 @@ interface ArrivalProductProps {
 export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
   return (
     <div className={styles.productItem}>
-      <Link href={`/product/${product.title.replaceAll(' ', '-')}`}>
-        <div
-          className={styles.productItemImage}
-          style={{ backgroundImage: `url(${product.imageUrl})` }}
-        >
-          <Button type="button" className={styles.addButton}>
-            Add to cart
+      <div
+        className={styles.productItemImage}
+        style={{ backgroundImage: `url(${product.imageUrl})` }}
+      >
+        <Button type="button" className={styles.addButton}>
+          Add to cart
+        </Button>
+        <div className={styles.productDiscount}>
+          <span className={styles.newTitle}>{product.discountedTitle}</span>
+          <span className={styles.discountTitle}>
+            {product.discountPercentage}
+          </span>
+          <Button type="button" className={styles.favoriteIcon}>
+            <Favorite style={{ width: 18, height: 18 }} />
           </Button>
-          <div className={styles.productDiscount}>
-            <span className={styles.newTitle}>{product.discountedTitle}</span>
-            <span className={styles.discountTitle}>
-              {product.discountPercentage}
-            </span>
-            <Button type="button" className={styles.favoriteIcon}>
-              <Favorite style={{ width: 18, height: 18 }} />
-            </Button>
-          </div>
         </div>
-      </Link>
+      </div>
       <div className={styles.productInfo}>
         <div className={styles.starsFill}>
           {product.rating.map((star, index) => (
@@ -44,7 +42,13 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
             />
           ))}
         </div>
-        <h4 className={styles.productTitle}>{product.title}</h4>
+
+        <h4 className={styles.productTitle}>
+          <Link href={`/product/${product.title.replaceAll(' ', '-')}`} className={styles.productTitleLink}>
+            {product.title}
+          </Link>
+        </h4>
+
         <div className={styles.productPrices}>
           <span className={styles.price}>{product.originalPrice}</span>
           <span className={styles.discount}>{product.discountedPrice}</span>

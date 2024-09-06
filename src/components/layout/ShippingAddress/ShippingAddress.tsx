@@ -4,17 +4,10 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Input } from '@/components/ui/Input/Input';
 import { CheckBoxWrapper } from '@/components/auth/CheckboxWrapper/CheckboxWrapper';
 import { FormBox } from '@/components/containers/FormBox/FormBox';
-
-interface FormValues {
-  streetAddress: string;
-  townOrCity: string;
-  state: string;
-  zipCode: string;
-  agreeToTerms: boolean;
-}
+import { FormValuesProps } from '@/types/form-values';
 
 export const ShippingAddress: FC = () => {
-  const { register, handleSubmit } = useForm<FormValues>({
+  const { register, handleSubmit } = useForm<FormValuesProps>({
     defaultValues: {
       streetAddress: '',
       townOrCity: '',
@@ -23,7 +16,7 @@ export const ShippingAddress: FC = () => {
       agreeToTerms: false,
     },
   });
-  const handleSubmitContactForm: SubmitHandler<FormValues> = (data) => {
+  const handleSubmitContactForm: SubmitHandler<FormValuesProps> = (data) => {
     console.log(data);
   };
   return (

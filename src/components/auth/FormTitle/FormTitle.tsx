@@ -1,12 +1,9 @@
 import { FC } from 'react';
 import styles from './FormTitle.module.scss';
 import { Button } from '@/components/ui/Button/Button';
+import { FormTitleProps } from '@/types/form-title';
 
-interface FormTitleProps {
-  title: string;
-  subTitle: string;
-  buttonLabel: string;
-}
+
 
 export const FormTitle: FC<FormTitleProps> = ({
   title,

@@ -1,4 +1,4 @@
-import { Fragment, type FC } from 'react';
+import type { FC } from 'react';
 import styles from './Sidebar.module.scss';
 import Image from 'next/image';
 import { roomTitles } from '@/constants/allRooms';

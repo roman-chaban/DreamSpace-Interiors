@@ -1,102 +1,101 @@
-import React, { useState } from 'react';
 import Link from 'next/link';
-import styles from '@/styles/ui/DropDown.module.scss';
+import { useEffect, useState, useRef, type FC } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FormUp } from 'grommet-icons';
+import {
+  iconRotation,
+  dropdownMenuAnimation,
+  listItemHoverTap,
+} from '@/animations/dropDown/dropDown';
+import { useOutsideClick } from '@/hooks/useOutsideClick';
+import { DropDownType } from '@/types/drop-down';
 
-interface Option {
-  label: string;
-  value: string;
-  href?: string;
-}
-
-interface DropDownProps {
-  options: Option[];
-  onSelect: (value: string) => void;
-  placeholder?: string;
-  icon?: React.ReactNode;
-  classNames: {
-    container: string;
-    header: string;
-    list: string;
-    listItem: string;
-    icon?: string;
-    link: string;
-  };
-}
-
-const DropDown: React.FC<DropDownProps> = ({
-  options,
-  onSelect,
-  placeholder = 'Select an option',
-  icon,
+export const DropDown: FC<DropDownType> = ({
+  options = [],
   classNames,
+  buttonLabel,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+  const [isOpenDropDown, setIsOpenDropDown] = useState<boolean>(false);
+  const dropDownRef = useRef<HTMLDivElement>(null);
+  const listItemsRef = useRef<(HTMLLIElement | null)[]>([]);
 
-  const handleSelect = (value: string, href?: string) => {
-    setSelectedValue(value);
-    onSelect(value);
-    setIsOpen(false);
-    if (href) {
-      window.location.href = href;
-    }
+  useOutsideClick({
+    ref: dropDownRef,
+    onClose: () => setIsOpenDropDown(false),
+    isMenuOpen: isOpenDropDown,
+  });
+
+  const handleToggleMenu = () => {
+    setIsOpenDropDown((previousOpen) => !previousOpen);
   };
 
-  const toggleOpen = () => setIsOpen((prev) => !prev);
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpenDropDown(false);
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        const currentIndex = listItemsRef.current.findIndex(
+          (item) => item === document.activeElement
+        );
+        if (event.key === 'ArrowDown' && currentIndex < options.length - 1) {
+          listItemsRef.current[currentIndex + 1]?.focus();
+        } else if (event.key === 'ArrowUp' && currentIndex > 0) {
+          listItemsRef.current[currentIndex - 1]?.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [options.length]);
 
   return (
-    <div className={classNames.container}>
-      <button
-        type="button"
-        className={classNames.header}
-        onClick={toggleOpen}
-        aria-haspopup="listbox"
-        aria-expanded={isOpen}
+    <div className={classNames.container} ref={dropDownRef}>
+      <motion.button
+        className={classNames.button}
+        onClick={handleToggleMenu}
+        aria-expanded={isOpenDropDown}
+        aria-haspopup="true"
       >
-        <span>
-          {selectedValue
-            ? options.find((option) => option.value === selectedValue)?.label
-            : placeholder}
-        </span>
-        {icon && (
-          <span
-            className={`${classNames.icon} ${isOpen ? styles.open : ''}`}
-            aria-hidden="true"
-            style={{ height: 24 }}
+        {buttonLabel}{' '}
+        <motion.span animate={iconRotation(isOpenDropDown)}>
+          <FormUp />
+        </motion.span>
+      </motion.button>
+      <AnimatePresence>
+        {isOpenDropDown && (
+          <motion.ul
+            className={classNames.menu}
+            role="menu"
+            {...dropdownMenuAnimation}
+            style={{ position: 'absolute' }}
           >
-            {icon}
-          </span>
+            {options.length > 0
+              ? options.map((option, index) => (
+                  <motion.li
+                    className={classNames.listItem}
+                    key={index}
+                    role="menuitem"
+                    tabIndex={0}
+                    ref={(el) => {
+                      listItemsRef.current[index] = el;
+                    }}
+                    {...listItemHoverTap}
+                    onClick={() => {
+                      setIsOpenDropDown(false);
+                    }}
+                  >
+                    <Link className={classNames.link} href={option.href}>
+                      {option.label}
+                    </Link>
+                  </motion.li>
+                ))
+              : 'No options available'}
+          </motion.ul>
         )}
-      </button>
-      {isOpen && (
-        <ul className={classNames.list} role="listbox">
-          {options.map((option) => (
-            <li
-              key={option.value}
-              className={classNames.listItem}
-              role="option"
-              aria-selected={selectedValue === option.value}
-              onClick={() => handleSelect(option.value, option.href)}
-              tabIndex={0}
-              onKeyUp={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  handleSelect(option.value, option.href);
-                }
-              }}
-            >
-              {option.href ? (
-                <Link className={classNames.link} href={option.href}>
-                  {option.label}
-                </Link>
-              ) : (
-                option.label
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
+      </AnimatePresence>
     </div>
   );
 };
-
-export default DropDown;

@@ -46,7 +46,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
     };
 
     loadProducts();
-  }, [visibleCount]);
+  }, []);
 
   useEffect(() => {
     if (!sentinelRef.current) return;
@@ -79,6 +79,12 @@ export const ShopProducts: FC<ShopProductsProps> = ({
       }
     };
   }, [visibleCount]);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      setVisibleProducts(products.slice(0, visibleCount));
+    }
+  }, [products, visibleCount]);
 
   const productVariants = {
     hidden: { opacity: 0, y: 20 },

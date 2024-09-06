@@ -4,13 +4,9 @@ import { FC, useState } from 'react';
 import { Input } from '@/components/ui/Input/Input';
 import Image from 'next/image';
 import styles from './PasswordInput.module.scss';
-import { UseFormRegisterReturn } from 'react-hook-form';
+import { PasswordInputProps } from '@/types/password-input';
 
-interface PasswordInputProps {
-  id: string;
-  placeholder: string;
-  register: UseFormRegisterReturn;
-}
+
 
 export const PasswordInput: FC<PasswordInputProps> = ({
   id,

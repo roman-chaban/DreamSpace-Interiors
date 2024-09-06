@@ -7,30 +7,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
 import { useScreenResize } from '@/hooks/useScreenResize';
+import { ArticleItemProps } from '@/types/article-item';
 
-export interface ArticleItemProps {
-  item: {
-    id: number;
-    image: string;
-    title: string;
-    link?: string;
-    dateTime?: string;
-    dynamicPath: string;
-  };
-  classNames: {
-    articlesItem: string;
-    imageContainer: string;
-    itemImage: string;
-    overlay: string;
-    metaIcon: string;
-    articleTitles: string;
-    itemTitle: string;
-    itemLink: string;
-    rightIcon: string;
-    dateTitle?: string;
-    largeIcon?: string;
-  };
-}
+
 export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
   const pathname = usePathname();
   const { isResize } = useScreenResize(900);

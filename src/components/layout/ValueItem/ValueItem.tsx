@@ -1,23 +1,11 @@
-import { Value } from '@/constants/valuesItems';
+import { ClassNames, ValueItemProps } from '@/types/value-item';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-interface ValueItemProps {
-  item: Value;
-}
-
-export interface ClassNames {
-  classNames: {
-    item: string;
-    itemContainer: string;
-    itemIcon: string;
-    itemTitles: string;
-    itemTitle: string;
-    itemSubTitle: string;
-  }
-}
-
-export const ValueItem: FC<ValueItemProps & ClassNames> = ({ item, classNames }) => {
+export const ValueItem: FC<ValueItemProps & ClassNames> = ({
+  item,
+  classNames,
+}) => {
   return (
     <div className={classNames.item}>
       <div className={classNames.itemContainer}>
@@ -36,3 +24,5 @@ export const ValueItem: FC<ValueItemProps & ClassNames> = ({ item, classNames })
     </div>
   );
 };
+export { ClassNames };
+

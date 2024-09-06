@@ -6,15 +6,8 @@ import { TextInput } from '../TextInput/TextInput';
 import { CheckBoxWrapper } from '../CheckboxWrapper/CheckboxWrapper';
 import { Alert, Close } from 'grommet-icons';
 import { PasswordInput } from '../PasswordInput/PasswordInput';
-import Link from 'next/link';
-import { NavPaths } from '@/enums/navPaths';
 import { CloseButton } from '../CloseButton/CloseButton';
-
-interface SignInForm {
-  email: string;
-  password: string;
-  agreeToTerms: boolean;
-}
+import { SignInForm as SignInFormProps } from '@/types/signin-form';
 
 export const SignInForm: FC = () => {
   const {
@@ -22,7 +15,7 @@ export const SignInForm: FC = () => {
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm<SignInForm>({
+  } = useForm<SignInFormProps>({
     defaultValues: {
       email: '',
       password: '',
@@ -32,7 +25,7 @@ export const SignInForm: FC = () => {
   });
 
   const handleSubmitSignInForm = (
-    data: SubmitHandler<SignInForm>,
+    data: SubmitHandler<SignInFormProps>,
     event: FormEvent<HTMLFormElement>
   ) => {
     console.log(data);

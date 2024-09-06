@@ -1,18 +1,8 @@
 import type { FC } from 'react';
 import styles from './TextInput.module.scss';
 import { Input } from '@/components/ui/Input/Input';
-import { UseFormRegisterReturn } from 'react-hook-form';
 import Image from 'next/image';
-
-interface TextInputProps {
-  id: string;
-  type: string;
-  placeholder?: string;
-  className?: string;
-  register: UseFormRegisterReturn;
-  labelText?: string;
-  labelClassName?: string;
-}
+import { TextInputProps } from '@/types/text-input';
 
 export const TextInput: FC<TextInputProps> = ({
   id,

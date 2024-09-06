@@ -1,12 +1,6 @@
 import type { FC } from 'react';
 import styles from '@/components/cart/CartProcess/CartProcess.module.scss';
-
-interface CartItemStepProps {
-  stepNumber: number;
-  title: string;
-  isActive: boolean;
-  onClick: () => void;
-}
+import { CartItemStepProps } from '@/types/cart-step';
 
 export const CartItemStep: FC<CartItemStepProps> = ({
   isActive,

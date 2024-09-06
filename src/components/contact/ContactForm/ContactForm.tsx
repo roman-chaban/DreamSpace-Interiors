@@ -3,21 +3,16 @@ import { Button } from '@/components/ui/Button/Button';
 import type { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './ContactForm.module.scss';
-
-interface IForm {
-  yourName: string;
-  email: string;
-  message: string;
-}
+import { ContactFormProps } from '@/types/contact-form';
 
 export const ContactForm: FC = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<IForm>();
+  } = useForm<ContactFormProps>();
 
-  const submitContactForm: SubmitHandler<IForm> = (data) => {};
+  const submitContactForm: SubmitHandler<ContactFormProps> = (data) => {};
 
   return (
     <form autoComplete="off" className={styles.contactForm}>

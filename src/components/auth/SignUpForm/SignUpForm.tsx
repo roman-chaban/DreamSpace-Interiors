@@ -5,14 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { TextInput } from '../TextInput/TextInput';
 import { CheckBoxWrapper } from '../CheckboxWrapper/CheckboxWrapper';
 import { CloseButton } from '../CloseButton/CloseButton';
-
-interface SignUpForm {
-  yourName: string;
-  userName: string;
-  email: string;
-  password: string;
-  agreeToTerms: boolean;
-}
+import { SignUpForm as SignUpFormProps } from '@/types/signup-form';
 
 export const SignUpForm: FC = () => {
   const {
@@ -20,7 +13,7 @@ export const SignUpForm: FC = () => {
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm<SignUpForm>({
+  } = useForm<SignUpFormProps>({
     defaultValues: {
       yourName: '',
       userName: '',
@@ -31,7 +24,7 @@ export const SignUpForm: FC = () => {
     mode: 'onChange',
   });
   const handleSubmitSignUpForm = (
-    data: SubmitHandler<SignUpForm>,
+    data: SubmitHandler<SignUpFormProps>,
     event: FormEvent<HTMLFormElement>
   ) => {
     console.log(data);

@@ -1,12 +1,7 @@
 import { FC } from 'react';
 import { CheckBox } from '@/components/ui/CheckBox/CheckBox';
 import styles from './CheckboxWrapper.module.scss';
-import { UseFormRegisterReturn } from 'react-hook-form';
-
-interface CheckBoxWrapperProps {
-  label: string;
-  register: UseFormRegisterReturn;
-}
+import { CheckBoxWrapperProps } from '@/types/checkbox-wrapper';
 
 export const CheckBoxWrapper: FC<CheckBoxWrapperProps> = ({
   label,

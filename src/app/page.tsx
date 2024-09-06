@@ -42,98 +42,100 @@ export default function Home() {
     useIntersectionObserver({ threshold: 0.1 });
 
   return (
-    <main className={`${poppins.className} ${styles.main}`}>
+    <div className={`${poppins.className} ${styles.main}`}>
       <Header />
-      <motion.div
-        ref={heroRef}
-        className={styles.hero}
-        initial={animationSettings.initial}
-        animate={
-          isHeroVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <Hero />
-      </motion.div>
-      <motion.div
-        ref={productBannersRef}
-        className={styles.productBanners}
-        initial={animationSettings.initial}
-        animate={
-          isProductBannersVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <ProductBanners />
-      </motion.div>
-      <motion.div
-        ref={arrivalProductsRef}
-        className={styles.arrivalProducts}
-        initial={animationSettings.initial}
-        animate={
-          isArrivalProductsVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <ArrivalProducts />
-      </motion.div>
-      <motion.div
-        ref={valuesRef}
-        className={styles.values}
-        initial={animationSettings.initial}
-        animate={
-          isValuesVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <Values
-          container={styles.valuesContainer}
-          values={valuesItems}
-          classNames={classNames}
-        />
-      </motion.div>
-      <motion.div
-        ref={salesRef}
-        className={styles.sales}
-        initial={animationSettings.initial}
-        animate={
-          isSalesVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <Sales
-          image="/images/sales/sales-banner.svg"
-          title="SALE UP TO 35% OFF"
-          secondTitle="HUNDREDS of New lower prices!"
-          subTitle="It’s more affordable than ever to give every room in your home a stylish makeover"
-          linkPath="Shop Now"
-          className={{ blockInfo: '' }}
-        />
-      </motion.div>
-      <motion.div
-        ref={articlesRef}
-        className={styles.articles}
-        initial={animationSettings.initial}
-        animate={
-          isArticlesVisible
-            ? animationSettings.animateVisible
-            : animationSettings.animateHidden
-        }
-        transition={animationSettings.transition}
-      >
-        <Articles />
-      </motion.div>
+      <main>
+        <motion.div
+          ref={heroRef}
+          className={styles.hero}
+          initial={animationSettings.initial}
+          animate={
+            isHeroVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <Hero />
+        </motion.div>
+        <motion.div
+          ref={productBannersRef}
+          className={styles.productBanners}
+          initial={animationSettings.initial}
+          animate={
+            isProductBannersVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <ProductBanners />
+        </motion.div>
+        <motion.div
+          ref={arrivalProductsRef}
+          className={styles.arrivalProducts}
+          initial={animationSettings.initial}
+          animate={
+            isArrivalProductsVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <ArrivalProducts />
+        </motion.div>
+        <motion.div
+          ref={valuesRef}
+          className={styles.values}
+          initial={animationSettings.initial}
+          animate={
+            isValuesVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <Values
+            container={styles.valuesContainer}
+            values={valuesItems}
+            classNames={classNames}
+          />
+        </motion.div>
+        <motion.div
+          ref={salesRef}
+          className={styles.sales}
+          initial={animationSettings.initial}
+          animate={
+            isSalesVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <Sales
+            image="/images/sales/sales-banner.svg"
+            title="SALE UP TO 35% OFF"
+            secondTitle="HUNDREDS of New lower prices!"
+            subTitle="It’s more affordable than ever to give every room in your home a stylish makeover"
+            linkPath="Shop Now"
+            className={{ blockInfo: '' }}
+          />
+        </motion.div>
+        <motion.div
+          ref={articlesRef}
+          className={styles.articles}
+          initial={animationSettings.initial}
+          animate={
+            isArticlesVisible
+              ? animationSettings.animateVisible
+              : animationSettings.animateHidden
+          }
+          transition={animationSettings.transition}
+        >
+          <Articles />
+        </motion.div>
+      </main>
       <Footer isVisible />
-    </main>
+    </div>
   );
 }

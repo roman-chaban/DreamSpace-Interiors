@@ -8,36 +8,30 @@ import Link from 'next/link';
 import { NavIcon, navMenuIcons } from '@/constants/navMenuIcons';
 import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
-import { Login, Logout, FormDown } from 'grommet-icons';
 import { Burger } from '../Burger/Burger';
 import dynamic from 'next/dynamic';
-import DropDown from '@/components/ui/DropDown/DropDown';
+import { DropDown } from '@/components/ui/DropDown/DropDown';
 import { motion } from 'framer-motion';
+import { buttonHoverTap } from '@/animations/dropDown/dropDown';
+import { poppins } from '@/fonts/basic-fonts';
+import { ClassNameType } from '@/types/class-names';
+import { options } from '@/types/options';
 
-const classNames = {
+const classNames: ClassNameType = {
   container: styles.dropDownContainer,
-  header: styles.dropDownHeader,
-  list: styles.dropDownList,
+  button: styles.dropDownButton,
+  menu: styles.dropDownMenu,
   listItem: styles.dropDownListItem,
   link: styles.dropDownLink,
-  icon: styles.iconArrow,
 };
 
 const Header: FC = () => {
   const pathname = usePathname();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const toggleBurgerMenu = () => setIsBurgerActive(!isBurgerActive);
-
-  const options = [{ label: 'Blog', value: 'Blog', href: '/blog' }];
-
-  const handleProductDropDownSelect = (value: string) => {
-    console.log('Selected product:', value);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +55,7 @@ const Header: FC = () => {
     <header
       className={`${styles.header} ${
         isScrollingUp ? styles.visible : styles.hidden
-      }`}
+      } ${poppins.className}`}
     >
       <TopBarMenu />
       <div className={styles.headerContainer}>
@@ -72,7 +66,9 @@ const Header: FC = () => {
             aria-label="Toggle menu"
           ></button>
           <h4 className={styles.headerLogoIcon}>
-            <Link href={NavPaths.HOME} className={styles.logoLink}>3legant</Link>
+            <Link href={NavPaths.HOME} className={styles.logoLink}>
+              3legant
+            </Link>
           </h4>
         </div>
         <nav className={styles.headerNav}>
@@ -80,14 +76,16 @@ const Header: FC = () => {
             {navMenuItems.map((item: NavItem) => {
               const isActiveLink = pathname === item.href;
               return (
-                <motion.li whileHover={{scale: 1.1 }} transition={{duration: 0.5}} key={item.id} className={styles.listItem}>
+                <motion.li
+                  {...buttonHoverTap}
+                  key={item.id}
+                  className={styles.listItem}
+                >
                   {item.label === 'Product' ? (
                     <DropDown
+                      buttonLabel="Product"
                       classNames={classNames}
-                      onSelect={handleProductDropDownSelect}
                       options={options}
-                      placeholder="Product"
-                      icon={<FormDown className={styles.iconArrow} />}
                     />
                   ) : (
                     <Link
@@ -107,30 +105,12 @@ const Header: FC = () => {
           {navMenuIcons.map((icon: NavIcon) => (
             <Fragment key={icon.id}>
               {icon.id === 2 ? (
-                <div className={styles.userIcon} onClick={toggleDropdown}>
-                  {icon.icon}
-                </div>
+                <div className={styles.userIcon}>{icon.icon}</div>
               ) : (
                 icon.icon
               )}
             </Fragment>
           ))}
-          <div
-            className={`${styles.dropdownMenu} ${
-              dropdownOpen ? styles.open : ''
-            }`}
-          >
-            <ul className={styles.userDropDown}>
-              <li className={styles.dropDownListItem}>
-                <Login style={{ width: 18, height: 18 }} color="#343839" />
-                <Link href={NavPaths.SIGNIN}>Sign In</Link>
-              </li>
-              <li className={styles.dropDownListItem}>
-                <Logout style={{ width: 18, height: 18 }} color="#343839" />
-                <Link href={NavPaths.SIGNUP}>Sign Up</Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
       <Burger isActive={isBurgerActive} onClose={toggleBurgerMenu} />
