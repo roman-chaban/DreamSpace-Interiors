@@ -24,5 +24,3 @@ export const ValueItem: FC<ValueItemProps & ClassNames> = ({
     </div>
   );
 };
-export { ClassNames };
-
