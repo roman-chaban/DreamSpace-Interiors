@@ -2,11 +2,11 @@ import { FC } from 'react';
 import styles from './ContactUs.module.scss';
 import { Values } from '@/components/layout/Values/Values';
 import { contactValues } from '@/constants/contactValues';
-import { ClassNames } from '@/components/layout/ValueItem/ValueItem';
 import { Map } from '@/components/common/Map/Map';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactsValues } from '../ContactValues/ContactValues';
 import { valuesItems } from '@/constants/valuesItems';
+import { ClassNames } from '@/types/value-item';
 
 export const classNames: ClassNames = {
   classNames: {
