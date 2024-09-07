@@ -14,7 +14,7 @@ interface MapProps {
   center: { lat: number; lng: number };
 }
 
-const API_KEY = process.env.NEXT_PUBLIC_PROJECT_APP_API_KEY || '';
+const API_KEY = 'AIzaSyBp2mAlPSQtPGwHhLdsauOP8bTANnLpkQk' || '';
 
 const libraries: string[] = ['places'];
 
