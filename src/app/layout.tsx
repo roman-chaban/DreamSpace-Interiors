@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/main/main.scss';
 import { inter } from '@/fonts/basic-fonts';
 import ScrollProgress from '@/components/ui/ScrollProgress/ScrollProgress';
+import { UpButton } from '@/components/ui/UpButton/UpButton';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ScrollProgress />
         <div className="layout">{children}</div>
+        <UpButton />
       </body>
     </html>
   );

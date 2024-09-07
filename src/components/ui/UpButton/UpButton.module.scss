@@ -1,0 +1,39 @@
+@use '../../../styles/colors/colors' as color;
+
+.upButton {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  background-color: color.$color-success;
+  color: color.$color-white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease,
+    background 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  opacity: 0;
+  transform: scale(0.7);
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.upButton.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.upButton:hover {
+  background-color: color.$color-product-title;
+}
+
+.iconUp {
+  transform: rotate(-45deg);
+}

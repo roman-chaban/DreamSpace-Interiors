@@ -40,6 +40,7 @@
     0.8393rem + 0.1786vw,
     #{size.$font-size-16px}
   );
+  transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   font-weight: 500;
   line-height: 175%;
   letter-spacing: -0.03em;
@@ -51,9 +52,12 @@
     background: color.$color-black;
     bottom: 0;
   }
+  &:hover {
+    transform: translateX(10px);
+  }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1130px) {
   .bannerTitles {
     top: 20px;
     left: 25px;
@@ -63,7 +67,8 @@
     font-size: size.$font-size-26px;
   }
   .bannerItem {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 12 / 9;
+    padding-bottom: 50%;
   }
 }
 

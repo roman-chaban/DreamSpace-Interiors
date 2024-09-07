@@ -9,6 +9,7 @@ import { ShopNav } from '@/components/common/ShopNav/ShopNav';
 import { ShopNavItems } from '@/constants/shopNav';
 import { Loader } from '@/components/ui/Loader/Loader';
 import { motion } from 'framer-motion';
+import { productVariants } from '@/animations/productCard/productCard';
 
 export interface ShopProductsProps {
   items: ShopNavItems;
@@ -24,7 +25,7 @@ const fetchProducts = async (): Promise<Products> => {
   });
 };
 
-export const  ShopProducts: FC<ShopProductsProps> = ({
+export const ShopProducts: FC<ShopProductsProps> = ({
   items,
   onSelectContent,
   selectedItemId,
@@ -86,18 +87,6 @@ export const  ShopProducts: FC<ShopProductsProps> = ({
     }
   }, [products, visibleCount]);
 
-  const productVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-      },
-    }),
-  };
-
   return (
     <div className={styles.shopProducts}>
       <ShopNav
@@ -110,10 +99,10 @@ export const  ShopProducts: FC<ShopProductsProps> = ({
         {loading ? (
           <Loader />
         ) : (
-          visibleProducts.map((product, index) => (
+          visibleProducts.map((product) => (
             <motion.div
               key={product.productId}
-              custom={index}
+              custom={product.productId}
               initial="hidden"
               animate="visible"
               variants={productVariants}
