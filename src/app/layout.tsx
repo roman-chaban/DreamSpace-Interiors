@@ -18,6 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_PROJECT_APP_API_KEY}`}
+        async
+        defer
+      ></script>
+
       <body className={inter.className}>
         <ScrollProgress />
         <div className="layout">{children}</div>
