@@ -4,11 +4,16 @@ import styles from './WishlistButton.module.scss';
 export type WishlistButtonType = {
   children: ReactNode;
   type: 'submit' | 'reset' | 'button';
+  className?: string;
 };
 
-export const WishlistButton: FC<WishlistButtonType> = ({ children, type }) => {
+export const WishlistButton: FC<WishlistButtonType> = ({
+  children,
+  type,
+  className,
+}) => {
   return (
-    <button className={styles.wishlistButton} type={type}>
+    <button className={className} type={type}>
       {children}
     </button>
   );

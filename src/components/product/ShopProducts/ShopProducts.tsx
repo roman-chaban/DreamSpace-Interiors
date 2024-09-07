@@ -24,7 +24,7 @@ const fetchProducts = async (): Promise<Products> => {
   });
 };
 
-export const ShopProducts: FC<ShopProductsProps> = ({
+export const  ShopProducts: FC<ShopProductsProps> = ({
   items,
   onSelectContent,
   selectedItemId,
@@ -101,6 +101,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
   return (
     <div className={styles.shopProducts}>
       <ShopNav
+        title="Living Room"
         items={items}
         onSelectContent={onSelectContent}
         selectedItemId={selectedItemId}
@@ -116,6 +117,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
               initial="hidden"
               animate="visible"
               variants={productVariants}
+              className={styles.cardContainer}
             >
               <ShopProduct product={product} />
             </motion.div>

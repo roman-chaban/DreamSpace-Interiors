@@ -8,16 +8,18 @@ interface ShopNavProps {
   items: ShopNavItems;
   onSelectContent: (id: number) => void;
   selectedItemId: number;
+  title?: string;
 }
 
 export const ShopNav: FC<ShopNavProps> = ({
   items,
   onSelectContent,
   selectedItemId,
+  title
 }) => {
   return (
     <div className={styles.shopProductsNav}>
-      <h4 className={styles.navTitle}>Living Room</h4>
+      <h4 className={styles.navTitle}>{title}</h4>
       <div className={styles.selectedOptions}>
         {items.map((item: ShopNavItem) => (
           <Button

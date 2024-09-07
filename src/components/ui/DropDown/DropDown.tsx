@@ -60,7 +60,14 @@ export const DropDown: FC<DropDownType> = ({
         aria-haspopup="true"
       >
         {buttonLabel}{' '}
-        <motion.span animate={iconRotation(isOpenDropDown)}>
+        <motion.span
+          animate={iconRotation(isOpenDropDown)}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <FormUp />
         </motion.span>
       </motion.button>

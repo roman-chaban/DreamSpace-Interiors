@@ -1,13 +1,15 @@
 'use client';
 
 import { Product, Products } from '@/types/products';
-import { useEffect, useState, type FC } from 'react';
+import { useEffect, useState, FC } from 'react';
 import currentProducts from '@/services/products/products.json';
 import { ArrivalProduct } from '../ArrivalProduct/ArrivalProduct';
 import styles from './ArrivalProducts.module.scss';
 import { Swiper as ArrivalSwiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
 import './ArrivalSwiper.scss';
@@ -40,9 +42,24 @@ export const ArrivalProducts: FC = () => {
           className={styles.arrivalSwiper}
           modules={[Pagination, Navigation, Autoplay, Scrollbar]}
           spaceBetween={30}
-          slidesPerView={1}
+          slidesPerView={4}
+          loop={false}
           scrollbar={{ draggable: true }}
           pagination={{ clickable: true }}
+          breakpoints={{
+            1200: {
+              slidesPerView: 4,
+            },
+            900: {
+              slidesPerView: 3,
+            },
+            600: {
+              slidesPerView: 2,
+            },
+            320: {
+              slidesPerView: 1,
+            },
+          }}
         >
           {products.map((product: Product) => (
             <SwiperSlide

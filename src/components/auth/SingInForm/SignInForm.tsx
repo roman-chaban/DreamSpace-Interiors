@@ -66,6 +66,7 @@ export const SignInForm: FC = () => {
               }),
             }}
             className={styles.emailInput}
+            labelClassName={styles.label}
           />
           {errors.email && (
             <span className={styles.errorMessage}>

@@ -23,7 +23,6 @@
   border-color: transparent transparent transparent color.$color-success;
   animation: spin 1s infinite linear;
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .loaderContainer::before {

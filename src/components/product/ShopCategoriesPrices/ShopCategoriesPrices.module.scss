@@ -1,0 +1,153 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/colors/colors' as color;
+
+.categoriesProducts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+.cardImage {
+  width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  height: 0;
+  aspect-ratio: 4 / 5;
+  padding-bottom: 65%;
+}
+
+.cardInfo {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardRating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cardTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  color: color.$color-black;
+  font-size: size.$font-size-16px;
+  line-height: 162%;
+}
+
+.cardPrices {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.originalPrice {
+  font-weight: 600;
+  color: color.$color-black;
+  font-size: size.$font-size-14px;
+  line-height: 157%;
+}
+
+.discountedPrice {
+  font-weight: 400;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-14px;
+  line-height: 157%;
+  text-decoration: line-through;
+}
+
+.cardSubTitle {
+  margin: 0;
+  margin-block-start: 16px;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-14px;
+  line-height: 157%;
+}
+
+.cardButtons {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 24px;
+}
+
+.cardAddButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  max-width: 508px;
+  height: 46px;
+  border: none;
+  background: color.$color-black;
+  font-weight: 500;
+  font-size: size.$font-size-16px;
+  color: color.$color-white;
+  line-height: 178%;
+  letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+  @media (max-width: 375px) {
+    font-size: size.$font-size-16px;
+    max-height: 40px;
+  }
+}
+
+.cardWishListButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  gap: 8px;
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: size.$font-size-14px;
+  padding-block-start: 8px;
+  line-height: 178%;
+  letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+  @media (max-width: 375px) {
+    font-size: size.$font-size-16px;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cardInfo {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cardSubTitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

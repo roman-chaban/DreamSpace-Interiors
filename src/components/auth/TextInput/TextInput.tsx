@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import styles from './TextInput.module.scss';
 import { Input } from '@/components/ui/Input/Input';
+import { UseFormRegisterReturn } from 'react-hook-form';
 import Image from 'next/image';
 import { TextInputProps } from '@/types/text-input';
 
@@ -17,7 +18,7 @@ export const TextInput: FC<TextInputProps> = ({
   const iconAlt = type === 'password' ? 'Eye Icon' : null;
 
   return (
-    <div className={styles.formLabelBlock}>
+    <div>
       <Input
         type={type}
         id={id}

@@ -10,7 +10,6 @@
 .productsContainer {
   @include container;
   padding-inline-end: 0;
-  height: 590px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -26,7 +25,15 @@
 
 .arrivalSwiper {
   width: 100%;
-  cursor: grab;
+  height: auto;
+  overflow: hidden;
+}
+
+.arrivalSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .arrivalsNav {
@@ -45,10 +52,6 @@
   max-width: 100px;
   line-height: 110%;
   letter-spacing: -0.01em;
-}
-
-.arrivalSlide {
-  max-width: 262px;
 }
 
 .arrivalLink {
@@ -78,7 +81,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .productsContainer {
     padding-inline: 100px;
   }

@@ -13,6 +13,11 @@
   position: relative;
 }
 
+.label {
+  border-bottom: 1px solid color.$color-gray;
+  padding: 0px 0px 8px 0px;
+}
+
 .signInTitle {
   color: color.$color-black;
   font-size: size.$font-size-40px;

@@ -87,11 +87,18 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
               {counterButtonIcons.plusIcon}
             </button>
           </div>
-          <WishlistButton type="button">
-            <Favorite color="plain" style={{ width: 25 }} className={styles.heartIcon} /> Wishlist
+          <WishlistButton type="button" className={styles.wishlistButton}>
+            <Favorite
+              color="plain"
+              style={{ width: 25 }}
+              className={styles.heartIcon}
+            />{' '}
+            Wishlist
           </WishlistButton>
         </div>
-        <AddButton type="button">Add to Cart</AddButton>
+        <AddButton type="button" className={styles.addButton}>
+          Add to Cart
+        </AddButton>
       </div>
       <div className={styles.categoryBlock}>
         <h6 className={styles.skuTitle}>

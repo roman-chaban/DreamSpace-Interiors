@@ -146,6 +146,54 @@
   gap: 24px;
 }
 
+.addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  max-width: 508px;
+  height: 52px;
+  border: none;
+  background: color.$color-black;
+  font-weight: 500;
+  font-size: size.$font-size-18px;
+  color: color.$color-white;
+  line-height: 178%;
+  letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+  @media (max-width: 375px) {
+    font-size: size.$font-size-16px;
+    max-height: 40px;
+  }
+}
+
+.wishlistButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid color.$color-black;
+  gap: 8px;
+  width: 100%;
+  max-width: 357px;
+  height: 52px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: size.$font-size-18px;
+  line-height: 178%;
+  letter-spacing: -0.02em;
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+  @media (max-width: 375px) {
+    font-size: size.$font-size-16px;
+    max-height: 40px;
+  }
+}
+
 .counterBlock {
   display: flex;
   justify-content: center;
