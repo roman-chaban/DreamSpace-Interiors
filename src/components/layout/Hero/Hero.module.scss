@@ -16,6 +16,8 @@
 }
 
 .heroContent {
+  width: 100%;
+  justify-content: space-between;
   display: flex;
   align-items: center;
 }
@@ -47,8 +49,9 @@
   font-size: clamp(
     #{size.$font-size-14px},
     0.8393rem + 0.1786vw,
-    #{size.$font-size-16px}
+    #{size.$font-size-20px}
   );
+  max-width: 430px;
   line-height: 162%;
 }
 

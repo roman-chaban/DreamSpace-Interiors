@@ -13,12 +13,25 @@ import { FeedbackPanel } from '@/components/layout/FeedbackPanel/FeedbackPanel';
 import { CommentsLoader } from '@/components/ui/CommentsLoader/CommentsLoader';
 import { useCallback, useState } from 'react';
 import { useScreenResize } from '@/hooks/useScreenResize';
+import { CustomSelect } from '@/components/ui/Select/Select';
+import { SelectClassNames } from '@/types/select-options';
 
 export type CustomerReviewsType = {
   product: Product;
 };
 
 const tabs = ['Additional Info', 'Questions', 'Reviews'];
+
+const options = [{ label: 'Newest', value: 'Newest' }];
+
+const classNames: SelectClassNames = {
+  label: styles.customSelect,
+  select: styles.select,
+  defaultOption: styles.selectDefaultOption,
+  option: styles.selectOption,
+  optionsContainer: styles.optionsContainer,
+  selectContainer: styles.selectContainer,
+};
 
 export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
   const [visibleCommentsCount, setVisibleCommentsCount] = useState<number>(5);
@@ -78,7 +91,10 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
         </div>
       </div>
       <article className={styles.commentsSection}>
-        <h3 className={styles.commentsTitle}>{data?.length} Reviews</h3>
+        <div className={styles.reviewsBlock}>
+          <h3 className={styles.commentsTitle}>{data?.length} Reviews</h3>
+          <CustomSelect defaultValue='Newest' options={options} classNames={classNames} />
+        </div>
         {loading && <CommentsLoader />}
         {error && <p>Error loading comments: Something went wrong!</p>}
         {data &&

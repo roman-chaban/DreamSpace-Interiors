@@ -68,6 +68,7 @@
   align-items: center;
   gap: 40px;
   margin: 0;
+  padding: 0;
 }
 
 .burgerButton {
@@ -115,7 +116,7 @@
 .headerSubNav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
 }
 
 .circleIcon {
@@ -129,7 +130,7 @@
   height: 20px;
   border-radius: 50%;
   position: relative;
-  right: 10px;
+  right: 5px;
   line-height: 83%;
   font-weight: 600;
 }
@@ -197,7 +198,7 @@
   }
 
   .headerSubNav {
-    gap: 15px;
+    gap: 8px;
   }
 }
 

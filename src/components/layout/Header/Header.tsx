@@ -16,6 +16,7 @@ import { buttonHoverTap } from '@/animations/dropDown/dropDown';
 import { poppins } from '@/fonts/basic-fonts';
 import { ClassNameType } from '@/types/class-names';
 import { options } from '@/types/options';
+import { CustomSelect } from '@/components/ui/Select/Select';
 
 const classNames: ClassNameType = {
   container: styles.dropDownContainer,

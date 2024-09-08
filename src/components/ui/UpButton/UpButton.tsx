@@ -3,7 +3,7 @@
 import { useEffect, useState, FC } from 'react';
 import styles from './UpButton.module.scss';
 import useDebounce from '@/hooks/useDebounce';
-import { Waypoint } from 'grommet-icons';
+import { UploadOption, Waypoint } from 'grommet-icons';
 
 export const UpButton: FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -35,7 +35,7 @@ export const UpButton: FC = () => {
       onClick={handleScrollToTop}
       aria-label="Scroll to top"
     >
-      <Waypoint color='white' className={styles.iconUp} />
+      <UploadOption color='white' className={styles.iconUp} />
     </button>
   );
 };

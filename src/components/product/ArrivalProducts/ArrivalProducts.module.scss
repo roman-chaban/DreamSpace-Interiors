@@ -31,9 +31,10 @@
 
 .arrivalSlide {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 100%;
+  max-width: 230px;
 }
 
 .arrivalsNav {

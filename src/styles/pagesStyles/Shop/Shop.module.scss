@@ -123,10 +123,129 @@
 .shopFeaturesProducts {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
 }
 
+.navSelectFeatures {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.selectContainer {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customSelect {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-16px;
+  line-height: 162%;
+  cursor: pointer;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  border-radius: 8px;
+  padding: 8px;
+  height: 48px;
+  background-position: right -5px center;
+  background-size: 40px 40px;
+  background-image: url('/icons/select-appearance.svg');
+  background-repeat: no-repeat;
+  transition: border-color 0.3s ease;
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid color.$color-success;
+    border: none;
+  }
+}
+
+.optionsContainer {
+  position: absolute;
+  top: 70px;
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  list-style: none;
+  opacity: 0;
+  margin: 0;
+  background: color.$color-white;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  padding: 7px;
+}
+
+.optionsContainer.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.selectOption {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: size.$font-size-16px;
+  color: color.$color-black;
+  line-height: 162%;
+
+  &:hover {
+    background-color: color.$color-light-gray;
+  }
+}
+
+.selectDefaultOption {
+  color: color.$color-light-gray;
+  font-style: italic;
+}
+
+@media (max-width: 1200px) {
+  .customSelect,
+  .selectOption {
+    font-size: size.$font-size-14px;
+  }
+  .selectContainer {
+    max-width: 200px;
+  }
+  .select {
+    max-width: 105px;
+    max-height: 44px;
+    font-size: size.$font-size-14px;
+  }
+  .optionsContainer {
+    padding: 4px;
+    padding-block: 0;
+  }
+  .selectOption {
+    padding: 6px;
+  }
+  .selectOption:nth-child(1) {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .selectOption:last-child {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
 
 @media only screen and (max-width: 1440px) {
   .productsGrid {
