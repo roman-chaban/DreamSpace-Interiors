@@ -11,6 +11,6 @@ export type NavMenuItems = NavItem[];
 export const navMenuItems: NavMenuItems = [
   { id: 1, href: NavPaths.HOME, label: 'Home' },
   { id: 2, href: NavPaths.SHOP, label: 'Shop' },
-  { id: 3, href: '', label: 'Product' },
+  { id: 3, href: NavPaths.BLOG, label: 'Blog' },
   { id: 4, href: NavPaths.CONTACT, label: 'Contact Us' },
 ];
