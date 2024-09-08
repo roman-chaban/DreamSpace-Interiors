@@ -70,6 +70,7 @@
 }
 
 .shopProductsNav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,6 +102,8 @@
 }
 
 .navTitle {
+  width: 100%;
+  max-width: fit-content;
   font-weight: 600;
   line-height: 160%;
   color: color.$color-brand;
@@ -128,7 +131,9 @@
 }
 
 .navSelectFeatures {
+  width: 100%;
   display: flex;
+  justify-content: end;
   align-items: center;
   gap: 32px;
 }
@@ -138,6 +143,8 @@
   max-width: 300px;
   position: relative;
   display: flex;
+  align-items: end;
+  justify-content: end;
   flex-direction: column;
   gap: 8px;
 }
@@ -222,9 +229,6 @@
   .selectOption {
     font-size: size.$font-size-14px;
   }
-  .selectContainer {
-    max-width: 200px;
-  }
   .select {
     max-width: 105px;
     max-height: 44px;
@@ -275,6 +279,25 @@
   .productsGrid {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+  }
+  .navSelectFeatures {
+    gap: 24px;
+  }
+
+  .shopProductsNav {
+    max-width: 100%;
+    justify-content: start;
+  }
+  .shopFeaturesProducts {
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .navSelectFeatures {
+    max-width: 100%;
+    justify-content: space-between;
   }
 }
 

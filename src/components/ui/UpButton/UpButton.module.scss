@@ -13,6 +13,7 @@
   border-radius: 50%;
   width: 45px;
   height: 45px;
+  z-index: 1000;
   font-size: 24px;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease,
@@ -34,3 +35,16 @@
   background-color: color.$color-product-title;
 }
 
+
+
+@media (max-width: 400px) {
+  .upButton {
+    right: 5px;
+    max-width: 35px;
+    max-height: 35px;
+  }
+  .iconUp {
+    max-width: 16px;
+    max-height: 16px;
+  }
+}

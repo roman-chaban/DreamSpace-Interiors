@@ -101,7 +101,12 @@
   .productsContainer {
     padding-inline: 32px;
   }
-  .arrivalSlide {
-    margin-right: 0 !important;
+}
+
+
+
+@media (max-width: 400px) {
+  .arrivalLink {
+    display: none;
   }
 }

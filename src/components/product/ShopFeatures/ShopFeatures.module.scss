@@ -124,3 +124,38 @@
     border-bottom-left-radius: 8px;
   }
 }
+
+@media (max-width: 830px) {
+  .features {
+    gap: 14px;
+  }
+  .selectContainer {
+    max-width: 135px;
+  }
+
+  .customSelect,
+  .selectOption {
+    font-size: size.$font-size-12px;
+  }
+
+  .select {
+    max-width: 120px;
+    max-height: 40px;
+    font-size: size.$font-size-12px;
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .selectContainer, .select  {
+    max-width: 100%;
+  }
+  .features {
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .select {
+    max-height: 35px;
+  }
+}
