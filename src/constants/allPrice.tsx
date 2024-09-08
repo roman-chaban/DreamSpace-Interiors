@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
+import { colors } from '@/theme/theme-variables';
+import { useTheme } from '@/hooks/useTheme';
 
 export interface PriceItem {
   id: number;
@@ -84,17 +86,28 @@ export const priceItems: PriceItems = [
   },
 ];
 
-const PriceList = () => (
-  <div className={styles.priceTitles}>
-    {priceItems.map((item) => (
-      <div className={styles.priceTitle} key={item.id}>
-        <span className={styles.title}>{item.title}</span>
-        <label htmlFor={`price${item.id}`} className={styles.checkboxLabel}>
-          {item.checkbox}
-        </label>
-      </div>
-    ))}
-  </div>
-);
+const PriceList = () => {
+  const { theme } = useTheme();
+
+  return (
+    <div className={styles.priceTitles}>
+      {priceItems.map((item) => (
+        <div className={styles.priceTitle} key={item.id}>
+          <span
+            className={styles.title}
+            style={{
+              color: theme === 'dark' ? colors.darkGray : colors.white,
+            }}
+          >
+            {item.title}
+          </span>
+          <label htmlFor={`price${item.id}`} className={styles.checkboxLabel}>
+            {item.checkbox}
+          </label>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default PriceList;

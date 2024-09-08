@@ -11,6 +11,7 @@ import { ProductGallery } from '@/components/product/ProductGallery/ProductGalle
 import ProductInfo from '@/components/product/ProductInfo/ProductInfo';
 import { CustomerReviews } from '@/components/product/CustomerReviews/CustomerReviews';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
+import { ThemeProvider } from '@/theme/Theme';
 
 interface Params {
   params: {
@@ -25,7 +26,7 @@ export default function Product({ params: { title } }: Params) {
   ) as ProductType;
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main className={styles.main}>
         <section className={styles.product}>
@@ -40,6 +41,6 @@ export default function Product({ params: { title } }: Params) {
         </section>
       </main>
       <Footer isVisible />
-    </>
+    </ThemeProvider>
   );
 }

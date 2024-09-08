@@ -4,14 +4,22 @@ import type { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './ContactForm.module.scss';
 import { ContactFormProps } from '@/types/contact-form';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export const ContactForm: FC = () => {
+  const { theme } = useTheme();
+
+  const buttonThemeStyles = {
+    color: theme === 'dark' ? '' : colors.globalBackground,
+    backgroundColor: theme === 'dark' ? '' : colors.white,
+  };
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm<ContactFormProps>();
-
   const submitContactForm: SubmitHandler<ContactFormProps> = (data) => {};
 
   return (
@@ -43,7 +51,11 @@ export const ContactForm: FC = () => {
           className={styles.textMessage}
         />
       </label>
-      <Button className={styles.sendButton} type="submit">
+      <Button
+        className={styles.sendButton}
+        type="submit"
+        style={buttonThemeStyles}
+      >
         Send Message
       </Button>
     </form>

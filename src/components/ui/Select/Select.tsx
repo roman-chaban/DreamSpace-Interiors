@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SelectProps } from '@/types/select-options';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export const CustomSelect: FC<SelectProps> = ({
   options,
@@ -11,6 +13,7 @@ export const CustomSelect: FC<SelectProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(defaultValue || '');
+  const { theme } = useTheme();
 
   const handleSelectOption = (value: string) => {
     setSelectedValue(value);
@@ -30,6 +33,7 @@ export const CustomSelect: FC<SelectProps> = ({
         id="customSelect"
         className={classNames.select}
         onClick={() => setIsOpen((prev) => !prev)}
+        // style={{ color: theme === 'dark' ? colors.black : colors.white }}
       >
         {selectedValue || defaultValue || 'Choose an option'}
       </div>

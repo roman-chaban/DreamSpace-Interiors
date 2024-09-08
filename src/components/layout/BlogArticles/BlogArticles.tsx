@@ -1,16 +1,25 @@
 'use client';
 
 import { useEffect, useState, type FC } from 'react';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import styles from './BlogArticles.module.scss';
 import { BlogArticle } from '@/constants/blogArticles';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { Button } from '@/components/ui/Button/Button';
 import blogArticles from '@/services/blogArticles/blogArticles.json';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export const BlogArticles: FC = () => {
   const [articles, setArticles] = useState<BlogArticle[]>(blogArticles);
   const [visibleArticleCount, setVisibleArticlesCount] = useState<number>(6);
+  const { theme } = useTheme();
+
+  const buttonThemeStyles = {
+    border: theme === 'dark' ? '' : `1.5px solid ${colors.white}`,
+    color: theme === 'dark' ? '' : colors.white,
+    backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
+  };
 
   useEffect(() => {
     setArticles(articles);
@@ -57,6 +66,7 @@ export const BlogArticles: FC = () => {
             className={styles.showMoreButton}
             onClick={handleLoadMore}
             type="button"
+            style={buttonThemeStyles}
           >
             Show more
           </Button>

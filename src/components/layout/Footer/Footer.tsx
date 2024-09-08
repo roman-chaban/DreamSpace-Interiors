@@ -8,6 +8,8 @@ import { FooterNav } from '../FooterNav/FooterNav';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { inter, poppins } from '@/fonts/basic-fonts';
 import { MailOption } from 'grommet-icons';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 interface FooterProps {
   isVisible: boolean;
@@ -16,12 +18,17 @@ interface FooterProps {
 export const Footer: FC<FooterProps> = ({ isVisible }) => {
   const { isResize } = useScreenResize(580);
   const [isVisibleBlock, setIsVisible] = useState<boolean>(isVisible);
+  const { theme } = useTheme();
 
   return (
     <footer
       className={`${styles.footer} ${isResize && styles.bgLight} ${
         inter.className
       }`}
+      style={{
+        backgroundColor:
+          theme === 'dark' ? colors.black : colors.globalBackground,
+      }}
     >
       {isVisibleBlock && (
         <div

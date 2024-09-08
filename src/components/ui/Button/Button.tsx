@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { CSSProperties, FC, ReactNode } from 'react';
 
 interface ButtonProps {
   type: 'reset' | 'button' | 'submit';
@@ -7,6 +7,7 @@ interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   title?: string;
+  style?: CSSProperties;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -16,9 +17,11 @@ export const Button: FC<ButtonProps> = ({
   children,
   onClick,
   title,
+  style,
 }) => {
   return (
     <button
+      style={style}
       title={title}
       type={type}
       id={id}

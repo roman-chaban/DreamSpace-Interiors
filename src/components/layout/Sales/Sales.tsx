@@ -4,7 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { inter } from '@/fonts/basic-fonts';
 import { SalesProps } from '@/types/sales';
-
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
+import { FormNext, FormNextLink } from 'grommet-icons';
 
 export const Sales: FC<SalesProps> = ({
   image,
@@ -14,6 +16,10 @@ export const Sales: FC<SalesProps> = ({
   linkPath,
   className,
 }) => {
+  const { theme } = useTheme();
+
+  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
+
   return (
     <section className={`${styles.sales} ${inter.className}`}>
       <div className={styles.salesContainer}>
@@ -21,23 +27,41 @@ export const Sales: FC<SalesProps> = ({
           <Image
             src={image}
             alt="Sales Banner Image"
+            priority
             width={720}
             height={532}
             className={styles.image}
           />
         </picture>
-        <div className={`${styles.salesInfoBlock} ${className.blockInfo}`}>
+        <div
+          className={`${styles.salesInfoBlock} ${className.blockInfo}`}
+          style={{
+            backgroundColor:
+              theme === 'dark' ? colors.lightGray : colors.globalBackground,
+          }}
+        >
           <div className={styles.salesUpItems}>
             <span className={styles.saleUpTitle}>{title}</span>
-            <h3 className={styles.saleTitle}>{secondTitle}</h3>
-            <p className={styles.saleSubTitle}>{subTitle}</p>
-            <Link className={styles.saleLink} href="">
+            <h3
+              className={styles.saleTitle}
+              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            >
+              {secondTitle}
+            </h3>
+            <p
+              className={styles.saleSubTitle}
+              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            >
+              {subTitle}
+            </p>
+            <Link
+              className={`${styles.saleLink} ${themeClass}`}
+              href=""
+              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            >
               {linkPath}{' '}
-              <Image
-                src="/images/banner/arrow-right.svg"
-                alt="Arrow right icon"
-                width={20}
-                height={20}
+              <FormNextLink
+                color={theme === 'dark' ? colors.black : colors.white}
               />
             </Link>
           </div>

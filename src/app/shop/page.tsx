@@ -16,12 +16,16 @@ import { ShopFeatures } from '@/components/product/ShopFeatures/ShopFeatures';
 import { ShopCategoriesPrices } from '@/components/product/ShopCategoriesPrices/ShopCategoriesPrices';
 import currentProducts from '@/services/products/products.json';
 import { Products } from '@/types/products';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
   const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
   const handleSelectTab = (id: number) => setSelectedTab(id);
   const [products, setProducts] = useState<Products>(currentProducts);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     setProducts(currentProducts);
@@ -67,7 +71,13 @@ export default function Shop() {
   return (
     <Suspense fallback={<Loading />}>
       <Header />
-      <main className={styles.shopMain}>
+      <main
+        className={styles.shopMain}
+        style={{
+          backgroundColor:
+            theme === 'dark' ? colors.white : colors.globalBackground,
+        }}
+      >
         <section className={styles.shop}>
           <div className={styles.shopContainer}>
             <TopBanner params={params} />

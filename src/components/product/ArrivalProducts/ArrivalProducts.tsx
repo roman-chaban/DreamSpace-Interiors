@@ -15,9 +15,15 @@ import Link from 'next/link';
 import './ArrivalSwiper.scss';
 import Image from 'next/image';
 import { inter } from '@/fonts/basic-fonts';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
+import { FormNextLink } from 'grommet-icons';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
+  const { theme } = useTheme();
+
+  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 
   useEffect(() => {
     setProducts(currentProducts);
@@ -27,14 +33,20 @@ export const ArrivalProducts: FC = () => {
     <section className={`${styles.products} ${inter.className}`}>
       <div className={styles.productsContainer}>
         <div className={styles.arrivalsNav}>
-          <h3 className={styles.arrivalTitle}>New Arrivals</h3>
-          <Link href="" className={styles.arrivalLink}>
+          <h3
+            className={styles.arrivalTitle}
+            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+          >
+            New Arrivals
+          </h3>
+          <Link
+            href=""
+            className={`${styles.arrivalLink} ${themeClass}`}
+            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+          >
             More Products{' '}
-            <Image
-              src="/images/banner/arrow-right.svg"
-              alt="Arrow right icon"
-              width={20}
-              height={20}
+            <FormNextLink
+              color={theme === 'dark' ? colors.black : colors.white}
             />
           </Link>
         </div>

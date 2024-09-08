@@ -2,10 +2,15 @@ import styles from '@/components/layout/Footer/Footer.module.scss';
 import { footerNav, NavItem } from '@/constants/footerNav';
 import { footerSocialItems } from '@/constants/footerSocial';
 import { paymentIcons } from '@/constants/payments';
+import { useTheme } from '@/hooks/useTheme';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
 export const FooterNav: FC = () => {
+  const { theme } = useTheme();
+
+  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
+
   return (
     <div className={styles.footerContainer}>
       <nav className={styles.footerNav}>
@@ -13,7 +18,9 @@ export const FooterNav: FC = () => {
           <h3 className={styles.navLogo}>
             3legant <span className={styles.logoMark}>.</span>
           </h3>
-          <p className={styles.navLogoSubtitle}>Gift & Decoration Store</p>
+          <p className={`${styles.navLogoSubtitle} ${themeClass}`}>
+            Gift & Decoration Store
+          </p>
         </div>
         <ul className={styles.navMenu}>
           {footerNav.map((item: NavItem) => (

@@ -52,6 +52,13 @@
     position: absolute;
     bottom: 0;
   }
+  &.darkTheme::after {
+    background-color: color.$color-primary;
+  }
+
+  &.lightTheme::after {
+    background-color: color.$color-white;
+  }
 }
 
 .showLink {

@@ -12,6 +12,10 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: transform .3s ease-in-out 0s;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 
 .productItemImage {

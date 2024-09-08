@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/Button/Button';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { CustomSelect } from '@/components/ui/Select/Select';
 import { SelectClassNames } from '@/types/select-options';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 interface ShopNavProps {
   items: ShopNavItems;
@@ -35,9 +37,15 @@ export const ShopNav: FC<ShopNavProps> = ({
   selectedItemId,
   title,
 }) => {
+  const { theme } = useTheme();
   return (
     <div className={styles.shopProductsNav}>
-      <h4 className={styles.navTitle}>{title}</h4>
+      <h4
+        className={styles.navTitle}
+        style={{ color: theme === 'dark' ? colors.black : colors.white }}
+      >
+        {title}
+      </h4>
       <div className={styles.navSelectFeatures}>
         <CustomSelect
           defaultValue="Sort by"

@@ -5,12 +5,15 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 interface ArrivalProductProps {
   product: Product;
 }
 
 export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
+  const { theme } = useTheme();
   return (
     <div className={styles.productItem}>
       <div
@@ -44,14 +47,28 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
         </div>
 
         <h4 className={styles.productTitle}>
-          <Link href={`/product/${product.title.replaceAll(' ', '-')}`} className={styles.productTitleLink}>
+          <Link
+            href={`/product/${product.title.replaceAll(' ', '-')}`}
+            className={styles.productTitleLink}
+            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+          >
             {product.title}
           </Link>
         </h4>
 
         <div className={styles.productPrices}>
-          <span className={styles.price}>{product.originalPrice}</span>
-          <span className={styles.discount}>{product.discountedPrice}</span>
+          <span
+            className={styles.price}
+            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+          >
+            {product.originalPrice}
+          </span>
+          <span
+            className={styles.discount}
+            style={{ color: theme === 'dark' ? '' : colors.white }}
+          >
+            {product.discountedPrice}
+          </span>
         </div>
       </div>
     </div>

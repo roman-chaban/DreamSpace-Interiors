@@ -8,6 +8,8 @@ import styles from '@/components/product/ShopCategoriesPrices/ShopCategoriesPric
 import { productVariants } from '@/animations/productCard/productCard';
 import { Favorite } from 'grommet-icons';
 import { Button } from '@/components/ui/Button/Button';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export interface ShopCategoryProductCardProps {
   products: Products;
@@ -16,6 +18,8 @@ export interface ShopCategoryProductCardProps {
 export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
   products,
 }) => {
+  const { theme } = useTheme();
+
   return (
     <div className={styles.categoriesProducts}>
       {products.map((product) => (
@@ -36,9 +40,6 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
               <span className={styles.discountTitle}>
                 {product.discountPercentage}
               </span>
-              {/* <Button type="button" className={styles.favoriteIcon}>
-                <Favorite style={{ width: 18, height: 18 }} />
-              </Button> */}
             </div>
           </div>
           <div className={styles.cardInfo}>
@@ -55,26 +56,58 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
               ))}
             </div>
             <div className={styles.cardTitles}>
-              <h4 className={styles.cardTitle}>{product.title}</h4>
+              <h4
+                className={styles.cardTitle}
+                style={{
+                  color: theme === 'dark' ? colors.black : colors.white,
+                }}
+              >
+                {product.title}
+              </h4>
               <div className={styles.cardPrices}>
-                <span className={styles.originalPrice}>
+                <span
+                  className={styles.originalPrice}
+                  style={{
+                    color: theme === 'dark' ? colors.black : colors.white,
+                  }}
+                >
                   {product.originalPrice}
                 </span>
-                <span className={styles.discountedPrice}>
+                <span
+                  className={styles.discountedPrice}
+                  style={{
+                    color: theme === 'dark' ? colors.black : colors.white,
+                  }}
+                >
                   {product.discountedPrice}
                 </span>
               </div>
             </div>
-            <p className={styles.cardSubTitle}>{product.subTitle}</p>
+            <p
+              className={styles.cardSubTitle}
+              style={{
+                color: theme === 'dark' ? '' : colors.white,
+              }}
+            >
+              {product.subTitle}
+            </p>
             <div className={styles.cardButtons}>
-              <AddButton type="button" className={styles.cardAddButton}>
+              <AddButton
+                type="button"
+                className={styles.cardAddButton}
+                style={{
+                  color: theme === 'dark' ? '' : colors.black,
+                  backgroundColor: theme === 'dark' ? '' : colors.white,
+                }}
+              >
                 Add to cart
               </AddButton>
               <WishlistButton
                 className={styles.cardWishListButton}
                 type="button"
+                style={{color: theme === 'dark' ? '' : colors.white}}
               >
-                <Favorite color="plain" className={styles.favoriteIcon} />{' '}
+                <Favorite color={theme === 'dark' ? 'plain' : colors.white} />
                 Wishlist
               </WishlistButton>
             </div>

@@ -87,6 +87,12 @@
     background: color.$color-black;
     bottom: 0;
   }
+  &.darkTheme::after {
+    background: color.$color-black;
+  }
+  &.lightTheme::after {
+    background: color.$color-white;
+  }
 }
 
 @media only screen and (max-width: 1250px) {

@@ -159,6 +159,13 @@
     width: 1px;
     background: color.$color-dark-gray;
   }
+
+  &.darkTheme::before {
+    background: color.$color-dark-gray;
+  }
+  &.lightTheme::before {
+    background: color.$color-white;
+  }
 }
 
 .navMenu {

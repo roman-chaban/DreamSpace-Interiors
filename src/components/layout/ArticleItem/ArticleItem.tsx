@@ -2,58 +2,77 @@
 
 import type { FC } from 'react';
 import Image from 'next/image';
-import { Meta } from 'grommet-icons';
+import { FormNextLink, Meta } from 'grommet-icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { ArticleItemProps } from '@/types/article-item';
-
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
+import styles from '@/components/layout/Articles/Articles.module.scss';
 
 export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
   const pathname = usePathname();
   const { isResize } = useScreenResize(900);
+  const { theme } = useTheme();
+
+  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 
   return (
     <div className={classNames.articlesItem} key={item.id}>
       <div className={classNames.imageContainer}>
-        <Link href={`/blog/article/${item.dynamicPath}`}>
-          <Image
-            priority
-            src={item.image}
-            alt={item.title}
-            width={357}
-            height={325}
-            className={classNames.itemImage}
+        <Image
+          priority
+          src={item.image}
+          alt={item.title}
+          width={357}
+          height={325}
+          className={classNames.itemImage}
+        />
+        <div className={classNames.overlay}>
+          <Meta
+            color="white"
+            className={`${classNames.metaIcon} ${
+              isResize ? classNames.largeIcon : ''
+            }`}
           />
-          <div className={classNames.overlay}>
-            <Meta
-              color="white"
-              className={`${classNames.metaIcon} ${
-                isResize ? classNames.largeIcon : ''
-              }`}
-            />
-            Buy one or buy a few and make every space where you sit more
-            convenient. Light and easy to move around with removable tray top,
-            handy for serving snacks.
-          </div>
-        </Link>
+          Buy one or buy a few and make every space where you sit more
+          convenient. Light and easy to move around with removable tray top,
+          handy for serving snacks.
+        </div>
       </div>
       <div className={classNames.articleTitles}>
-        <h4 className={classNames.itemTitle}>{item.title}</h4>
+        <h4
+          className={classNames.itemTitle}
+          style={{
+            color: theme === 'dark' ? colors.darkestGray : colors.white,
+          }}
+        >
+          {item.title}
+        </h4>
         {pathname === NavPaths.HOME ? (
-          <Link className={classNames.itemLink} href="">
+          <Link
+            className={`${classNames.itemLink} ${themeClass}`}
+            href=""
+            style={{
+              color: theme === 'dark' ? colors.black : colors.white,
+            }}
+          >
             Read More
-            <Image
-              src="/images/articles/arrow-right.svg"
-              alt="Arrow Right Icon"
-              width={20}
-              height={20}
-              className={classNames.rightIcon}
+            <FormNextLink
+              color={theme === 'dark' ? colors.black : colors.white}
             />
           </Link>
         ) : (
-          <h5 className={classNames.dateTitle}>{item.dateTime}</h5>
+          <h5
+            className={classNames.dateTitle}
+            style={{
+              color: theme === 'dark' ? colors.black : colors.white,
+            }}
+          >
+            {item.dateTime}
+          </h5>
         )}
       </div>
     </div>

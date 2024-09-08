@@ -2,14 +2,21 @@ import type { FC } from 'react';
 import styles from './ContactNav.module.scss';
 import Link from 'next/link';
 import { NavPaths } from '@/enums/navPaths';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export const ContactNav: FC = () => {
+  const { theme } = useTheme();
   return (
     <nav className={styles.contactNav}>
       <div className={styles.navContainer}>
         <ul className={styles.navMenu}>
           <li className={styles.navListItem}>
-            <Link href={NavPaths.HOME} className={styles.navLink}>
+            <Link
+              href={NavPaths.HOME}
+              className={styles.navLink}
+              style={{ color: theme === 'dark' ? '' : colors.white }}
+            >
               Home{' '}
               <svg
                 width="12"
@@ -28,7 +35,12 @@ export const ContactNav: FC = () => {
               </svg>
             </Link>
           </li>
-          <li className={styles.navListItem}>Contact Us</li>
+          <li
+            className={styles.navListItem}
+            style={{ color: theme === 'dark' ? '' : colors.white }}
+          >
+            Contact Us
+          </li>
         </ul>
       </div>
     </nav>

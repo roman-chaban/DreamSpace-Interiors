@@ -1,12 +1,14 @@
 import { FC } from 'react';
 import styles from './ContactUs.module.scss';
 import { Values } from '@/components/layout/Values/Values';
-import { contactValues } from '@/constants/contactValues';
 import { Map } from '@/components/common/Map/Map';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactsValues } from '../ContactValues/ContactValues';
 import { valuesItems } from '@/constants/valuesItems';
 import { ClassNames } from '@/types/value-item';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
+import { contactValues } from '@/constants/contactValues';
 
 export const classNames: ClassNames = {
   classNames: {
@@ -20,10 +22,16 @@ export const classNames: ClassNames = {
 };
 
 export const ContactUs: FC = () => {
+  const { theme } = useTheme();
   return (
     <section className={styles.contactUs}>
       <div className={styles.contactUsContainer}>
-        <h2 className={styles.contactUsTitle}>Contact Us</h2>
+        <h2
+          className={styles.contactUsTitle}
+          style={{ color: theme === 'dark' ? '' : colors.white }}
+        >
+          Contact Us
+        </h2>
         <Values
           container={styles.contactValuesContainer}
           classNames={classNames.classNames}

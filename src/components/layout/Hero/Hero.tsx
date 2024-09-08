@@ -10,8 +10,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export const Hero: FC = () => {
+  const { theme } = useTheme();
+  const containerStyle = {
+    color: theme === 'dark' ? colors.darkGray : colors.white,
+  };
   return (
     <section className={styles.hero}>
       <div className={styles.heroContainer}>
@@ -55,13 +61,22 @@ export const Hero: FC = () => {
           </SwiperSlide>
         </HeroSwiper>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
+          <h1
+            className={styles.heroTitle}
+            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+          >
             Simply Unique <span className={styles.titleMark}>/</span>
             Simply Better <span className={styles.titleMark}>.</span>
           </h1>
-          <p className={styles.heroSubTitle}>
-            <span className={styles.subTitleMark}>3legant</span> is a gift &
-            decorations store based in HCMC, Vietnam. Est since 2019.
+          <p className={styles.heroSubTitle} style={containerStyle}>
+            <span
+              className={styles.subTitleMark}
+              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            >
+              3legant
+            </span>{' '}
+            is a gift & decorations store based in HCMC, Vietnam. Est since
+            2019.
           </p>
         </div>
       </div>

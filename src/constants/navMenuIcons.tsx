@@ -2,6 +2,9 @@ import Image from 'next/image';
 import styles from '@/components/layout/Header/Header.module.scss';
 import { NavPaths } from '@/enums/navPaths';
 import Link from 'next/link';
+import { Search, Shop, User } from 'grommet-icons';
+import { useTheme } from '@/hooks/useTheme';
+import { colors } from '@/theme/theme-variables';
 
 export interface NavIcon {
   id: number;
@@ -10,47 +13,52 @@ export interface NavIcon {
 
 export type NavMenuIcons = NavIcon[];
 
-export const navMenuIcons: NavMenuIcons = [
-  {
-    id: 1,
-    icon: (
-      <Image
-        src="/icons/header-nav/search.svg"
-        alt="Search icon"
-        width={24}
-        height={24}
-        className={styles.hiddenIcon}
-      />
-    ),
-  },
-  {
-    id: 2,
-    icon: (
-      <Image
-        src="/icons/header-nav/user-circle.svg"
-        alt="User icon"
-        width={24}
-        height={24}
-        className={styles.dropDownIcon}
-      />
-    ),
-  },
-  {
-    id: 3,
-    icon: (
-      <Link href={NavPaths.CART} className={styles.cartLink}>
-        <Image
-          src="/icons/header-nav/shopping%20bag.svg"
-          alt="Shopping bag icon"
-          width={24}
-          height={24}
-          className={styles.hiddenIcon}
-        />
-      </Link>
-    ),
-  },
-  {
-    id: 4,
-    icon: <span className={styles.circleIcon}>0</span>,
-  },
-];
+export const HeaderIcons = () => {
+  const { theme } = useTheme();
+
+  const iconColor = theme === 'dark' ? colors.black : colors.white;
+  const iconSettings = { width: 20, height: 20 };
+
+  const navMenuIcons: NavMenuIcons = [
+    {
+      id: 1,
+      icon: <Search color={iconColor} style={iconSettings} />,
+    },
+    {
+      id: 2,
+      icon: <User color={iconColor} style={iconSettings} />,
+    },
+    {
+      id: 3,
+      icon: (
+        <Link href={NavPaths.CART} className={styles.cartLink}>
+          <Shop color={iconColor} style={iconSettings} />
+        </Link>
+      ),
+    },
+    {
+      id: 4,
+      icon: (
+        <span
+          className={styles.circleIcon}
+          style={{
+            background: iconColor,
+            color: theme === 'dark' ? colors.white : colors.black,
+          }}
+        >
+          0
+        </span>
+      ),
+    },
+  ];
+
+  return (
+    <div className={styles.navIcons}>
+      {navMenuIcons.map((navIcon) => (
+        <div key={navIcon.id} className={styles.navIcon}>
+          {navIcon.icon}
+        </div>
+      ))}
+    </div>
+  );
+};

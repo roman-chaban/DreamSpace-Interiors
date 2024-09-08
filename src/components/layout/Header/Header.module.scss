@@ -186,6 +186,19 @@
   color: color.$color-success;
 }
 
+.navIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @media only screen and (min-width: 1024px) {
   .burgerButton {
     display: none;
