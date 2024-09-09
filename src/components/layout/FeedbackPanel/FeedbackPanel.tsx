@@ -1,14 +1,22 @@
+'use client';
+
 import type { FC } from 'react';
 import { ReviewComment } from '@/types/reviews-comments';
 import styles from './FeedbackPanel.module.scss';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { colors } from '@/theme/theme-variables';
 
 export type FeedbackPanelType = {
   comment: ReviewComment;
 };
 
 export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const colorThemeStyle = { color: theme === 'dark' ? '' : colors.white };
+
   return (
     <div className={styles.feedbackPanel}>
       <div className={styles.commentBlock}>
@@ -19,9 +27,15 @@ export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
           width={80}
           height={80}
           className={styles.authorImage}
+          style={{
+            border: theme === 'dark' ? '' : `3px solid ${colors.white}`,
+            borderRadius: '50%',
+          }}
         />
         <div className={styles.commentInfo}>
-          <h4 className={styles.authorTitle}>{comment.author}</h4>
+          <h4 className={styles.authorTitle} style={colorThemeStyle}>
+            {comment.author}
+          </h4>
           <div className={styles.commentStars}>
             {comment.ratingStars.map((icon, indx) => (
               <Image
@@ -33,12 +47,22 @@ export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
               />
             ))}
           </div>
-          <p className={styles.comment}>{comment.comment}</p>
+          <p className={styles.comment} style={colorThemeStyle}>
+            {comment.comment}
+          </p>
           <div className={styles.likesBlock}>
-            <Button type="button" className={styles.commentLike}>
+            <Button
+              type="button"
+              className={styles.commentLike}
+              style={colorThemeStyle}
+            >
               {comment.like}
             </Button>
-            <Button type="button" className={styles.commentReply}>
+            <Button
+              type="button"
+              className={styles.commentReply}
+              style={colorThemeStyle}
+            >
               {comment.reply}
             </Button>
           </div>

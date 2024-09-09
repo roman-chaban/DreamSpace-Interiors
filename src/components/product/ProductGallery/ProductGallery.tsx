@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import styles from './ProductGallery.module.scss';
 import { Product } from '@/types/products';
@@ -9,15 +11,26 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './ProductSwiper.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { colors } from '@/theme/theme-variables';
 
 export type ProductGalleryType = {
   product: Product;
 };
 
 export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const slideThemeBoxShadow = {
+    boxShadow:
+      theme === 'dark'
+        ? ''
+        : `rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;`,
+  };
+
   return (
     <div className={styles.gallery}>
-      <div className={styles.galleryMainImage}>
+      <div className={styles.galleryMainImage} style={slideThemeBoxShadow}>
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           spaceBetween={30}

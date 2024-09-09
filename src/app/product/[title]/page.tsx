@@ -12,6 +12,7 @@ import ProductInfo from '@/components/product/ProductInfo/ProductInfo';
 import { CustomerReviews } from '@/components/product/CustomerReviews/CustomerReviews';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { colors } from '@/theme/theme-variables';
 
 interface Params {
   params: {
@@ -30,7 +31,13 @@ export default function Product({ params: { title } }: Params) {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main
+        className={styles.main}
+        style={{
+          backgroundColor:
+            theme === 'dark' ? colors.white : colors.globalBackground,
+        }}
+      >
         <section className={styles.product}>
           <div className={styles.productContainer}>
             <ProductNav product={findCurrentProduct} />

@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './ScrollProgress.module.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { colors } from '@/theme/theme-variables';
 
 const ScrollProgress: React.FC = () => {
   const [scrollPercent, setScrollPercent] = useState<number>(0);
+  const theme = useAppSelector((state) => state.theme.theme);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +28,10 @@ const ScrollProgress: React.FC = () => {
     <div className={styles.scrollProgressContainer}>
       <div
         className={styles.scrollProgressBar}
-        style={{ width: `${scrollPercent}%` }}
+        style={{
+          width: `${scrollPercent}%`,
+          background: theme === 'dark' ? '' : colors.white,
+        }}
       ></div>
     </div>
   );
