@@ -8,14 +8,14 @@ import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { ArticleItemProps } from '@/types/article-item';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
 import styles from '@/components/layout/Articles/Articles.module.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
   const pathname = usePathname();
   const { isResize } = useScreenResize(900);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 

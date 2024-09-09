@@ -1,3 +1,5 @@
+'use client';
+
 import { AddButton } from '@/components/ui/AddButton/AddButton';
 import { WishlistButton } from '@/components/ui/WishlistButton/WishlistButton';
 import { Products } from '@/types/products';
@@ -7,9 +9,8 @@ import Image from 'next/image';
 import styles from '@/components/product/ShopCategoriesPrices/ShopCategoriesPrices.module.scss';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Favorite } from 'grommet-icons';
-import { Button } from '@/components/ui/Button/Button';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export interface ShopCategoryProductCardProps {
   products: Products;
@@ -18,7 +19,7 @@ export interface ShopCategoryProductCardProps {
 export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
   products,
 }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <div className={styles.categoriesProducts}>

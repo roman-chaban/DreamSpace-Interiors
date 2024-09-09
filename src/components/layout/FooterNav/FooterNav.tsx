@@ -1,13 +1,15 @@
+'use client';
+
 import styles from '@/components/layout/Footer/Footer.module.scss';
 import { footerNav, NavItem } from '@/constants/footerNav';
 import { footerSocialItems } from '@/constants/footerSocial';
 import { paymentIcons } from '@/constants/payments';
-import { useTheme } from '@/hooks/useTheme';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';
 
 export const FooterNav: FC = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 

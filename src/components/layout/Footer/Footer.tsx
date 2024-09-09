@@ -8,8 +8,8 @@ import { FooterNav } from '../FooterNav/FooterNav';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { inter, poppins } from '@/fonts/basic-fonts';
 import { MailOption } from 'grommet-icons';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 interface FooterProps {
   isVisible: boolean;
@@ -18,7 +18,7 @@ interface FooterProps {
 export const Footer: FC<FooterProps> = ({ isVisible }) => {
   const { isResize } = useScreenResize(580);
   const [isVisibleBlock, setIsVisible] = useState<boolean>(isVisible);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <footer

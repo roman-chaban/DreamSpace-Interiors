@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import styles from './ContactTitle.module.scss';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const ContactTitle: FC = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div className={styles.contactTitles}>
       <h1

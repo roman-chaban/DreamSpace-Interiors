@@ -3,7 +3,7 @@ import '@/styles/main/main.scss';
 import { inter } from '@/fonts/basic-fonts';
 import ScrollProgress from '@/components/ui/ScrollProgress/ScrollProgress';
 import { UpButton } from '@/components/ui/UpButton/UpButton';
-import { ThemeProvider } from '@/theme/Theme';
+import { Providers } from '@/store/Provider/provider';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Home',
@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
+        <Providers>
           <ScrollProgress />
           <div className="layout">{children}</div>
           <UpButton />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

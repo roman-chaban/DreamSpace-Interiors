@@ -6,12 +6,13 @@ import { ContactTitle } from '@/components/contact/ContactTitle/ContactTitle';
 import { ContactUs } from '@/components/contact/ContactUs/ContactUs';
 import { Footer } from '@/components/layout/Footer/Footer';
 import Header from '@/components/layout/Header/Header';
-import { useTheme } from '@/hooks/useTheme';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import styles from '@/styles/pagesStyles/Contact/Contact.module.scss';
 import { colors } from '@/theme/theme-variables';
 
 export default function Contact() {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
+
   return (
     <>
       <Header />

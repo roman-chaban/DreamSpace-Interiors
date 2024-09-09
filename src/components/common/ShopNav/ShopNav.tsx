@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/Button/Button';
 import { Icon } from '@/components/ui/Icon/Icon';
 import { CustomSelect } from '@/components/ui/Select/Select';
 import { SelectClassNames } from '@/types/select-options';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 interface ShopNavProps {
   items: ShopNavItems;
@@ -37,7 +37,7 @@ export const ShopNav: FC<ShopNavProps> = ({
   selectedItemId,
   title,
 }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div className={styles.shopProductsNav}>
       <h4

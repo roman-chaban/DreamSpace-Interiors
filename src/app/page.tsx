@@ -1,7 +1,6 @@
 'use client';
 
 import { poppins } from '@/fonts/basic-fonts';
-import { Metadata } from 'next';
 import styles from '@/styles/pagesStyles/Home/Home.module.scss';
 import { Hero } from '@/components/layout/Hero/Hero';
 import { ProductBanners } from '@/components/product/ProductsBanners/ProductsBanners';
@@ -15,9 +14,8 @@ import { valuesItems } from '@/constants/valuesItems';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { motion } from 'framer-motion';
 import { animationSettings } from '@/animations/home/home';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
-import { ThemeProvider } from '@/theme/Theme';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 const classNames = {
   item: styles.item,
@@ -29,7 +27,7 @@ const classNames = {
 };
 
 export default function Home() {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   const containerStyle = {
     backgroundColor: theme === 'dark' ? colors.white : colors.globalBackground,
   };

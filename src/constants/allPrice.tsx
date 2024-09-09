@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
 import { colors } from '@/theme/theme-variables';
-import { useTheme } from '@/hooks/useTheme';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export interface PriceItem {
   id: number;
@@ -87,7 +89,7 @@ export const priceItems: PriceItems = [
 ];
 
 const PriceList = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <div className={styles.priceTitles}>

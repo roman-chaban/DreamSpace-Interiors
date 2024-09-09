@@ -2,11 +2,13 @@ import type { FC } from 'react';
 import styles from './ContactNav.module.scss';
 import Link from 'next/link';
 import { NavPaths } from '@/enums/navPaths';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const ContactNav: FC = () => {
-  const { theme } = useTheme();
+
+  const theme = useAppSelector((state) => state.theme.theme);
+  
   return (
     <nav className={styles.contactNav}>
       <div className={styles.navContainer}>

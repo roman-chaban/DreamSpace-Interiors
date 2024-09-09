@@ -1,8 +1,8 @@
+'use client';
 import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SelectProps } from '@/types/select-options';
-import { useTheme } from '@/hooks/useTheme';
-import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const CustomSelect: FC<SelectProps> = ({
   options,
@@ -13,7 +13,7 @@ export const CustomSelect: FC<SelectProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(defaultValue || '');
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const handleSelectOption = (value: string) => {
     setSelectedValue(value);

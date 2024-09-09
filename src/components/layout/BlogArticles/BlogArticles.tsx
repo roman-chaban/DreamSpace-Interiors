@@ -1,19 +1,19 @@
 'use client';
 
 import { useEffect, useState, type FC } from 'react';
-import { color, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './BlogArticles.module.scss';
 import { BlogArticle } from '@/constants/blogArticles';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { Button } from '@/components/ui/Button/Button';
 import blogArticles from '@/services/blogArticles/blogArticles.json';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const BlogArticles: FC = () => {
   const [articles, setArticles] = useState<BlogArticle[]>(blogArticles);
   const [visibleArticleCount, setVisibleArticlesCount] = useState<number>(6);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const buttonThemeStyles = {
     border: theme === 'dark' ? '' : `1.5px solid ${colors.white}`,

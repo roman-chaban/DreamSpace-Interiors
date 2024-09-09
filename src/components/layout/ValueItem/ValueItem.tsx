@@ -1,5 +1,5 @@
 import { ThemedIcon } from '@/constants/valuesItems';
-import { useTheme } from '@/hooks/useTheme';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
 import { ClassNames, ValueItemProps } from '@/types/value-item';
 import type { FC } from 'react';
@@ -8,7 +8,7 @@ export const ValueItem: FC<ValueItemProps & ClassNames> = ({
   item,
   classNames,
 }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div className={classNames.item}>
       <div

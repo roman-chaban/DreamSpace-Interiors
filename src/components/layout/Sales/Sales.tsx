@@ -1,12 +1,14 @@
+'use client';
+
 import type { FC } from 'react';
 import styles from './Sales.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { inter } from '@/fonts/basic-fonts';
 import { SalesProps } from '@/types/sales';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
 import { FormNext, FormNextLink } from 'grommet-icons';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const Sales: FC<SalesProps> = ({
   image,
@@ -16,7 +18,7 @@ export const Sales: FC<SalesProps> = ({
   linkPath,
   className,
 }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 

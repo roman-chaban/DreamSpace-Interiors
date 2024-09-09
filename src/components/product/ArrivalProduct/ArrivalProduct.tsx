@@ -1,3 +1,5 @@
+'use client';
+
 import { Product } from '@/types/products';
 import type { FC } from 'react';
 import styles from './ArrivalProduct.module.scss';
@@ -5,15 +7,15 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 interface ArrivalProductProps {
   product: Product;
 }
 
 export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <div className={styles.productItem}>
       <div

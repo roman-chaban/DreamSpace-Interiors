@@ -10,11 +10,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const Hero: FC = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   const containerStyle = {
     color: theme === 'dark' ? colors.darkGray : colors.white,
   };

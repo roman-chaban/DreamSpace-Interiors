@@ -1,8 +1,11 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
-import { useTheme } from '@/hooks/useTheme'; // Ensure this path is correct
+import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '@/theme/theme-variables';
+import { AppDispatch } from '@/store/store';
+import { RootState } from '@/store/rootReducer/rootReducer';
+import { toggleTheme } from '@/store/slices/ThemeSlice';
 
 const CustomSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -57,12 +60,17 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export const ThemeSwitcher: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const dispatch = useDispatch<AppDispatch>();
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
+  const handleChange = () => {
+    dispatch(toggleTheme());
+  };
 
   return (
     <CustomSwitch
       checked={theme === 'light'}
-      onChange={toggleTheme}
+      onChange={handleChange}
       aria-label="Toggle theme"
     />
   );

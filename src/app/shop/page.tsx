@@ -16,8 +16,8 @@ import { ShopFeatures } from '@/components/product/ShopFeatures/ShopFeatures';
 import { ShopCategoriesPrices } from '@/components/product/ShopCategoriesPrices/ShopCategoriesPrices';
 import currentProducts from '@/services/products/products.json';
 import { Products } from '@/types/products';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
@@ -25,7 +25,7 @@ export default function Shop() {
   const handleSelectTab = (id: number) => setSelectedTab(id);
   const [products, setProducts] = useState<Products>(currentProducts);
 
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   useEffect(() => {
     setProducts(currentProducts);

@@ -4,13 +4,13 @@ import { useEffect, useState, FC } from 'react';
 import styles from './UpButton.module.scss';
 import useDebounce from '@/hooks/useDebounce';
 import { UploadOption, Waypoint } from 'grommet-icons';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const UpButton: FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);
   const debouncedScrollY = useDebounce(scrollY, 100);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   useEffect(() => {
     const handleScroll = () => {

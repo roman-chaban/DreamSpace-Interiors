@@ -6,7 +6,6 @@ import { NavPaths } from '@/enums/navPaths';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import styles from '@/styles/pagesStyles/Cart/Cart.module.scss';
-import { ThemeProvider } from '@/theme/Theme';
 import { FormPrevious } from 'grommet-icons';
 import Link from 'next/link';
 
@@ -14,7 +13,7 @@ export default function Cart() {
   useChangePageTitle('DreamSpace Interiors | Cart');
   const { isResize } = useScreenResize(500);
   return (
-    <ThemeProvider>
+    <>
       <PageLayout>
         <section className={styles.cart}>
           {isResize && (
@@ -26,6 +25,6 @@ export default function Cart() {
           <CartProcess />
         </section>
       </PageLayout>
-    </ThemeProvider>
+    </>
   );
 }

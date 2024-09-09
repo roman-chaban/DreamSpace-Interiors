@@ -6,9 +6,9 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactsValues } from '../ContactValues/ContactValues';
 import { valuesItems } from '@/constants/valuesItems';
 import { ClassNames } from '@/types/value-item';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
 import { contactValues } from '@/constants/contactValues';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const classNames: ClassNames = {
   classNames: {
@@ -22,7 +22,7 @@ export const classNames: ClassNames = {
 };
 
 export const ContactUs: FC = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <section className={styles.contactUs}>
       <div className={styles.contactUsContainer}>

@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import styles from './CurrentArticle.module.scss';
-import { ArticleBlock, BlogArticle } from '@/constants/blogArticles';
+import { BlogArticle } from '@/constants/blogArticles';
 import Image from 'next/image';
-import { useScreenResize } from '@/hooks/useScreenResize';
 import { ArticleBlog } from '../ArticleBlog/ArticleBlog';
 
 interface CurrentArticleProps {

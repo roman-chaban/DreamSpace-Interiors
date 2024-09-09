@@ -2,15 +2,15 @@ import { FC } from 'react';
 import styles from './ContactValues.module.scss';
 import { Value } from '@/constants/valuesItems';
 import { ContactValuesItem } from '../ContactValuesItem/ContactValuesItem';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export interface ContactValuesProps {
   values: Value[];
 }
 
 export const ContactsValues: FC<ContactValuesProps> = ({ values }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <section
       className={styles.contactValues}

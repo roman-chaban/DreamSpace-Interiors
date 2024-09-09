@@ -1,4 +1,6 @@
-import { useTheme } from '@/hooks/useTheme';
+'use client';
+
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
 import { JSX } from 'react';
 
@@ -16,7 +18,7 @@ export const ThemedIcon = ({
 }: {
   icon: (theme: string) => JSX.Element;
 }) => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return icon(theme);
 };

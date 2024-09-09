@@ -13,15 +13,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
 import './ArrivalSwiper.scss';
-import Image from 'next/image';
 import { inter } from '@/fonts/basic-fonts';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 

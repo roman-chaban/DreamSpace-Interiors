@@ -6,13 +6,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
 import { motion, AnimatePresence, color } from 'framer-motion';
 import { animation } from '@/animations/topBarHidden/topBarHidden';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
 import { FormClose, LinkNext, Ticket } from 'grommet-icons';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const TopBarMenu: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const backgroundContainer = {
     backgroundColor:

@@ -1,10 +1,11 @@
-import Image from 'next/image';
+'use client';
+
 import styles from '@/components/layout/Header/Header.module.scss';
 import { NavPaths } from '@/enums/navPaths';
 import Link from 'next/link';
 import { Search, Shop, User } from 'grommet-icons';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export interface NavIcon {
   id: number;
@@ -14,7 +15,7 @@ export interface NavIcon {
 export type NavMenuIcons = NavIcon[];
 
 export const HeaderIcons = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const iconColor = theme === 'dark' ? colors.black : colors.white;
   const iconSettings = { width: 20, height: 20 };

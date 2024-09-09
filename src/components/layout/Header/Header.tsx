@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, type FC, useState, useEffect } from 'react';
+import { type FC, useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { TopBarMenu } from '../TopBarMenu/TopBarMenu';
 import { NavItem, navMenuItems } from '@/constants/navMenuItems';
@@ -17,8 +17,8 @@ import { poppins } from '@/fonts/basic-fonts';
 import { ClassNameType } from '@/types/class-names';
 import { options } from '@/types/options';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 const classNames: ClassNameType = {
   container: styles.dropDownContainer,
@@ -33,7 +33,7 @@ const Header: FC = () => {
   const [isBurgerActive, setIsBurgerActive] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   const containerStyle = {
     backgroundColor: theme === 'dark' ? colors.white : colors.globalBackground,
   };

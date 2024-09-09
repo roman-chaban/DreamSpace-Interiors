@@ -4,11 +4,12 @@ import type { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './ContactForm.module.scss';
 import { ContactFormProps } from '@/types/contact-form';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const ContactForm: FC = () => {
-  const { theme } = useTheme();
+
+  const theme = useAppSelector((state) => state.theme.theme);
 
   const buttonThemeStyles = {
     color: theme === 'dark' ? '' : colors.globalBackground,

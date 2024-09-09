@@ -1,10 +1,12 @@
+'use client';
+
 import { FC } from 'react';
 import styles from './Loader.module.scss';
-import { useTheme } from '@/hooks/useTheme';
 import { colors } from '@/theme/theme-variables';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const Loader: FC = () => {
-  const { theme } = useTheme();
+  const theme = useAppSelector((state) => state.theme.theme);
   const isDarkTheme = theme === 'dark';
 
   return (
