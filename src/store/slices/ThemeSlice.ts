@@ -7,6 +7,10 @@ interface ThemeState {
 }
 
 const getInitialTheme = (): Theme => {
+  if (typeof window === 'undefined') {
+    return 'light';
+  }
+
   const savedTheme = localStorage.getItem('theme');
   return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light';
 };
@@ -21,12 +25,16 @@ const themeSlice = createSlice({
   reducers: {
     setTheme: (state, action: PayloadAction<Theme>) => {
       state.theme = action.payload;
-      localStorage.setItem('theme', action.payload);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', action.payload);
+      }
     },
     toggleTheme: (state) => {
       const newTheme: Theme = state.theme === 'light' ? 'dark' : 'light';
       state.theme = newTheme;
-      localStorage.setItem('theme', newTheme);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('theme', newTheme);
+      }
     },
   },
 });
