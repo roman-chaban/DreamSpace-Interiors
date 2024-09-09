@@ -4,6 +4,13 @@ import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { CustomRadioButton } from '@/components/ui/CustomRadioButton/CustomRadioButton';
 import styles from './CartSummary.module.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { Button } from '@/components/ui/Button/Button';
+import {
+  getSummaryButtonStyles,
+  getSummaryContainerStyles,
+  getSummaryTitleThemeStyle,
+} from '@/components/themeStyles/cartSummaryStyles/cartSummaryStyles';
 
 interface FormValues {
   option: string;
@@ -13,20 +20,30 @@ export const CartSummary: FC = () => {
   const { register, watch, handleSubmit, setValue } = useForm<FormValues>({
     defaultValues: {
       option: '',
-    }
+    },
   });
-  const selectedValue = watch('option', '');
 
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const selectedValue = watch('option', '');
   const onSubmitRadio: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
 
   return (
     <form className={styles.cartSummary} onSubmit={handleSubmit(onSubmitRadio)}>
-      <div className={styles.summaryContainer}>
-        <h4 className={styles.title}>Cart summary</h4>
+      <div
+        className={styles.summaryContainer}
+        style={getSummaryContainerStyles(theme)}
+      >
+        <h4 className={styles.title} style={getSummaryTitleThemeStyle(theme)}>
+          Cart summary
+        </h4>
         <div className={styles.summaryCheckoutButtons}>
-          <div className={styles.checkoutButtonBlock}>
+          <div
+            className={styles.checkoutButtonBlock}
+            style={getSummaryContainerStyles(theme)}
+          >
             <CustomRadioButton
               className={styles.radio}
               labelClassName={styles.radioLabel}
@@ -34,10 +51,19 @@ export const CartSummary: FC = () => {
               value="option1"
               checked={selectedValue === 'option1'}
               onChange={() => setValue('option', 'option1')}
+              style={getSummaryTitleThemeStyle(theme)}
             />
-            <span className={styles.price}>$0.00</span>
+            <span
+              className={styles.price}
+              style={getSummaryTitleThemeStyle(theme)}
+            >
+              $0.00
+            </span>
           </div>
-          <div className={styles.checkoutButtonBlock}>
+          <div
+            className={styles.checkoutButtonBlock}
+            style={getSummaryContainerStyles(theme)}
+          >
             <CustomRadioButton
               className={styles.radio}
               labelClassName={styles.radioLabel}
@@ -45,10 +71,19 @@ export const CartSummary: FC = () => {
               value="option2"
               checked={selectedValue === 'option2'}
               onChange={() => setValue('option', 'option2')}
+              style={getSummaryTitleThemeStyle(theme)}
             />
-            <span className={styles.price}>+$15.00</span>
+            <span
+              className={styles.price}
+              style={getSummaryTitleThemeStyle(theme)}
+            >
+              +$15.00
+            </span>
           </div>
-          <div className={styles.checkoutButtonBlock}>
+          <div
+            className={styles.checkoutButtonBlock}
+            style={getSummaryContainerStyles(theme)}
+          >
             <CustomRadioButton
               className={styles.radio}
               labelClassName={styles.radioLabel}
@@ -56,15 +91,35 @@ export const CartSummary: FC = () => {
               value="option3"
               checked={selectedValue === 'option3'}
               onChange={() => setValue('option', 'option3')}
+              style={getSummaryTitleThemeStyle(theme)}
             />
-            <span className={styles.price}>$21.00</span>
+            <span
+              className={styles.price}
+              style={getSummaryTitleThemeStyle(theme)}
+            >
+              $21.00
+            </span>
           </div>
         </div>
-        <h5 className={styles.subTotalTitle}>Subtotal</h5>
-        <h3 className={styles.totalTitle}>Total</h3>
-        <button type="submit" className={styles.checkoutButton}>
+        <h5
+          className={styles.subTotalTitle}
+          style={getSummaryTitleThemeStyle(theme)}
+        >
+          Subtotal
+        </h5>
+        <h3
+          className={styles.totalTitle}
+          style={getSummaryTitleThemeStyle(theme)}
+        >
+          Total
+        </h3>
+        <Button
+          type="submit"
+          className={styles.checkoutButton}
+          style={getSummaryButtonStyles(theme)}
+        >
           Checkout
-        </button>
+        </Button>
       </div>
     </form>
   );

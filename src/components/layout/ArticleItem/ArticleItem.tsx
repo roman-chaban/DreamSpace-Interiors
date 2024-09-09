@@ -11,6 +11,10 @@ import { ArticleItemProps } from '@/types/article-item';
 import { colors } from '@/theme/theme-variables';
 import styles from '@/components/layout/Articles/Articles.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getSecondTitleStyle,
+  getTitleItemStyle,
+} from '@/components/themeStyles/articleItemStyles/ArticleItemStyles';
 
 export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
   const pathname = usePathname();
@@ -43,21 +47,14 @@ export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
         </div>
       </div>
       <div className={classNames.articleTitles}>
-        <h4
-          className={classNames.itemTitle}
-          style={{
-            color: theme === 'dark' ? colors.darkestGray : colors.white,
-          }}
-        >
+        <h4 className={classNames.itemTitle} style={getTitleItemStyle(theme)}>
           {item.title}
         </h4>
         {pathname === NavPaths.HOME ? (
           <Link
             className={`${classNames.itemLink} ${themeClass}`}
             href=""
-            style={{
-              color: theme === 'dark' ? colors.black : colors.white,
-            }}
+            style={getSecondTitleStyle(theme)}
           >
             Read More
             <FormNextLink
@@ -67,9 +64,7 @@ export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
         ) : (
           <h5
             className={classNames.dateTitle}
-            style={{
-              color: theme === 'dark' ? colors.black : colors.white,
-            }}
+            style={getSecondTitleStyle(theme)}
           >
             {item.dateTime}
           </h5>

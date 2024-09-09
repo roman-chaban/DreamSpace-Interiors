@@ -6,15 +6,10 @@ import styles from './ContactForm.module.scss';
 import { ContactFormProps } from '@/types/contact-form';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getButtonThemeStyles } from '@/components/themeStyles/contactFormStyles/contactFormStyles';
 
 export const ContactForm: FC = () => {
-
   const theme = useAppSelector((state) => state.theme.theme);
-
-  const buttonThemeStyles = {
-    color: theme === 'dark' ? '' : colors.globalBackground,
-    backgroundColor: theme === 'dark' ? '' : colors.white,
-  };
 
   const {
     register,
@@ -55,7 +50,7 @@ export const ContactForm: FC = () => {
       <Button
         className={styles.sendButton}
         type="submit"
-        style={buttonThemeStyles}
+        style={getButtonThemeStyles(theme)}
       >
         Send Message
       </Button>

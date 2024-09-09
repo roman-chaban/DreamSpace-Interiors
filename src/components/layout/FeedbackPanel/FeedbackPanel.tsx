@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
+import { getFeedbackPanelStyles } from '@/components/themeStyles/feedbackPanelStyles/feedbackPanelStyles';
 
 export type FeedbackPanelType = {
   comment: ReviewComment;
@@ -27,10 +28,7 @@ export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
           width={80}
           height={80}
           className={styles.authorImage}
-          style={{
-            border: theme === 'dark' ? '' : `3px solid ${colors.white}`,
-            borderRadius: '50%',
-          }}
+          style={getFeedbackPanelStyles(theme)}
         />
         <div className={styles.commentInfo}>
           <h4 className={styles.authorTitle} style={colorThemeStyle}>

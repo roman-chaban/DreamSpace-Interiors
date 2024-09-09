@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getProductTitleStyle } from '@/components/themeStyles/productCard/productCard';
 
 interface ShopProductProps {
   product: Product;
@@ -50,23 +50,14 @@ export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
             />
           ))}
         </div>
-        <h4
-          className={styles.productTitle}
-          style={{ color: theme === 'dark' ? colors.black : colors.white }}
-        >
+        <h4 className={styles.productTitle} style={getProductTitleStyle(theme)}>
           {product.title}
         </h4>
         <div className={styles.productPrices}>
-          <span
-            className={styles.price}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
-          >
+          <span className={styles.price} style={getProductTitleStyle(theme)}>
             {product.originalPrice}
           </span>
-          <span
-            className={styles.discount}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
-          >
+          <span className={styles.discount} style={getProductTitleStyle(theme)}>
             {product.discountedPrice}
           </span>
         </div>

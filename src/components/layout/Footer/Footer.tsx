@@ -10,6 +10,7 @@ import { inter, poppins } from '@/fonts/basic-fonts';
 import { MailOption } from 'grommet-icons';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getFooterStyles } from '@/components/themeStyles/footerStyles/footerStyles';
 
 interface FooterProps {
   isVisible: boolean;
@@ -25,10 +26,7 @@ export const Footer: FC<FooterProps> = ({ isVisible }) => {
       className={`${styles.footer} ${isResize && styles.bgLight} ${
         inter.className
       }`}
-      style={{
-        backgroundColor:
-          theme === 'dark' ? colors.black : colors.globalBackground,
-      }}
+      style={getFooterStyles(theme)}
     >
       {isVisibleBlock && (
         <div

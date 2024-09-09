@@ -7,20 +7,17 @@ import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const Loader: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const isDarkTheme = theme === 'dark';
+  const loaderStyles = {
+    borderColor: theme === 'dark' ? colors.white : colors.success,
+    backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
+  };
 
   return (
-    <div
-      className={styles.loader}
-      style={{ borderColor: isDarkTheme ? colors.success : colors.white }}
-    >
+    <div className={styles.loader} style={loaderStyles}>
       <div
         className={`${styles.loaderContainer} ${
-          isDarkTheme ? styles.darkTheme : styles.lightTheme
+          theme === 'dark' ? styles.lightTheme : styles.darkTheme
         }`}
-        style={{
-          borderColor: isDarkTheme ? colors.success : colors.white,
-        }}
       ></div>
     </div>
   );

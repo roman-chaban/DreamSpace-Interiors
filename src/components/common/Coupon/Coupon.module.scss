@@ -41,7 +41,7 @@
   padding-inline: 16px;
   padding-block: 12px;
   align-items: center;
-  border: 1.8px solid color.$color-dark-gray !important;
+  border: 1.8px solid color.$color-dark-gray;
 }
 
 .couponLabel {
@@ -65,15 +65,18 @@
   &:focus {
     outline: color.$color-success;
   }
+  &.darkTheme::placeholder {
+    color: color.$color-dark-gray;
+  }
+  &.lightTheme::placeholder {
+    color: color.$color-white;
+  }
 }
-
-
 
 .couponLabel {
   display: flex;
   align-items: center;
 }
-
 
 .applyButton {
   color: color.$color-black;

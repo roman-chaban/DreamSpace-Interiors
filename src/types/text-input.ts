@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 export interface TextInputProps {
@@ -8,4 +9,5 @@ export interface TextInputProps {
   register: UseFormRegisterReturn;
   labelText?: string;
   labelClassName?: string;
+  style?: CSSProperties;
 }

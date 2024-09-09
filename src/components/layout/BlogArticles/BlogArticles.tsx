@@ -7,19 +7,13 @@ import { BlogArticle } from '@/constants/blogArticles';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { Button } from '@/components/ui/Button/Button';
 import blogArticles from '@/services/blogArticles/blogArticles.json';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getButtonThemeStyles } from '@/components/themeStyles/blogArticles/blogArticles';
 
 export const BlogArticles: FC = () => {
   const [articles, setArticles] = useState<BlogArticle[]>(blogArticles);
   const [visibleArticleCount, setVisibleArticlesCount] = useState<number>(6);
   const theme = useAppSelector((state) => state.theme.theme);
-
-  const buttonThemeStyles = {
-    border: theme === 'dark' ? '' : `1.5px solid ${colors.white}`,
-    color: theme === 'dark' ? '' : colors.white,
-    backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
-  };
 
   useEffect(() => {
     setArticles(articles);
@@ -66,7 +60,7 @@ export const BlogArticles: FC = () => {
             className={styles.showMoreButton}
             onClick={handleLoadMore}
             type="button"
-            style={buttonThemeStyles}
+            style={getButtonThemeStyles(theme)}
           >
             Show more
           </Button>

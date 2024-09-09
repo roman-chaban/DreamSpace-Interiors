@@ -7,8 +7,12 @@ import Link from 'next/link';
 import { inter } from '@/fonts/basic-fonts';
 import { SalesProps } from '@/types/sales';
 import { colors } from '@/theme/theme-variables';
-import { FormNext, FormNextLink } from 'grommet-icons';
+import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getSalesInfoBlockStyle,
+  getSalesTitleStyle,
+} from '@/components/themeStyles/salesStyles/salesStyles';
 
 export const Sales: FC<SalesProps> = ({
   image,
@@ -37,29 +41,23 @@ export const Sales: FC<SalesProps> = ({
         </picture>
         <div
           className={`${styles.salesInfoBlock} ${className.blockInfo}`}
-          style={{
-            backgroundColor:
-              theme === 'dark' ? colors.lightGray : colors.globalBackground,
-          }}
+          style={getSalesInfoBlockStyle(theme)}
         >
           <div className={styles.salesUpItems}>
             <span className={styles.saleUpTitle}>{title}</span>
-            <h3
-              className={styles.saleTitle}
-              style={{ color: theme === 'dark' ? colors.black : colors.white }}
-            >
+            <h3 className={styles.saleTitle} style={getSalesTitleStyle(theme)}>
               {secondTitle}
             </h3>
             <p
               className={styles.saleSubTitle}
-              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+              style={getSalesTitleStyle(theme)}
             >
               {subTitle}
             </p>
             <Link
               className={`${styles.saleLink} ${themeClass}`}
               href=""
-              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+              style={getSalesTitleStyle(theme)}
             >
               {linkPath}{' '}
               <FormNextLink

@@ -10,14 +10,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getHeroContainerStyle,
+  getHeroTitleStyle,
+} from '@/components/themeStyles/heroStyles/heroStyles';
 
 export const Hero: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const containerStyle = {
-    color: theme === 'dark' ? colors.darkGray : colors.white,
-  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContainer}>
@@ -61,17 +62,17 @@ export const Hero: FC = () => {
           </SwiperSlide>
         </HeroSwiper>
         <div className={styles.heroContent}>
-          <h1
-            className={styles.heroTitle}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
-          >
+          <h1 className={styles.heroTitle} style={getHeroTitleStyle(theme)}>
             Simply Unique <span className={styles.titleMark}>/</span>
             Simply Better <span className={styles.titleMark}>.</span>
           </h1>
-          <p className={styles.heroSubTitle} style={containerStyle}>
+          <p
+            className={styles.heroSubTitle}
+            style={getHeroContainerStyle(theme)}
+          >
             <span
               className={styles.subTitleMark}
-              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+              style={getHeroTitleStyle(theme)}
             >
               3legant
             </span>{' '}

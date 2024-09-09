@@ -3,7 +3,10 @@
 import { useState, type FC } from 'react';
 import styles from './CustomerReviewsTabsNav.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { colors } from '@/theme/theme-variables';
+import {
+  getCustomerTitleStyle,
+  getTabsNavContainerStyle,
+} from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
 
 export type CustomerReviewsTabsNavType = {
   tabs: string[];
@@ -26,14 +29,12 @@ export const CustomerReviewsTabsNav: FC<CustomerReviewsTabsNavType> = ({
   return (
     <div
       className={styles.tabsContainer}
-      style={{
-        borderBottom: theme === 'dark' ? '' : 'none',
-      }}
+      style={getTabsNavContainerStyle(theme)}
     >
       {tabs.map((tab) => (
         <button
           key={tab}
-          style={{ color: theme === 'dark' ? '' : colors.white }}
+          style={getCustomerTitleStyle(theme)}
           className={`${styles.tabItem} ${
             tab === activeTab ? styles.active : ''
           }`}

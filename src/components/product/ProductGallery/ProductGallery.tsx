@@ -13,6 +13,7 @@ import 'swiper/css/scrollbar';
 import './ProductSwiper.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
+import { getSlideThemeBoxShadow } from '@/components/themeStyles/productGalleryStyles/productGalleryStyles';
 
 export type ProductGalleryType = {
   product: Product;
@@ -21,16 +22,12 @@ export type ProductGalleryType = {
 export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
-  const slideThemeBoxShadow = {
-    boxShadow:
-      theme === 'dark'
-        ? ''
-        : `rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;`,
-  };
-
   return (
     <div className={styles.gallery}>
-      <div className={styles.galleryMainImage} style={slideThemeBoxShadow}>
+      <div
+        className={styles.galleryMainImage}
+        style={getSlideThemeBoxShadow(theme)}
+      >
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           spaceBetween={30}

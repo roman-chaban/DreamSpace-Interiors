@@ -13,6 +13,11 @@ import { useProductItemCounter } from '@/hooks/useProductItemCounter';
 import { counterButtonIcons } from '@/components/ui/CounterButtonsIcons/CounterButtonsIcons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
+import {
+  getCounterThemeStyles,
+  getInfoThemeBackground,
+  getInfoThemeStyle,
+} from '@/components/themeStyles/productInfoStyles/productInfoStyles';
 
 export type ProductInfoType = {
   product: Product;
@@ -24,16 +29,6 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
   const { productItemNumber, onAddProduct, onDeleteProduct } =
     useProductItemCounter({ productItem: 1 });
   const theme = useAppSelector((state) => state.theme.theme);
-
-  const infoThemeStyle = { color: theme === 'dark' ? '' : colors.white };
-  const infoThemeBackground = {
-    backgroundColor: theme === 'dark' ? '' : colors.black,
-    color: theme === 'dark' ? '' : colors.white,
-  };
-
-  const counterThemeStyles = {
-    color: theme === 'dark' ? '' : colors.white,
-  };
 
   return (
     <div className={styles.productInfoContainer}>
@@ -49,68 +44,101 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
             />
           ))}
         </div>
-        <span className={styles.reviewsCount} style={infoThemeStyle}>
+        <span className={styles.reviewsCount} style={getInfoThemeStyle(theme)}>
           {product.reviewsCount} Reviews
         </span>
       </div>
-      <h1 className={styles.title} style={infoThemeStyle}>
+      <h1 className={styles.title} style={getInfoThemeStyle(theme)}>
         {product.title}
       </h1>
-      <p className={styles.subTitle} style={infoThemeStyle}>
+      <p className={styles.subTitle} style={getInfoThemeStyle(theme)}>
         {product.subTitle}
       </p>
-      <div className={styles.prices} style={infoThemeStyle}>
-        <h3 className={styles.originalPrice} style={infoThemeStyle}>
+      <div className={styles.prices} style={getInfoThemeStyle(theme)}>
+        <h3 className={styles.originalPrice} style={getInfoThemeStyle(theme)}>
           {product.originalPrice}
         </h3>
-        <span className={styles.discountedPrice} style={infoThemeStyle}>
+        <span
+          className={styles.discountedPrice}
+          style={getInfoThemeStyle(theme)}
+        >
           {product.discountedPrice}
         </span>
       </div>
       <div className={styles.offerBlock}>
-        <h5 className={styles.offerTitle} style={infoThemeStyle}>
+        <h5 className={styles.offerTitle} style={getInfoThemeStyle(theme)}>
           Offer expires in:
         </h5>
         <div className={styles.discountTimeBlock}>
           <p className={styles.timeCapture}>
-            <span className={styles.timeBlock} style={infoThemeBackground}>
+            <span
+              className={styles.timeBlock}
+              style={getInfoThemeBackground(theme)}
+            >
               {timeRemaining.days}
             </span>
-            <span className={styles.timeLabel} style={counterThemeStyles}>
+            <span
+              className={styles.timeLabel}
+              style={getCounterThemeStyles(theme)}
+            >
               Days
             </span>
           </p>
           <p className={styles.timeCapture}>
-            <span className={styles.timeBlock} style={infoThemeBackground}>
+            <span
+              className={styles.timeBlock}
+              style={getInfoThemeBackground(theme)}
+            >
               {timeRemaining.hours}{' '}
             </span>
-            <span className={styles.timeLabel} style={counterThemeStyles}>
+            <span
+              className={styles.timeLabel}
+              style={getCounterThemeStyles(theme)}
+            >
               Hours
             </span>
           </p>
           <p className={styles.timeCapture}>
-            <span className={styles.timeBlock} style={infoThemeBackground}>
+            <span
+              className={styles.timeBlock}
+              style={getInfoThemeBackground(theme)}
+            >
               {timeRemaining.minutes}{' '}
             </span>
-            <span className={styles.timeLabel} style={counterThemeStyles}>
+            <span
+              className={styles.timeLabel}
+              style={getCounterThemeStyles(theme)}
+            >
               Minutes
             </span>
           </p>
           <p className={styles.timeCapture}>
-            <span className={styles.timeBlock} style={infoThemeBackground}>
+            <span
+              className={styles.timeBlock}
+              style={getInfoThemeBackground(theme)}
+            >
               {timeRemaining.seconds}{' '}
             </span>
-            <span className={styles.timeLabel} style={counterThemeStyles}>
+            <span
+              className={styles.timeLabel}
+              style={getCounterThemeStyles(theme)}
+            >
               Seconds
             </span>
           </p>
         </div>
       </div>
       <div className={styles.measurementsBlock}>
-        <h5 className={styles.measurementsTitle} style={infoThemeStyle}>
+        <h5
+          className={styles.measurementsTitle}
+          style={getInfoThemeStyle(theme)}
+        >
           Measurements
         </h5>
-        <p className={styles.measurementsParams} style={infoThemeStyle}>
+        <p
+          className={styles.measurementsParams}
+          style={getInfoThemeStyle(theme)}
+        >
           {product.measurements}&quot;
         </p>
       </div>
@@ -130,7 +158,7 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
           <WishlistButton
             type="button"
             className={styles.wishlistButton}
-            style={infoThemeBackground}
+            style={getInfoThemeBackground(theme)}
           >
             <Favorite
               color={theme === 'dark' ? 'plain' : colors.white}
@@ -145,14 +173,23 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
         </AddButton>
       </div>
       <div className={styles.categoryBlock}>
-        <h6 className={styles.skuTitle} style={counterThemeStyles}>
-          <span className={styles.titleMark} style={counterThemeStyles}>
+        <h6 className={styles.skuTitle} style={getCounterThemeStyles(theme)}>
+          <span
+            className={styles.titleMark}
+            style={getCounterThemeStyles(theme)}
+          >
             SKU:
           </span>
           {product.sku}
         </h6>
-        <h6 className={styles.categoryTitle} style={counterThemeStyles}>
-          <span className={styles.titleMark} style={counterThemeStyles}>
+        <h6
+          className={styles.categoryTitle}
+          style={getCounterThemeStyles(theme)}
+        >
+          <span
+            className={styles.titleMark}
+            style={getCounterThemeStyles(theme)}
+          >
             Category:
           </span>
           {product.category}

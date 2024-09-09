@@ -10,15 +10,17 @@ import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
 import { Burger } from '../Burger/Burger';
 import dynamic from 'next/dynamic';
-import { DropDown } from '@/components/ui/DropDown/DropDown';
 import { motion } from 'framer-motion';
 import { buttonHoverTap } from '@/animations/dropDown/dropDown';
 import { poppins } from '@/fonts/basic-fonts';
 import { ClassNameType } from '@/types/class-names';
-import { options } from '@/types/options';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getContainerStyle,
+  getHeaderLinkActiveStyle,
+  getHeaderLinkStyle,
+} from '@/components/themeStyles/headerStyles/headerStyles';
 
 const classNames: ClassNameType = {
   container: styles.dropDownContainer,
@@ -34,10 +36,6 @@ const Header: FC = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const theme = useAppSelector((state) => state.theme.theme);
-  const containerStyle = {
-    backgroundColor: theme === 'dark' ? colors.white : colors.globalBackground,
-  };
-
   const toggleBurgerMenu = () => setIsBurgerActive(!isBurgerActive);
 
   useEffect(() => {
@@ -65,7 +63,7 @@ const Header: FC = () => {
       } ${poppins.className}`}
     >
       <TopBarMenu />
-      <div className={styles.headerContainer} style={containerStyle}>
+      <div className={styles.headerContainer} style={getContainerStyle(theme)}>
         <div className={styles.headerLogo}>
           <button
             className={styles.burgerButton}
@@ -76,7 +74,7 @@ const Header: FC = () => {
             <Link
               href={NavPaths.HOME}
               className={styles.logoLink}
-              style={{ color: theme === 'dark' ? colors.black : colors.white }}
+              style={getHeaderLinkStyle(theme)}
             >
               3legant
             </Link>
@@ -92,24 +90,13 @@ const Header: FC = () => {
                   key={item.id}
                   className={styles.listItem}
                 >
-                  {item.label === 'Product' ? (
-                    <DropDown
-                      buttonLabel="Product"
-                      classNames={classNames}
-                      options={options}
-                    />
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={styles.listLink}
-                      style={{
-                        color:
-                          theme === 'dark' ? colors.darkGray : colors.white,
-                      }}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    className={styles.listLink}
+                    style={getHeaderLinkActiveStyle(theme)}
+                  >
+                    {item.label}
+                  </Link>
                 </motion.li>
               );
             })}

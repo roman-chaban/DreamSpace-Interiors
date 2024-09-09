@@ -17,6 +17,7 @@ import { inter } from '@/fonts/basic-fonts';
 import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
@@ -34,14 +35,14 @@ export const ArrivalProducts: FC = () => {
         <div className={styles.arrivalsNav}>
           <h3
             className={styles.arrivalTitle}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getArrivalTitleStyle(theme)}
           >
             New Arrivals
           </h3>
           <Link
             href=""
             className={`${styles.arrivalLink} ${themeClass}`}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getArrivalTitleStyle(theme)}
           >
             More Products{' '}
             <FormNextLink

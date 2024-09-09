@@ -1,9 +1,11 @@
+'use client';
+
 import type { FC } from 'react';
 import styles from './TextInput.module.scss';
 import { Input } from '@/components/ui/Input/Input';
-import { UseFormRegisterReturn } from 'react-hook-form';
 import Image from 'next/image';
 import { TextInputProps } from '@/types/text-input';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const TextInput: FC<TextInputProps> = ({
   id,
@@ -13,9 +15,12 @@ export const TextInput: FC<TextInputProps> = ({
   register,
   labelText,
   labelClassName,
+  style,
 }) => {
   const iconSrc = type === 'password' ? '/icons/eye.svg' : null;
   const iconAlt = type === 'password' ? 'Eye Icon' : null;
+
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <div>
@@ -26,6 +31,7 @@ export const TextInput: FC<TextInputProps> = ({
         className={className || styles.formInput}
         {...register}
         labelText={labelText}
+        style={style}
         labelClassName={labelClassName}
       />
       {iconSrc && iconAlt && (

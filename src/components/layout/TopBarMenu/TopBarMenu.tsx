@@ -9,18 +9,16 @@ import { animation } from '@/animations/topBarHidden/topBarHidden';
 import { colors } from '@/theme/theme-variables';
 import { FormClose, LinkNext, Ticket } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getBackgroundContainer,
+  getLink,
+  getThemeClass,
+  getTitle,
+} from '@/components/themeStyles/topBarMenuStyles/topBarMenuStyles';
 
 export const TopBarMenu: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const theme = useAppSelector((state) => state.theme.theme);
-
-  const backgroundContainer = {
-    backgroundColor:
-      theme === 'dark' ? colors.lightGray : colors.globalBackground,
-    borderBottom: theme === 'dark' ? 'none' : `1.5px solid ${colors.white}`,
-  };
-
-  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 
   const handleCloseTopBarMenu = () => {
     setIsVisible(false);
@@ -36,27 +34,20 @@ export const TopBarMenu: FC = () => {
           exit={animation.exit}
           transition={animation.transition}
           className={styles.topBarMenu}
-          style={backgroundContainer}
+          style={getBackgroundContainer(theme)}
         >
           <motion.ul className={styles.topBarItems}>
             <li className={styles.topBarItem}>
               <Ticket color={theme === 'dark' ? colors.black : colors.white} />
             </li>
-            <li
-              className={styles.topBarItem}
-              style={{
-                color: theme === 'dark' ? colors.darkGray : colors.white,
-              }}
-            >
+            <li className={styles.topBarItem} style={getTitle(theme)}>
               30% off storewide — Limited time!
             </li>
-            <li className={`${styles.topBarItem} ${themeClass}`}>
+            <li className={`${styles.topBarItem} ${getThemeClass(theme)}`}>
               <Link
-                className={`${styles.showLink} ${themeClass}`}
+                className={`${styles.showLink} ${getThemeClass(theme)}`}
                 href={''}
-                style={{
-                  color: theme === 'dark' ? colors.primary : colors.white,
-                }}
+                style={getLink(theme)}
               >
                 Shop Now
               </Link>

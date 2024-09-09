@@ -15,8 +15,12 @@ import { useCallback, useState } from 'react';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { CustomSelect } from '@/components/ui/Select/Select';
 import { SelectClassNames } from '@/types/select-options';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getAreaStyle,
+  getCustomerTitleStyle,
+  getMoreButtonStyle,
+} from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
 
 export type CustomerReviewsType = {
   product: Product;
@@ -58,7 +62,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
       <div className={styles.reviewsInfoBlock}>
         <h3
           className={styles.reviewsTitle}
-          style={{ color: theme === 'dark' ? '' : colors.white }}
+          style={getCustomerTitleStyle(theme)}
         >
           Customer Reviews | {product.title}
         </h3>
@@ -76,7 +80,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
           </div>
           <span
             className={styles.reviewsRatingTitle}
-            style={{ color: theme === 'dark' ? '' : colors.white }}
+            style={getCustomerTitleStyle(theme)}
           >
             {product.reviewsCount} Reviews
           </span>
@@ -86,9 +90,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
             name=""
             id=""
             className={styles.reviewsArea}
-            style={{
-              backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
-            }}
+            style={getAreaStyle(theme)}
           />
           {isResize ? (
             <Button type="button" className={styles.writeButtonSmall}>
@@ -110,7 +112,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
         <div className={styles.reviewsBlock}>
           <h3
             className={styles.commentsTitle}
-            style={{ color: theme === 'dark' ? '' : colors.white }}
+            style={getCustomerTitleStyle(theme)}
           >
             {data?.length} Reviews
           </h3>
@@ -133,10 +135,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
             type="button"
             onClick={handleLoadMore}
             className={styles.loadMoreButton}
-            style={{
-              color: theme === 'dark' ? '' : colors.white,
-              border: theme === 'dark' ? '' : `1.5px solid ${colors.white}`,
-            }}
+            style={getMoreButtonStyle(theme)}
           >
             Load more
           </Button>

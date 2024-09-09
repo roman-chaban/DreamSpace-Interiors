@@ -8,6 +8,7 @@ import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getArticlesTitle } from '@/components/themeStyles/articlesStyles/articlesStyles';
 
 export const Articles: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
@@ -18,16 +19,13 @@ export const Articles: FC = () => {
     <section className={styles.articles}>
       <div className={styles.articlesContainer}>
         <div className={styles.articlesNav}>
-          <h3
-            className={styles.articlesTitle}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
-          >
+          <h3 className={styles.articlesTitle} style={getArticlesTitle(theme)}>
             Articles
           </h3>
           <Link
             href=""
             className={`${styles.articlesLink} ${themeClass}`}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getArticlesTitle(theme)}
           >
             More Articles{' '}
             <FormNextLink

@@ -23,36 +23,6 @@
   border-color: transparent transparent transparent color.$color-success;
   animation: spin 1s infinite linear;
   position: relative;
-}
-
-.loaderContainer::before {
-  content: '';
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  border: 8px solid;
-  border-color: color.$color-success transparent transparent transparent;
-  animation: spin 1.5s infinite linear reverse;
-
-  &.darkTheme {
-    border-color: color.$color-success;
-  }
-
-  &.lightTheme {
-    border-color: color.$color-white;
-  }
-}
-
-.loaderContainer::after {
-  content: '';
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  border-radius: 50%;
-  border: 8px solid;
-  border-color: transparent color.$color-success transparent transparent;
-  animation: spin 2s infinite linear;
 
   &.darkTheme {
     border-color: transparent color.$color-success transparent transparent;
@@ -60,6 +30,44 @@
 
   &.lightTheme {
     border-color: transparent color.$color-white transparent transparent;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: color.$color-success transparent transparent transparent;
+    animation: spin 1.5s infinite linear reverse;
+
+    &.darkTheme {
+      border-color: color.$color-success transparent transparent transparent;
+    }
+
+    &.lightTheme {
+      border-color: color.$color-white transparent transparent transparent;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    border: 8px solid;
+    animation: spin 2s infinite linear;
+    border-color: transparent color.$color-success transparent transparent;
+
+    &.darkTheme {
+      border-color: transparent color.$color-success transparent transparent;
+    }
+
+    &.lightTheme {
+      border-color: transparent color.$color-white transparent transparent;
+    }
   }
 }
 

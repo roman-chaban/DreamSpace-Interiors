@@ -11,6 +11,10 @@ import { productVariants } from '@/animations/productCard/productCard';
 import { Favorite } from 'grommet-icons';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getButtonStyle,
+  getProductTitleStyle,
+} from '@/components/themeStyles/productCard/productCard';
 
 export interface ShopCategoryProductCardProps {
   products: Products;
@@ -59,26 +63,20 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
             <div className={styles.cardTitles}>
               <h4
                 className={styles.cardTitle}
-                style={{
-                  color: theme === 'dark' ? colors.black : colors.white,
-                }}
+                style={getProductTitleStyle(theme)}
               >
                 {product.title}
               </h4>
               <div className={styles.cardPrices}>
                 <span
                   className={styles.originalPrice}
-                  style={{
-                    color: theme === 'dark' ? colors.black : colors.white,
-                  }}
+                  style={getProductTitleStyle(theme)}
                 >
                   {product.originalPrice}
                 </span>
                 <span
                   className={styles.discountedPrice}
-                  style={{
-                    color: theme === 'dark' ? colors.black : colors.white,
-                  }}
+                  style={getProductTitleStyle(theme)}
                 >
                   {product.discountedPrice}
                 </span>
@@ -86,9 +84,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
             </div>
             <p
               className={styles.cardSubTitle}
-              style={{
-                color: theme === 'dark' ? '' : colors.white,
-              }}
+              style={getProductTitleStyle(theme)}
             >
               {product.subTitle}
             </p>
@@ -96,17 +92,14 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
               <AddButton
                 type="button"
                 className={styles.cardAddButton}
-                style={{
-                  color: theme === 'dark' ? '' : colors.black,
-                  backgroundColor: theme === 'dark' ? '' : colors.white,
-                }}
+                style={getButtonStyle(theme)}
               >
                 Add to cart
               </AddButton>
               <WishlistButton
                 className={styles.cardWishListButton}
                 type="button"
-                style={{color: theme === 'dark' ? '' : colors.white}}
+                style={getProductTitleStyle(theme)}
               >
                 <Favorite color={theme === 'dark' ? 'plain' : colors.white} />
                 Wishlist

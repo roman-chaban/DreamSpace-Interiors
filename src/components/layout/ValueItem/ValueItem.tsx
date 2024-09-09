@@ -1,6 +1,6 @@
+import { getItemContainerStyles, getValueItemTitleStyle } from '@/components/themeStyles/valueItemStyles/valueItemStyles';
 import { ThemedIcon } from '@/constants/valuesItems';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { colors } from '@/theme/theme-variables';
 import { ClassNames, ValueItemProps } from '@/types/value-item';
 import type { FC } from 'react';
 
@@ -13,21 +13,19 @@ export const ValueItem: FC<ValueItemProps & ClassNames> = ({
     <div className={classNames.item}>
       <div
         className={classNames.itemContainer}
-        style={{
-          backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
-        }}
+        style={getItemContainerStyles(theme)}
       >
         <ThemedIcon icon={item.icon} />
         <div className={classNames.itemTitles}>
           <h4
             className={classNames.itemTitle}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getValueItemTitleStyle(theme)}
           >
             {item.title}
           </h4>
           <p
             className={classNames.itemSubTitle}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getValueItemTitleStyle(theme)}
           >
             {item.subTitle}
           </p>

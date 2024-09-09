@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
 
 interface ArrivalProductProps {
   product: Product;
@@ -52,23 +52,17 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
           <Link
             href={`/product/${product.title.replaceAll(' ', '-')}`}
             className={styles.productTitleLink}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
+            style={getArrivalTitleStyle(theme)}
           >
             {product.title}
           </Link>
         </h4>
 
         <div className={styles.productPrices}>
-          <span
-            className={styles.price}
-            style={{ color: theme === 'dark' ? colors.black : colors.white }}
-          >
+          <span className={styles.price} style={getArrivalTitleStyle(theme)}>
             {product.originalPrice}
           </span>
-          <span
-            className={styles.discount}
-            style={{ color: theme === 'dark' ? '' : colors.white }}
-          >
+          <span className={styles.discount} style={getArrivalTitleStyle(theme)}>
             {product.discountedPrice}
           </span>
         </div>
