@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@/theme/Theme';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,8 +13,6 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
       <main>{children}</main>
-    </ThemeProvider>
   );
 }
