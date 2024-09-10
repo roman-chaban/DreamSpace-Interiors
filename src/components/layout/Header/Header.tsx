@@ -13,7 +13,6 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { buttonHoverTap } from '@/animations/dropDown/dropDown';
 import { poppins } from '@/fonts/basic-fonts';
-import { ClassNameType } from '@/types/class-names';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
@@ -22,14 +21,6 @@ import {
   getHeaderLinkStyle,
 } from '@/components/themeStyles/headerStyles/headerStyles';
 
-const classNames: ClassNameType = {
-  container: styles.dropDownContainer,
-  button: styles.dropDownButton,
-  menu: styles.dropDownMenu,
-  listItem: styles.dropDownListItem,
-  link: styles.dropDownLink,
-};
-
 const Header: FC = () => {
   const pathname = usePathname();
   const [isBurgerActive, setIsBurgerActive] = useState(false);
@@ -37,6 +28,8 @@ const Header: FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const theme = useAppSelector((state) => state.theme.theme);
   const toggleBurgerMenu = () => setIsBurgerActive(!isBurgerActive);
+
+  const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,14 +59,14 @@ const Header: FC = () => {
       <div className={styles.headerContainer} style={getContainerStyle(theme)}>
         <div className={styles.headerLogo}>
           <button
-            className={styles.burgerButton}
+            className={`${styles.burgerButton} ${themeClass}`}
             onClick={toggleBurgerMenu}
             aria-label="Toggle menu"
           ></button>
           <h4 className={styles.headerLogoIcon}>
             <Link
               href={NavPaths.HOME}
-              className={styles.logoLink}
+              className={`${styles.logoLink} ${themeClass}`}
               style={getHeaderLinkStyle(theme)}
             >
               3legant

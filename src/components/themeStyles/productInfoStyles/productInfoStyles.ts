@@ -11,3 +11,5 @@ export const getInfoThemeBackground = (theme: 'dark' | 'light') => ({
 export const getCounterThemeStyles = (theme: 'dark' | 'light') => ({
   color: theme === 'dark' ? '' : colors.white,
 });
+
+

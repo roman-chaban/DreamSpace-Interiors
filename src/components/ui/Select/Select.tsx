@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SelectProps } from '@/types/select-options';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { colors } from '@/theme/theme-variables';
 
 export const CustomSelect: FC<SelectProps> = ({
   options,
@@ -25,7 +26,11 @@ export const CustomSelect: FC<SelectProps> = ({
 
   return (
     <div className={classNames.selectContainer}>
-      <label htmlFor="customSelect" className={classNames.label}>
+      <label
+        htmlFor="customSelect"
+        className={classNames.label}
+        style={{ color: theme === 'dark' ? colors.black : colors.white }}
+      >
         {selectLabel}
       </label>
 
@@ -33,7 +38,6 @@ export const CustomSelect: FC<SelectProps> = ({
         id="customSelect"
         className={classNames.select}
         onClick={() => setIsOpen((prev) => !prev)}
-        // style={{ color: theme === 'dark' ? colors.black : colors.white }}
       >
         {selectedValue || defaultValue || 'Choose an option'}
       </div>

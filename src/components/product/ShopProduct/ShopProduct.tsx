@@ -13,6 +13,7 @@ import {
   getProductInfoStyles,
   getProductTitleStyle,
 } from '@/components/themeStyles/productCard/productCard';
+import { Stars } from '@/constants/productRating';
 
 interface ShopProductProps {
   product: Product;
@@ -45,16 +46,7 @@ export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
       </Link>
       <div className={styles.productInfo} style={getProductInfoStyles(theme)}>
         <div className={styles.starsFill}>
-          {product.rating.map((star, index) => (
-            <Image
-              key={index}
-              src={star}
-              alt={`Star ${index + 1}`}
-              width={16}
-              height={16}
-              className={styles.starIcon}
-            />
-          ))}
+          <Stars />
         </div>
         <h4 className={styles.productTitle} style={getProductTitleStyle(theme)}>
           {product.title}

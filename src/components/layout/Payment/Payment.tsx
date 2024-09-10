@@ -13,6 +13,8 @@ import {
   getFormContainerStyle,
   getFormTitleStyle,
 } from '@/components/themeStyles/contactInformationStyles/contactInformationStyles';
+import { Ticket } from 'grommet-icons';
+import { colors } from '@/theme/theme-variables';
 
 export const Payment: FC = () => {
   const { register, handleSubmit, watch } = useForm<PaymentFormValues>();
@@ -52,12 +54,7 @@ export const Payment: FC = () => {
               labelClassName={styles.radioLabel}
               style={getFormTitleStyle(theme)}
             />
-            <Image
-              src="/icons/cash-icon.svg"
-              width={20}
-              height={20}
-              alt="Credit Card Icon"
-            />
+            <Ticket color={theme === 'dark' ? 'plain' : colors.white}  />
           </div>
           <div className={styles.paymentBlock}>
             <CustomRadioButton

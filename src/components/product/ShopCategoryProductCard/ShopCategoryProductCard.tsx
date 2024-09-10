@@ -13,8 +13,10 @@ import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getButtonStyle,
+  getProductTitleDiscountStyle,
   getProductTitleStyle,
 } from '@/components/themeStyles/productCard/productCard';
+import { Stars } from '@/constants/productRating';
 
 export interface ShopCategoryProductCardProps {
   products: Products;
@@ -49,16 +51,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
           </div>
           <div className={styles.cardInfo}>
             <div className={styles.cardRating}>
-              {product.rating.map((icon, index) => (
-                <Image
-                  src={icon}
-                  key={`${icon}-${index}`}
-                  width={16}
-                  height={16}
-                  alt={'Star fill icon'}
-                  className={styles.starIcon}
-                />
-              ))}
+              <Stars />
             </div>
             <div className={styles.cardTitles}>
               <h4
@@ -76,7 +69,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
                 </span>
                 <span
                   className={styles.discountedPrice}
-                  style={getProductTitleStyle(theme)}
+                  style={getProductTitleDiscountStyle(theme)}
                 >
                   {product.discountedPrice}
                 </span>

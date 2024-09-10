@@ -4,6 +4,10 @@ export const getProductTitleStyle = (theme: 'dark' | 'light') => ({
   color: theme === 'dark' ? colors.black : colors.white,
 });
 
+export const getProductTitleDiscountStyle = (theme: 'dark' | 'light') => ({
+  color: theme === 'dark' ? colors.darkGray : colors.error,
+});
+
 export const getButtonStyle = (theme: 'dark' | 'light') => ({
   color: theme === 'dark' ? '' : colors.black,
   backgroundColor: theme === 'dark' ? '' : colors.white,
@@ -14,7 +18,6 @@ export const getProductBorderStyle = (theme: 'dark' | 'light') => ({
   borderRadius: theme === 'dark' ? '' : '12px',
 });
 
-
 export const getProductInfoStyles = (theme: 'dark' | 'light') => ({
-  padding: theme === 'dark' ? '' : '10px'
-})
+  padding: theme === 'dark' ? '' : '10px',
+});

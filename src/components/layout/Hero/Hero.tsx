@@ -14,6 +14,7 @@ import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getHeroContainerStyle,
   getHeroTitleStyle,
+  getMarkStyle,
 } from '@/components/themeStyles/heroStyles/heroStyles';
 
 export const Hero: FC = () => {
@@ -63,8 +64,14 @@ export const Hero: FC = () => {
         </HeroSwiper>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle} style={getHeroTitleStyle(theme)}>
-            Simply Unique <span className={styles.titleMark}>/</span>
-            Simply Better <span className={styles.titleMark}>.</span>
+            Simply Unique{' '}
+            <span className={styles.titleMark} style={getMarkStyle(theme)}>
+              /
+            </span>
+            Simply Better{' '}
+            <span className={styles.titleMark} style={getMarkStyle(theme)}>
+              .
+            </span>
           </h1>
           <p
             className={styles.heroSubTitle}
@@ -72,7 +79,7 @@ export const Hero: FC = () => {
           >
             <span
               className={styles.subTitleMark}
-              style={getHeroTitleStyle(theme)}
+              style={getMarkStyle(theme)}
             >
               3legant
             </span>{' '}

@@ -4,13 +4,31 @@ import { useRef, type FC } from 'react';
 import styles from './Burger.module.scss';
 import Image from 'next/image';
 import { Input } from '@/components/ui/Input/Input';
-import { NavItem, navMenuItems } from '@/constants/navMenuItems';
+import { burgerNavMenuItems, NavItem } from '@/constants/navMenuItems';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
-import { Github, Instagram, Linkedin } from 'grommet-icons';
+import {
+  Basket,
+  Close,
+  Favorite,
+  Github,
+  Instagram,
+  Linkedin,
+} from 'grommet-icons';
 import { useBodyOverFlow } from '@/hooks/useBodyOverflow';
 import { motion } from 'framer-motion';
 import { menuVariants } from '@/animations/burger/burger';
+import {
+  burgerButtonStyle,
+  getBurgerBackgroundStyle,
+  getBurgerLinkStyle,
+} from '@/components/themeStyles/burgerStyles/burgerStyles';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getHeaderLinkStyle } from '@/components/themeStyles/headerStyles/headerStyles';
+import { NavPaths } from '@/enums/navPaths';
+import { colors } from '@/theme/theme-variables';
+import { duration } from '@mui/material';
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 
 interface BurgerProps {
   onClose: () => void;
@@ -19,6 +37,20 @@ interface BurgerProps {
 
 export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
   const burgerMenuRef = useRef<HTMLDivElement>(null);
+
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const listVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+      },
+    }),
+  };
 
   useBodyOverFlow(isActive);
 
@@ -30,17 +62,19 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
         initial="hidden"
         animate={isActive ? 'visible' : 'hidden'}
         exit="exit"
+        style={getBurgerBackgroundStyle(theme)}
         variants={menuVariants}
       >
         <div className={styles.burgerHeader}>
           <div className={styles.burgerLogo}>
-            <h3 className={styles.logo}>3legant</h3>
+            <h3 className={styles.logo} style={getHeaderLinkStyle(theme)}>
+              3legant
+            </h3>
+            <ThemeSwitcher />
             <button className={styles.close} onClick={onClose}>
-              <Image
-                src="/icons/header-nav/close.svg"
-                alt="Close Icon"
-                width={24}
-                height={24}
+              <Close
+                style={{ width: 20, height: 20 }}
+                color={theme === 'dark' ? 'plain' : colors.white}
               />
             </button>
           </div>
@@ -60,45 +94,60 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
             />
           </label>
           <ul className={styles.burgerList}>
-            {navMenuItems.map((item: NavItem) => (
-              <li className={styles.listItem} key={item.id}>
-                <Link href={item.href} className={styles.listLink}>
+            {burgerNavMenuItems.map((item: NavItem, index: number) => (
+              <motion.li
+                className={styles.listItem}
+                key={item.id}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={listVariants}
+              >
+                <Link
+                  href={item.href}
+                  className={styles.listLink}
+                  style={getBurgerLinkStyle(theme)}
+                >
                   {item.label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
         <div className={styles.burgerFooter}>
           <div className={styles.cart}>
-            <h5 className={styles.title}>
+            <h5 className={styles.title} style={getBurgerLinkStyle(theme)}>
               Cart{' '}
               <div className={styles.icons}>
-                <Image
-                  src="/icons/header-nav/shopping bag.svg"
-                  width={24}
-                  height={24}
-                  alt="Cart Icon"
-                />{' '}
+                <Link href={NavPaths.CART} className={styles.cartLink}>
+                  <Basket
+                    style={{ width: 18, height: 18 }}
+                    color={theme === 'dark' ? 'plain' : colors.white}
+                  />
+                </Link>
                 <span className={styles.circleCounter}>0</span>
               </div>
             </h5>
           </div>
           <div className={styles.wishlist}>
-            <h5 className={styles.title}>
+            <h5 className={styles.title} style={getBurgerLinkStyle(theme)}>
               Wishlist
               <div className={styles.icons}>
-                <Image
-                  src="/icons/header-nav/wishlist.svg"
-                  width={24}
-                  height={24}
-                  alt="Cart Icon"
-                />{' '}
+                <Link href={NavPaths.FAVORITE} className={styles.favoriteLink}>
+                  <Favorite
+                    style={{ width: 18, height: 18 }}
+                    color={theme === 'dark' ? 'plain' : colors.white}
+                  />
+                </Link>
                 <span className={styles.circleCounter}>0</span>
               </div>
             </h5>
           </div>
-          <Button type="button" className={styles.signIn}>
+          <Button
+            type="button"
+            className={styles.signIn}
+            style={burgerButtonStyle(theme)}
+          >
             Sign In
           </Button>
           <div className={styles.burgerSocials}>

@@ -4,12 +4,18 @@ import styles from './SignInForm.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { TextInput } from '../TextInput/TextInput';
 import { CheckBoxWrapper } from '../CheckboxWrapper/CheckboxWrapper';
-import { Alert, Close } from 'grommet-icons';
+import { Alert } from 'grommet-icons';
 import { PasswordInput } from '../PasswordInput/PasswordInput';
 import { CloseButton } from '../CloseButton/CloseButton';
 import { SignInForm as SignInFormProps } from '@/types/signin-form';
+import {
+  getSignButtonStyle,
+  getTitleStyle,
+} from '@/components/themeStyles/signInStyles/signInStyles';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const SignInForm: FC = () => {
+  const theme = useAppSelector((state) => state.theme.theme);
   const {
     register,
     formState: { errors },
@@ -37,9 +43,11 @@ export const SignInForm: FC = () => {
       <CloseButton />
       <div className={styles.signInContainer}>
         <div className={styles.signInInfoBlock}>
-          <h1 className={styles.signInTitle}>Sign In</h1>
+          <h1 className={styles.signInTitle} style={getTitleStyle(theme)}>
+            Sign In
+          </h1>
           <div className={styles.signInTitles}>
-            <span className={styles.accountTitle}>
+            <span className={styles.accountTitle} style={getTitleStyle(theme)}>
               Don&apos;t have an account yet?
             </span>
             <Button type="button" className={styles.signUpButton}>
@@ -77,6 +85,7 @@ export const SignInForm: FC = () => {
           <PasswordInput
             placeholder="Password"
             id="password"
+            style={getTitleStyle(theme)}
             register={{
               ...register('password', {
                 minLength: {
@@ -110,9 +119,15 @@ export const SignInForm: FC = () => {
               register={{ ...register('agreeToTerms', {}) }}
               label="Remember Me"
             />
-            <span className={styles.forgotTitle}>Forgot password?</span>
+            <span className={styles.forgotTitle} style={getTitleStyle(theme)}>
+              Forgot password?
+            </span>
           </div>
-          <Button type="submit" className={styles.submitFormButton}>
+          <Button
+            type="submit"
+            className={styles.submitFormButton}
+            style={getSignButtonStyle(theme)}
+          >
             Sign In
           </Button>
         </form>

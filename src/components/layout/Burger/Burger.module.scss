@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transform-origin: top right;
 }
 
@@ -49,6 +48,8 @@
 }
 
 .close {
+  position: absolute;
+  right: 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -59,9 +60,10 @@
 }
 
 .burgerLogo {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 15px;
 }
 
 .logo {
@@ -139,12 +141,6 @@
   font-size: size.$font-size-14px;
   color: color.$color-black;
   text-decoration: none;
-  display: block;
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: translateX(10px);
-    font-weight: 600;
-  }
 }
 
 .burgerFooter {
@@ -212,4 +208,10 @@
   align-items: center;
   gap: 24px;
   display: none;
+}
+
+.favoriteLink,
+.cartLink {
+  display: flex;
+  align-items: center;
 }

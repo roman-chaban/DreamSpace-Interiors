@@ -6,12 +6,11 @@ import Image from 'next/image';
 import styles from './PasswordInput.module.scss';
 import { PasswordInputProps } from '@/types/password-input';
 
-
-
 export const PasswordInput: FC<PasswordInputProps> = ({
   id,
   placeholder,
   register,
+  style,
 }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -27,6 +26,7 @@ export const PasswordInput: FC<PasswordInputProps> = ({
         placeholder={placeholder}
         className={styles.formInput}
         {...register}
+        style={style}
       />
       <div className={styles.iconWrapper} onClick={togglePasswordVisibility}>
         <Image

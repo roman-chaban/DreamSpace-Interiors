@@ -3,7 +3,7 @@
 import styles from '@/components/layout/Header/Header.module.scss';
 import { NavPaths } from '@/enums/navPaths';
 import Link from 'next/link';
-import { Search, Shop, User } from 'grommet-icons';
+import { Favorite, Search, Shop, User } from 'grommet-icons';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
@@ -27,28 +27,44 @@ export const HeaderIcons = () => {
     },
     {
       id: 2,
-      icon: <User color={iconColor} style={iconSettings} />,
+      icon: (
+        <Link href={NavPaths.SIGNIN}>
+          <User color={iconColor} style={iconSettings} />
+        </Link>
+      ),
     },
     {
       id: 3,
       icon: (
         <Link href={NavPaths.CART} className={styles.cartLink}>
           <Shop color={iconColor} style={iconSettings} />
+          <span
+            className={styles.circleIcon}
+            style={{
+              background: iconColor,
+              color: theme === 'dark' ? colors.white : colors.black,
+            }}
+          >
+            0
+          </span>
         </Link>
       ),
     },
     {
       id: 4,
       icon: (
-        <span
-          className={styles.circleIcon}
-          style={{
-            background: iconColor,
-            color: theme === 'dark' ? colors.white : colors.black,
-          }}
-        >
-          0
-        </span>
+        <Link href={NavPaths.FAVORITE} className={styles.cartLink}>
+          <Favorite color={iconColor} style={iconSettings} />
+          <span
+            className={styles.circleIcon}
+            style={{
+              background: iconColor,
+              color: theme === 'dark' ? colors.white : colors.black,
+            }}
+          >
+            0
+          </span>
+        </Link>
       ),
     },
   ];

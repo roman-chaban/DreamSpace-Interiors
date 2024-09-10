@@ -9,6 +9,7 @@ import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
+import { Stars } from '@/constants/productRating';
 
 interface ArrivalProductProps {
   product: Product;
@@ -37,17 +38,8 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
       </div>
       <div className={styles.productInfo}>
         <div className={styles.starsFill}>
-          {product.rating.map((star, index) => (
-            <Image
-              key={index}
-              src={star}
-              alt={`Star ${index + 1}`}
-              width={16}
-              height={16}
-            />
-          ))}
+          <Stars />
         </div>
-
         <h4 className={styles.productTitle}>
           <Link
             href={`/product/${product.title.replaceAll(' ', '-')}`}

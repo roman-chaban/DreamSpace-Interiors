@@ -61,6 +61,14 @@
     right: -5px;
     bottom: 3px;
   }
+
+  &.darkTheme::after {
+    background: color.$color-dark-gray;
+  }
+
+  &.lightTheme::after {
+    background: color.$color-success;
+  }
 }
 
 .headerNav > .headerMenu {
@@ -82,6 +90,7 @@
   background: color.$color-black;
   border: none;
   border-radius: 20px;
+  transition: background-color 0.3s ease;
 
   &::before,
   &::after {
@@ -91,6 +100,7 @@
     height: 3px;
     background: color.$color-black;
     border-radius: 20px;
+    transition: background-color 0.3s ease;
   }
 
   &::before {
@@ -99,6 +109,24 @@
 
   &::after {
     top: -5px;
+  }
+
+  &.darkTheme {
+    background: color.$color-black;
+  }
+
+  &.darkTheme::before,
+  &.darkTheme::after {
+    background: color.$color-black;
+  }
+
+  &.lightTheme {
+    background: color.$color-white;
+  }
+
+  &.lightTheme::before,
+  &.lightTheme::after {
+    background: color.$color-white;
   }
 }
 
@@ -122,15 +150,16 @@
 .circleIcon {
   color: color.$color-white;
   background: color.$color-black;
-  font-size: size.$font-size-12px;
+  font-size: size.$font-size-10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: relative;
-  right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  position: absolute;
+  right: 9px;
+  bottom: 11px;
   line-height: 83%;
   font-weight: 600;
 }
@@ -144,8 +173,10 @@
 }
 
 .cartLink {
+  text-decoration: none;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .dropDownContainer {
@@ -197,7 +228,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 @media only screen and (min-width: 1024px) {
   .burgerButton {

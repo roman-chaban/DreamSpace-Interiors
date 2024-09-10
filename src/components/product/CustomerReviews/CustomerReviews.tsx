@@ -18,6 +18,7 @@ import { SelectClassNames } from '@/types/select-options';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getAreaStyle,
+  getButtonStyle,
   getCustomerTitleStyle,
   getMoreButtonStyle,
 } from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
@@ -102,7 +103,7 @@ export const CustomerReviews: FC<CustomerReviewsType> = ({ product }) => {
               />
             </Button>
           ) : (
-            <Button type="button" className={styles.writeButton}>
+            <Button type="button" className={styles.writeButton} style={getButtonStyle(theme)} >
               Write Review
             </Button>
           )}

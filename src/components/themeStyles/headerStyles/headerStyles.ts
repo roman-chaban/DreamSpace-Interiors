@@ -11,3 +11,4 @@ export const getHeaderLinkStyle = (theme: 'dark' | 'light') => ({
 export const getHeaderLinkActiveStyle = (theme: 'dark' | 'light') => ({
   color: theme === 'dark' ? colors.darkGray : colors.white,
 });
+

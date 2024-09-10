@@ -1,0 +1,8 @@
+@use '../../colors/colors' as color;
+@use '../../abstracts/globals' as size;
+@use '../../abstracts/mixins' as *;
+
+
+.main {
+    min-height: 100vh;
+}

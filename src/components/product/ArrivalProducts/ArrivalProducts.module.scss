@@ -72,6 +72,7 @@
   font-weight: 500;
   line-height: 175%;
   letter-spacing: -0.03em;
+  transition: transform 0.4s ease-in-out 0s;
   &::after {
     content: '';
     position: absolute;
@@ -86,6 +87,9 @@
 
   &.lightTheme::after {
     background: color.$color-white;
+  }
+  &:hover {
+    transform: translate(10px);
   }
 }
 

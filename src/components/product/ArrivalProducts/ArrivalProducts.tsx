@@ -6,10 +6,9 @@ import currentProducts from '@/services/products/products.json';
 import { ArrivalProduct } from '../ArrivalProduct/ArrivalProduct';
 import styles from './ArrivalProducts.module.scss';
 import { Swiper as ArrivalSwiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay, Scrollbar } from 'swiper/modules';
+import { Navigation, Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Link from 'next/link';
 import './ArrivalSwiper.scss';
@@ -18,6 +17,7 @@ import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
+import { NavPaths } from '@/enums/navPaths';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
@@ -40,7 +40,7 @@ export const ArrivalProducts: FC = () => {
             New Arrivals
           </h3>
           <Link
-            href=""
+            href={NavPaths.SHOP}
             className={`${styles.arrivalLink} ${themeClass}`}
             style={getArrivalTitleStyle(theme)}
           >
@@ -52,7 +52,7 @@ export const ArrivalProducts: FC = () => {
         </div>
         <ArrivalSwiper
           className={styles.arrivalSwiper}
-          modules={[Pagination, Navigation, Autoplay, Scrollbar]}
+          modules={[Navigation, Autoplay, Scrollbar]}
           spaceBetween={30}
           slidesPerView={4}
           loop={false}

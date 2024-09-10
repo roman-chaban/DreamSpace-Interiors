@@ -18,6 +18,7 @@ import {
   getInfoThemeBackground,
   getInfoThemeStyle,
 } from '@/components/themeStyles/productInfoStyles/productInfoStyles';
+import { getButtonStyle } from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
 
 export type ProductInfoType = {
   product: Product;
@@ -158,17 +159,21 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
           <WishlistButton
             type="button"
             className={styles.wishlistButton}
-            style={getInfoThemeBackground(theme)}
+            style={getButtonStyle(theme)}
           >
             <Favorite
-              color={theme === 'dark' ? 'plain' : colors.white}
+              color={theme === 'dark' ? 'plain' :  colors.black}
               style={{ width: 25 }}
               className={styles.heartIcon}
             />{' '}
             Wishlist
           </WishlistButton>
         </div>
-        <AddButton type="button" className={styles.addButton}>
+        <AddButton
+          type="button"
+          className={styles.addButton}
+          style={getButtonStyle(theme)}
+        >
           Add to Cart
         </AddButton>
       </div>

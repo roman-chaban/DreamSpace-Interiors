@@ -12,8 +12,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './ProductSwiper.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { colors } from '@/theme/theme-variables';
-import { getSlideThemeBoxShadow } from '@/components/themeStyles/productGalleryStyles/productGalleryStyles';
 
 export type ProductGalleryType = {
   product: Product;
@@ -24,10 +22,7 @@ export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
 
   return (
     <div className={styles.gallery}>
-      <div
-        className={styles.galleryMainImage}
-        style={getSlideThemeBoxShadow(theme)}
-      >
+      <div className={styles.galleryMainImage}>
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           spaceBetween={30}
@@ -44,6 +39,7 @@ export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
               width={400}
               height={400}
               className={styles.mainImage}
+              priority
             />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
@@ -53,6 +49,7 @@ export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
               width={400}
               height={400}
               className={styles.mainImage}
+              priority
             />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
@@ -62,6 +59,7 @@ export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
               width={400}
               height={400}
               className={styles.mainImage}
+              priority
             />
           </SwiperSlide>
         </Swiper>

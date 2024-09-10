@@ -122,7 +122,8 @@
 }
 
 @media (max-width: 375px) {
-  .gallery, .galleryMainImage {
+  .gallery,
+  .galleryMainImage {
     max-width: 265px;
   }
 }

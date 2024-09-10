@@ -1,6 +1,7 @@
 'use client';
 
 import styles from '@/components/layout/Footer/Footer.module.scss';
+import { getMarkStyle } from '@/components/themeStyles/heroStyles/heroStyles';
 import { footerNav, NavItem } from '@/constants/footerNav';
 import { footerSocialItems } from '@/constants/footerSocial';
 import { paymentIcons } from '@/constants/payments';
@@ -18,7 +19,10 @@ export const FooterNav: FC = () => {
       <nav className={styles.footerNav}>
         <div className={styles.footerNavLogo}>
           <h3 className={styles.navLogo}>
-            3legant <span className={styles.logoMark}>.</span>
+            3legant{' '}
+            <span className={styles.logoMark} style={getMarkStyle(theme)}>
+              .
+            </span>
           </h3>
           <p className={`${styles.navLogoSubtitle} ${themeClass}`}>
             Gift & Decoration Store
