@@ -6,9 +6,10 @@ import { CheckBoxWrapperProps } from '@/types/checkbox-wrapper';
 export const CheckBoxWrapper: FC<CheckBoxWrapperProps> = ({
   label,
   register,
+  style
 }) => (
   <div className={styles.authCheckBox}>
-    <CheckBox className={styles.formCheckBox} {...register} />
-    <span className={styles.authCheckBoxSubTitle}>{label}</span>
+    <CheckBox className={styles.formCheckBox} {...register}/>
+    <span className={styles.authCheckBoxSubTitle} style={style} >{label}</span>
   </div>
 );

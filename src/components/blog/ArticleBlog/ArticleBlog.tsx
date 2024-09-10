@@ -1,8 +1,12 @@
+'use client';
+
 import type { FC } from 'react';
 import Image from 'next/image';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { BlogArticle } from '@/constants/blogArticles';
 import styles from '@/components/blog/CurrentArticle/CurrentArticle.module.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { getNavTitleLinkStyle } from '@/components/themeStyles/articleNav/articleNav';
 
 interface ArticleBlog {
   article: BlogArticle;
@@ -10,6 +14,7 @@ interface ArticleBlog {
 
 export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
   const { isResize } = useScreenResize(670);
+  const theme = useAppSelector((state) => state.theme.theme);
   return (
     <>
       {article.articleBlock.map((blogItem) => (
@@ -23,9 +28,24 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
               height={645}
             />
             <div className={styles.newsInfo}>
-              <p className={styles.newsSubTitle}>{blogItem.subTitle}</p>
-              <h3 className={styles.newsTitle}>{blogItem.title}</h3>
-              <p className={styles.newsSecondTitle}>{blogItem.secondTitle}</p>
+              <p
+                className={styles.newsSubTitle}
+                style={getNavTitleLinkStyle(theme)}
+              >
+                {blogItem.subTitle}
+              </p>
+              <h3
+                className={styles.newsTitle}
+                style={getNavTitleLinkStyle(theme)}
+              >
+                {blogItem.title}
+              </h3>
+              <p
+                className={styles.newsSecondTitle}
+                style={getNavTitleLinkStyle(theme)}
+              >
+                {blogItem.secondTitle}
+              </p>
             </div>
           </div>
           {isResize ? (
@@ -40,10 +60,16 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
                       height={729}
                       className={styles.newsImageBanner}
                     />
-                    <h3 className={styles.secondNewsBlockTitle}>
+                    <h3
+                      className={styles.secondNewsBlockTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.title}
                     </h3>
-                    <p className={styles.secondNewsBlockSubTitle}>
+                    <p
+                      className={styles.secondNewsBlockSubTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.subTitle}
                     </p>
                   </div>
@@ -55,10 +81,16 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
                       height={729}
                       className={styles.newsImageBanner}
                     />
-                    <h3 className={styles.secondNewsBlockTitle}>
+                    <h3
+                      className={styles.secondNewsBlockTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.secondTitle}
                     </h3>
-                    <p className={styles.secondNewsBlockSubTitle}>
+                    <p
+                      className={styles.secondNewsBlockSubTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.secondSubTitle}
                     </p>
                   </div>
@@ -86,16 +118,28 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
                     />
                   </div>
                   <div className={styles.secondNewsBlock}>
-                    <h3 className={styles.secondNewsBlockTitle}>
+                    <h3
+                      className={styles.secondNewsBlockTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.title}
                     </h3>
-                    <p className={styles.secondNewsBlockSubTitle}>
+                    <p
+                      className={styles.secondNewsBlockSubTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.subTitle}
                     </p>
-                    <h3 className={styles.secondNewsBlockTitle}>
+                    <h3
+                      className={styles.secondNewsBlockTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.secondTitle}
                     </h3>
-                    <p className={styles.secondNewsBlockSubTitle}>
+                    <p
+                      className={styles.secondNewsBlockSubTitle}
+                      style={getNavTitleLinkStyle(theme)}
+                    >
                       {secondNews.blockInfo.secondSubTitle}
                     </p>
                   </div>
@@ -116,16 +160,16 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
                   />
                 </div>
                 <div className={styles.tertiaryNewsBlock}>
-                  <h3 className={styles.tertiaryNewsBlockTitle}>
+                  <h3 className={styles.tertiaryNewsBlockTitle} style={getNavTitleLinkStyle(theme)}>
                     {tertiaryNews.blockInfo.title}
                   </h3>
-                  <p className={styles.tertiaryNewsBlockSubTitle}>
+                  <p className={styles.tertiaryNewsBlockSubTitle} style={getNavTitleLinkStyle(theme)}>
                     {tertiaryNews.blockInfo.subTitle}
                   </p>
-                  <h3 className={styles.tertiaryNewsBlockTitle}>
+                  <h3 className={styles.tertiaryNewsBlockTitle} style={getNavTitleLinkStyle(theme)}>
                     {tertiaryNews.blockInfo.secondTitle}
                   </h3>
-                  <p className={styles.tertiaryNewsBlockSubTitle}>
+                  <p className={styles.tertiaryNewsBlockSubTitle} style={getNavTitleLinkStyle(theme)}>
                     {tertiaryNews.blockInfo.secondSubTitle}
                   </p>
                 </div>

@@ -8,7 +8,7 @@
 
 .blogContainer {
   @include container;
-  margin-top: 110px;
+  padding-block-start: 110px;
 }
 
 @media only screen and (max-width: 1300px) {

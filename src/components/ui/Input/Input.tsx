@@ -39,7 +39,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     return (
-      <label className={labelClassName}>
+      <label className={labelClassName} style={style}>
         {labelText}
         <input
           ref={ref}

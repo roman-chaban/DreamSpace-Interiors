@@ -8,7 +8,11 @@ import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { getProductTitleStyle } from '@/components/themeStyles/productCard/productCard';
+import {
+  getProductBorderStyle,
+  getProductInfoStyles,
+  getProductTitleStyle,
+} from '@/components/themeStyles/productCard/productCard';
 
 interface ShopProductProps {
   product: Product;
@@ -17,11 +21,13 @@ interface ShopProductProps {
 export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <div className={styles.productItem}>
+    <div className={styles.productItem} style={getProductBorderStyle(theme)}>
       <Link href={`/product/${product.title.replaceAll(' ', '-')}`}>
         <div
           className={styles.productItemImage}
-          style={{ backgroundImage: `url(${product.imageUrl})` }}
+          style={{
+            backgroundImage: `url(${product.imageUrl})`,
+          }}
         >
           <Button type="button" className={styles.addButton}>
             Add to cart
@@ -37,7 +43,7 @@ export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
           </div>
         </div>
       </Link>
-      <div className={styles.productInfo}>
+      <div className={styles.productInfo} style={getProductInfoStyles(theme)}>
         <div className={styles.starsFill}>
           {product.rating.map((star, index) => (
             <Image

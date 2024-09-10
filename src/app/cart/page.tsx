@@ -18,12 +18,7 @@ export default function Cart() {
   return (
     <>
       <PageLayout>
-        <section
-          className={styles.cart}
-          style={{
-            backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
-          }}
-        >
+        <section className={styles.cart}>
           {isResize && (
             <Link href={NavPaths.HOME} className={styles.goBackLink}>
               <FormPrevious style={{ width: 20, height: 20 }} />

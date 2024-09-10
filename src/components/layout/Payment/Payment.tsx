@@ -7,6 +7,12 @@ import Image from 'next/image';
 import { Input } from '@/components/ui/Input/Input';
 import { Button } from '@/components/ui/Button/Button';
 import { PaymentFormValues } from '@/types/payment-values';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import {
+  getFormButtonStyles,
+  getFormContainerStyle,
+  getFormTitleStyle,
+} from '@/components/themeStyles/contactInformationStyles/contactInformationStyles';
 
 export const Payment: FC = () => {
   const { register, handleSubmit, watch } = useForm<PaymentFormValues>();
@@ -16,6 +22,8 @@ export const Payment: FC = () => {
   };
 
   const selectedPaymentMethod = watch('paymentMethod');
+
+  const theme = useAppSelector((state) => state.theme.theme);
 
   return (
     <FormBox
@@ -27,9 +35,12 @@ export const Payment: FC = () => {
       $direction={'column'}
       className={styles.paymentForm}
       onSubmit={handleSubmit(onSubmit)}
+      style={getFormContainerStyle(theme)}
     >
       <div className={styles.formContainer}>
-        <h3 className={styles.formTitle}>Payment method</h3>
+        <h3 className={styles.formTitle} style={getFormTitleStyle(theme)}>
+          Payment method
+        </h3>
         <div className={styles.payBlock}>
           <div className={styles.paymentBlock}>
             <CustomRadioButton
@@ -39,6 +50,7 @@ export const Payment: FC = () => {
               {...register('paymentMethod')}
               className={styles.radio}
               labelClassName={styles.radioLabel}
+              style={getFormTitleStyle(theme)}
             />
             <Image
               src="/icons/cash-icon.svg"
@@ -55,6 +67,7 @@ export const Payment: FC = () => {
               {...register('paymentMethod')}
               className={styles.radio}
               labelClassName={styles.radioLabel}
+              style={getFormTitleStyle(theme)}
             />
           </div>
         </div>
@@ -65,6 +78,7 @@ export const Payment: FC = () => {
           type="text"
           placeholder="1234 1234 1234"
           labelText="Card Number"
+          style={getFormTitleStyle(theme)}
         />
         <div className={styles.dateCvcBlock}>
           <Input
@@ -74,6 +88,7 @@ export const Payment: FC = () => {
             labelClassName={styles.label}
             placeholder="MM/YY"
             labelText="Expiration date"
+            style={getFormTitleStyle(theme)}
           />
           <Input
             name="cvcCode"
@@ -82,10 +97,15 @@ export const Payment: FC = () => {
             labelClassName={styles.label}
             placeholder="CVC code"
             labelText="CVC"
+            style={getFormTitleStyle(theme)}
           />
         </div>
       </div>
-      <Button type="submit" className={styles.placeOrderButton}>
+      <Button
+        type="submit"
+        className={styles.placeOrderButton}
+        style={getFormButtonStyles(theme)}
+      >
         Place Order
       </Button>
     </FormBox>

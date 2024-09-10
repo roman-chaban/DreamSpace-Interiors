@@ -6,7 +6,10 @@ import styles from './ContactForm.module.scss';
 import { ContactFormProps } from '@/types/contact-form';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { getButtonThemeStyles } from '@/components/themeStyles/contactFormStyles/contactFormStyles';
+import {
+  getButtonThemeStyles,
+  getLabelStyle,
+} from '@/components/themeStyles/contactFormStyles/contactFormStyles';
 
 export const ContactForm: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
@@ -27,6 +30,7 @@ export const ContactForm: FC = () => {
         placeholder="Your Name"
         labelClassName={styles.label}
         className={styles.contactFormInput}
+        style={getLabelStyle(theme)}
         register={{ ...register('yourName', {}) }}
       />
       <TextInput
@@ -36,9 +40,14 @@ export const ContactForm: FC = () => {
         placeholder="Your Email"
         className={styles.contactFormInput}
         labelClassName={styles.label}
+        style={getLabelStyle(theme)}
         register={{ ...register('email', {}) }}
       />
-      <label htmlFor="message" className={styles.contactFormLabel}>
+      <label
+        htmlFor="message"
+        className={styles.contactFormLabel}
+        style={getLabelStyle(theme)}
+      >
         Message
         <textarea
           placeholder="Your message"
