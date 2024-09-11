@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 import { animationSettings } from '@/animations/home/home';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { VisuallyHidden } from '@/components/ui/VisuallyHidden/visuallyHidden';
+import { VisuallyHidden } from '@/components/ui/VisuallyHidden/VisuallyHidden';
 
 const classNames = {
   item: styles.item,

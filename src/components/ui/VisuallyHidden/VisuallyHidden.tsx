@@ -18,10 +18,10 @@ export const VisuallyHidden: FC = () => {
       <h1>Ensuring Accessibility: How Our Project Supports All Users</h1>
       <section>
         <p>
-          At <strong>[Your Project Name]</strong>, we are committed to creating
-          an inclusive digital experience for all users, including those with
-          disabilities. Accessibility is a core value of our design and
-          development process, and we strive to ensure that our website and
+          At <strong>[DreamSpace Interiors]</strong>, we are committed to
+          creating an inclusive digital experience for all users, including
+          those with disabilities. Accessibility is a core value of our design
+          and development process, and we strive to ensure that our website and
           services are usable by everyone.
         </p>
 
