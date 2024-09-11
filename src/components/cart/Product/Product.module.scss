@@ -1,0 +1,118 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+.product {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 65px;
+  margin-block-start: 24px;
+  padding-block-end: 16px;
+  border-bottom: 2.5px solid color.$color-light-gray;
+}
+
+.product__container {
+  display: flex;
+  gap: 16px;
+}
+
+.product__container > .product__info {
+  display: flex;
+  gap: 16px;
+}
+
+.product__image {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.product__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product__title {
+  font-size: size.$font-size-14px;
+  line-height: 157%;
+  color: color.$color-black;
+}
+
+.product__color {
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-12px;
+  line-height: 167%;
+}
+
+.product__removeButton {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-14px;
+  line-height: 157%;
+}
+
+.counterBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 8px;
+  width: 90px;
+  height: 32px;
+  background: color.$color-dropdown-header;
+}
+
+.counterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: size.$font-size-24px;
+  color: color.$color-black;
+  font-weight: 400;
+  padding-block: 0;
+  cursor: pointer;
+  width: 100%;
+  max-width: 20px;
+  padding: 0;
+}
+
+.productItemNumber {
+  font-weight: 600;
+  font-size: size.$font-size-12px;
+  line-height: 162%;
+  width: 20px;
+  text-align: center;
+}
+
+.originalPrice {
+  font-weight: 400;
+  font-size: size.$font-size-18px;
+  line-height: 167%;
+  color: color.$color-black;
+  text-align: center;
+}
+
+.subTotal {
+  font-size: size.$font-size-18px;
+  line-height: 167%;
+  color: color.$color-black;
+  text-align: center;
+  width: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .product {
+    gap: 30px;
+  }
+}

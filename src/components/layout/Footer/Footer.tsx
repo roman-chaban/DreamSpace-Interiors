@@ -8,7 +8,6 @@ import { FooterNav } from '../FooterNav/FooterNav';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import { inter, poppins } from '@/fonts/basic-fonts';
 import { MailOption } from 'grommet-icons';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getFooterStyles } from '@/components/themeStyles/footerStyles/footerStyles';
 

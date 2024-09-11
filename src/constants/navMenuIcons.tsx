@@ -16,6 +16,10 @@ export type NavMenuIcons = NavIcon[];
 
 export const HeaderIcons = () => {
   const theme = useAppSelector((state) => state.theme.theme);
+  const cartCounter = useAppSelector((state) => state.cart.goodCounter);
+  const favoriteCounter = useAppSelector(
+    (state) => state.favorite.favoriteCounter
+  );
 
   const iconColor = theme === 'dark' ? colors.black : colors.white;
   const iconSettings = { width: 20, height: 20 };
@@ -45,7 +49,7 @@ export const HeaderIcons = () => {
               color: theme === 'dark' ? colors.white : colors.black,
             }}
           >
-            0
+            {cartCounter}
           </span>
         </Link>
       ),
@@ -62,7 +66,7 @@ export const HeaderIcons = () => {
               color: theme === 'dark' ? colors.white : colors.black,
             }}
           >
-            0
+            {favoriteCounter}
           </span>
         </Link>
       ),

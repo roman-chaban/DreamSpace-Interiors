@@ -30,6 +30,9 @@ export const CartSummary: FC = () => {
     console.log(data);
   };
 
+  
+
+
   return (
     <form className={styles.cartSummary} onSubmit={handleSubmit(onSubmitRadio)}>
       <div
