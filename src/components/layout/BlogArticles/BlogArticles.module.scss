@@ -28,12 +28,6 @@
   overflow: hidden;
 }
 
-.itemImage {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .overlay {
   display: flex;
   flex-direction: column;
@@ -71,8 +65,8 @@
 
 .itemImage {
   width: 100%;
-  object-fit: cover;
   height: auto;
+  object-fit: cover;
 }
 
 .blogTitles {

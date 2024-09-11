@@ -3,12 +3,12 @@
 import { Product } from '@/types/products';
 import type { FC } from 'react';
 import styles from './ShopProduct.module.scss';
-import Image from 'next/image';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
+  getDiscountedTitleStyle,
   getProductBorderStyle,
   getProductInfoStyles,
   getProductTitleStyle,
@@ -55,7 +55,10 @@ export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
           <span className={styles.price} style={getProductTitleStyle(theme)}>
             {product.originalPrice}
           </span>
-          <span className={styles.discount} style={getProductTitleStyle(theme)}>
+          <span
+            className={styles.discount}
+            style={getDiscountedTitleStyle(theme)}
+          >
             {product.discountedPrice}
           </span>
         </div>

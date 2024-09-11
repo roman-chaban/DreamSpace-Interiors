@@ -2,8 +2,11 @@ import type { FC } from 'react';
 import React, { useCallback, useRef } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import styles from './Map.module.scss';
-import { defaultOptions } from './defaultOptions/defaultOptions';
+import { DefaultOptions } from './defaultOptions/defaultOptions';
 import { MapLoader } from './MapLoader/MapLoader';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { darkTheme } from './MapTheme/DarkTheme';
+import { lightTheme } from './MapTheme/LightTheme';
 
 const containerStyle = {
   width: '100%',
@@ -20,6 +23,17 @@ const libraries: string[] = ['places'];
 
 export const Map: FC<MapProps> = ({ center }) => {
   const mapRef = useRef<google.maps.Map | undefined>(undefined);
+  const mapTheme = useAppSelector((state) => state.theme.theme);
+
+  const defaultOptions: DefaultOptions = {
+    panControl: true,
+    zoomControl: true,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    rotateControl: false,
+    styles: mapTheme === 'dark' ? lightTheme : darkTheme,
+  };
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',

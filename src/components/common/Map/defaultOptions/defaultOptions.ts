@@ -1,6 +1,6 @@
-import { defaultTheme, Style } from '../MapTheme/Theme';
+import { Style } from "../MapTheme/DarkTheme";
 
-interface DefaultOptions {
+export interface DefaultOptions {
   panControl: boolean;
   zoomControl: boolean;
   mapTypeControl: boolean;
@@ -9,13 +9,3 @@ interface DefaultOptions {
   rotateControl: boolean;
   styles: Style[];
 }
-
-export const defaultOptions: DefaultOptions = {
-  panControl: true,
-  zoomControl: true,
-  mapTypeControl: false,
-  scaleControl: false,
-  streetViewControl: false,
-  rotateControl: false,
-  styles: defaultTheme,
-};

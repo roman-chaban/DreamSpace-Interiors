@@ -9,7 +9,6 @@ export const Loader: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
   const loaderStyles = {
     borderColor: theme === 'dark' ? colors.white : colors.success,
-    backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
   };
 
   return (

@@ -14,10 +14,14 @@ export const getButtonStyle = (theme: 'dark' | 'light') => ({
 });
 
 export const getProductBorderStyle = (theme: 'dark' | 'light') => ({
-  border: theme === 'dark' ? '' : `5px solid ${colors.grayLight}`,
+  border: theme === 'dark' ? '' : `3px solid ${colors.grayLight}`,
   borderRadius: theme === 'dark' ? '' : '12px',
 });
 
 export const getProductInfoStyles = (theme: 'dark' | 'light') => ({
   padding: theme === 'dark' ? '' : '10px',
+});
+
+export const getDiscountedTitleStyle = (theme: 'dark' | 'light') => ({
+  color: theme === 'dark' ? '' : colors.error,
 });

@@ -8,7 +8,7 @@ export interface Style {
   }>;
 }
 
-export const defaultTheme: Style[] = [
+export const lightTheme: Style[] = [
   {
       "featureType": "all",
       "elementType": "labels.text",
