@@ -5,8 +5,8 @@ import styles from './Map.module.scss';
 import { DefaultOptions } from './defaultOptions/defaultOptions';
 import { MapLoader } from './MapLoader/MapLoader';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { darkTheme } from './MapTheme/DarkTheme';
-import { lightTheme } from './MapTheme/LightTheme';
+import { lightTheme } from './MapTheme/lightTheme';
+import { darkTheme } from './MapTheme/darkTheme';
 
 const containerStyle = {
   width: '100%',

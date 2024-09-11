@@ -1,4 +1,4 @@
-import { Style } from "../MapTheme/DarkTheme";
+import { Style } from "../MapTheme/darkTheme";
 
 export interface DefaultOptions {
   panControl: boolean;
