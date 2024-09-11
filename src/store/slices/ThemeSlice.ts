@@ -12,7 +12,11 @@ const getInitialTheme = (): Theme => {
   }
 
   const savedTheme = localStorage.getItem('theme');
-  return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light';
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme;
+  }
+
+  return 'light';
 };
 
 const initialState: ThemeState = {

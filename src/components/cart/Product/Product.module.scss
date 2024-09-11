@@ -29,6 +29,7 @@
 }
 
 .product__details {
+  width: 150px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -56,6 +57,7 @@
   color: color.$color-dark-gray;
   font-size: size.$font-size-14px;
   line-height: 157%;
+  padding: 0;
 }
 
 .counterBlock {
@@ -107,7 +109,6 @@
   font-size: size.$font-size-18px;
   line-height: 167%;
   color: color.$color-black;
-  text-align: center;
   width: 100px;
 }
 

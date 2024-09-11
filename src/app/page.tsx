@@ -16,6 +16,7 @@ import { motion } from 'framer-motion';
 import { animationSettings } from '@/animations/home/home';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { VisuallyHidden } from '@/components/ui/VisuallyHidden/visuallyHidden';
 
 const classNames = {
   item: styles.item,
@@ -54,6 +55,7 @@ export default function Home() {
       >
         <Header />
         <main>
+          <VisuallyHidden />
           <motion.div
             ref={heroRef}
             className={styles.hero}
