@@ -1,5 +1,5 @@
-import { Loader } from '@/components/ui/Loader/Loader';
+import { Spinner } from '@/components/ui/Spinner/Spinner';
 
 export default function Loading() {
-  return <Loader />;
+  return <Spinner />;
 }

@@ -5,7 +5,6 @@ import styles from './TextInput.module.scss';
 import { Input } from '@/components/ui/Input/Input';
 import Image from 'next/image';
 import { TextInputProps } from '@/types/text-input';
-import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const TextInput: FC<TextInputProps> = ({
   id,
@@ -20,13 +19,10 @@ export const TextInput: FC<TextInputProps> = ({
   const iconSrc = type === 'password' ? '/icons/eye.svg' : null;
   const iconAlt = type === 'password' ? 'Eye Icon' : null;
 
-  const theme = useAppSelector((state) => state.theme.theme);
-
   return (
     <div>
       <Input
         type={type}
-        id={id}
         placeholder={placeholder}
         className={className || styles.formInput}
         {...register}

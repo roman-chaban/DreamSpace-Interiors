@@ -14,12 +14,15 @@ export const getButtonStyle = (theme: 'dark' | 'light') => ({
 });
 
 export const getProductBorderStyle = (theme: 'dark' | 'light') => ({
-  border: theme === 'dark' ? '' : `3px solid ${colors.grayLight}`,
+  boxShadow:
+    theme === 'dark'
+      ? ''
+      : 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset',
   borderRadius: theme === 'dark' ? '' : '12px',
 });
 
 export const getProductInfoStyles = (theme: 'dark' | 'light') => ({
-  padding: theme === 'dark' ? '' : '10px',
+  padding: theme === 'dark' ? '' : '13px',
 });
 
 export const getDiscountedTitleStyle = (theme: 'dark' | 'light') => ({

@@ -3,8 +3,8 @@
 import { Products } from '@/types/products';
 import { useEffect, useState, type FC } from 'react';
 import styles from './ShopCategoriesPrices.module.scss';
-import { Loader } from '@/components/ui/Loader/Loader';
 import { ShopCategoryProductCard } from '../ShopCategoryProductCard/ShopCategoryProductCard';
+import { Spinner } from '@/components/ui/Spinner/Spinner';
 
 interface ShopCategoriesPricesProps {
   products: Products;
@@ -27,7 +27,7 @@ export const ShopCategoriesPrices: FC<ShopCategoriesPricesProps> = ({
 
   return (
     <div className={styles.products}>
-      {loading ? <Loader /> : <ShopCategoryProductCard products={products} />}
+      {loading ? <Spinner /> : <ShopCategoryProductCard products={products} />}
     </div>
   );
 };

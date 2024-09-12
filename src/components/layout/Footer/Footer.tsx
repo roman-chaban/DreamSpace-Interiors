@@ -17,7 +17,7 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ isVisible }) => {
   const { isResize } = useScreenResize(580);
-  const [isVisibleBlock, setIsVisible] = useState<boolean>(isVisible);
+  const [isVisibleBlock] = useState<boolean>(isVisible);
   const theme = useAppSelector((state) => state.theme.theme);
 
   return (

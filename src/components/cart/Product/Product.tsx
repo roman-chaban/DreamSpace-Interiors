@@ -1,5 +1,5 @@
 import { Product as CurrentProduct } from '@/types/products';
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 import styles from './Product.module.scss';
 import Image from 'next/image';
 import { Close } from 'grommet-icons';
@@ -26,9 +26,15 @@ export const Product: FC<ProductProps> = ({ good }) => {
   const { productItemNumber, onAddProduct, onDeleteProduct } =
     useProductItemCounter({ productItem: 1 });
 
-  const subTotal = (
-    parseFloat(good.originalPrice.replace('$', '')) * productItemNumber
-  ).toFixed(2);
+  const subTotal = useMemo(() => {
+    if (good && good.originalPrice) {
+      const percentWithoutDollar = good.originalPrice.replace('$', '');
+      const total = (
+        parseFloat(percentWithoutDollar) * productItemNumber
+      ).toFixed(2);
+      return total;
+    }
+  }, [good, productItemNumber]);
 
   return (
     <div className={styles.product}>

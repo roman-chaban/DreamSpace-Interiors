@@ -12,6 +12,7 @@ import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getSalesInfoBlockStyle,
   getSalesTitleStyle,
+  getSalesUpTitle,
 } from '@/components/themeStyles/salesStyles/salesStyles';
 
 export const Sales: FC<SalesProps> = ({
@@ -44,7 +45,7 @@ export const Sales: FC<SalesProps> = ({
           style={getSalesInfoBlockStyle(theme)}
         >
           <div className={styles.salesUpItems}>
-            <span className={styles.saleUpTitle}>{title}</span>
+            <span className={styles.saleUpTitle} style={getSalesUpTitle(theme)} >{title}</span>
             <h3 className={styles.saleTitle} style={getSalesTitleStyle(theme)}>
               {secondTitle}
             </h3>

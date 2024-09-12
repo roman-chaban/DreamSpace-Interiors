@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { styled } from 'styled-components';
 
-const VisuallyHiddenBox = styled.article`
+const VisuallyHiddenBox = styled.section`
   width: 1px;
   height: 1px;
   position: absolute;
@@ -16,7 +16,7 @@ export const VisuallyHidden: FC = () => {
   return (
     <VisuallyHiddenBox>
       <h1>Ensuring Accessibility: How Our Project Supports All Users</h1>
-      <section>
+      <article>
         <p>
           At <strong>[DreamSpace Interiors]</strong>, we are committed to
           creating an inclusive digital experience for all users, including
@@ -75,7 +75,7 @@ export const VisuallyHidden: FC = () => {
           navigate our site with ease. Together, we can make the web a more
           accessible place for everyone.
         </p>
-      </section>
+      </article>
     </VisuallyHiddenBox>
   );
 };

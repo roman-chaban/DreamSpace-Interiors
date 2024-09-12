@@ -12,7 +12,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: transform .3s ease-in-out 0s;
+  transition: transform 0.3s ease-in-out 0s;
   &:hover {
     transform: scale(0.9);
   }
@@ -159,6 +159,14 @@
   &:hover {
     background: color.$color-success;
   }
+}
+
+.addedFavorite {
+  background-color: color.$color-favorite-background;
+}
+
+.addedCart {
+  background: color.$color-success;
 }
 
 @media (max-width: 1200px) {

@@ -8,3 +8,7 @@ export const getSalesInfoBlockStyle = (theme: 'dark' | 'light') => ({
   backgroundColor:
     theme === 'dark' ? colors.lightGray : colors.globalBackground,
 });
+
+export const getSalesUpTitle = (theme: 'dark' | 'light') => ({
+  color: theme === 'dark' ? '' : colors.success
+})

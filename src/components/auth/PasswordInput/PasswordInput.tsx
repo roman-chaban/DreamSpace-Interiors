@@ -22,7 +22,6 @@ export const PasswordInput: FC<PasswordInputProps> = ({
     <label htmlFor={id} className={styles.formLabel}>
       <Input
         type={showPassword ? 'text' : 'password'}
-        id={id}
         placeholder={placeholder}
         className={styles.formInput}
         {...register}

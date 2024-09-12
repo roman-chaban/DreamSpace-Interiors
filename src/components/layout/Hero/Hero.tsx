@@ -34,7 +34,7 @@ export const Hero: FC = () => {
           <SwiperSlide>
             <Image
               priority
-              src="images/slider/slider-banner.svg"
+              src="/images/slider/slider-banner.jpg"
               alt="Slide Image"
               width={1120}
               height={536}
@@ -44,7 +44,7 @@ export const Hero: FC = () => {
           <SwiperSlide>
             <Image
               priority
-              src="images/slider/secondSlider-banner.svg"
+              src="/images/slider/secondSlider-banner.jpg"
               alt="Slide Image"
               width={1120}
               height={536}
@@ -54,7 +54,7 @@ export const Hero: FC = () => {
           <SwiperSlide>
             <Image
               priority
-              src="images/slider/tertiarySlider-banner.svg"
+              src="/images/slider/tertiary-banner.jpg"
               alt="Slide Image"
               width={1120}
               height={536}
@@ -77,10 +77,7 @@ export const Hero: FC = () => {
             className={styles.heroSubTitle}
             style={getHeroContainerStyle(theme)}
           >
-            <span
-              className={styles.subTitleMark}
-              style={getMarkStyle(theme)}
-            >
+            <span className={styles.subTitleMark} style={getMarkStyle(theme)}>
               3legant
             </span>{' '}
             is a gift & decorations store based in HCMC, Vietnam. Est since

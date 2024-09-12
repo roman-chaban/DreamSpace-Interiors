@@ -161,6 +161,7 @@
   color: color.$color-white;
   line-height: 178%;
   letter-spacing: -0.02em;
+  cursor: pointer;
   @media (max-width: 900px) {
     max-width: 100%;
   }
@@ -185,6 +186,7 @@
   font-size: size.$font-size-18px;
   line-height: 178%;
   letter-spacing: -0.02em;
+  cursor: pointer;
   @media (max-width: 900px) {
     max-width: 100%;
   }
@@ -254,6 +256,11 @@
   font-size: size.$font-size-16px;
   line-height: 167%;
   color: color.$color-dark-gray;
+}
+
+.activeAdd {
+  background: color.$color-success;
+  color: color.$color-white;
 }
 
 @media (max-width: 1150px) {

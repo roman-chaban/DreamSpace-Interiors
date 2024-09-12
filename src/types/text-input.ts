@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 export interface TextInputProps {
-  id: string;
+  id?: string;
   type: string;
   placeholder?: string;
   className?: string;

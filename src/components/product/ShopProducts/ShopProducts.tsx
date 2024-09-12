@@ -7,9 +7,9 @@ import styles from '@/styles/pagesStyles/Shop/Shop.module.scss';
 import { ShopProduct } from '../ShopProduct/ShopProduct';
 import { ShopNav } from '@/components/common/ShopNav/ShopNav';
 import { ShopNavItems } from '@/constants/shopNav';
-import { Loader } from '@/components/ui/Loader/Loader';
 import { motion } from 'framer-motion';
 import { productVariants } from '@/animations/productCard/productCard';
+import { Spinner } from '@/components/ui/Spinner/Spinner';
 
 export interface ShopProductsProps {
   items: ShopNavItems;
@@ -97,7 +97,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
       />
       <div className={styles.productsGrid}>
         {loading ? (
-          <Loader />
+          <Spinner />
         ) : (
           visibleProducts.map((product) => (
             <motion.div

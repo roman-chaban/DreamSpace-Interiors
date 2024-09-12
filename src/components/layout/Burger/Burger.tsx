@@ -27,7 +27,6 @@ import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getHeaderLinkStyle } from '@/components/themeStyles/headerStyles/headerStyles';
 import { NavPaths } from '@/enums/navPaths';
 import { colors } from '@/theme/theme-variables';
-import { duration } from '@mui/material';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 
 interface BurgerProps {

@@ -1,0 +1,93 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+
+.favoriteProduct {
+  width: 100%;
+  margin-block: 50px;
+}
+
+.productContainer {
+  display: flex;
+  gap: 16px;
+  max-width: 100%;
+  position: relative;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.productTitle {
+  margin: 0;
+}
+
+.productPrices {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.productOriginalPrice {
+  font-weight: 600;
+  font-size: size.$font-size-18px;
+}
+
+.productDiscountedPrice {
+  text-decoration: line-through;
+  color: color.$color-banner-link;
+}
+
+.productSubTitle {
+  margin: 0;
+  width: 100%;
+  max-width: 700px;
+  color: color.$color-dark-gray;
+}
+
+.productMeasurements {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: color.$color-success;
+  font-weight: 500;
+}
+
+.productMeasurementsMark {
+  font-weight: 400;
+  color: color.$color-brand;
+}
+
+.wishlistButton {
+  width: 100%;
+  max-width: 250px;
+  padding: 5px;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  background: color.$color-brand;
+  color: color.$color-white;
+  cursor: pointer;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
