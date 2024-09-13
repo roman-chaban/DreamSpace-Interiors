@@ -68,7 +68,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
                   className={styles.originalPrice}
                   style={getProductTitleStyle(theme)}
                 >
-                  {product.originalPrice}
+                  ${product.originalPrice}
                 </span>
                 <span
                   className={styles.discountedPrice}

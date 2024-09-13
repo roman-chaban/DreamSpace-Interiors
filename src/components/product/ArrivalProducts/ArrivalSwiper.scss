@@ -1,0 +1,19 @@
+@use '../../../styles/colors/colors' as color;
+
+.swiper-scrollbar {
+  &-drag {
+    border-radius: 10px;
+  }
+}
+
+.darkTheme .swiper-scrollbar .swiper-scrollbar-drag {
+  background-color: color.$global-background;
+  width: 100%;
+  max-width: 300px;
+}
+
+.lightTheme .swiper-scrollbar .swiper-scrollbar-drag {
+  background-color: color.$color-white;
+  width: 100%;
+  max-width: 300px;
+}

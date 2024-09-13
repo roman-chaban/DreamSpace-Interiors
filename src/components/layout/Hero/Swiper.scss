@@ -84,17 +84,9 @@
   height: 4px !important;
   background: color.$color-white;
   border-radius: 4px !important;
-
-  &-drag {
-    background-color: color.$color-darkest-gray !important;
-    width: 834px !important;
-  }
 }
 
 @media (max-width: 1150px) {
-  .swiper-scrollbar-drag {
-    max-width: 400px;
-  }
   .swiper-button-prev,
   .swiper-button-next {
     width: 44px !important;

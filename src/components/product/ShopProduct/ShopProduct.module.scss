@@ -186,6 +186,10 @@
     flex-direction: row;
     gap: 10px;
   }
+  .addButton {
+    max-width: 140px;
+    bottom: 5px;
+  }
 }
 
 @media only screen and (max-width: 500px) {

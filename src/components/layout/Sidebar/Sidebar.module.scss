@@ -36,8 +36,7 @@
   gap: 16px;
 }
 
-.categoriesTitle,
-.priceTitle {
+.categoriesTitle {
   font-weight: 600;
   line-height: 162%;
   color: color.$color-product-title;
@@ -71,28 +70,11 @@
   border-radius: 10px;
 }
 
-.price::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.price::-webkit-scrollbar-track {
-  background: color.$color-scroll-bar-thumb;
-  border-radius: 100px;
-}
-
-.price::-webkit-scrollbar-thumb {
-  background: color.$color-dark-gray;
-  height: 40px;
-  border-radius: 10px;
-}
-
 .allRoomsTitle {
   color: color.$color-product-title;
 }
 
-.title,
-.allPriceTitle {
+.title {
   line-height: 157%;
   font-weight: 600;
   font-size: size.$font-size-14px;
@@ -103,66 +85,6 @@
   background: transparent;
   border: none;
   padding: 0;
-}
-
-.priceTitles {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.priceTitle {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.checkboxPrice {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid color.$color-dark-gray;
-  border-radius: 4px;
-  background-color: color.$color-white;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-
-  appearance: none;
-  outline: none;
-
-  &:checked {
-    background-color: color.$color-black;
-    border-color: transparent;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background-image: url('/sidebar/arrow-checkbox.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: scale(0) translate(-50%, -50%);
-    border-radius: 2px;
-    transition: transform 0.3s ease;
-    z-index: 1;
-  }
-
-  &:checked::after {
-    transform: scale(1) translate(-50%, -50%);
-  }
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  justify-content: space-between;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -176,14 +98,6 @@
   }
   .allRoomsTitle {
     font-size: size.$font-size-12px;
-  }
-  .checkboxPrice {
-    max-width: 18px;
-    max-height: 18px;
-    &::after {
-      max-width: 17px;
-      max-height: 17px;
-    }
   }
 }
 

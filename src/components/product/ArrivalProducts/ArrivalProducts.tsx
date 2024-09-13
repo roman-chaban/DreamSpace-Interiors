@@ -1,7 +1,4 @@
-'use client';
-
-import { Product, Products } from '@/types/products';
-import { useEffect, useState, FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import currentProducts from '@/services/products/products.json';
 import { ArrivalProduct } from '../ArrivalProduct/ArrivalProduct';
 import styles from './ArrivalProducts.module.scss';
@@ -18,6 +15,7 @@ import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
 import { NavPaths } from '@/enums/navPaths';
+import { Product, Products } from '@/types/products';
 
 export const ArrivalProducts: FC = () => {
   const [products, setProducts] = useState<Products>([]);
@@ -28,6 +26,17 @@ export const ArrivalProducts: FC = () => {
   useEffect(() => {
     setProducts(currentProducts);
   }, []);
+
+  // Use JavaScript to apply the scrollbar background color based on the theme
+  useEffect(() => {
+    const scrollbar = document.querySelector('.swiper-scrollbar-drag');
+    if (scrollbar) {
+      scrollbar.setAttribute(
+        'style',
+        `background-color: ${theme === 'dark' ? '#333' : '#ccc'}`
+      );
+    }
+  }, [theme]); // Re-run when the theme changes
 
   return (
     <section className={`${styles.products} ${inter.className}`}>
@@ -51,7 +60,7 @@ export const ArrivalProducts: FC = () => {
           </Link>
         </div>
         <ArrivalSwiper
-          className={styles.arrivalSwiper}
+          className={`${styles.arrivalSwiper} ${themeClass}`}
           modules={[Navigation, Autoplay, Scrollbar]}
           spaceBetween={30}
           slidesPerView={4}

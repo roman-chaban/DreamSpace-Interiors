@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
-import { colors } from '@/theme/theme-variables';
-import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import styles from '@/components/layout/SidebarPrices/SidebarPrices.module.scss';
 
 export interface PriceItem {
   id: number;
@@ -87,29 +85,3 @@ export const priceItems: PriceItems = [
     title: '$400.00+',
   },
 ];
-
-const PriceList = () => {
-  const theme = useAppSelector((state) => state.theme.theme);
-
-  return (
-    <div className={styles.priceTitles}>
-      {priceItems.map((item) => (
-        <div className={styles.priceTitle} key={item.id}>
-          <span
-            className={styles.title}
-            style={{
-              color: theme === 'dark' ? colors.darkGray : colors.white,
-            }}
-          >
-            {item.title}
-          </span>
-          <label htmlFor={`price${item.id}`} className={styles.checkboxLabel}>
-            {item.checkbox}
-          </label>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default PriceList;
