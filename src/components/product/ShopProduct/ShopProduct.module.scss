@@ -167,6 +167,10 @@
   background-color: color.$color-favorite-background;
 }
 
+.active {
+  background-color: color.$color-success;
+}
+
 @media (max-width: 1200px) {
   .newTitle {
     display: flex;

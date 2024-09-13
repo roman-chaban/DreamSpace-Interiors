@@ -10,6 +10,7 @@ import { counterButtonIcons } from '@/components/ui/CounterButtonsIcons/CounterB
 import { productTitle } from '@/components/themeStyles/productStyles/productStyles';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface ProductProps {
   good: CurrentProduct;
@@ -19,8 +20,14 @@ export const Product: FC<ProductProps> = ({ good }) => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector((state) => state.theme.theme);
 
+  const [isAddedCart, setIsAddedCart] = useLocalStorage<boolean>(
+    `cart-${good.productId}`,
+    true
+  );
+
   const handleRemoveGood = () => {
     dispatch(deleteProductFromCart(good.productId));
+    setIsAddedCart(false);
   };
 
   const { productItemNumber, onAddProduct, onDeleteProduct } =

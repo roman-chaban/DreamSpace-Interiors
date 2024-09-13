@@ -21,10 +21,7 @@ export const CartProducts: FC = () => {
         >
           Product
         </h4>
-        <ul
-          className={styles.productsMenu}
-          style={getContainerThemeBorderBottom(theme)}
-        >
+        <ul className={styles.productsMenu}>
           <li
             className={styles.menuListItem}
             style={getListItemThemeStyle(theme)}

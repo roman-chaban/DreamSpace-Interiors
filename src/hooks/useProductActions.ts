@@ -6,8 +6,10 @@ import {
   addGoodToFavorite,
   deleteGoodFromFavorite,
 } from '@/store/slices/FavoriteSlice';
+import { useState } from 'react';
 
 export const useProductActions = (product: Product) => {
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isAddedFavorite, setIsAddedFavorite] = useLocalStorage(
     `favorite-${product.productId}`,
     false
@@ -23,11 +25,17 @@ export const useProductActions = (product: Product) => {
     if (!isAddedCart) {
       dispatch(addGoodToCart(product));
       setIsAddedCart(true);
+      setToastMessage('Product added to cart!');
     } else {
       dispatch(deleteProductFromCart(product.productId));
       setIsAddedCart(false);
+      setToastMessage('Product removed from cart.');
     }
   };
+
+  setTimeout(() => {
+    setToastMessage(null);
+  }, 3000);
 
   const handleAddFavorite = () => {
     if (!isAddedFavorite) {
@@ -44,5 +52,6 @@ export const useProductActions = (product: Product) => {
     isAddedFavorite,
     handleAddFavorite,
     handleAddProduct,
+    toastMessage,
   };
 };

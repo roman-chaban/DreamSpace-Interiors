@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Favorite, Search, Shop, User } from 'grommet-icons';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { usePathname } from 'next/navigation';
 
 export interface NavIcon {
   id: number;
@@ -24,6 +25,8 @@ export const HeaderIcons = () => {
   const iconColor = theme === 'dark' ? colors.black : colors.white;
   const iconSettings = { width: 20, height: 20 };
 
+  const pathname = usePathname();
+
   const navMenuIcons: NavMenuIcons = [
     {
       id: 1,
@@ -40,7 +43,16 @@ export const HeaderIcons = () => {
     {
       id: 3,
       icon: (
-        <Link href={NavPaths.CART} className={styles.cartLink}>
+        <Link
+          href={NavPaths.CART}
+          className={`${styles.cartLink} ${
+            pathname === NavPaths.CART
+              ? theme === 'dark'
+                ? styles.activeIconDark
+                : styles.activeIconLight
+              : ''
+          }`}
+        >
           <Shop color={iconColor} style={iconSettings} />
           <span
             className={styles.circleIcon}
@@ -57,7 +69,16 @@ export const HeaderIcons = () => {
     {
       id: 4,
       icon: (
-        <Link href={NavPaths.FAVORITE} className={styles.cartLink}>
+        <Link
+          href={NavPaths.FAVORITE}
+          className={`${styles.cartLink} ${
+            pathname === NavPaths.FAVORITE
+              ? theme === 'dark'
+                ? styles.activeIconDark
+                : styles.activeIconLight
+              : ''
+          }`}
+        >
           <Favorite color={iconColor} style={iconSettings} />
           <span
             className={styles.circleIcon}

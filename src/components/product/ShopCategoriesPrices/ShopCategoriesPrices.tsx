@@ -26,8 +26,14 @@ export const ShopCategoriesPrices: FC<ShopCategoriesPricesProps> = ({
   }, []);
 
   return (
-    <div className={styles.products}>
-      {loading ? <Spinner /> : <ShopCategoryProductCard products={products} />}
+    <div className={styles.categoriesProducts}>
+      {loading ? (
+        <Spinner />
+      ) : (
+        products.map((product) => (
+          <ShopCategoryProductCard key={product.productId} product={product} />
+        ))
+      )}
     </div>
   );
 };

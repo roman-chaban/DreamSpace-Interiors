@@ -1,13 +1,13 @@
 'use client';
 
 import { Product } from '@/types/products';
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 import styles from './ArrivalProduct.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
+import { getArrivalTitleDiscountTitle, getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
 import { Stars } from '@/constants/productRating';
 import { colors } from '@/theme/theme-variables';
 import { useProductActions } from '@/hooks/useProductActions';
@@ -18,8 +18,13 @@ interface ArrivalProductProps {
 
 export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
   const theme = useAppSelector((state) => state.theme.theme);
-  const { isAddedCart, isAddedFavorite, handleAddProduct, handleAddFavorite } =
-    useProductActions(product);
+  const {
+    isAddedCart,
+    isAddedFavorite,
+    handleAddProduct,
+    handleAddFavorite,
+    toastMessage,
+  } = useProductActions(product);
 
   return (
     <div className={styles.productItem}>
@@ -73,11 +78,19 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
           <span className={styles.price} style={getArrivalTitleStyle(theme)}>
             ${product.originalPrice}
           </span>
-          <span className={styles.discount} style={getArrivalTitleStyle(theme)}>
+          <span
+            className={styles.discount}
+            style={getArrivalTitleDiscountTitle(theme)}
+          >
             {product.discountedPrice}
           </span>
         </div>
       </div>
+      {toastMessage && (
+        <div className={styles.toast}>
+          <span>{toastMessage}</span>
+        </div>
+      )}
     </div>
   );
 };

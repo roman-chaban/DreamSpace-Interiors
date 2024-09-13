@@ -38,7 +38,9 @@ export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
         <div className={styles.addBlock}>
           <Button
             type="button"
-            className={styles.addButton}
+            className={`${styles.addButton}  ${
+              isAddedCart ? styles.active : ''
+            } `}
             onClick={handleAddProduct}
           >
             {isAddedCart ? 'Added to cart' : 'Add to cart'}
