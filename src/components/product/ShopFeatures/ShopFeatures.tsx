@@ -1,6 +1,6 @@
 import { CustomSelect } from '@/components/ui/Select/Select';
 import { Option, SelectClassNames } from '@/types/select-options';
-import type { FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import styles from './ShopFeatures.module.scss';
 
 export const options: Option[] = [

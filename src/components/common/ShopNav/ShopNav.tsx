@@ -43,7 +43,6 @@ export const ShopNav: FC<ShopNavProps> = ({
 
   const handleSortChange = (selectedOption: string) => {
     onSortChange(selectedOption);
-    console.log('sort');
   };
 
   return (

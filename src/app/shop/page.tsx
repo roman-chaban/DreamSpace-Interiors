@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import { TopBanner } from '@/components/common/TopBanner/TopBanner';
@@ -18,14 +19,25 @@ import currentProducts from '@/services/products/products.json';
 import { Products } from '@/types/products';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { sortProducts } from '@/components/sortProducts/sortProducts';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
   const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
-  const handleSelectTab = (id: number) => setSelectedTab(id);
   const [products, setProducts] = useState<Products>(currentProducts);
+  const [sortOption, setSortOption] = useState<string>('');
 
   const theme = useAppSelector((state) => state.theme.theme);
+
+  const handleSelectTab = (id: number) => setSelectedTab(id);
+  const handleSortChange = (option: string) => setSortOption(option);
+
+  useEffect(() => {
+    if (sortOption) {
+      const sorted = sortProducts(products, sortOption);
+      setProducts(sorted);
+    }
+  }, [sortOption]);
 
   useEffect(() => {
     setProducts(currentProducts);
@@ -59,6 +71,7 @@ export default function Shop() {
             items={shopNavItems}
             onSelectContent={handleSelectTab}
             selectedItemId={selectedTab}
+            onSortChange={handleSortChange}
           />
         </div>
         <ShopCategoriesPrices products={products} />
