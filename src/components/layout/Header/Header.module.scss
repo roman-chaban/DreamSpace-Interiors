@@ -147,6 +147,10 @@
   gap: 8px;
 }
 
+.activeLink {
+  color: color.$color-warning;
+}
+
 .circleIcon {
   color: color.$color-white;
   background: color.$color-black;

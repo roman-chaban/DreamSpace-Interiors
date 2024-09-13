@@ -4,9 +4,9 @@
 
 .product {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-block-start: 24px;
   padding-block-end: 16px;
   border-bottom: 2.5px solid color.$color-light-gray;
@@ -109,11 +109,15 @@
   font-size: size.$font-size-18px;
   line-height: 167%;
   color: color.$color-black;
-  width: 100px;
+  width: 100%;
+  max-width: 80px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1230px) {
   .product {
     gap: 30px;
+  }
+  .counterBlock {
+    display: none;
   }
 }

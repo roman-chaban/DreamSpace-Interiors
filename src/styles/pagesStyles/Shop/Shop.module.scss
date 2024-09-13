@@ -164,11 +164,11 @@
 .select {
   display: flex;
   align-items: center;
-  width: 120px;
+  width: 130px;
   border-radius: 8px;
   padding: 8px;
   height: 48px;
-  background-position: right -5px center;
+  background-position: right -10px center;
   background-size: 40px 40px;
   background-image: url('/icons/select-appearance.svg');
   background-repeat: no-repeat;
@@ -230,7 +230,7 @@
     font-size: size.$font-size-14px;
   }
   .select {
-    max-width: 105px;
+    max-width: 125px;
     max-height: 44px;
     font-size: size.$font-size-14px;
   }

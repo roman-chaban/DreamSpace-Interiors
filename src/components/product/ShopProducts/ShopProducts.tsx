@@ -10,6 +10,7 @@ import { ShopNavItems } from '@/constants/shopNav';
 import { motion } from 'framer-motion';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Spinner } from '@/components/ui/Spinner/Spinner';
+import { sortProducts } from '@/components/sortProducts/sortProducts';
 
 export interface ShopProductsProps {
   items: ShopNavItems;
@@ -32,8 +33,9 @@ export const ShopProducts: FC<ShopProductsProps> = ({
 }) => {
   const [products, setProducts] = useState<Products>([]);
   const [visibleProducts, setVisibleProducts] = useState<Products>([]);
-  const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [visibleCount, setVisibleCount] = useState<number>(3);
+  const [sortOption, setSortOption] = useState<string>('');
 
   const observer = useRef<IntersectionObserver | null>(null);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -45,9 +47,12 @@ export const ShopProducts: FC<ShopProductsProps> = ({
       setVisibleProducts(data.slice(0, visibleCount));
       setLoading(false);
     };
-
     loadProducts();
   }, []);
+
+  const handleSortChange = (option: string) => {
+    setSortOption(option);
+  };
 
   useEffect(() => {
     if (!sentinelRef.current) return;
@@ -83,9 +88,10 @@ export const ShopProducts: FC<ShopProductsProps> = ({
 
   useEffect(() => {
     if (products.length > 0) {
-      setVisibleProducts(products.slice(0, visibleCount));
+      const sortedProducts = sortProducts(products, sortOption);
+      setVisibleProducts(sortedProducts.slice(0, visibleCount));
     }
-  }, [products, visibleCount]);
+  }, [products, visibleCount, sortOption]);
 
   return (
     <div className={styles.shopProducts}>
@@ -94,6 +100,7 @@ export const ShopProducts: FC<ShopProductsProps> = ({
         items={items}
         onSelectContent={onSelectContent}
         selectedItemId={selectedItemId}
+        onSortChange={handleSortChange}
       />
       <div className={styles.productsGrid}>
         {loading ? (

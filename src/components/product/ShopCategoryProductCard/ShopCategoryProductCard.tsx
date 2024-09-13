@@ -5,7 +5,6 @@ import { WishlistButton } from '@/components/ui/WishlistButton/WishlistButton';
 import { Products } from '@/types/products';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import Image from 'next/image';
 import styles from '@/components/product/ShopCategoriesPrices/ShopCategoriesPrices.module.scss';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Favorite } from 'grommet-icons';
@@ -17,6 +16,7 @@ import {
   getProductTitleStyle,
 } from '@/components/themeStyles/productCard/productCard';
 import { Stars } from '@/constants/productRating';
+import { useProductActions } from '@/hooks/useProductActions';
 
 export interface ShopCategoryProductCardProps {
   products: Products;
@@ -26,6 +26,9 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
   products,
 }) => {
   const theme = useAppSelector((state) => state.theme.theme);
+
+  const { handleAddProduct, handleAddFavorite, isAddedCart, isAddedFavorite } =
+    useProductActions(products[0]);
 
   return (
     <div className={styles.categoriesProducts}>
@@ -86,6 +89,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
                 type="button"
                 className={styles.cardAddButton}
                 style={getButtonStyle(theme)}
+                onClick={handleAddProduct}
               >
                 Add to cart
               </AddButton>
@@ -93,6 +97,7 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
                 className={styles.cardWishListButton}
                 type="button"
                 style={getProductTitleStyle(theme)}
+                onClick={handleAddFavorite}
               >
                 <Favorite color={theme === 'dark' ? 'plain' : colors.white} />
                 Wishlist

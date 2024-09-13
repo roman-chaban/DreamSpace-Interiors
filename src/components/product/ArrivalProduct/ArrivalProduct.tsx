@@ -1,7 +1,7 @@
 'use client';
 
 import { Product } from '@/types/products';
-import { useEffect, useState, type FC } from 'react';
+import { type FC } from 'react';
 import styles from './ArrivalProduct.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
@@ -9,50 +9,17 @@ import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
 import { Stars } from '@/constants/productRating';
-import { addGoodToCart, deleteProductFromCart } from '@/store/slices/CartSlice';
-import { useAppDispatch } from '@/hooks/redux-hooks/useAppDispatch';
-import {
-  addGoodToFavorite,
-  deleteGoodFromFavorite,
-} from '@/store/slices/FavoriteSlice';
 import { colors } from '@/theme/theme-variables';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { useProductActions } from '@/hooks/useProductActions';
 
 interface ArrivalProductProps {
   product: Product;
 }
 
 export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
-  const [isAddedFavorite, setIsAddedFavorite] = useLocalStorage<boolean>(
-    `favorite-${product.productId}`,
-    false
-  );
-  const [isAddedCart, setAddedCart] = useLocalStorage<boolean>(
-    `cart-${product.productId}`,
-    false
-  );
   const theme = useAppSelector((state) => state.theme.theme);
-  const dispatch = useAppDispatch();
-
-  const handleAddProduct = () => {
-    if (!isAddedCart) {
-      dispatch(addGoodToCart(product));
-      setAddedCart(true);
-    } else {
-      dispatch(deleteProductFromCart(product.productId));
-      setAddedCart(false);
-    }
-  };
-
-  const handleAddProductToFavorite = () => {
-    if (!isAddedFavorite) {
-      dispatch(addGoodToFavorite(product));
-      setIsAddedFavorite(true);
-    } else {
-      dispatch(deleteGoodFromFavorite(product.productId));
-      setIsAddedFavorite(false);
-    }
-  };
+  const { isAddedCart, isAddedFavorite, handleAddProduct, handleAddFavorite } =
+    useProductActions(product);
 
   return (
     <div className={styles.productItem}>
@@ -79,7 +46,7 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
             className={`${styles.favoriteIcon} ${
               isAddedFavorite ? styles.addedFavorite : ''
             } `}
-            onClick={handleAddProductToFavorite}
+            onClick={handleAddFavorite}
           >
             <Favorite
               style={{ width: 18, height: 18 }}
@@ -104,7 +71,7 @@ export const ArrivalProduct: FC<ArrivalProductProps> = ({ product }) => {
 
         <div className={styles.productPrices}>
           <span className={styles.price} style={getArrivalTitleStyle(theme)}>
-            {product.originalPrice}
+            ${product.originalPrice}
           </span>
           <span className={styles.discount} style={getArrivalTitleStyle(theme)}>
             {product.discountedPrice}

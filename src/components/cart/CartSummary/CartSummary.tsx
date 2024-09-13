@@ -31,8 +31,6 @@ export const CartSummary: FC = () => {
   };
 
   
-
-
   return (
     <form className={styles.cartSummary} onSubmit={handleSubmit(onSubmitRadio)}>
       <div

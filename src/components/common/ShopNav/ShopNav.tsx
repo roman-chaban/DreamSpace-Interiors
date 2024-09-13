@@ -13,13 +13,14 @@ interface ShopNavProps {
   onSelectContent: (id: number) => void;
   selectedItemId: number;
   title?: string;
+  onSortChange: (option: string) => void;
 }
 
 const options = [
-  { label: 'lowest price', value: 'priceAsc' },
-  { label: 'highest price', value: 'priceDesc' },
-  { label: 'popularity', value: 'popularity' },
-  { label: 'rating', value: 'rating' },
+  { label: 'lowest price', value: 'Lowest price' },
+  { label: 'highest price', value: 'Highest price' },
+  { label: 'popularity', value: 'Popularity' },
+  { label: 'rating', value: 'Rating' },
 ];
 
 const classNames: SelectClassNames = {
@@ -36,8 +37,15 @@ export const ShopNav: FC<ShopNavProps> = ({
   onSelectContent,
   selectedItemId,
   title,
+  onSortChange,
 }) => {
   const theme = useAppSelector((state) => state.theme.theme);
+
+  const handleSortChange = (selectedOption: string) => {
+    onSortChange(selectedOption);
+    console.log('sort');
+  };
+
   return (
     <div className={styles.shopProductsNav}>
       <h4
@@ -51,6 +59,7 @@ export const ShopNav: FC<ShopNavProps> = ({
           defaultValue="Sort by"
           options={options}
           classNames={classNames}
+          onChange={(selectedValue) => handleSortChange(selectedValue)}
         />
         <div className={styles.selectedOptions}>
           {items.map((item: ShopNavItem) => (

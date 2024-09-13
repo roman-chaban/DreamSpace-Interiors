@@ -5,13 +5,15 @@ export interface Product {
     discountPercentage: string;
     imageUrl: string;
     rating: string[];
-    originalPrice: string;
+    originalPrice: number;
     discountedPrice: string;
     reviewsCount: string;
     subTitle: string;
     measurements: string;
     sku: number;
     category: string;
+    popularity: number;
+    ratingItem: number;
 };
 
 

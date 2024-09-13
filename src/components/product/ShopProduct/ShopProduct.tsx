@@ -14,6 +14,8 @@ import {
   getProductTitleStyle,
 } from '@/components/themeStyles/productCard/productCard';
 import { Stars } from '@/constants/productRating';
+import { useProductActions } from '@/hooks/useProductActions';
+import { colors } from '@/theme/theme-variables';
 
 interface ShopProductProps {
   product: Product;
@@ -21,39 +23,61 @@ interface ShopProductProps {
 
 export const ShopProduct: FC<ShopProductProps> = ({ product }) => {
   const theme = useAppSelector((state) => state.theme.theme);
+
+  const { isAddedCart, isAddedFavorite, handleAddProduct, handleAddFavorite } =
+    useProductActions(product);
+
   return (
     <div className={styles.productItem} style={getProductBorderStyle(theme)}>
-      <Link href={`/product/${product.title.replaceAll(' ', '-')}`}>
-        <div
-          className={styles.productItemImage}
-          style={{
-            backgroundImage: `url(${product.imageUrl})`,
-          }}
-        >
-          <Button type="button" className={styles.addButton}>
-            Add to cart
+      <div
+        className={styles.productItemImage}
+        style={{
+          backgroundImage: `url(${product.imageUrl})`,
+        }}
+      >
+        <div className={styles.addBlock}>
+          <Button
+            type="button"
+            className={styles.addButton}
+            onClick={handleAddProduct}
+          >
+            {isAddedCart ? 'Added to cart' : 'Add to cart'}
           </Button>
-          <div className={styles.productDiscount}>
-            <span className={styles.newTitle}>{product.discountedTitle}</span>
-            <span className={styles.discountTitle}>
-              {product.discountPercentage}
-            </span>
-            <Button type="button" className={styles.favoriteIcon}>
-              <Favorite style={{ width: 18, height: 18 }} />
-            </Button>
-          </div>
         </div>
-      </Link>
+        <div className={styles.productDiscount}>
+          <span className={styles.newTitle}>{product.discountedTitle}</span>
+          <span className={styles.discountTitle}>
+            {product.discountPercentage}
+          </span>
+          <Button
+            type="button"
+            className={`${styles.favoriteIcon} ${
+              isAddedFavorite ? styles.addedFavorite : ''
+            }`}
+            onClick={handleAddFavorite}
+          >
+            <Favorite
+              style={{ width: 18, height: 18 }}
+              color={isAddedFavorite ? colors.white : ''}
+            />
+          </Button>
+        </div>
+      </div>
       <div className={styles.productInfo} style={getProductInfoStyles(theme)}>
         <div className={styles.starsFill}>
           <Stars />
         </div>
-        <h4 className={styles.productTitle} style={getProductTitleStyle(theme)}>
-          {product.title}
+        <h4 className={styles.productTitle}>
+          <Link
+            href={`/product/${product.title.replaceAll(' ', '-')}`}
+            style={getProductTitleStyle(theme)}
+          >
+            {product.title}
+          </Link>
         </h4>
         <div className={styles.productPrices}>
           <span className={styles.price} style={getProductTitleStyle(theme)}>
-            {product.originalPrice}
+            ${product.originalPrice}
           </span>
           <span
             className={styles.discount}

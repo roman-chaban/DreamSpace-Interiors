@@ -17,9 +17,9 @@ import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher/ThemeSwitcher';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getContainerStyle,
-  getHeaderLinkActiveStyle,
   getHeaderLinkStyle,
 } from '@/components/themeStyles/headerStyles/headerStyles';
+import { themesDefaultActiveLinks } from './linkThemes/linkThemes';
 
 const Header: FC = () => {
   const pathname = usePathname();
@@ -30,6 +30,8 @@ const Header: FC = () => {
   const toggleBurgerMenu = () => setIsBurgerActive(!isBurgerActive);
 
   const themeClass = theme === 'dark' ? styles.darkTheme : styles.lightTheme;
+  const themeColors =
+    themesDefaultActiveLinks[theme] || themesDefaultActiveLinks.light;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,7 +88,11 @@ const Header: FC = () => {
                   <Link
                     href={item.href}
                     className={styles.listLink}
-                    style={getHeaderLinkActiveStyle(theme)}
+                    style={{
+                      color: isActiveLink
+                        ? themeColors.activeLinkColor
+                        : themeColors.linkColor,
+                    }}
                   >
                     {item.label}
                   </Link>

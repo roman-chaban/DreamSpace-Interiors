@@ -47,7 +47,10 @@ export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
         </div>
       </div>
       <div className={classNames.articleTitles}>
-        <Link href={`/blog/article/${item.dynamicPath}`} style={{textDecoration: 'none'}}>
+        <Link
+          href={`/blog/article/${item.dynamicPath}`}
+          style={{ textDecoration: 'none' }}
+        >
           <h4 className={classNames.itemTitle} style={getTitleItemStyle(theme)}>
             {item.title}
           </h4>
@@ -55,7 +58,7 @@ export const ArticleItem: FC<ArticleItemProps> = ({ item, classNames }) => {
         {pathname === NavPaths.HOME ? (
           <Link
             className={`${classNames.itemLink} ${themeClass}`}
-            href=""
+            href={NavPaths.BLOG}
             style={getSecondTitleStyle(theme)}
           >
             Read More

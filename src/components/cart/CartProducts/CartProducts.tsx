@@ -14,35 +14,37 @@ export const CartProducts: FC = () => {
 
   return (
     <div className={styles.cartProducts}>
-      <ul
-        className={styles.productsMenu}
-        style={getContainerThemeBorderBottom(theme)}
-      >
-        <li
-          className={styles.menuListItem}
+      <div className={styles.productsContainer}>
+        <h4
+          className={styles.cartProductsTitle}
           style={getListItemThemeStyle(theme)}
         >
           Product
-        </li>
-        <li
-          className={styles.menuListItem}
-          style={getListItemThemeStyle(theme)}
+        </h4>
+        <ul
+          className={styles.productsMenu}
+          style={getContainerThemeBorderBottom(theme)}
         >
-          Quantity
-        </li>
-        <li
-          className={styles.menuListItem}
-          style={getListItemThemeStyle(theme)}
-        >
-          Price
-        </li>
-        <li
-          className={styles.menuListItem}
-          style={getListItemThemeStyle(theme)}
-        >
-          Subtotal
-        </li>
-      </ul>
+          <li
+            className={styles.menuListItem}
+            style={getListItemThemeStyle(theme)}
+          >
+            Quantity
+          </li>
+          <li
+            className={styles.menuListItem}
+            style={getListItemThemeStyle(theme)}
+          >
+            Price
+          </li>
+          <li
+            className={styles.menuListItem}
+            style={getListItemThemeStyle(theme)}
+          >
+            Subtotal
+          </li>
+        </ul>
+      </div>
       <div className={styles.productGrid}>
         {goods.length === 0 ? (
           <h3 className={styles.emptyTitle} style={productTitle(theme)}>

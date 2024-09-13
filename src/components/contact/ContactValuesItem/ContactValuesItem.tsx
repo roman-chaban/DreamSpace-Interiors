@@ -3,6 +3,7 @@ import { Value, ThemedIcon } from '@/constants/valuesItems';
 import styles from '@/components/contact/ContactValues/ContactValues.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getValueStyle } from '@/components/themeStyles/contactValuesStyles/contactValuesStyles';
+import { colors } from '@/theme/theme-variables';
 
 interface ValueItemProps {
   item: Value;
@@ -11,7 +12,12 @@ interface ValueItemProps {
 export const ContactValuesItem: FC<ValueItemProps> = ({ item }) => {
   const theme = useAppSelector((state) => state.theme.theme);
   return (
-    <div className={styles.item}>
+    <div
+      className={styles.item}
+      style={{
+        backgroundColor: theme === 'dark' ? '' : colors.blackTransparent,
+      }}
+    >
       <div className={styles.itemContainer}>
         <ThemedIcon icon={item.icon} />
         <div className={styles.itemTitles} style={getValueStyle(theme)}>

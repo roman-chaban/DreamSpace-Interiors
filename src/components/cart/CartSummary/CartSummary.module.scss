@@ -128,6 +128,15 @@
   background: color.$color-product-title;
 }
 
+@media (max-width: 1240px) {
+  .title {
+    font-size: size.$font-size-18px;
+  }
+  .radio + span, .price {
+    font-size: size.$font-size-14px;
+  }
+}
+
 @media (max-width: 1024px) {
   .cartSummary > .summaryContainer {
     max-width: 100%;
