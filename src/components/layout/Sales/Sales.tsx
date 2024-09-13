@@ -14,6 +14,7 @@ import {
   getSalesTitleStyle,
   getSalesUpTitle,
 } from '@/components/themeStyles/salesStyles/salesStyles';
+import { NavPaths } from '@/enums/navPaths';
 
 export const Sales: FC<SalesProps> = ({
   image,
@@ -45,7 +46,9 @@ export const Sales: FC<SalesProps> = ({
           style={getSalesInfoBlockStyle(theme)}
         >
           <div className={styles.salesUpItems}>
-            <span className={styles.saleUpTitle} style={getSalesUpTitle(theme)} >{title}</span>
+            <span className={styles.saleUpTitle} style={getSalesUpTitle(theme)}>
+              {title}
+            </span>
             <h3 className={styles.saleTitle} style={getSalesTitleStyle(theme)}>
               {secondTitle}
             </h3>
@@ -57,7 +60,7 @@ export const Sales: FC<SalesProps> = ({
             </p>
             <Link
               className={`${styles.saleLink} ${themeClass}`}
-              href=""
+              href={NavPaths.SHOP}
               style={getSalesTitleStyle(theme)}
             >
               {linkPath}{' '}

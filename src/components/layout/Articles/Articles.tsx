@@ -9,6 +9,7 @@ import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getArticlesTitle } from '@/components/themeStyles/articlesStyles/articlesStyles';
+import { NavPaths } from '@/enums/navPaths';
 
 export const Articles: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
@@ -23,7 +24,7 @@ export const Articles: FC = () => {
             Articles
           </h3>
           <Link
-            href=""
+            href={NavPaths.BLOG}
             className={`${styles.articlesLink} ${themeClass}`}
             style={getArticlesTitle(theme)}
           >

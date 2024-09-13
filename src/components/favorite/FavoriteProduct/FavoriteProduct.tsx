@@ -92,7 +92,7 @@ export const FavoriteProduct: FC<FavoriteProductProps> = ({ good }) => {
                 style={getProductTitleStyle(theme)}
               >
                 <span className={styles.productOriginalPrice}>
-                  {good.originalPrice}
+                  ${good.originalPrice}
                 </span>
                 <span className={styles.productDiscountedPrice}>
                   {good.discountedPrice}
@@ -113,10 +113,12 @@ export const FavoriteProduct: FC<FavoriteProductProps> = ({ good }) => {
               <WishlistButton
                 onClick={handleAddToCart}
                 type="button"
-                className={styles.wishlistButton}
+                className={`${styles.wishlistButton} ${
+                  isAddedCart ? styles.active : ''
+                }`}
                 style={getProductButtonStyle(theme)}
               >
-                Add to wishlist
+                {isAddedCart ? 'Added to wishlist' : 'Add to wishlist'}
               </WishlistButton>
             </div>
             <button onClick={handleDeleteGood} className={styles.closeButton}>

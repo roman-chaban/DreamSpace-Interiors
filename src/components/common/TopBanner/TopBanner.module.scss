@@ -67,6 +67,9 @@
   .bannerSubTitle {
     font-size: size.$font-size-18px;
   }
+  .banner {
+    aspect-ratio: 35 / 16;
+  }
 }
 
 @media only screen and (max-width: 680px) {
