@@ -28,10 +28,8 @@ export const Product: FC<ProductProps> = ({ good }) => {
 
   const subTotal = useMemo(() => {
     if (good && good.originalPrice) {
-      const percentWithoutDollar = good.originalPrice.replace('$', '');
-      const total = (
-        parseFloat(percentWithoutDollar) * productItemNumber
-      ).toFixed(2);
+      const percentWithoutDollar = good.originalPrice;
+      const total = (percentWithoutDollar * productItemNumber).toFixed(2);
       return total;
     }
   }, [good, productItemNumber]);
