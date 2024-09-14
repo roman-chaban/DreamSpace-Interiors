@@ -6,7 +6,7 @@ import { Products } from '@/types/products';
 import styles from '@/styles/pagesStyles/Shop/Shop.module.scss';
 import { ShopProduct } from '../ShopProduct/ShopProduct';
 import { ShopNav } from '@/components/common/ShopNav/ShopNav';
-import { ShopNavItems } from '@/constants/shopNav';
+import { ShopNavItems } from '@/fixtures/shopNav/shopNav';
 import { motion } from 'framer-motion';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Spinner } from '@/components/ui/Spinner/Spinner';

@@ -1,4 +1,4 @@
-import { ShopNavItem, ShopNavItems } from '@/constants/shopNav';
+import { ShopNavItem, ShopNavItems } from '@/fixtures/shopNav/shopNav';
 import { type FC } from 'react';
 import styles from '@/styles/pagesStyles/Shop/Shop.module.scss';
 import { Button } from '@/components/ui/Button/Button';

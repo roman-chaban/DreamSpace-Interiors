@@ -1,4 +1,4 @@
-import { Value } from "@/constants/valuesItems";
+import { Value } from '@/fixtures/valuesItems/valuesItems';
 
 export interface ValuesProps {
   values: Value[];

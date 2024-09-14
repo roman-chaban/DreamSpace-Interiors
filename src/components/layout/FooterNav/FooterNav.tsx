@@ -2,9 +2,9 @@
 
 import styles from '@/components/layout/Footer/Footer.module.scss';
 import { getMarkStyle } from '@/components/themeStyles/heroStyles/heroStyles';
-import { footerNav, NavItem } from '@/constants/footerNav';
-import { footerSocialItems } from '@/constants/footerSocial';
-import { paymentIcons } from '@/constants/payments';
+import { footerNav, NavItem } from '@/fixtures/footerNav/footerNav';
+import { footerSocialItems } from '@/fixtures/footerSocial/footerSocial';
+import { paymentIcons } from '@/fixtures/payments/payments';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import Link from 'next/link';
 import { FC, Fragment } from 'react';

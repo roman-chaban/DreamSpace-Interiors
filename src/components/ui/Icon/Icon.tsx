@@ -1,5 +1,5 @@
 import { cloneElement, ReactNode } from 'react';
-import { ShopNavItem } from '@/constants/shopNav';
+import { ShopNavItem } from '@/fixtures/shopNav/shopNav';
 
 interface IconProps {
   item: ShopNavItem;

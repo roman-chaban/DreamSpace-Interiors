@@ -349,7 +349,7 @@
         "title": "Wooden Bookshelf",
         "discountedTitle": "new",
         "discountPercentage": "-25%",
-        "imageUrl": "/products/image/WoodenBookshelf.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",
@@ -372,7 +372,7 @@
         "title": "Accent Rug",
         "discountedTitle": "new",
         "discountPercentage": "-20%",
-        "imageUrl": "/products/image/AccentRug.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",
@@ -395,7 +395,7 @@
         "title": "Wall Art",
         "discountedTitle": "new",
         "discountPercentage": "-15%",
-        "imageUrl": "/products/image/WallArt.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",
@@ -418,7 +418,7 @@
         "title": "Leather Recliner",
         "discountedTitle": "new",
         "discountPercentage": "-50%",
-        "imageUrl": "/products/image/LeatherRecliner.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",
@@ -441,7 +441,7 @@
         "title": "Outdoor Table Set",
         "discountedTitle": "new",
         "discountPercentage": "-35%",
-        "imageUrl": "/products/image/OutdoorTableSet.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",
@@ -464,7 +464,7 @@
         "title": "Office Desk",
         "discountedTitle": "new",
         "discountPercentage": "-20%",
-        "imageUrl": "/products/image/OfficeDesk.svg",
+        "imageUrl": "",
         "rating": [
             "/products/icon/star-fill.svg",
             "/products/icon/star-fill.svg",

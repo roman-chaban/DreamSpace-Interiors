@@ -8,7 +8,7 @@ import { NavPaths } from '@/enums/navPaths';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
 import React from 'react';
-import { NavItems } from '@/constants/NavItems';
+import { NavItems } from '@/fixtures/navItems/NavItems';
 
 export type ProductNavType = {
   product: Product;

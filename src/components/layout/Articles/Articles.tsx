@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import styles from './Articles.module.scss';
 import Link from 'next/link';
-import { ArticleListItem, articlesList } from '@/constants/articlesList';
+import { ArticleListItem, articlesList } from '@/fixtures/articlesList/articlesList';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { colors } from '@/theme/theme-variables';
 import { FormNextLink } from 'grommet-icons';

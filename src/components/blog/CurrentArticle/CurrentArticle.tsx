@@ -2,8 +2,7 @@
 
 import type { FC } from 'react';
 import styles from './CurrentArticle.module.scss';
-import { BlogArticle } from '@/constants/blogArticles';
-import Image from 'next/image';
+import { BlogArticle } from '@/fixtures/blogArticles/blogArticles';
 import { ArticleBlog } from '../ArticleBlog/ArticleBlog';
 import { getNavTitleLinkStyle } from '@/components/themeStyles/articleNav/articleNav';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Value, ThemedIcon } from '@/constants/valuesItems';
+import { Value, ThemedIcon } from '@/fixtures/valuesItems/valuesItems';
 import styles from '@/components/contact/ContactValues/ContactValues.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getValueStyle } from '@/components/themeStyles/contactValuesStyles/contactValuesStyles';

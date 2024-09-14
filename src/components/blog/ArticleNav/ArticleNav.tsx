@@ -2,7 +2,7 @@
 
 import type { FC } from 'react';
 import styles from './ArticleNav.module.scss';
-import { BlogArticle } from '@/constants/blogArticles';
+import { BlogArticle } from '@/fixtures/blogArticles/blogArticles';
 import Link from 'next/link';
 import { NavPaths } from '@/enums/navPaths';
 import Image from 'next/image';
@@ -31,7 +31,11 @@ export const ArticleNav: FC<ArticleNavProps> = ({ article }) => {
         </Link>
       ) : (
         <div className={styles.articleNavContainer}>
-          <Link href={NavPaths.HOME} className={styles.navLink} style={getNavTitleLinkStyle(theme)}>
+          <Link
+            href={NavPaths.HOME}
+            className={styles.navLink}
+            style={getNavTitleLinkStyle(theme)}
+          >
             Home{' '}
             <Image
               src="/icons/nav/gray-right.svg"
@@ -40,7 +44,11 @@ export const ArticleNav: FC<ArticleNavProps> = ({ article }) => {
               height={16}
             />
           </Link>
-          <Link href={NavPaths.BLOG} className={styles.navLink} style={getNavTitleLinkStyle(theme)}>
+          <Link
+            href={NavPaths.BLOG}
+            className={styles.navLink}
+            style={getNavTitleLinkStyle(theme)}
+          >
             Blog{' '}
             <Image
               src="/icons/nav/gray-right.svg"
@@ -49,7 +57,9 @@ export const ArticleNav: FC<ArticleNavProps> = ({ article }) => {
               height={16}
             />
           </Link>
-          <h5 className={styles.navTitle} style={getNavTitleLinkStyle(theme)}>{article.title}</h5>
+          <h5 className={styles.navTitle} style={getNavTitleLinkStyle(theme)}>
+            {article.title}
+          </h5>
         </div>
       )}
     </nav>

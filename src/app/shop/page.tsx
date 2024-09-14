@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer/Footer';
 import Header from '@/components/layout/Header/Header';
 import { Sidebar } from '@/components/layout/Sidebar/Sidebar';
 import { ShopProducts } from '@/components/product/ShopProducts/ShopProducts';
-import { shopNavItems } from '@/constants/shopNav';
+import { shopNavItems } from '@/fixtures/shopNav/shopNav';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
 import styles from '@/styles/pagesStyles/Shop/Shop.module.scss';
 import { params } from '@/types/params';

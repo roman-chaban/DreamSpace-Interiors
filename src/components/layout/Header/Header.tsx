@@ -3,9 +3,9 @@
 import { type FC, useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { TopBarMenu } from '../TopBarMenu/TopBarMenu';
-import { NavItem, navMenuItems } from '@/constants/navMenuItems';
+import { NavItem, navMenuItems } from '@/fixtures/navMenuItems/navMenuItems';
 import Link from 'next/link';
-import { HeaderIcons } from '@/constants/navMenuIcons';
+import { HeaderIcons } from '@/fixtures/navMenuIcons/navMenuIcons';
 import { usePathname } from 'next/navigation';
 import { NavPaths } from '@/enums/navPaths';
 import { Burger } from '../Burger/Burger';

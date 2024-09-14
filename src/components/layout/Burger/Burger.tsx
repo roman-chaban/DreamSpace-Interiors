@@ -4,7 +4,10 @@ import { useRef, type FC } from 'react';
 import styles from './Burger.module.scss';
 import Image from 'next/image';
 import { Input } from '@/components/ui/Input/Input';
-import { burgerNavMenuItems, NavItem } from '@/constants/navMenuItems';
+import {
+  burgerNavMenuItems,
+  NavItem,
+} from '@/fixtures/navMenuItems/navMenuItems';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
 import {
@@ -36,6 +39,10 @@ interface BurgerProps {
 
 export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
   const burgerMenuRef = useRef<HTMLDivElement>(null);
+  const cartCounter = useAppSelector((state) => state.cart.goodCounter);
+  const favoriteCounter = useAppSelector(
+    (state) => state.favorite.favoriteCounter
+  );
 
   const theme = useAppSelector((state) => state.theme.theme);
 
@@ -124,7 +131,12 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
                     color={theme === 'dark' ? 'plain' : colors.white}
                   />
                 </Link>
-                <span className={styles.circleCounter}>0</span>
+                <span
+                  className={styles.circleCounter}
+                  style={burgerButtonStyle(theme)}
+                >
+                  {cartCounter}
+                </span>
               </div>
             </h5>
           </div>
@@ -138,7 +150,12 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
                     color={theme === 'dark' ? 'plain' : colors.white}
                   />
                 </Link>
-                <span className={styles.circleCounter}>0</span>
+                <span
+                  className={styles.circleCounter}
+                  style={burgerButtonStyle(theme)}
+                >
+                  {favoriteCounter}
+                </span>
               </div>
             </h5>
           </div>

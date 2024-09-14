@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import Image from 'next/image';
 import { useScreenResize } from '@/hooks/useScreenResize';
-import { BlogArticle } from '@/constants/blogArticles';
+import { BlogArticle } from '@/fixtures/blogArticles/blogArticles';
 import styles from '@/components/blog/CurrentArticle/CurrentArticle.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { getNavTitleLinkStyle } from '@/components/themeStyles/articleNav/articleNav';
@@ -160,16 +160,28 @@ export const ArticleBlog: FC<ArticleBlog> = ({ article }) => {
                   />
                 </div>
                 <div className={styles.tertiaryNewsBlock}>
-                  <h3 className={styles.tertiaryNewsBlockTitle} style={getNavTitleLinkStyle(theme)}>
+                  <h3
+                    className={styles.tertiaryNewsBlockTitle}
+                    style={getNavTitleLinkStyle(theme)}
+                  >
                     {tertiaryNews.blockInfo.title}
                   </h3>
-                  <p className={styles.tertiaryNewsBlockSubTitle} style={getNavTitleLinkStyle(theme)}>
+                  <p
+                    className={styles.tertiaryNewsBlockSubTitle}
+                    style={getNavTitleLinkStyle(theme)}
+                  >
                     {tertiaryNews.blockInfo.subTitle}
                   </p>
-                  <h3 className={styles.tertiaryNewsBlockTitle} style={getNavTitleLinkStyle(theme)}>
+                  <h3
+                    className={styles.tertiaryNewsBlockTitle}
+                    style={getNavTitleLinkStyle(theme)}
+                  >
                     {tertiaryNews.blockInfo.secondTitle}
                   </h3>
-                  <p className={styles.tertiaryNewsBlockSubTitle} style={getNavTitleLinkStyle(theme)}>
+                  <p
+                    className={styles.tertiaryNewsBlockSubTitle}
+                    style={getNavTitleLinkStyle(theme)}
+                  >
                     {tertiaryNews.blockInfo.secondSubTitle}
                   </p>
                 </div>

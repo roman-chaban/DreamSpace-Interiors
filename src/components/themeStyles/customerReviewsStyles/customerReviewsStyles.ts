@@ -24,3 +24,9 @@ export const getButtonStyle = (theme: 'dark' | 'light') => ({
   color: theme === 'dark' ? '' : colors.white,
   border: theme === 'dark' ? '' : `2px solid ${colors.white}`
 });
+
+
+export const getButtonMarkStyle = (theme: 'dark' | 'light') => ({
+  backgroundColor: theme === 'dark' ? '' : 'transparent',
+  color: theme === 'dark' ? '' : colors.white,
+});

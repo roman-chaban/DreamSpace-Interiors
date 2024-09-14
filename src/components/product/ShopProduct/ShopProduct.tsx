@@ -13,7 +13,7 @@ import {
   getProductInfoStyles,
   getProductTitleStyle,
 } from '@/components/themeStyles/productCard/productCard';
-import { Stars } from '@/constants/productRating';
+import { Stars } from '@/fixtures/productRating/productRating';
 import { useProductActions } from '@/hooks/useProductActions';
 import { colors } from '@/theme/theme-variables';
 

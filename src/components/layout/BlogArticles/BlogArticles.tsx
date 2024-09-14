@@ -3,7 +3,7 @@
 import { useEffect, useState, type FC } from 'react';
 import { motion } from 'framer-motion';
 import styles from './BlogArticles.module.scss';
-import { BlogArticle } from '@/constants/blogArticles';
+import { BlogArticle } from '@/fixtures/blogArticles/blogArticles';
 import { ArticleItem } from '@/components/layout/ArticleItem/ArticleItem';
 import { Button } from '@/components/ui/Button/Button';
 import blogArticles from '@/services/blogArticles/blogArticles.json';

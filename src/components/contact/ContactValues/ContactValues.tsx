@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './ContactValues.module.scss';
-import { Value } from '@/constants/valuesItems';
+import { Value } from '@/fixtures/valuesItems/valuesItems';
 import { ContactValuesItem } from '../ContactValuesItem/ContactValuesItem';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';

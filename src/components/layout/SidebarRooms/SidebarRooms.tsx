@@ -1,12 +1,12 @@
 'use client';
 
-import { getButtonStyle } from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
+import { getButtonMarkStyle, getButtonStyle } from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
 import { getStrokeStyle, getTitleStyle } from '@/components/themeStyles/sidebarStyles/sidebarStyles';
 import { Button } from '@/components/ui/Button/Button';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { FC } from 'react';
 import styles from '@/components/layout/Sidebar/Sidebar.module.scss';
-import { roomTitles } from '@/constants/allRooms';
+import { roomTitles } from '@/fixtures/allRooms/allRooms';
 
 export const SidebarRooms: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
@@ -45,7 +45,7 @@ export const SidebarRooms: FC = () => {
               type="button"
               key={title}
               className={styles.title}
-              style={getButtonStyle(theme)}
+              style={getButtonMarkStyle(theme)}
             >
               {title}
             </Button>

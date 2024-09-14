@@ -5,4 +5,7 @@
 .main {
   min-height: 100vh;
   padding-block-start: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

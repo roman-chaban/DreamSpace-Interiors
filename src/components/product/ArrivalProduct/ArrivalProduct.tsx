@@ -7,8 +7,11 @@ import { Button } from '@/components/ui/Button/Button';
 import { Favorite } from 'grommet-icons';
 import Link from 'next/link';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { getArrivalTitleDiscountTitle, getArrivalTitleStyle } from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
-import { Stars } from '@/constants/productRating';
+import {
+  getArrivalTitleDiscountTitle,
+  getArrivalTitleStyle,
+} from '@/components/themeStyles/arrivalProductStyles/arrivalProductStyles';
+import { Stars } from '@/fixtures/productRating/productRating';
 import { colors } from '@/theme/theme-variables';
 import { useProductActions } from '@/hooks/useProductActions';
 

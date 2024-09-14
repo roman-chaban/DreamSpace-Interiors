@@ -4,10 +4,10 @@ import { Values } from '@/components/layout/Values/Values';
 import { Map } from '@/components/common/Map/Map';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ContactsValues } from '../ContactValues/ContactValues';
-import { valuesItems } from '@/constants/valuesItems';
+import { valuesItems } from '@/fixtures/valuesItems/valuesItems';
 import { ClassNames } from '@/types/value-item';
 import { colors } from '@/theme/theme-variables';
-import { contactValues } from '@/constants/contactValues';
+import { contactValues } from '@/fixtures/contactValues/contactValues';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export const classNames: ClassNames = {

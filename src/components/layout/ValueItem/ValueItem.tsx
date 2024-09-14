@@ -2,7 +2,7 @@ import {
   getItemContainerStyles,
   getValueItemTitleStyle,
 } from '@/components/themeStyles/valueItemStyles/valueItemStyles';
-import { ThemedIcon } from '@/constants/valuesItems';
+import { ThemedIcon } from '@/fixtures/valuesItems/valuesItems';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { ClassNames, ValueItemProps } from '@/types/value-item';
 import type { FC } from 'react';

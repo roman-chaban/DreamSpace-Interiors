@@ -10,7 +10,7 @@ import { Values } from '@/components/layout/Values/Values';
 import { Sales } from '@/components/layout/Sales/Sales';
 import { Articles } from '@/components/layout/Articles/Articles';
 import { ArrivalProducts } from '@/components/product/ArrivalProducts/ArrivalProducts';
-import { valuesItems } from '@/constants/valuesItems';
+import { valuesItems } from '@/fixtures/valuesItems/valuesItems';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { motion } from 'framer-motion';
 import { animationSettings } from '@/animations/home/home';

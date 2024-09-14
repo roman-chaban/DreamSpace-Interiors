@@ -2,8 +2,8 @@ import { FC } from 'react';
 import styles from './SidebarPrices.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
-import { PriceItem, priceItems } from '@/constants/allPrice';
 import { getTitleStyle } from '@/components/themeStyles/sidebarStyles/sidebarStyles';
+import { PriceItem, priceItems } from '@/fixtures/allPrice/allPrice';
 
 export const SideBarPrices: FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);
