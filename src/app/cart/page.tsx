@@ -7,7 +7,6 @@ import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { useChangePageTitle } from '@/hooks/useChangePageTitle';
 import { useScreenResize } from '@/hooks/useScreenResize';
 import styles from '@/styles/pagesStyles/Cart/Cart.module.scss';
-import { colors } from '@/theme/theme-variables';
 import { FormPrevious } from 'grommet-icons';
 import Link from 'next/link';
 

@@ -11,6 +11,7 @@ import { productTitle } from '@/components/themeStyles/productStyles/productStyl
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { motion } from 'framer-motion';
 
 interface ProductProps {
   good: CurrentProduct;
@@ -26,7 +27,6 @@ export const Product: FC<ProductProps> = ({ good }) => {
   );
 
   const handleRemoveGood = () => {
-    dispatch(deleteProductFromCart(good.productId));
     setIsAddedCart(false);
   };
 
@@ -42,7 +42,18 @@ export const Product: FC<ProductProps> = ({ good }) => {
   }, [good, productItemNumber]);
 
   return (
-    <div className={styles.product}>
+    <motion.div
+      className={styles.product}
+      initial={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: isAddedCart ? 1 : 0, scale: isAddedCart ? 1 : 0.9 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.3 }}
+      onAnimationComplete={() => {
+        if (!isAddedCart) {
+          dispatch(deleteProductFromCart(good.productId));
+        }
+      }}
+    >
       <div className={styles.product__container}>
         <Image
           src={good.imageUrl}
@@ -65,7 +76,7 @@ export const Product: FC<ProductProps> = ({ good }) => {
           >
             <Close
               color={theme === 'dark' ? '' : colors.white}
-              style={{ width: 14, height: 14, cursor: 'pointer' }}
+              style={{ width: 14, height: 14 }}
             />{' '}
             Remove
           </button>
@@ -81,11 +92,11 @@ export const Product: FC<ProductProps> = ({ good }) => {
         </button>
       </div>
       <h5 className={styles.originalPrice} style={productTitle(theme)}>
-        {good.originalPrice}
+        ${good.originalPrice}
       </h5>
       <h5 className={styles.subTotal} style={productTitle(theme)}>
         ${subTotal}
       </h5>
-    </div>
+    </motion.div>
   );
 };
