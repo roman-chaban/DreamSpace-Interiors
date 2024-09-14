@@ -263,6 +263,18 @@
   color: color.$color-white;
 }
 
+.activeWishlist {
+  background-color: color.$color-success;
+  color: color.$color-white;
+  border: none;
+  font-weight: 600;
+}
+
+.activeCartButton {
+  background: color.$color-success;
+  color: color.$color-white;
+}
+
 @media (max-width: 1150px) {
   .title {
     font-size: size.$font-size-38px;

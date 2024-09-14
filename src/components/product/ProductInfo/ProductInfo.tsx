@@ -19,6 +19,7 @@ import {
   getInfoThemeStyle,
 } from '@/components/themeStyles/productInfoStyles/productInfoStyles';
 import { getButtonStyle } from '@/components/themeStyles/customerReviewsStyles/customerReviewsStyles';
+import { useProductActions } from '@/hooks/useProductActions';
 
 export type ProductInfoType = {
   product: Product;
@@ -30,6 +31,9 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
   const { productItemNumber, onAddProduct, onDeleteProduct } =
     useProductItemCounter({ productItem: 1 });
   const theme = useAppSelector((state) => state.theme.theme);
+
+  const { isAddedCart, isAddedFavorite, handleAddFavorite, handleAddProduct } =
+    useProductActions(product);
 
   return (
     <div className={styles.productInfoContainer}>
@@ -57,7 +61,7 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
       </p>
       <div className={styles.prices} style={getInfoThemeStyle(theme)}>
         <h3 className={styles.originalPrice} style={getInfoThemeStyle(theme)}>
-          {product.originalPrice}
+          ${product.originalPrice}
         </h3>
         <span
           className={styles.discountedPrice}
@@ -158,11 +162,14 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
           </div>
           <WishlistButton
             type="button"
-            className={styles.wishlistButton}
+            className={`${styles.wishlistButton} ${
+              isAddedFavorite ? styles.activeWishlist : ''
+            }`}
             style={getButtonStyle(theme)}
+            onClick={handleAddFavorite}
           >
             <Favorite
-              color={theme === 'dark' ? 'plain' :  colors.black}
+              color={isAddedFavorite ? colors.white : 'plain'}
               style={{ width: 25 }}
               className={styles.heartIcon}
             />{' '}
@@ -171,10 +178,11 @@ const ProductInfo: FC<ProductInfoType> = ({ product }) => {
         </div>
         <AddButton
           type="button"
-          className={styles.addButton}
+          className={`${styles.addButton} ${isAddedCart ? styles.activeCartButton : ''}`}
           style={getButtonStyle(theme)}
+          onClick={handleAddProduct}
         >
-          Add to Cart
+          {isAddedCart ? 'Added to cart' : 'Add to cart'}
         </AddButton>
       </div>
       <div className={styles.categoryBlock}>

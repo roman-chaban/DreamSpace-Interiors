@@ -49,6 +49,8 @@ export const FavoriteProduct: FC<FavoriteProductProps> = ({ good }) => {
     }
   };
 
+  const slideDirection = good.productId % 2 === 0 ? '100vw' : '-100vw';
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -58,7 +60,7 @@ export const FavoriteProduct: FC<FavoriteProductProps> = ({ good }) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{
             opacity: 0,
-            x: '100vw',
+            x: slideDirection,
             transition: {
               duration: 0.3,
               ease: 'easeInOut',

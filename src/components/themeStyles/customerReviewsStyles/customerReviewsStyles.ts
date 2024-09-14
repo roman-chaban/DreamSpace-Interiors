@@ -22,4 +22,5 @@ export const getTabsNavContainerStyle = (theme: 'dark' | 'light') => ({
 export const getButtonStyle = (theme: 'dark' | 'light') => ({
   backgroundColor: theme === 'dark' ? '' : 'transparent',
   color: theme === 'dark' ? '' : colors.white,
+  border: theme === 'dark' ? '' : `2px solid ${colors.white}`
 });
