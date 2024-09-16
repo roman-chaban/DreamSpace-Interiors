@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .articleNav {
   display: flex;
@@ -9,14 +10,14 @@
 .articleNavContainer {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .navLink {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
   font-weight: 500;
   line-height: 171%;
   color: color.$color-banner-link;
@@ -33,7 +34,7 @@
 .goBackLink {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
   font-size: size.$font-size-14px;
   color: color.$color-banner-link;
   line-height: 171%;

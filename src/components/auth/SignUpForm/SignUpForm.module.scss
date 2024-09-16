@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .signUp {
   width: 100%;
@@ -9,15 +10,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-inline: 50px;
+  padding-inline: px-to-rem(50px);
 }
 
 .signUpContainer {
   width: 100%;
-  max-width: 500px;
+  max-width: px-to-rem(500px);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: px-to-rem(32px);
 }
 
 .signUpTitle {
@@ -32,13 +33,13 @@
 .signUpInfoBlock {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .signUpTitles {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: px-to-rem(3px);
 }
 
 .accountTitle {
@@ -58,13 +59,13 @@
 .signForm {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: px-to-rem(32px);
 }
 
 .termsBlock {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: px-to-rem(12px);
 }
 
 .submitFormButton {
@@ -73,8 +74,8 @@
   color: color.$color-white;
   width: 100%;
   max-width: 100%;
-  height: 48px;
-  border-radius: 8px;
+  height: px-to-rem(48px);
+  border-radius: px-to-rem(8px);
   border: none;
   font-weight: 500;
   line-height: 175%;
@@ -97,19 +98,19 @@
 .userNameInput {
   width: 100%;
   border: none;
-  max-width: 456px;
-  height: 40px;
+  max-width: px-to-rem(456px);
+  height: px-to-rem(40px);
   &:focus {
     outline: none;
   }
 }
 
-@media only screen and (max-width: 1110px) {
+@media only screen and (max-width: px-to-rem(1110px)) {
   .signForm {
-    gap: 24px;
+    gap: px-to-rem(24px);
   }
   .signUpInfoBlock {
-    gap: 14px;
+    gap: px-to-rem(14px);
   }
   .signUpTitle {
     font-size: size.$font-size-32px;
@@ -121,13 +122,13 @@
   }
   .submitFormButton {
     font-size: size.$font-size-14px;
-    max-height: 40px;
+    max-height: px-to-rem(40px);
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: px-to-rem(780px)) {
   .signForm {
-    padding-block-end: 40px;
-    gap: 24px;
+    padding-block-end: px-to-rem(40px);
+    gap: px-to-rem(24px);
   }
 }

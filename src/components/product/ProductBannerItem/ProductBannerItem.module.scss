@@ -1,22 +1,23 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .bannerItem {
   position: relative;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   width: 100%;
-  max-width: 546px;
+  max-width: px-to-rem(546px);
   aspect-ratio: 16 / 9;
 }
 
 .bannerTitles {
   position: absolute;
-  left: 48px;
-  top: 48px;
+  left: px-to-rem(48px);
+  top: px-to-rem(48px);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: px-to-rem(12px);
 }
 
 .bannerTitle {
@@ -32,7 +33,7 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -40,7 +41,7 @@
     0.8393rem + 0.1786vw,
     #{size.$font-size-16px}
   );
-  transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   font-weight: 500;
   line-height: 175%;
   letter-spacing: -0.03em;
@@ -57,11 +58,11 @@
   }
 }
 
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: px-to-rem(1130px)) {
   .bannerTitles {
-    top: 20px;
-    left: 25px;
-    gap: 6px;
+    top: px-to-rem(20px);
+    left: px-to-rem(25px);
+    gap: px-to-rem(6px);
   }
   .bannerTitle {
     font-size: size.$font-size-26px;
@@ -72,7 +73,7 @@
   }
 }
 
-@media only screen and (max-width: 665px) {
+@media only screen and (max-width: px-to-rem(665px)) {
   .firstBannerItem {
     aspect-ratio: 3 / 3;
   }
@@ -84,8 +85,8 @@
     top: 45%;
   }
   .firstBannerTitle {
-    left: 48px;
-    top: 30px;
+    left: px-to-rem(48px);
+    top: px-to-rem(30px);
   }
   .bannerTitle {
     font-size: size.$font-size-34px;
@@ -96,21 +97,24 @@
   }
 }
 
-@media only screen and (max-width: 385px) {
+@media only screen and (max-width: px-to-rem(385px)) {
   .bannerTitles {
-    top: 30%;
-    left: 10px;
+    top: 15%;
+    left: px-to-rem(10px);
   }
   .firstBannerTitle {
     top: 5%;
     font-size: size.$font-size-18px;
   }
   .bannerTitle {
-    font-size: size.$font-size-22px;
+    font-size: size.$font-size-18px;
   }
   .firstBannerItem {
     background: url(../../../../public/images/banner/primaryBannerSmall.svg)
       no-repeat center center !important;
     aspect-ratio: 5 / 6;
+  }
+  .bannerLink {
+    font-size: size.$font-size-10px;
   }
 }

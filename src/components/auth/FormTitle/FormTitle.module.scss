@@ -1,40 +1,39 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
-
-
+@use '../../../styles/functions/functions' as *;
 
 .formInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 32px;
-  }
-
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(24px);
+  margin-bottom: px-to-rem(32px);
+}
 
 .formLabelsBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(32px);
+}
 
 .signTitle {
-    font-weight: 500;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    color: color.$color-black;
-    font-size: size.$font-size-40px;
-  }
-  
-  .signSubTitle {
-    line-height: 162%;
-    color: color.$color-dark-gray;
-  }
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  color: color.$color-black;
+  font-size: size.$font-size-40px;
+}
 
+.signSubTitle {
+  line-height: 162%;
+  color: color.$color-dark-gray;
+  font-size: size.$font-size-16px;
+}
 
 .signButton {
-    background: transparent;
-    border: none;
-    font-weight: 600;
-    color: color.$color-success;
-  }
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: color.$color-success;
+  font-size: size.$font-size-16px;
+}

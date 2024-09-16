@@ -1,17 +1,18 @@
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .hero {
   display: flex;
-  margin-top: 110px;
+  margin-top: px-to-rem(110px);
 }
 
 .heroContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 32px;
+  gap: px-to-rem(32px);
   @include container;
 }
 
@@ -34,7 +35,7 @@
   );
   position: relative;
   width: 100%;
-  max-width: 643px;
+  max-width: px-to-rem(643px);
 }
 
 .titleMark {
@@ -50,7 +51,7 @@
     0.8393rem + 0.1786vw,
     #{size.$font-size-20px}
   );
-  max-width: 430px;
+  max-width: px-to-rem(430px);
   line-height: 162%;
 }
 
@@ -61,60 +62,54 @@
 
 @include toDesktop {
   .heroContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .heroContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 835px) {
+@media only screen and (max-width: px-to-rem(835px)) {
   .heroTitle {
     font-size: size.$font-size-44px;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: px-to-rem(750px)) {
   .heroContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
     align-items: start;
   }
   .heroContent {
     flex-direction: column;
     align-items: start;
-    gap: 25px;
+    gap: px-to-rem(25px);
   }
   .heroTitle {
-    max-width: 400px;
+    max-width: px-to-rem(400px);
   }
 }
 
-@media only screen and (max-width: 582px) {
+@media only screen and (max-width: px-to-rem(582px)) {
   .heroContainer {
     padding-inline: 0;
   }
   .heroContent {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
   .heroSubTitle {
     font-size: size.$font-size-16px;
-    max-width: 320px;
+    max-width: px-to-rem(320px);
   }
   .heroTitle {
     font-size: size.$font-size-50px;
   }
 }
 
-@media only screen and (max-width: 582px) {
-  .heroTitle {
-    font-size: size.$font-size-44px;
-  }
-}
-
-@media only screen and (max-width: 395px) {
+@media only screen and (max-width: px-to-rem(395px)) {
   .heroTitle {
     font-size: size.$font-size-38px;
   }

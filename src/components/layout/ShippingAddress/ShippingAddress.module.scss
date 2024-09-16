@@ -1,11 +1,10 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
-
-
+@use '../../../styles/functions/functions' as *;
 
 .formContainer {
-  padding: 40px 24px;
+  padding: px-to-rem(40px) px-to-rem(24px);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -22,7 +21,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: px-to-rem(12px);
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
@@ -32,14 +31,14 @@
 
 .input {
   width: 100%;
-  padding-inline: 16px;
-  border-radius: 4px;
-  min-height: 40px;
-  border: 1.5px solid color.$color-input-border-secondary;
+  padding-inline: px-to-rem(16px);
+  border-radius: px-to-rem(4px);
+  min-height: px-to-rem(40px);
+  border: px-to-rem(1.5px) solid color.$color-input-border-secondary;
   caret-color: color.$color-dark-gray;
   color: color.$color-dark-gray;
   &:focus {
-    outline: 1.5px solid color.$color-success;
+    outline: px-to-rem(1.5px) solid color.$color-success;
     border: none;
   }
   &::placeholder {
@@ -51,13 +50,12 @@
 .addressBlock {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
-
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .formContainer {
-    padding: 30px 20px;
+    padding: px-to-rem(30px) px-to-rem(20px);
   }
   .formTitle {
     font-size: size.$font-size-18px;

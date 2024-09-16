@@ -1,7 +1,9 @@
+@use '../../../styles/functions/functions' as *;
+
 .closeButton {
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: px-to-rem(25px);
+  top: px-to-rem(25px);
   background: transparent;
   display: flex;
   align-items: center;

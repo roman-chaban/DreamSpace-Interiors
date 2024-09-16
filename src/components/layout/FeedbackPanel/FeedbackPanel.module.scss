@@ -1,18 +1,19 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .commentBlock {
   display: flex;
-  gap: 40px;
-  padding-block-end: 24px;
-  border-bottom: 1.5px solid color.$color-gray;
+  gap: px-to-rem(40px);
+  padding-block-end: px-to-rem(24px);
+  border-bottom: px-to-rem(1.5px) solid color.$color-gray;
 }
 
 .commentInfo {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .authorTitle {
@@ -25,7 +26,7 @@
 .commentStars {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
 }
 
 .comment {
@@ -38,7 +39,7 @@
 .likesBlock {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: px-to-rem(10px);
 }
 
 .commentLike,
@@ -51,17 +52,17 @@
   line-height: 167%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: px-to-rem(900px)) {
   .commentInfo {
-    gap: 12px;
+    gap: px-to-rem(12px);
   }
   .commentBlock {
-    gap: 25px;
+    gap: px-to-rem(25px);
     flex-direction: column;
   }
   .authorImage {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: px-to-rem(60px);
+    max-height: px-to-rem(60px);
   }
   .comment {
     max-width: 100%;

@@ -1,23 +1,24 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .reviews {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: px-to-rem(48px);
 }
 
 .reviewsInfoBlock {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: px-to-rem(26px);
 }
 
 .reviewsRatingBlock {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: px-to-rem(10px);
 }
 
 .reviewsBlock {
@@ -35,13 +36,13 @@
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: px-to-rem(10px);
 }
 
 .starsFill {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
 }
 
 .reviewsRatingTitle {
@@ -57,14 +58,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid color.$color-gray;
-  border-radius: 16px;
-  padding: 16px 16px 16px 24px;
+  border: px-to-rem(2px) solid color.$color-gray;
+  border-radius: px-to-rem(16px);
+  padding: px-to-rem(16px) px-to-rem(16px) px-to-rem(16px) px-to-rem(24px);
   max-width: 100%;
-  min-height: 72px;
+  min-height: px-to-rem(72px);
   &:hover {
     border: none;
-    border: 2px solid color.$color-success;
+    border: px-to-rem(2px) solid color.$color-success;
   }
 }
 
@@ -82,10 +83,10 @@
 }
 
 .writeButton {
-  border-radius: 80px;
+  border-radius: px-to-rem(80px);
   width: 100%;
-  max-width: 176px;
-  height: 40px;
+  max-width: px-to-rem(176px);
+  height: px-to-rem(40px);
   border: none;
   background: color.$color-black;
   color: color.$color-white;
@@ -98,7 +99,7 @@
 .commentsSection {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .commentsTitle {
@@ -110,11 +111,11 @@
 }
 
 .loadMoreButton {
-  border-radius: 80px;
+  border-radius: px-to-rem(80px);
   width: 100%;
-  max-width: 158px;
-  min-height: 40px;
-  border: 1.5px solid color.$color-black;
+  max-width: px-to-rem(158px);
+  min-height: px-to-rem(40px);
+  border: px-to-rem(1.5px) solid color.$color-black;
   background: transparent;
   font-weight: 500;
   color: color.$color-black;
@@ -126,32 +127,32 @@
 }
 
 .writeButtonSmall {
-  border-radius: 100px;
+  border-radius: px-to-rem(100px);
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 32px;
-  height: 32px;
+  max-width: px-to-rem(32px);
+  height: px-to-rem(32px);
   background: color.$color-black;
   padding: 0;
 }
 
 .selectContainer {
   width: 100%;
-  max-width: 250px;
+  max-width: px-to-rem(250px);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .customSelect {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
   font-weight: 600;
   color: color.$color-dark-gray;
   font-size: size.$font-size-16px;
@@ -163,13 +164,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  border-radius: 8px;
-  padding: 8px 8px 8px 16px;
-  height: 48px;
-  border: 2px solid color.$color-gray;
+  border-radius: px-to-rem(8px);
+  padding: px-to-rem(8px) px-to-rem(8px) px-to-rem(8px) px-to-rem(16px);
+  height: px-to-rem(48px);
+  border: px-to-rem(2px) solid color.$color-gray;
   background-color: color.$color-white;
   background-position: right 5px center;
-  background-size: 40px 40px;
+  background-size: px-to-rem(40px) px-to-rem(40px);
   background-image: url('/icons/select-appearance.svg');
   background-repeat: no-repeat;
   transition: border-color 0.3s ease;
@@ -178,7 +179,7 @@
   cursor: pointer;
 
   &:focus {
-    outline: 2px solid color.$color-success;
+    outline: px-to-rem(2px) solid color.$color-success;
     border: none;
   }
 }
@@ -188,8 +189,8 @@
   top: 75px;
   width: 100%;
   background-color: color.$color-white;
-  border: 1px solid color.$color-light-gray;
-  border-radius: 8px;
+  border: px-to-rem(1px) solid color.$color-light-gray;
+  border-radius: px-to-rem(8px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 100;
   list-style: none;
@@ -197,7 +198,7 @@
   margin: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
-  padding: 7px;
+  padding: px-to-rem(7px);
 }
 
 .optionsContainer.open {
@@ -208,7 +209,7 @@
 }
 
 .selectOption {
-  padding: 10px;
+  padding: px-to-rem(10px);
   cursor: pointer;
   font-weight: 600;
   font-size: size.$font-size-16px;
@@ -225,45 +226,45 @@
   font-style: italic;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .customSelect,
   .selectOption {
     font-size: size.$font-size-14px;
   }
   .selectContainer {
-    max-width: 200px;
+    max-width: px-to-rem(200px);
   }
   .select {
-    max-height: 44px;
+    max-height: px-to-rem(44px);
     font-size: size.$font-size-14px;
   }
   .optionsContainer {
-    padding: 4px;
+    padding: px-to-rem(4px);
     padding-block: 0;
   }
   .selectOption {
-    padding: 6px;
+    padding: px-to-rem(6px);
   }
   .selectOption:nth-child(1) {
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-top-right-radius: px-to-rem(8px);
+    border-top-left-radius: px-to-rem(8px);
   }
   .selectOption:last-child {
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: px-to-rem(8px);
+    border-bottom-left-radius: px-to-rem(8px);
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: px-to-rem(560px)) {
   .reviewsTitle {
     font-size: size.$font-size-22px;
   }
   .areaBlock {
-    padding-block: 10px;
+    padding-block: px-to-rem(10px);
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: px-to-rem(375px)) {
   .reviewsTitle {
     font-size: size.$font-size-28px;
   }

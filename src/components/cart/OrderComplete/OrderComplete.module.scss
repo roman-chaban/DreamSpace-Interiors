@@ -1,9 +1,10 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .orderComplete {
-  margin-block: 80px;
+  margin-block: px-to-rem(80px);
 }
 
 .completeContainer {
@@ -17,15 +18,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  border-radius: 8px;
+  gap: px-to-rem(16px);
+  border-radius: px-to-rem(8px);
   width: 100%;
-  max-width: 800px;
-  height: 730px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  max-width: px-to-rem(800px);
+  height: px-to-rem(730px);
+  box-shadow: rgb(204, 219, 232) px-to-rem(3px) px-to-rem(3px) px-to-rem(6px)
+      0px inset,
+    rgba(255, 255, 255, 0.5) px-to-rem(-3px) px-to-rem(-3px) px-to-rem(6px)
+      px-to-rem(1px) inset;
   background: color.$color-natural-white;
-  padding: 80px 95px;
+  padding: px-to-rem(80px) px-to-rem(95px);
 }
 
 .thanksTitle {
@@ -43,7 +46,7 @@
   font-weight: 500;
   line-height: 110%;
   letter-spacing: -0.01em;
-  max-width: 500px;
+  max-width: px-to-rem(500px);
   text-align: center;
   text-align-last: center;
 }
@@ -51,10 +54,10 @@
 .orderList {
   padding: 0;
   margin: 0;
-  margin-block-start: 40px;
+  margin-block-start: px-to-rem(40px);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: px-to-rem(20px);
   > .orderListItem {
     font-size: size.$font-size-14px;
     color: color.$color-dark-gray;
@@ -65,12 +68,12 @@
 }
 
 .orderButton {
-  margin-block-start: 40px;
-  border-radius: 80px;
-  padding: 12px 40px;
+  margin-block-start: px-to-rem(40px);
+  border-radius: px-to-rem(80px);
+  padding: px-to-rem(12px) px-to-rem(40px);
   width: 100%;
-  max-width: 203px;
-  height: 52px;
+  max-width: px-to-rem(203px);
+  height: px-to-rem(52px);
   border: none;
   font-weight: 500;
   line-height: 175%;
@@ -81,27 +84,27 @@
   background: color.$color-black;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .completeContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px-to-rem(1000px)) {
   .completeContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .completeContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: px-to-rem(560px)) {
   .orderBlock {
-    padding-inline: 16px;
+    padding-inline: px-to-rem(16px);
     align-items: start;
   }
   .orderTitle {

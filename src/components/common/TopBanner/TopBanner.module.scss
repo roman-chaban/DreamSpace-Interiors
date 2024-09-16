@@ -1,5 +1,6 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .banner {
   width: 100%;
@@ -10,13 +11,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .bannerNav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .bannerLink {
@@ -30,7 +31,7 @@
 }
 
 .bannerLink:nth-child(1) {
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-banner-link;
 }
 
@@ -38,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .bannerTitle {
@@ -57,9 +58,9 @@
   color: color.$color-brand;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: px-to-rem(1200px)) {
   .bannerTitles {
-    gap: 16px;
+    gap: px-to-rem(16px);
   }
   .bannerTitle {
     font-size: size.$font-size-46px;
@@ -72,9 +73,9 @@
   }
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: px-to-rem(680px)) {
   .banner {
-    gap: 18px;
+    gap: px-to-rem(18px);
     aspect-ratio: 18 / 9;
   }
   .bannerTitle {
@@ -85,11 +86,11 @@
   }
 }
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: px-to-rem(499px)) {
   .banner {
     gap: 14px;
     aspect-ratio: 12 / 9;
-    padding: 12px;
+    padding: px-to-rem(12px);
   }
   .bannerTitle {
     font-size: size.$font-size-40px;
@@ -99,7 +100,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: px-to-rem(375px)) {
   .bannerTitle {
     font-size: size.$font-size-34px;
   }

@@ -1,6 +1,7 @@
 @use '../../colors/colors' as color;
 @use '../../abstracts/globals' as size;
 @use '../../abstracts/mixins' as *;
+@use '../../functions/functions' as *;
 
 .main {
   flex: 1 1 auto;
@@ -10,32 +11,32 @@
 
 .valuesContainer {
   @include container;
-  padding-block: 48px;
+  padding-block: px-to-rem(48px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .item {
   width: 100%;
-  max-width: 262px;
+  max-width: px-to-rem(262px);
 }
 
 .item > .itemContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 48px 32px;
+  gap: px-to-rem(16px);
+  padding: px-to-rem(48px) px-to-rem(32px);
   height: 100%;
-  max-height: 220px;
+  max-height: px-to-rem(220px);
   background: color.$color-light-gray;
 }
 
 .itemTitles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .itemTitle {
@@ -51,13 +52,13 @@
   line-height: 171%;
 }
 
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: px-to-rem(1360px)) {
   .item > .itemContainer {
-    padding-inline: 22px;
+    padding-inline: px-to-rem(22px);
   }
   .itemIcon {
-    max-width: 42px;
-    max-height: 42px;
+    max-width: px-to-rem(42px);
+    max-height: px-to-rem(42px);
   }
 
   .itemTitle {
@@ -69,16 +70,16 @@
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: px-to-rem(1300px)) {
   .valuesContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
   .itemTitles {
-    gap: 4px;
+    gap: px-to-rem(4px);
   }
 }
 
-@media only screen and (max-width: 1044px) {
+@media only screen and (max-width: px-to-rem(1044px)) {
   .item {
     max-width: 100%;
   }
@@ -96,47 +97,47 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px-to-rem(1000px)) {
   .valuesContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .valuesContainer {
-    padding-inline: 32px;
-    gap: 18px;
+    padding-inline: px-to-rem(32px);
+    gap: px-to-rem(18px);
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: px-to-rem(500px)) {
   .valuesContainer {
-    gap: 8px;
+    gap: px-to-rem(8px);
   }
   .item > .itemContainer {
-    padding: 32px 16px;
+    padding: px-to-rem(32px) px-to-rem(16px);
     align-items: start;
   }
 
   .itemTitle {
     font-size: size.$font-size-14px;
-    max-height: 45px;
+    max-height: px-to-rem(45px);
   }
   .itemTitles {
     align-items: start;
   }
   .itemSubTitle {
     text-align: left;
-    max-width: 100px;
-    max-height: 20px;
+    max-width: px-to-rem(100px);
+    max-height: px-to-rem(20px);
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: px-to-rem(385px)) {
   .item > .itemContainer {
-    padding: 32px 8px;
+    padding: px-to-rem(32px) px-to-rem(8px);
   }
   .itemTitle {
     font-size: size.$font-size-12px;
@@ -146,13 +147,13 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: px-to-rem(360px)) {
   .valuesContainer {
     grid-template-columns: 1fr;
   }
   .item > .itemContainer {
     align-items: center;
-    border-radius: 10px;
+    border-radius: px-to-rem(10px);
   }
   .itemTitle {
     font-size: size.$font-size-16px;

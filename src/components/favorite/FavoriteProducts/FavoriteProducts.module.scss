@@ -1,9 +1,10 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .favoriteProducts {
-  padding-block-start: 110px;
+  padding-block-start: px-to-rem(110px);
   width: 100%;
   height: 100%;
   @include container;
@@ -31,32 +32,32 @@
   aspect-ratio: 14 / 9;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .favoriteProducts {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .background {
     position: relative;
     aspect-ratio: 17 / 9;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .favoriteProducts {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
   .background {
-    aspect-ratio:  9 / 9;
+    aspect-ratio: 9 / 9;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: px-to-rem(750px)) {
   .favoriteProducts {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
   .background {
-    max-width: 500px;
+    max-width: px-to-rem(500px);
   }
 }

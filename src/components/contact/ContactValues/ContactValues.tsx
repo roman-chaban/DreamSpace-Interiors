@@ -18,12 +18,7 @@ export const ContactsValues: FC<ContactValuesProps> = ({ values }) => {
         backgroundColor: theme === 'dark' ? '' : colors.globalBackground,
       }}
     >
-      <div
-        className={styles.container}
-        style={{
-          borderBottom: theme === 'dark' ? 'none' : `2px solid ${colors.white}`,
-        }}
-      >
+      <div className={styles.container}>
         {values.map((item: Value) => (
           <ContactValuesItem item={item} key={item.id} />
         ))}

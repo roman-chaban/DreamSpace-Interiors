@@ -1,27 +1,28 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .authForm {
   width: 100%;
-  max-width: 500px;
+  max-width: px-to-rem(500px);
   display: flex;
   flex-direction: column;
-  padding-inline: 100px;
-  max-width: 738px;
+  padding-inline: px-to-rem(100px);
+  max-width: px-to-rem(738px);
 }
 
 .formInfo {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: px-to-rem(24px);
+  margin-bottom: px-to-rem(32px);
 }
 
 .formLabelsBlock {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: px-to-rem(32px);
 }
 
 .signTitle {
@@ -37,7 +38,6 @@
   color: color.$color-dark-gray;
 }
 
-
 .signButton {
   background: transparent;
   border: none;
@@ -51,7 +51,7 @@
   cursor: pointer;
   user-select: none;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: px-to-rem(8px);
 }
 
 .checkboxInput {
@@ -64,8 +64,8 @@
 
 .formCheckBox {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: px-to-rem(20px);
+  height: px-to-rem(20px);
   border-radius: 4px;
   background-color: #f0f0f0;
   border: 2px solid #ccc;
@@ -79,8 +79,8 @@
 }
 
 .checkboxInput:checked + .formCheckBox {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: color.$color-primary;
+  border-color: color.$color-primary;
 }
 
 .checkboxInput:checked + .formCheckBox::after {
@@ -96,7 +96,7 @@
 }
 
 .checkboxLabel {
-  font-size: 16px;
+  font-size: size.$font-size-16px;
   color: #333;
   line-height: 20px;
   margin: 0;
@@ -128,7 +128,7 @@
 
 .primaryButton {
   width: 100%;
-  max-width: 456px;
+  max-width: px-to-rem(456px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,7 +136,7 @@
   letter-spacing: -0.03em;
   font-weight: 500;
   border-radius: 8px;
-  padding: 10px 40px;
+  padding: px-to-rem(10px) px-to-rem(40px);
   background: color.$color-black;
   color: color.$color-white;
   border: none;
@@ -148,7 +148,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 438px;
+  max-width: px-to-rem(438px);
 }
 
 .closeIcon {
@@ -161,25 +161,24 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .authForm {
-    padding-inline: 70px;
-    margin-bottom: 150px;
+    padding-inline: px-to-rem(70px);
+    margin-bottom: px-to-rem(150px);
   }
   .primaryButton {
     max-width: 100%;
   }
-
 }
 
-@media (max-width: 1080px) {
+@media (max-width: px-to-rem(1080px)) {
   .formLabelsBlock {
-    gap: 10px;
+    gap: px-to-rem(10px);
   }
 
   .formInfo {
-    gap: 7px;
-    margin-bottom: 20px;
+    gap: px-to-rem(7px);
+    margin-bottom: px-to-rem(20px);
   }
 
   .signTitle {
@@ -189,7 +188,7 @@
   .signSubTitle {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: px-to-rem(5px);
     font-size: size.$font-size-14px;
   }
 
@@ -205,15 +204,15 @@
   }
 
   .passwordIcon {
-    max-width: 18px;
-    max-height: 19px;
+    max-width: px-to-rem(18px);
+    max-height: px-to-rem(19px);
   }
   .authCheckBoxSubTitle {
     font-size: size.$font-size-12px;
   }
   .formCheckBox {
-    max-width: 18px;
-    max-height: 18px;
+    max-width: px-to-rem(18px);
+    max-height: px-to-rem(18px);
   }
   .checkboxInput:checked + .formCheckBox::after {
     top: 0;
@@ -225,9 +224,9 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .authForm {
-    padding: 40px;
+    padding: px-to-rem(40px);
     margin-bottom: 0;
   }
   .formLabel {
@@ -235,12 +234,12 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: px-to-rem(425px)) {
   .signTitle {
     font-size: size.$font-size-40px;
   }
   .formInfo {
-    gap: 24px;
+    gap: px-to-rem(24px);
   }
   .signSubTitle {
     font-size: size.$font-size-16px;
@@ -255,9 +254,9 @@
     }
   }
   .formInfo {
-    margin-bottom: 32px;
+    margin-bottom: px-to-rem(32px);
   }
   .formLabelsBlock {
-    gap: 32px;
+    gap: px-to-rem(32px);
   }
 }

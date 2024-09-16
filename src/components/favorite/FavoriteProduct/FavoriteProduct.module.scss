@@ -1,34 +1,35 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .favoriteProduct {
   width: 100%;
-  margin-block: 50px;
+  margin-block: px-to-rem(50px);
 }
 
 .productContainer {
   display: flex;
-  gap: 16px;
+  gap: px-to-rem(16px);
   max-width: 100%;
   position: relative;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: px-to-rem(10px);
+  padding: px-to-rem(20px);
 }
 
 .productImage {
   width: 100%;
-  max-width: 200px;
+  max-width: px-to-rem(200px);
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: px-to-rem(5px);
 }
 
 .productInfo {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: px-to-rem(14px);
 }
 
 .productTitle {
@@ -38,7 +39,7 @@
 .productPrices {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: px-to-rem(15px);
 }
 
 .productOriginalPrice {
@@ -54,14 +55,14 @@
 .productSubTitle {
   margin: 0;
   width: 100%;
-  max-width: 700px;
+  max-width: px-to-rem(700px);
   color: color.$color-dark-gray;
 }
 
 .productMeasurements {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: px-to-rem(5px);
   color: color.$color-success;
   font-weight: 500;
 }
@@ -73,11 +74,11 @@
 
 .wishlistButton {
   width: 100%;
-  max-width: 250px;
-  padding: 5px;
+  max-width: px-to-rem(250px);
+  padding: px-to-rem(5px);
   border: none;
-  height: 40px;
-  border-radius: 5px;
+  height: px-to-rem(40px);
+  border-radius: px-to-rem(5px);
   background: color.$color-brand;
   color: color.$color-white;
   cursor: pointer;

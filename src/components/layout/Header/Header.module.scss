@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .header {
   display: flex;
@@ -23,7 +24,7 @@
 
 .headerContainer {
   @include container;
-  padding-block: 18px;
+  padding-block: px-to-rem(18px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +34,7 @@
 .headerLogo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: px-to-rem(14px);
 }
 
 .headerLogo > .headerLogoIcon .logoLink {
@@ -46,7 +47,7 @@
     #{size.$font-size-24px}
   );
   position: relative;
-  max-width: 105px;
+  max-width: px-to-rem(105px);
   color: color.$color-brand;
   text-decoration: none;
 
@@ -54,8 +55,8 @@
     content: '';
     display: block;
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: px-to-rem(4px);
+    height: px-to-rem(4px);
     background: color.$color-dark-gray;
     border-radius: 50%;
     right: -5px;
@@ -74,7 +75,7 @@
 .headerNav > .headerMenu {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: px-to-rem(40px);
   margin: 0;
   padding: 0;
 }
@@ -85,21 +86,21 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 24px;
-  height: 3px;
+  width: px-to-rem(24px);
+  height: px-to-rem(3px);
   background: color.$color-black;
   border: none;
-  border-radius: 20px;
+  border-radius: px-to-rem(20px);
   transition: background-color 0.3s ease;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
-    width: 24px;
-    height: 3px;
+    width: px-to-rem(24px);
+    height: px-to-rem(3px);
     background: color.$color-black;
-    border-radius: 20px;
+    border-radius: px-to-rem(20px);
     transition: background-color 0.3s ease;
   }
 
@@ -143,7 +144,6 @@
   overflow: hidden;
 }
 
-
 .listLink {
   text-decoration: none;
   line-height: 171%;
@@ -175,7 +175,7 @@
 .headerSubNav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .activeLink {
@@ -189,8 +189,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16px;
-  height: 16px;
+  width: px-to-rem(16px);
+  height: px-to-rem(16px);
   border-radius: 100%;
   position: absolute;
   right: 9px;
@@ -241,7 +241,7 @@
 }
 
 .dropDownMenu {
-  width: 110px;
+  width: px-to-rem(110px);
   position: absolute;
   padding: 0;
   bottom: -55px;
@@ -253,7 +253,7 @@
 }
 
 .dropDownListItem {
-  padding: 10px 20px;
+  padding: px-to-rem(10px) px-to-rem(20px);
   cursor: pointer;
 }
 
@@ -286,15 +286,15 @@
   justify-content: center;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: px-to-rem(1024px)) {
   .burgerButton {
     display: none;
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: px-to-rem(1300px)) {
   .headerContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 
   .headerSubNav {
@@ -302,7 +302,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: px-to-rem(1024px)) {
   .headerContainer {
     padding-inline: 50px;
   }
@@ -312,21 +312,28 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: px-to-rem(750px)) {
   .headerContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
   .navIcons {
     display: none;
   }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: px-to-rem(430px)) {
   .hiddenIcon {
     display: none;
   }
 
   .headerSubNav {
-    gap: 10px;
+    gap: px-to-rem(10px);
+  }
+}
+
+
+@media (max-width: px-to-rem(340px)) {
+  .headerContainer {
+    padding-block: px-to-rem(10px);
   }
 }

@@ -1,14 +1,15 @@
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .banners {
-  margin-block-start: 40px;
+  margin-block-start: px-to-rem(40px);
   display: flex;
 }
 
 .bannersContainer {
   @include container;
   display: flex;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .otherBannersItems {
@@ -16,29 +17,29 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: px-to-rem(1300px)) {
   .bannersContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .bannersContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: px-to-rem(750px)) {
   .bannersContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
 }
 
-@media screen and (max-width: 665px) {
-    .bannersContainer {
+@media screen and (max-width: px-to-rem(665px)) {
+  .bannersContainer {
     flex-direction: column;
   }
 }

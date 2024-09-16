@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .contactUs {
   display: flex;
@@ -9,7 +10,7 @@
 
 .contactUsContainer {
   @include container;
-  margin-top: 48px;
+  margin-top: px-to-rem(48px);
 }
 
 .contactUsTitle {
@@ -25,10 +26,10 @@
 .contactValuesContainer {
   @include container;
   padding-inline: 0;
-  padding-block: 40px;
+  padding-block: px-to-rem(40px);
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .contactItem {
@@ -45,22 +46,22 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
-  padding: 16px 32px;
-  max-width: 357px;
-  height: 156px;
+  gap: px-to-rem(16px);
+  padding: px-to-rem(16px) px-to-rem(32px);
+  max-width: px-to-rem(357px);
+  height: px-to-rem(156px);
 }
 
 .contactItemIcon {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: px-to-rem(32px);
+  max-height: px-to-rem(32px);
 }
 
 .contactItemTitles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .contactItemSubTitle {
@@ -70,7 +71,7 @@
   color: color.$color-black;
   margin: 0;
   width: 100%;
-  max-width: 280px;
+  max-width: px-to-rem(280px);
 }
 
 .contactItemTitle {
@@ -82,8 +83,8 @@
 
 .FormMapContainer {
   display: flex;
-  gap: 28px;
-  padding-bottom: 80px;
+  gap: px-to-rem(28px);
+  padding-bottom: px-to-rem(80px);
 }
 
 .contactUsValuesContainer {
@@ -93,15 +94,15 @@
   justify-content: center;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .contactUsContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .contactUsContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
   .contactValuesContainer {
     display: grid;
@@ -109,16 +110,19 @@
   }
   .contactItem {
     display: flex;
-    border-radius: 10px;
+    border-radius: px-to-rem(10px);
     justify-content: center;
   }
   .FormMapContainer {
     flex-direction: column;
   }
+  .contactItemContainer {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .contactUsContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
 }

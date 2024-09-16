@@ -1,4 +1,5 @@
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .container {
   width: 100%;
@@ -14,10 +15,10 @@
 
 .circle {
   box-sizing: border-box;
-  width: 80px;
-  height: 80px;
+  width: px-to-rem(80px);
+  height: px-to-rem(80px);
   border-radius: 50%;
-  border: 10px solid color.$color-banner-link;
+  border: px-to-rem(10px) solid color.$color-banner-link;
   border-top-color: color.$color-white;
   animation: spin 1s infinite linear;
 }

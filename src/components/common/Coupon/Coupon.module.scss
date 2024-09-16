@@ -1,25 +1,26 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .coupon {
-  margin-bottom: 92px;
+  margin-bottom: px-to-rem(92px);
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .couponContainer {
-  max-width: 424px;
+  max-width: px-to-rem(424px);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .couponTitles {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: px-to-rem(7px);
 }
 
 .couponTitle {
@@ -38,8 +39,8 @@
 .couponInputBlock {
   display: flex;
   justify-content: space-between;
-  padding-inline: 16px;
-  padding-block: 12px;
+  padding-inline: px-to-rem(16px);
+  padding-block: px-to-rem(12px);
   align-items: center;
   border: 1.8px solid color.$color-dark-gray;
 }
@@ -48,7 +49,7 @@
   border-bottom: none !important;
   justify-content: start !important;
   flex-direction: row-reverse !important;
-  gap: 5px;
+  gap: px-to-rem(5px);
 }
 
 .formInput {
@@ -89,7 +90,7 @@
   padding-inline: 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .couponTitle {
     font-size: size.$font-size-16px;
   }

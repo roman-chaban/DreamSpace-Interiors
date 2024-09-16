@@ -1,25 +1,26 @@
 @use '../../abstracts/mixins' as *;
 @use '../../abstracts/globals' as size;
 @use '../../colors/colors' as color;
+@use '../../functions/functions' as *;
 
 .cart {
   @include container;
   display: flex;
   flex-direction: column;
-  gap: 115px;
+  gap: px-to-rem(115px);
   padding-inline: 0;
-  padding-block-start: 110px;
+  padding-block-start: px-to-rem(110px);
   position: relative;
 }
 
 .goBackLink {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: px-to-rem(5px);
   font-weight: 500;
   text-decoration: none;
   position: absolute;
-  padding-inline-start: 160px;
+  padding-inline-start: px-to-rem(160px);
   color: color.$color-banner-link;
   font-size: size.$font-size-14px;
   line-height: 171%;
@@ -28,17 +29,17 @@
 .productsRowReverse {
   display: flex;
   flex-direction: column;
-  padding-inline: 160px;
+  padding-inline: px-to-rem(160px);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .productsRowReverse,
   .goBackLink {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .productsCartSummary,
   .productsRowReverse {
     flex-direction: column;
@@ -48,23 +49,23 @@
   }
   .productsRowReverse {
     flex-direction: column;
-    gap: 80px;
+    gap: px-to-rem(80px);
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px-to-rem(1000px)) {
   .productsRowReverse,
   .goBackLink {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .productsRowReverse,
   .goBackLink {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
   .cart {
-    gap: 40px;
+    gap: px-to-rem(40px);
   }
 }

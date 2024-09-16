@@ -1,56 +1,57 @@
 @use '../../abstracts/mixins' as *;
 @use '../../abstracts/globals' as size;
 @use '../../colors/colors' as color;
+@use '../../functions/functions' as *;
 
 .main {
   min-height: 100vh;
 }
 
 .product {
-  padding-block-start: 110px;
+  padding-block-start: px-to-rem(110px);
 }
 
 .product > .productContainer {
   @include container;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin-block-end: 40px;
+  gap: px-to-rem(40px);
+  margin-block-end: px-to-rem(40px);
 }
 
 .productInformation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 64px;
-  @media (max-width: 1024px) {
-    gap: 40px;
+  column-gap: px-to-rem(64px);
+  @media (max-width: px-to-rem(1024px)) {
+    gap: px-to-rem(40px);
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .product > .productContainer {
-    padding-inline: 100px;
-  }
-}
-@media (max-width: 1024px) {
-  .product > .productContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: px-to-rem(1024px)) {
+  .product > .productContainer {
+    padding-inline: px-to-rem(50px);
+  }
+}
+
+@media (max-width: px-to-rem(900px)) {
   .productInformation {
     grid-template-columns: 1fr;
   }
   .product > .productContainer {
-    gap: 20px;
+    gap: px-to-rem(20px);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .product > .productContainer {
-    padding-inline: 32px;
-    gap: 40px;
+    padding-inline: px-to-rem(32px);
+    gap: px-to-rem(40px);
   }
 }
-

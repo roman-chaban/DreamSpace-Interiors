@@ -1,18 +1,19 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .productsContainer {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block-end: 24px;
-  border-bottom: 1.5px solid color.$color-dark-gray;
+  padding-block-end: px-to-rem(24px);
+  border-bottom: px-to-rem(1.5px) solid color.$color-dark-gray;
 }
 
 .cartProductsTitle {
-  width: 325px;
+  width: px-to-rem(325px);
 }
 
 .cartProductsTitle,
@@ -28,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 74.5px;
+  gap: px-to-rem(74.5px);
   padding: 0;
   margin: 0;
 }
@@ -46,19 +47,19 @@
 .emptyTitle {
   text-align: center;
   font-size: size.$font-size-40px;
-  margin-block-start: 30px;
+  margin-block-start: px-to-rem(30px);
   font-weight: 500;
 }
 
-@media (max-width: 1230px) {
+@media (max-width: px-to-rem(1230px)) {
   .productGrid {
-    max-width: 600px;
+    max-width: px-to-rem(600px);
   }
   .cartProductsTitle {
-    max-width: 305px;
+    max-width: px-to-rem(305px);
   }
   .productsMenu {
-    gap: 56.5px;
+    gap: px-to-rem(56.5px);
   }
   .menuListItem:nth-child(2) {
     display: none;

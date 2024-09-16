@@ -1,36 +1,32 @@
 @use '../../abstracts/mixins' as *;
-
+@use '../../functions/functions' as *;
 
 .main {
-    padding-block-start: 110px;
+  padding-block-start: px-to-rem(110px);
 }
-
 
 .articleContainer {
-    display: flex;
-    flex-direction: column;
-    @include container;
-    gap: 56px;
+  display: flex;
+  flex-direction: column;
+  @include container;
+  gap: px-to-rem(56px);
 }
 
-
-
-@media (max-width: 1200px) {
-    .articleContainer {
-        padding-inline: 100px;
-        gap: 35px;
-    } 
+@media (max-width: px-to-rem(1200px)) {
+  .articleContainer {
+    padding-inline: px-to-rem(100px);
+    gap: px-to-rem(35px);
+  }
 }
 
-@media (max-width: 1000px) {
-    .articleContainer {
-        padding-inline: 50px;
-    }
+@media (max-width: px-to-rem(1000px)) {
+  .articleContainer {
+    padding-inline: px-to-rem(50px);
+  }
 }
 
-@media (max-width: 720px) {
-    .articleContainer {
-        padding-inline: 32px;
-    }
+@media (max-width: px-to-rem(720px)) {
+  .articleContainer {
+    padding-inline: px-to-rem(32px);
+  }
 }
-

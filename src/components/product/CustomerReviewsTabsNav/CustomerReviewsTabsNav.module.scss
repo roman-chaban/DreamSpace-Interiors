@@ -1,11 +1,12 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .tabsContainer {
   display: flex;
   align-items: center;
-  gap: 80px;
-  border-bottom: 1.5px solid #e8ecef;
+  gap: px-to-rem(80px);
+  border-bottom: px-to-rem(1.5px) solid #e8ecef;
 }
 
 .tabItem {
@@ -16,7 +17,7 @@
   font-size: size.$font-size-18px;
   line-height: 178%;
   letter-spacing: -0.02em;
-  padding-block-end: 5px;
+  padding-block-end: px-to-rem(5px);
   transition: color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   cursor: pointer;
 }
@@ -37,16 +38,16 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: px-to-rem(600px)) {
   .tabItem,
   .active {
     font-size: size.$font-size-16px;
   }
 }
 
-@media (max-width: 510px) {
+@media (max-width: px-to-rem(510px)) {
   .tabsContainer {
-    gap: 20px;
+    gap: px-to-rem(20px);
     align-items: start;
     flex-direction: column;
     border-bottom: none;

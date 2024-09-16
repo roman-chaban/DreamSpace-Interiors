@@ -1,5 +1,5 @@
 'use client';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SelectProps } from '@/types/select-options';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';

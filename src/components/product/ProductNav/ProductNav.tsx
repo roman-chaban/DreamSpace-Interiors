@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, FC } from 'react';
+import type { FC } from 'react';
 import styles from './ProductNav.module.scss';
 import { Product } from '@/types/products';
 import Link from 'next/link';
@@ -18,7 +18,6 @@ export const ProductNav: FC<ProductNavType> = ({ product }) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
   const linkColor = theme === 'dark' ? '' : colors.white;
-  const itemColor = theme === 'dark' ? '' : colors.white;
 
   return (
     <div className={styles.productNav}>

@@ -1,25 +1,26 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .blogList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 25px;
-  padding-block: 40px 200px;
+  gap: px-to-rem(40px) px-to-rem(25px);
+  padding-block: px-to-rem(40px) px-to-rem(200px);
 }
 
 .showMoreContainer {
   grid-column: span 3;
   display: flex;
   justify-content: center;
-  padding-block-start: 80px;
+  padding-block-start: px-to-rem(80px);
 }
 
 .blogListItem {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .imageContainer {
@@ -31,7 +32,7 @@
 .overlay {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: px-to-rem(24px);
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -72,7 +73,7 @@
 .blogTitles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .itemTitle {
@@ -94,7 +95,7 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -119,11 +120,11 @@
   color: color.$color-black;
   border: 1.5px solid color.$color-black;
   background: transparent;
-  border-radius: 80px;
-  padding: 6px 20px;
+  border-radius: px-to-rem(80px);
+  padding: px-to-rem(6px) px-to-rem(20px);
   width: 100%;
-  max-width: 163px;
-  height: 40px;
+  max-width: px-to-rem(163px);
+  height: px-to-rem(40px);
   line-height: 175%;
   letter-spacing: -0.03em;
   text-align: center;
@@ -139,22 +140,22 @@
 }
 
 .largeIcon {
-  width: 40px !important;
-  height: 40px !important;
+  width: px-to-rem(40px) !important;
+  height: px-to-rem(40px) !important;
 }
 
-@media only screen and (max-width: 1335px) {
+@media only screen and (max-width: px-to-rem(1335px)) {
   .itemTitle {
-    max-width: 250px;
+    max-width: px-to-rem(250px);
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: px-to-rem(1200px)) {
   .blogList {
-    padding-block-end: 100px;
+    padding-block-end: px-to-rem(100px);
   }
   .articlesContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
   .itemTitle {
     font-size: size.$font-size-18px;
@@ -164,13 +165,13 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .articlesContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: px-to-rem(900px)) {
   .blogList {
     display: grid;
     grid-template-columns: 1fr;
@@ -187,34 +188,34 @@
   }
   .itemImage {
     aspect-ratio: 4 / 2.5;
-    border-radius: 20px;
+    border-radius: px-to-rem(20px);
   }
   .dateTitle {
     font-size: size.$font-size-16px;
   }
   .overlay {
     font-size: size.$font-size-24px;
-    border-radius: 20px;
+    border-radius: px-to-rem(20px);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: px-to-rem(600px)) {
   .overlay {
     font-size: size.$font-size-18px;
   }
   .blogList {
-    padding-block-end: 50px;
+    padding-block-end: px-to-rem(50px);
   }
   .showMoreContainer {
-    padding-block-start: 50px;
+    padding-block-start: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: px-to-rem(500px)) {
   .articlesContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
-  
+
   .itemTitle {
     font-size: size.$font-size-16px;
   }
@@ -226,8 +227,8 @@
     font-size: size.$font-size-34px;
   }
   .rightIcon {
-    max-width: 16px;
-    max-height: 16px;
+    max-width: px-to-rem(16px);
+    max-height: px-to-rem(16px);
   }
   .overlay {
     font-size: size.$font-size-10px;

@@ -1,17 +1,18 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .gallery {
   width: 100%;
-  max-width: 700px;
+  max-width: px-to-rem(700px);
 }
 
 .galleryMainImage {
   position: relative;
   width: 100%;
-  max-width: 547px;
-  height: 728px;
+  max-width: px-to-rem(547px);
+  height: px-to-rem(728px);
   background: color.$color-light-gray;
   display: flex;
   align-items: center;
@@ -24,37 +25,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 300px;
+  max-width: px-to-rem(300px);
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: px-to-rem(4px);
   margin: 0 auto;
 }
 
 .discountTitles {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: px-to-rem(10px);
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: px-to-rem(24px);
+  left: px-to-rem(24px);
   z-index: 30;
 }
 
 .discountedTitle {
-  border-radius: 4px;
+  border-radius: px-to-rem(4px);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 79px;
-  height: 34px;
+  max-width: px-to-rem(79px);
+  height: px-to-rem(34px);
   background: color.$color-white;
   font-weight: 700;
   font-size: size.$font-size-18px;
   line-height: 100%;
   text-align: center;
-  padding: 8px 18px;
+  padding: px-to-rem(8px) px-to-rem(18px);
   text-transform: uppercase;
 }
 
@@ -62,68 +63,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  padding: 8px 18px;
+  border-radius: px-to-rem(4px);
+  padding: px-to-rem(8px) px-to-rem(18px);
   width: 100%;
-  max-width: 79px;
-  height: 34px;
+  max-width: px-to-rem(79px);
+  height: px-to-rem(34px);
   color: color.$color-white;
   font-weight: 700;
   font-size: size.$font-size-18px;
   background: color.$color-success;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: px-to-rem(1150px)) {
   .galleryMainImage {
-    max-width: 400px;
-    max-height: 690px;
-    border-radius: 4px;
+    max-width: px-to-rem(400px);
+    max-height: px-to-rem(690px);
+    border-radius: px-to-rem(4px);
   }
   .discountTitles {
-    top: 18px;
-    left: 18px;
+    top: px-to-rem(18px);
+    left: px-to-rem(18px);
   }
   .discountedTitle,
   .discountPercentage {
     font-size: size.$font-size-14px;
-    max-width: 65px;
-    max-height: 32px;
+    max-width: px-to-rem(65px);
+    max-height: px-to-rem(32px);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: px-to-rem(900px)) {
   .galleryMainImage {
     max-width: 100%;
   }
   .gallery {
-    max-width: 500px;
+    max-width: px-to-rem(500px);
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: px-to-rem(560px)) {
   .gallery {
-    max-width: 400px;
+    max-width: px-to-rem(400px);
   }
   .galleryMainImage {
-    max-height: 470px;
+    max-height: px-to-rem(470px);
   }
 }
 
-@media (max-width: 455px) {
+@media (max-width: px-to-rem(455px)) {
   .gallery {
-    max-width: 350px;
+    max-width: px-to-rem(350px);
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .gallery {
-    max-width: 300px;
+    max-width: px-to-rem(300px);
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: px-to-rem(375px)) {
   .gallery,
   .galleryMainImage {
-    max-width: 265px;
+    max-width: px-to-rem(265px);
   }
 }

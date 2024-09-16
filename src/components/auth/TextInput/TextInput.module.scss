@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .formLabel {
   width: 100%;
@@ -17,9 +18,9 @@
   background: transparent;
   border: none;
   outline: none;
-  padding-bottom: 8px;
-  padding-inline-start: 8px;
-  height: 40px;
+  padding-bottom: px-to-rem(8px);
+  padding-inline-start: px-to-rem(8px);
+  height: px-to-rem(40px);
   line-height: 162%;
   color: color.$color-dark-gray;
   caret-color: color.$color-dark-gray;
@@ -30,13 +31,13 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1.5px solid color.$color-gray;
-  padding: 0px 0px 8px 0px;
+  padding: 0 0 px-to-rem(8px) 0;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: px-to-rem(1100px)) {
   .eyeIcon {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: px-to-rem(20px);
+    max-height: px-to-rem(20px);
   }
   .formInput {
     font-size: size.$font-size-14px;

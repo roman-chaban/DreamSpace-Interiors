@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .footer {
   width: 100%;
@@ -15,9 +16,9 @@
 
 .footerContainer {
   width: 100%;
-  height: 260px;
+  height: px-to-rem(260px);
   display: flex;
-  gap: 25px;
+  gap: px-to-rem(25px);
   justify-content: center;
   flex-direction: column;
 }
@@ -25,7 +26,7 @@
 .footerBanner {
   width: 100%;
   height: auto;
-  max-height: 319px;
+  max-height: px-to-rem(319px);
   background: url(../../../../public/images/footer/footerBanner.svg) no-repeat
     center center;
   background-size: cover;
@@ -37,7 +38,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: px-to-rem(32px);
   justify-content: center;
   align-items: center;
 }
@@ -45,7 +46,7 @@
 .footerJoinBlockTitles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .joinTitle {
@@ -67,17 +68,17 @@
 .signUp {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: px-to-rem(8px);
   width: 100%;
-  max-width: 488px;
-  height: 52px;
+  max-width: px-to-rem(488px);
+  height: px-to-rem(52px);
   position: relative;
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 1.5px;
+    height: px-to-rem(1.5px);
     background: color.$color-dark-gray-light;
   }
 }
@@ -90,7 +91,7 @@
   letter-spacing: -0.03em;
   font-weight: 500;
   width: 100%;
-  max-width: 380px;
+  max-width: px-to-rem(380px);
   color: color.$color-dark-gray;
   &::placeholder {
     color: color.$color-dark-gray;
@@ -115,7 +116,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-block-end: 49px;
+  margin-block-end: px-to-rem(49px);
   &::after {
     content: '';
     position: absolute;
@@ -129,7 +130,7 @@
 .footerNavLogo {
   display: flex;
   align-items: center;
-  gap: 65px;
+  gap: px-to-rem(65px);
 }
 
 .navLogo {
@@ -155,7 +156,7 @@
     position: absolute;
     left: -32px;
     content: '';
-    height: 24px;
+    height: px-to-rem(24px);
     width: 1px;
     background: color.$color-dark-gray;
   }
@@ -173,7 +174,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .listItem {
@@ -216,14 +217,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: px-to-rem(28px);
 }
 
 .copyPayments {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px;
+  gap: px-to-rem(32px);
 }
 
 .copyrightTitle {
@@ -237,7 +238,7 @@
 .policyTermsItemBlock {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: px-to-rem(28px);
 }
 
 .privacy,
@@ -251,7 +252,7 @@
 .paymentsIconsBlock {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: px-to-rem(7px);
 }
 
 .iconContainer {
@@ -261,13 +262,13 @@
   align-items: center;
   border: 1px solid;
   width: 100%;
-  border-radius: 4px;
-  max-width: 48px;
+  border-radius: px-to-rem(4px);
+  max-width: px-to-rem(48px);
   background: color.$color-white;
-  height: 32px;
+  height: px-to-rem(32px);
   cursor: pointer;
   transition: all 0.3s ease-in-out 0s;
-  padding-inline: 5px;
+  padding-inline: px-to-rem(5px);
   &:hover {
     transform: scale(1.1);
   }
@@ -275,14 +276,14 @@
 
 .icon {
   width: auto;
-  max-width: 35px;
+  max-width: px-to-rem(35px);
   height: 100%;
 }
 
 .footerSocial {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .bgTransparent {
@@ -298,13 +299,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+  padding: px-to-rem(2px);
 }
 
 .socialIcon {
   transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
-  width: 30px;
-  height: 30px;
+  width: px-to-rem(30px);
+  height: px-to-rem(30px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,18 +317,18 @@
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: px-to-rem(1300px)) {
   .footerInformation {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
   .joinSubTitle {
     font-size: size.$font-size-16px;
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .footerInformation {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
   .footerJoinBlockTitles {
     align-items: center;
@@ -337,31 +338,31 @@
   }
 }
 
-@media only screen and (max-width: 835px) {
+@media only screen and (max-width: px-to-rem(835px)) {
   .footerNav {
     flex-direction: column;
     align-items: start;
-    gap: 25px;
+    gap: px-to-rem(25px);
     &::after {
-      top: 110px;
+      top: px-to-rem(110px);
     }
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: px-to-rem(750px)) {
   .footerContainer {
-    margin-block: 25px;
-    gap: 10px;
+    margin-block: px-to-rem(25px);
+    gap: px-to-rem(10px);
   }
   .footerJoinBlock {
-    gap: 20px;
+    gap: px-to-rem(20px);
   }
   .joinSubTitle {
     font-size: size.$font-size-12px;
   }
 
   .footerInformation {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
   .footerBanner {
     aspect-ratio: 25 / 9;
@@ -370,20 +371,20 @@
     max-width: 100%;
     flex-direction: column;
     align-items: start;
-    gap: 25px;
+    gap: px-to-rem(25px);
   }
   .copyrightItemBlock {
     justify-content: space-between;
   }
   .signUp {
-    max-width: 350px;
+    max-width: px-to-rem(350px);
   }
   .signUpInput {
-    max-width: 250px;
+    max-width: px-to-rem(250px);
   }
   .emailIcon {
-    max-width: 18px;
-    max-height: 18px;
+    max-width: px-to-rem(18px);
+    max-height: px-to-rem(18px);
   }
   .signUpInput {
     &::placeholder {
@@ -395,13 +396,13 @@
   }
 }
 
-@media only screen and (max-width: 551px) {
+@media only screen and (max-width: px-to-rem(551px)) {
   .copyPayments {
     flex-direction: column-reverse;
     align-items: center;
   }
   .footerContainer {
-    margin-block: 195px;
+    margin-block: px-to-rem(195px);
   }
   .footerBanner {
     aspect-ratio: 15 / 9;
@@ -409,12 +410,12 @@
   .footerNav {
     align-items: center;
     &::after {
-      top: 373px;
+      top: px-to-rem(373px);
     }
   }
   .footerNavLogo {
     flex-direction: column;
-    gap: 33px;
+    gap: px-to-rem(33px);
   }
   .navLogoSubtitle::before {
     display: none;
@@ -430,14 +431,14 @@
     content: '';
     width: 1px;
     position: absolute;
-    top: 32px;
+    top: px-to-rem(32px);
     transform: rotate(90deg);
-    height: 24px;
+    height: px-to-rem(24px);
     background: color.$color-dark-gray;
   }
   .navMenu {
     flex-direction: column;
-    gap: 32px;
+    gap: px-to-rem(32px);
   }
   .footerCopyrightBlock {
     flex-direction: column-reverse;
@@ -450,7 +451,7 @@
     color: color.$color-gray;
   }
   .footerJoinBlockTitles {
-    max-width: 311px;
+    max-width: px-to-rem(311px);
   }
   .joinTitle {
     font-size: size.$font-size-28px;
@@ -461,26 +462,29 @@
     text-align-last: center;
   }
   .signUp {
-    max-width: 300px;
+    max-width: px-to-rem(300px);
   }
   .signUpInput {
-    max-width: 190px;
+    max-width: px-to-rem(190px);
   }
 }
 
-@media only screen and (max-width: 330px) {
+@media only screen and (max-width: px-to-rem(330px)) {
   .copyrightTitle {
     font-size: size.$font-size-9px;
   }
   .signUp {
-    max-width: 250px;
+    max-width: px-to-rem(250px);
   }
   .signUpInput {
-    max-width: 150px;
+    max-width: px-to-rem(150px);
   }
   .paymentsIconsBlock {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: px-to-rem(20px);
+  }
+  .footerInformation {
+    padding-block: px-to-rem(20px);
   }
 }

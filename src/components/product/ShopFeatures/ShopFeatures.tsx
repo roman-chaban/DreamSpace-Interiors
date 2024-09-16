@@ -1,13 +1,13 @@
 import { CustomSelect } from '@/components/ui/Select/Select';
 import { Option, SelectClassNames } from '@/types/select-options';
-import { useEffect, useState, type FC } from 'react';
+import { type FC } from 'react';
 import styles from './ShopFeatures.module.scss';
 
 export const options: Option[] = [
   { label: 'Living Room', value: 'living-room' },
   { label: 'Bedroom', value: 'bedroom-room' },
   { label: 'Bathroom', value: 'bathroom-room' },
-  { label: 'Dining', value: 'dining' },
+  { label: 'Lightning', value: 'lightning' },
   { label: 'Outdoor', value: 'outdoor' },
 ];
 
@@ -27,7 +27,16 @@ const classNames: SelectClassNames = {
   selectContainer: styles.selectContainer,
 };
 
-export const ShopFeatures: FC = () => {
+interface IShopFeatures {
+  onSortChange: (option: string) => void;
+}
+
+export const ShopFeatures: FC<IShopFeatures> = ({ onSortChange }) => {
+  const handleSortChange = (selectedOption: string) => {
+    onSortChange(selectedOption);
+    console.log(selectedOption);
+  };
+
   return (
     <div className={styles.features}>
       <CustomSelect
@@ -35,6 +44,7 @@ export const ShopFeatures: FC = () => {
         selectLabel="CATEGORIES"
         classNames={classNames}
         defaultValue="All Rooms"
+        onChange={handleSortChange}
       />
       <CustomSelect
         options={priceOptions}

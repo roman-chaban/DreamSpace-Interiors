@@ -19,7 +19,7 @@ import currentProducts from '@/services/products/products.json';
 import { Products } from '@/types/products';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { sortProducts } from '@/components/sortProducts/sortProducts';
+import { sortedFeaturesProducts } from '@/components/sortedFeaturesProducts/sortedFeaturesProducts';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
@@ -34,8 +34,10 @@ export default function Shop() {
 
   useEffect(() => {
     if (sortOption) {
-      const sorted = sortProducts(products, sortOption);
-      setProducts(sorted);
+      const sortedProducts = sortedFeaturesProducts(products, sortOption);
+      setProducts(sortedProducts);
+    } else {
+      setProducts(currentProducts);
     }
   }, [sortOption]);
 
@@ -66,7 +68,7 @@ export default function Shop() {
     3: (
       <div className={styles.shopFeatures}>
         <div className={styles.shopFeaturesProducts}>
-          <ShopFeatures />
+          <ShopFeatures onSortChange={handleSortChange} />
           <ShopNav
             items={shopNavItems}
             onSelectContent={handleSelectTab}

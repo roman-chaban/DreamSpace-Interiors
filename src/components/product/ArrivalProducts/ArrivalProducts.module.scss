@@ -1,10 +1,11 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .products {
   display: flex;
-  padding-block: 48px;
+  padding-block: px-to-rem(48px);
 }
 
 .productsContainer {
@@ -12,13 +13,13 @@
   padding-inline-end: 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .productsItems {
   display: grid;
-  grid-template-columns: repeat(4, 262px);
-  gap: 24px;
+  grid-template-columns: repeat(4, px-to-rem(262px));
+  gap: px-to-rem(24px);
   width: 100%;
   overflow-x: hidden;
 }
@@ -34,12 +35,11 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  max-width: 230px;
+  max-width: px-to-rem(230px);
 }
 
 .arrivalsNav {
-  max-width: 1440px;
-  padding-inline: 160px;
+  @include container;
   padding-inline-start: 0;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@
   color: color.$color-brand;
   font-size: size.$font-size-40px;
   font-weight: 500;
-  max-width: 100px;
+  max-width: px-to-rem(100px);
   line-height: 110%;
   letter-spacing: -0.01em;
 }
@@ -60,8 +60,8 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
-  margin-top: 8px;
+  gap: px-to-rem(4px);
+  margin-top: px-to-rem(8px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -93,28 +93,28 @@
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .productsContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
   .arrivalsNav {
     padding-inline: 0px;
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: px-to-rem(1025px)) {
   .arrivalSlide {
-    margin-right: 20px !important;
+    margin-right: px-to-rem(20px) !important;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .productsContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .arrivalLink {
     display: none;
   }

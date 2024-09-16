@@ -1,23 +1,24 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .productInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .ratingReviewsBlock {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: px-to-rem(10px);
 }
 
 .ratingStars {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: px-to-rem(2px);
 }
 
 .reviewsCount {
@@ -41,14 +42,14 @@
   line-height: 162%;
   color: color.$color-dark-gray;
   width: 100%;
-  max-width: 508px;
+  max-width: px-to-rem(508px);
 }
 
 .prices {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-block-end: 24px;
+  gap: px-to-rem(12px);
+  padding-block-end: px-to-rem(24px);
   border-bottom: 1.5px solid color.$color-gray;
   > .originalPrice {
     color: color.$color-product-title;
@@ -67,8 +68,8 @@
 }
 
 .offerBlock {
-  padding-block-end: 24px;
-  border-bottom: 1.5px solid color.$color-gray;
+  padding-block-end: px-to-rem(24px);
+  border-bottom: px-to-rem(1.5px) solid color.$color-gray;
 }
 
 .offerTitle {
@@ -81,7 +82,7 @@
 .discountTimeBlock {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .timeCapture {
@@ -94,8 +95,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: px-to-rem(60px);
+  height: px-to-rem(60px);
   color: color.$color-black;
   background: color.$color-gray;
   font-size: size.$font-size-34px;
@@ -103,7 +104,7 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   text-align: center;
-  border-radius: 2px;
+  border-radius: px-to-rem(2px);
 }
 
 .timeLabel {
@@ -115,7 +116,7 @@
 .measurementsBlock {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .measurementsTitle {
@@ -135,15 +136,15 @@
 .addButtonsBlock {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-block-end: 24px;
-  border-bottom: 1.5px solid color.$color-gray;
+  gap: px-to-rem(16px);
+  padding-block-end: px-to-rem(24px);
+  border-bottom: px-to-rem(1.5px) solid color.$color-gray;
 }
 
 .wishlistBlock {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .addButton {
@@ -151,9 +152,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-radius: 8px;
-  max-width: 508px;
-  height: 52px;
+  border-radius: px-to-rem(8px);
+  max-width: px-to-rem(508px);
+  height: px-to-rem(52px);
   border: none;
   background: color.$color-black;
   font-weight: 500;
@@ -162,12 +163,12 @@
   line-height: 178%;
   letter-spacing: -0.02em;
   cursor: pointer;
-  @media (max-width: 900px) {
+  @media (max-width: px-to-rem(900px)) {
     max-width: 100%;
   }
-  @media (max-width: 375px) {
+  @media (max-width: px-to-rem(375px)) {
     font-size: size.$font-size-16px;
-    max-height: 40px;
+    max-height: px-to-rem(40px);
   }
 }
 
@@ -176,23 +177,23 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 1.5px solid color.$color-black;
-  gap: 8px;
+  border: px-to-rem(1.5px) solid color.$color-black;
+  gap: px-to-rem(8px);
   width: 100%;
-  max-width: 357px;
-  height: 52px;
-  border-radius: 8px;
+  max-width: px-to-rem(357px);
+  height: px-to-rem(52px);
+  border-radius: px-to-rem(8px);
   font-weight: 500;
   font-size: size.$font-size-18px;
   line-height: 178%;
   letter-spacing: -0.02em;
   cursor: pointer;
-  @media (max-width: 900px) {
+  @media (max-width: px-to-rem(900px)) {
     max-width: 100%;
   }
-  @media (max-width: 375px) {
+  @media (max-width: px-to-rem(375px)) {
     font-size: size.$font-size-16px;
-    max-height: 40px;
+    max-height: px-to-rem(40px);
   }
 }
 
@@ -200,11 +201,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
   width: 100%;
-  border-radius: 8px;
-  max-width: 127px;
-  height: 52px;
+  border-radius: px-to-rem(8px);
+  max-width: px-to-rem(127px);
+  height: px-to-rem(52px);
   background: color.$color-dropdown-header;
 }
 
@@ -220,7 +221,7 @@
   padding-block: 0;
   cursor: pointer;
   width: 100%;
-  max-width: 20px;
+  max-width: px-to-rem(20px);
   padding: 0;
 }
 
@@ -228,21 +229,21 @@
   font-weight: 600;
   font-size: size.$font-size-16px;
   line-height: 162%;
-  width: 20px;
+  width: px-to-rem(20px);
   text-align: center;
 }
 
 .categoryBlock {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .skuTitle,
 .categoryTitle {
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: px-to-rem(100px);
   font-weight: 400;
   color: color.$color-black;
   font-size: size.$font-size-16px;
@@ -251,7 +252,7 @@
 
 .titleMark {
   width: 100%;
-  max-width: 100px;
+  max-width: px-to-rem(100px);
   display: block;
   font-size: size.$font-size-16px;
   line-height: 167%;
@@ -275,7 +276,7 @@
   color: color.$color-white;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: px-to-rem(1150px)) {
   .title {
     font-size: size.$font-size-38px;
   }
@@ -285,29 +286,29 @@
   }
   .prices,
   .offerBlock {
-    padding-block-end: 12px;
+    padding-block-end: px-to-rem(12px);
   }
   .prices > .originalPrice {
     font-size: size.$font-size-26px;
   }
   .discountTimeBlock {
-    gap: 10px;
+    gap: px-to-rem(10px);
   }
   .timeBlock {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: px-to-rem(50px);
+    max-height: px-to-rem(50px);
     font-size: size.$font-size-24px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: px-to-rem(900px)) {
   .counterBlock {
-    max-width: 200px;
-    gap: 40px;
+    max-width: px-to-rem(200px);
+    gap: px-to-rem(40px);
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: px-to-rem(460px)) {
   .title {
     font-size: size.$font-size-40px;
   }
@@ -315,26 +316,26 @@
     font-size: size.$font-size-16px;
   }
   .discountTimeBlock {
-    gap: 16px;
+    gap: px-to-rem(16px);
   }
   .timeBlock {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: px-to-rem(60px);
+    max-height: px-to-rem(60px);
     font-size: size.$font-size-28px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: px-to-rem(375px)) {
   .discountTimeBlock {
-    gap: 10px;
+    gap: px-to-rem(10px);
   }
   .counterBlock {
-    gap: 20px;
-    max-width: 180px;
-    max-height: 40px;
+    gap: px-to-rem(20px);
+    max-width: px-to-rem(180px);
+    max-height: px-to-rem(40px);
   }
   .heartIcon {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: px-to-rem(20px);
+    max-height: px-to-rem(20px);
   }
 }

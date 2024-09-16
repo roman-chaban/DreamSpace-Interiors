@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .customCheckbox {
   display: flex;
@@ -8,7 +9,7 @@
   cursor: pointer;
   user-select: none;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: px-to-rem(8px);
 }
 
 .checkboxInput {
@@ -21,18 +22,18 @@
 
 .formCheckBox {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
+  width: px-to-rem(20px);
+  height: px-to-rem(20px);
+  border-radius: px-to-rem(4px);
   background-color: #f0f0f0;
-  border: 2px solid #ccc;
+  border: px-to-rem(2px) solid #ccc;
   transition: background-color 0.3s, border-color 0.3s;
   position: relative;
-  margin-right: 10px;
+  margin-right: px-to-rem(10px);
   box-sizing: border-box;
   flex-shrink: 0;
-  left: -1.5px;
-  bottom: -2.5px;
+  left: px-to-rem(-1.5px);
+  bottom: px-to-rem(-2.5px);
 }
 
 .checkboxInput:checked + .formCheckBox {
@@ -43,19 +44,19 @@
 .checkboxInput:checked + .formCheckBox::after {
   content: '';
   position: absolute;
-  left: 4.5px;
-  top: 1px;
-  width: 7px;
-  height: 12px;
+  left: px-to-rem(4.5px);
+  top: px-to-rem(1px);
+  width: px-to-rem(7px);
+  height: px-to-rem(12px);
   border: solid color.$color-white;
-  border-width: 0 2px 2px 0;
+  border-width: 0 px-to-rem(2px) px-to-rem(2px) 0;
   transform: rotate(45deg);
 }
 
 .checkboxLabel {
-  font-size: 16px;
+  font-size: size.$font-size-16px;
   color: #333;
-  line-height: 20px;
+  line-height: px-to-rem(20px);
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -68,11 +69,11 @@
 
 .authCheckBoxSubTitle {
   position: relative;
-  bottom: 5.5px;
+  bottom: px-to-rem(5.5px);
   color: color.$color-dark-gray;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: px-to-rem(1100px)) {
   .authCheckBoxSubTitle {
     font-size: size.$font-size-14px;
   }

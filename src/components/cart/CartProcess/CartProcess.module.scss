@@ -1,13 +1,14 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .cartProcess {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin-top: 80px;
+  gap: px-to-rem(40px);
+  margin-top: px-to-rem(80px);
 }
 
 .title {
@@ -23,25 +24,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: px-to-rem(32px);
 }
 
 .processItem {
   display: flex;
   width: 100%;
-  max-width: 256px;
+  max-width: px-to-rem(256px);
   cursor: pointer;
   align-items: center;
-  gap: 17px;
-  padding-block-end: 26px;
+  gap: px-to-rem(17px);
+  padding-block-end: px-to-rem(26px);
   > .processCircle {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 40px;
-    padding: 8px 17px;
-    width: 42px;
-    height: 42px;
+    border-radius: px-to-rem(40px);
+    padding: px-to-rem(8px) px-to-rem(17px);
+    width: px-to-rem(42px);
+    height: px-to-rem(42px);
     color: color.$color-white;
     background: color.$color-process-circle;
     line-height: 162%;
@@ -66,8 +67,8 @@
 
 .process .activeBorder {
   border-bottom: 2px solid color.$color-process-title;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: px-to-rem(2px);
+  border-bottom-left-radius: px-to-rem(2px);
 }
 
 .productsSummaryBlock {
@@ -83,85 +84,85 @@
   display: flex;
   flex-direction: column;
   @include container;
-  gap: 80px;
+  gap: px-to-rem(80px);
 }
 
 .productsCartBlock {
   display: flex;
-  gap: 64px;
+  gap: px-to-rem(64px);
 }
 
 .processForms {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-block-end: 160px;
-  gap: 24px;
+  margin-block-end: px-to-rem(160px);
+  gap: px-to-rem(24px);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .productsSummaryBlock,
   .productsSummary {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: px-to-rem(1100px)) {
   .process {
-    gap: 64px;
+    gap: px-to-rem(64px);
     overflow-x: auto;
     max-width: 100%;
     white-space: nowrap;
   }
   .productsSummaryBlock {
-    gap: 40px;
+    gap: px-to-rem(40px);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .productsCartBlock {
     flex-direction: column;
-    gap: 40px;
+    gap: px-to-rem(40px);
   }
   .productsSummaryBlock {
     grid-template-columns: 1fr;
     justify-items: start;
-    margin-block-end: 90px;
+    margin-block-end: px-to-rem(90px);
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px-to-rem(1000px)) {
   .process {
-    padding-inline-start: 50px;
+    padding-inline-start: px-to-rem(50px);
     justify-content: start;
   }
   .productsSummaryBlock,
   .productsSummary {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
   .process::-webkit-scrollbar {
     display: none;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .process {
-    padding-inline-start: 32px;
+    padding-inline-start: px-to-rem(32px);
   }
   .productsSummaryBlock {
-    padding-inline: 32px;
-    gap: 24px;
+    padding-inline: px-to-rem(32px);
+    gap: px-to-rem(24px);
   }
   .productsSummary {
-    padding-inline: 32px;
-    gap: 24px;
+    padding-inline: px-to-rem(32px);
+    gap: px-to-rem(24px);
   }
   .processForms {
-    margin-block-end: 80px;
+    margin-block-end: px-to-rem(80px);
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .title {
     font-size: size.$font-size-40px;
   }

@@ -1,13 +1,14 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .productItem {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: px-to-rem(12px);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -21,7 +22,7 @@
   background-position: center center;
   position: relative;
   aspect-ratio: 4 / 5;
-  padding: 16px;
+  padding: px-to-rem(16px);
   transition: all 0.3s ease;
   &:hover .addButton {
     opacity: 1;
@@ -35,9 +36,9 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  top: 16px;
-  left: 16px;
+  gap: px-to-rem(8px);
+  top: px-to-rem(16px);
+  left: px-to-rem(16px);
 }
 
 .newTitle {
@@ -48,18 +49,18 @@
   text-align: center;
   color: color.$color-black;
   background: color.$color-white;
-  border-radius: 4px;
-  padding: 4px 14px;
-  max-width: 67px;
-  height: 24px;
+  border-radius: px-to-rem(4px);
+  padding: px-to-rem(4px) px-to-rem(14px);
+  max-width: px-to-rem(67px);
+  height: px-to-rem(24px);
 }
 
 .discountTitle {
   width: 100%;
-  border-radius: 4px;
-  padding: 4px 14px;
-  max-width: 71px;
-  height: 24px;
+  border-radius: px-to-rem(4px);
+  padding: px-to-rem(4px) px-to-rem(14px);
+  max-width: px-to-rem(71px);
+  height: px-to-rem(24px);
   background: color.$color-success;
   color: color.$color-white;
   line-height: 100%;
@@ -72,13 +73,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 32px;
-  padding: 6px;
-  width: 32px;
-  height: 32px;
+  border-radius: px-to-rem(32px);
+  padding: px-to-rem(6px);
+  width: px-to-rem(32px);
+  height: px-to-rem(32px);
   background: color.$color-white;
   position: absolute;
-  right: 30px;
+  right: px-to-rem(30px);
   top: -3px;
   border: none;
   cursor: pointer;
@@ -87,19 +88,19 @@
 .productInfo {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 4px-to-rem(4px);
 }
 
 .starsFill {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
 }
 
 .productPrices {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: px-to-rem(12px);
 }
 
 .productTitle > a {
@@ -138,21 +139,21 @@
   font-weight: 500;
   color: color.$color-white;
   position: absolute;
-  bottom: 10px;
+  bottom: px-to-rem(10px);
   transform: translateX(-50%) translateY(20px);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 8px;
+  border-radius: px-to-rem(8px);
   width: 100%;
-  padding: 6px 24px;
-  height: 35px;
+  padding: px-to-rem(6px) px-to-rem(24px);
+  height: px-to-rem(35px);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04);
   background: color.$color-black;
   font-size: size.$font-size-14px;
   cursor: pointer;
-  max-width: 210px;
+  max-width: px-to-rem(210px);
   opacity: 0;
   visibility: hidden;
   z-index: 2;
@@ -171,32 +172,32 @@
   background-color: color.$color-success;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .newTitle {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: size.$font-size-12px;
-    max-width: 45px;
+    max-width: px-to-rem(45px);
   }
   .discountTitle {
     font-size: size.$font-size-10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 45px;
+    max-width: px-to-rem(45px);
   }
   .productDiscount {
     flex-direction: row;
-    gap: 10px;
+    gap: px-to-rem(10px);
   }
   .addButton {
-    max-width: 140px;
-    bottom: 5px;
+    max-width: px-to-rem(140px);
+    bottom: px-to-rem(5px);
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: px-to-rem(500px)) {
   .addButton {
     max-width: 120px;
     font-size: size.$font-size-12px;
@@ -207,9 +208,9 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: px-to-rem(450px)) {
   .productItem {
-    max-height: 281px;
+    max-height: px-to-rem(281px);
   }
   .productItemImage {
     aspect-ratio: 4 / 5;

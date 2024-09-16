@@ -1,10 +1,11 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .topBarMenu {
   background: color.$color-light-gray;
-  min-height: 40px;
+  min-height: px-to-rem(40px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,18 +93,21 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: px-to-rem(550px)) {
   .topBarItem:nth-child(3) {
     display: none;
   }
   .closeButton {
-    right: 30px;
+    right: px-to-rem(30px);
   }
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: px-to-rem(380px)) {
   .topBarMenu {
     justify-content: start;
-    padding-left: 32px;
+    padding-left: px-to-rem(32px);
+  }
+  .closeButton {
+    right: px-to-rem(5px);
   }
 }

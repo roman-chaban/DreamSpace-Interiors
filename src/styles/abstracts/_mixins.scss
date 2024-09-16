@@ -1,25 +1,26 @@
+@use '../functions/functions' as *;
+
 @mixin container() {
   width: 100%;
   margin: 0 auto;
-  max-width: 1800px;
-  padding: 0 160px;
+  max-width: px-to-rem(1800px);
+  padding: 0 px-to-rem(160px);
 }
 
-
 @mixin toDesktop {
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (max-width: px-to-rem(1300px)) {
     @content;
   }
 }
 
 @mixin toLargeTablet {
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: px-to-rem(1000px)) {
     @content;
   }
 }
 
 @mixin toTablet {
-  @media only screen and (max-width: 835px) {
+  @media only screen and (max-width: px-to-rem(835px)) {
     @content;
   }
 }
@@ -31,13 +32,13 @@
 }
 
 @mixin toMobile {
-  @media only screen and (max-width: 582px) {
+  @media only screen and (max-width: px-to-rem(582px)) {
     @content;
   }
 }
 
 @mixin toSmallMobile {
-  @media only screen and (max-width: 395px) {
+  @media only screen and (max-width: px-to-rem(395px)) {
     @content;
   }
 }

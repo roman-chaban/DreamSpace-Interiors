@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .article {
   width: 100%;
@@ -11,13 +12,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .articleInfo {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .articleNews,
@@ -44,14 +45,14 @@
 .articleAuthorBlock {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: px-to-rem(48px);
 }
 
 .authorTitle,
 .articleData {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
   line-height: 162%;
   color: color.$color-dark-gray;
   font-weight: 400;
@@ -61,26 +62,26 @@
 .articleNews {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .newsBlocks {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin-bottom: 80px;
+  gap: px-to-rem(40px);
+  margin-bottom: px-to-rem(80px);
 }
 
 .newsBlock {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .tertiaryNewsBlockItems {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 24px;
+  column-gap: px-to-rem(24px);
 }
 
 .newsBanner {
@@ -116,13 +117,13 @@
 .secondNews {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .secondNewsImages {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 24px;
+  column-gap: px-to-rem(24px);
   justify-content: space-between;
 }
 
@@ -132,11 +133,11 @@
   height: auto;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px-to-rem(1000px)) {
   .newsInfo {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: px-to-rem(15px);
   }
   .newsTitle,
   .secondNewsBlockTitle,
@@ -151,20 +152,20 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: px-to-rem(800px)) {
   .newsBlock {
-    gap: 25px;
+    gap: px-to-rem(25px);
   }
   .secondNewsBlock {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: px-to-rem(24px);
   }
   .secondNews {
     flex-direction: column;
   }
   .articleInfo {
-    gap: 15px;
+    gap: px-to-rem(15px);
   }
   .articleTitle {
     font-size: size.$font-size-40px;
@@ -174,8 +175,8 @@
     font-size: size.$font-size-14px;
   }
   .navIcon {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: px-to-rem(20px);
+    max-height: px-to-rem(20px);
   }
   .secondNewsBlockTitle {
     font-size: size.$font-size-24px;
@@ -183,14 +184,14 @@
   .tertiaryNewsBlock {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: px-to-rem(15px);
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: px-to-rem(670px)) {
   .tertiaryNewsBlockItems {
     display: flex;
-    gap: 16px;
+    gap: px-to-rem(16px);
     flex-direction: column;
   }
   .secondNewsImages {
@@ -199,19 +200,19 @@
   .newContentBlock {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: px-to-rem(16px);
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: px-to-rem(430px)) {
   .newsBlocks {
-    gap: 16px;
+    gap: px-to-rem(16px);
   }
   .articleTitle {
     font-size: size.$font-size-28px;
   }
   .articleInfo {
-    gap: 24px;
+    gap: px-to-rem(24px);
   }
   .articleCategory {
     font-size: size.$font-size-12px;
@@ -234,13 +235,13 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: px-to-rem(375px)) {
   .articleInfo {
-    gap: 15px;
+    gap: px-to-rem(15px);
   }
   .articleAuthorBlock {
     flex-direction: column;
     align-items: start;
-    gap: 10px;
+    gap: px-to-rem(10px);
   }
 }

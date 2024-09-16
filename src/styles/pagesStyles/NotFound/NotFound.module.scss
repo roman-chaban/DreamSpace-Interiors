@@ -1,5 +1,6 @@
 @use '../../abstracts/globals' as size;
 @use '../../colors/colors' as color;
+@use '../../functions/functions' as *;
 
 .notFoundBanner {
   display: flex;
@@ -18,14 +19,14 @@
     bottom: 0;
     background: url('/not-found/404.svg') no-repeat center center;
     background-size: contain;
-    transition: filter 1s ease; 
+    transition: filter 1s ease;
     filter: blur(0);
     z-index: 1;
     aspect-ratio: 16 / 9;
   }
 
   &:hover .background {
-    filter: blur(3px);
+    filter: blur(px-to-rem(3px));
   }
 
   .content {
@@ -39,7 +40,7 @@
   color: color.$color-black;
   font-size: size.$font-size-50px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: px-to-rem(20px);
 }
 
 .goBackLink {
@@ -57,8 +58,8 @@
   color: color.$color-error;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .notFoundBanner .background {
-    background-position: 40px -40px;
+    background-position: px-to-rem(40px) px-to-rem(-40px);
   }
 }

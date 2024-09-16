@@ -1,20 +1,22 @@
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
+@use '../../../styles/abstracts/globals' as size;
 
 .upButton {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 20px;
-  right: 20px;
+  bottom: px-to-rem(20px);
+  right: px-to-rem(20px);
   background-color: color.$color-success;
   color: color.$color-white;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: px-to-rem(45px);
+  height: px-to-rem(45px);
   z-index: 1000;
-  font-size: 24px;
+  font-size: size.$font-size-24px;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease,
     background 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
@@ -35,16 +37,22 @@
   background-color: color.$color-product-title;
 }
 
-
-
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .upButton {
-    right: 5px;
-    max-width: 35px;
-    max-height: 35px;
+    right: px-to-rem(5px);
+    width: px-to-rem(35px);
+    height: px-to-rem(35px);
   }
   .iconUp {
-    max-width: 16px;
-    max-height: 16px;
+    max-width: px-to-rem(16px);
+    max-height: px-to-rem(16px);
+  }
+}
+
+
+
+@media (max-width: px-to-rem(340px)) {
+  .upButton {
+    bottom: px-to-rem(45px);
   }
 }

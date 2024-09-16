@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .contactNav {
   > .navContainer {
@@ -11,7 +12,7 @@
       align-items: center;
       padding: 0;
       margin: 0;
-      gap: 16px;
+      gap: px-to-rem(16px);
     }
   }
 }
@@ -27,7 +28,7 @@
 .navLink {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-banner-link;
   font-size: size.$font-size-14px;
   text-decoration: none;

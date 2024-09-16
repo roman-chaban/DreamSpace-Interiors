@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .contactValues {
   height: 100%;
@@ -11,10 +12,10 @@
 .container {
   display: flex;
   @include container;
-  padding-block: 60px;
+  padding-block: px-to-rem(60px);
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: px-to-rem(18px);
   height: 100%;
 }
 
@@ -23,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: px-to-rem(20px);
 }
 
 .itemContainer {
@@ -31,18 +32,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .itemTitles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .itemTitle {
   font-weight: 500;
-  font-size: size.$font-size-20px;
+  font-size: size.$font-size-18px;
   line-height: 140%;
   color: color.$color-black;
 }
@@ -50,23 +51,24 @@
 .itemSubTitle {
   margin: 0;
   color: color.$color-dark-gray;
-  font-size: size.$font-size-14px;
+  font-size: size.$font-size-13px;
   line-height: 171%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .container {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .container {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
     display: grid;
     padding-block: 0;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
+    margin-block-end: px-to-rem(35px);
   }
   .itemContainer {
     align-items: center;
@@ -76,14 +78,14 @@
   }
   .item {
     display: flex;
-    padding: 20px;
-    padding-block: 40px;
+    padding: px-to-rem(20px);
+    padding-block: px-to-rem(40px);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .container {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
     max-height: 100%;
   }
   .itemContainer,
@@ -92,7 +94,7 @@
   }
 }
 
-@media (max-width: 435px) {
+@media (max-width: px-to-rem(435px)) {
   .itemContainer,
   .itemTitles {
     align-items: center;
@@ -105,13 +107,13 @@
     font-size: size.$font-size-16px;
   }
   .item {
-    padding-block: 20px;
-    padding-inline: 5px;
+    padding-block: px-to-rem(20px);
+    padding-inline: px-to-rem(5px);
   }
   .itemSubTitle {
     font-size: size.$font-size-10px;
   }
   .itemTitles {
-    gap: 4px;
+    gap: px-to-rem(4px);
   }
 }

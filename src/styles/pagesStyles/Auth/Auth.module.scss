@@ -1,6 +1,7 @@
 @use '../../colors/colors' as color;
 @use '../../abstracts/globals' as size;
 @use '../../abstracts/mixins' as *;
+@use '../../functions/functions' as *;
 
 .signIn {
   margin: 0 auto;
@@ -10,7 +11,7 @@
 
 .banner {
   width: 100%;
-  max-width: 720px;
+  max-width: px-to-rem(720px);
   height: 100vh;
 }
 
@@ -23,29 +24,28 @@
 
 .signInBanner {
   width: 100%;
-  max-width: 730px;
+  max-width: px-to-rem(730px);
   height: 100vh;
-  max-height: 1080px;
+  max-height: px-to-rem(1080px);
   background: url('/images/auth/authBanner.svg') no-repeat left center;
   background-size: contain;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: px-to-rem(1100px)) {
   .signInContainer {
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: px-to-rem(400px) 1fr;
   }
 }
 
-
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: px-to-rem(780px)) {
   .signInContainer {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: px-to-rem(40px);
   }
   .signInBanner {
     background-size: cover;
-    max-height: 700px;
+    max-height: px-to-rem(700px);
     background-position: center center;
   }
 }

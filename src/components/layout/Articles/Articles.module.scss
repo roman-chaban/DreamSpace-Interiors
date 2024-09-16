@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .articles {
   display: flex;
@@ -8,10 +9,10 @@
 
 .articlesContainer {
   @include container;
-  padding-block: 80px;
+  padding-block: px-to-rem(80px);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: px-to-rem(40px);
 }
 
 .articlesNav {
@@ -32,7 +33,7 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -63,13 +64,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: px-to-rem(25px);
 }
 
 .articlesItem {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .imageContainer {
@@ -87,7 +88,7 @@
 .overlay {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: px-to-rem(24px);
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -128,7 +129,7 @@
 .articleTitles {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .itemTitle {
@@ -143,7 +144,7 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
+  gap: px-to-rem(4px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -170,9 +171,9 @@
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: px-to-rem(1300px)) {
   .articlesContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
   .itemTitle {
     font-size: size.$font-size-18px;
@@ -182,13 +183,13 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: px-to-rem(1000px)) {
   .articlesContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: px-to-rem(900px)) {
   .articlesList {
     display: grid;
     grid-template-columns: 1fr;
@@ -207,7 +208,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: px-to-rem(500px)) {
   .articlesContainer {
     padding-inline: 32px;
   }
@@ -222,8 +223,8 @@
     font-size: size.$font-size-34px;
   }
   .rightIcon {
-    max-width: 16px;
-    max-height: 16px;
+    max-width: px-to-rem(16px);
+    max-height: px-to-rem(16px);
   }
   .overlay {
     font-size: size.$font-size-10px;
@@ -233,5 +234,16 @@
     left: 5px;
     top: 5px;
     font-size: size.$font-size-18px;
+  }
+}
+
+@media (max-width: px-to-rem(340px)) {
+  .articlesNav {
+    flex-direction: column;
+    align-items: start;
+    gap: px-to-rem(15px);
+  }
+  .itemImage {
+    aspect-ratio: 4 / 4;
   }
 }

@@ -1,27 +1,28 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .features {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .selectContainer {
   width: 100%;
-  max-width: 300px;
+  max-width: px-to-rem(300px);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
 }
 
 .customSelect {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: px-to-rem(8px);
   font-weight: 600;
   color: color.$color-dark-gray;
   font-size: size.$font-size-16px;
@@ -33,13 +34,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  border-radius: 8px;
-  padding: 8px 8px 8px 16px;
-  height: 48px;
-  border: 2px solid color.$color-dark-gray;
+  border-radius: px-to-rem(8px);
+  padding: px-to-rem(8px) px-to-rem(8px) px-to-rem(8px) px-to-rem(16px);
+  height: px-to-rem(48px);
+  border: px-to-rem(2px) solid color.$color-dark-gray;
   background-color: color.$color-white;
   background-position: right 5px center;
-  background-size: 40px 40px;
+  background-size: px-to-rem(40px) px-to-rem(40px);
   background-image: url('/icons/select-appearance.svg');
   background-repeat: no-repeat;
   transition: border-color 0.3s ease;
@@ -55,11 +56,11 @@
 
 .optionsContainer {
   position: absolute;
-  top: 100px;
+  top: px-to-rem(100px);
   width: 100%;
   background-color: color.$color-white;
   border: 1px solid color.$color-light-gray;
-  border-radius: 8px;
+  border-radius: px-to-rem(8px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 100;
   list-style: none;
@@ -67,7 +68,7 @@
   margin: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
-  padding: 7px;
+  padding: px-to-rem(7px);
 }
 
 .optionsContainer.open {
@@ -78,7 +79,7 @@
 }
 
 .selectOption {
-  padding: 10px;
+  padding: px-to-rem(10px);
   cursor: pointer;
   font-weight: 600;
   font-size: size.$font-size-16px;
@@ -95,42 +96,42 @@
   font-style: italic;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .customSelect,
   .selectOption {
     font-size: size.$font-size-14px;
   }
   .selectContainer {
-    max-width: 200px;
+    max-width: px-to-rem(200px);
   }
   .select {
-    max-height: 44px;
+    max-height: px-to-rem(44px);
     font-size: size.$font-size-14px;
   }
   .optionsContainer {
-    top: 90px;
-    padding: 4px;
+    top: px-to-rem(90px);
+    padding: px-to-rem(4px);
     padding-block: 0;
   }
   .selectOption {
-    padding: 6px;
+    padding: px-to-rem(6px);
   }
   .selectOption:nth-child(1) {
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-top-right-radius: px-to-rem(8px);
+    border-top-left-radius: px-to-rem(8px);
   }
   .selectOption:last-child {
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: px-to-rem(8px);
+    border-bottom-left-radius: px-to-rem(8px);
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: px-to-rem(830px)) {
   .features {
-    gap: 14px;
+    gap: px-to-rem(14px);
   }
   .selectContainer {
-    max-width: 135px;
+    max-width: px-to-rem(135px);
   }
 
   .customSelect,
@@ -139,15 +140,16 @@
   }
 
   .select {
-    max-width: 120px;
-    max-height: 40px;
+    max-width: px-to-rem(120px);
+    max-height: px-to-rem(40px);
     font-size: size.$font-size-12px;
-    background-size: 30px 30px;
+    background-size: px-to-rem(30px) px-to-rem(30px);
   }
 }
 
-@media (max-width: 530px) {
-  .selectContainer, .select  {
+@media (max-width: px-to-rem(530px)) {
+  .selectContainer,
+  .select {
     max-width: 100%;
   }
   .features {
@@ -156,6 +158,6 @@
     flex-direction: column;
   }
   .select {
-    max-height: 35px;
+    max-height: px-to-rem(35px);
   }
 }

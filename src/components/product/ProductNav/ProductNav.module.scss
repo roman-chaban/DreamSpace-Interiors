@@ -1,17 +1,18 @@
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .navItems {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: px-to-rem(5px);
   color: color.$color-banner-link;
   font-size: size.$font-size-14px;
   font-weight: 500;
@@ -22,7 +23,7 @@
 .productItem {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: px-to-rem(5px);
   color: color.$color-product-title;
   font-size: size.$font-size-14px;
   font-weight: 500;

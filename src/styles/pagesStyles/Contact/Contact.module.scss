@@ -1,39 +1,39 @@
 @use '../../abstracts/mixins' as *;
 @use '../../abstracts/globals' as size;
 @use '../../colors/colors' as color;
+@use '../../functions/functions' as *;
 
 .main {
-  padding-block-start: 110px;
+  padding-block-start: px-to-rem(110px);
 }
 
 .contactContainer {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: px-to-rem(48px);
   @include container;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: px-to-rem(1300px)) {
   .contactContainer {
-    padding-inline: 100px;
+    padding-inline: px-to-rem(100px);
   }
 }
 
-
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .contactContainer {
-    padding-inline: 50px;
+    padding-inline: px-to-rem(50px);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: px-to-rem(750px)) {
   .contactContainer {
-    padding-inline: 32px;
+    padding-inline: px-to-rem(32px);
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: px-to-rem(500px)) {
   .contactContainer {
-    gap: 24px;
+    gap: px-to-rem(24px);
   }
 }

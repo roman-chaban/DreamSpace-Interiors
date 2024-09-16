@@ -1,6 +1,7 @@
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .cartSummary {
   width: 100%;
@@ -9,13 +10,13 @@
   > .summaryContainer {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    border: 2px solid color.$color-dark-gray;
-    border-radius: 6px;
+    gap: px-to-rem(16px);
+    border: px-to-rem(2px) solid color.$color-dark-gray;
+    border-radius: px-to-rem(6px);
     width: 100%;
-    max-width: 413px;
-    height: 476px;
-    padding: 24px;
+    max-width: px-to-rem(413px);
+    height: px-to-rem(476px);
+    padding: px-to-rem(24px);
   }
 }
 
@@ -30,17 +31,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1.5px solid color.$color-dark-gray;
-  min-height: 52px;
-  padding: 13px 16px;
-  border-radius: 4px;
+  border: px-to-rem(1.5px) solid color.$color-dark-gray;
+  min-height: px-to-rem(52px);
+  padding: px-to-rem(13px) px-to-rem(16px);
+  border-radius: px-to-rem(4px);
   > .summaryButton {
     display: flex;
     align-items: center;
     padding: 0;
-    gap: 12px;
+    gap: px-to-rem(12px);
     width: 100%;
-    max-width: 365px;
+    max-width: px-to-rem(365px);
     background: transparent;
     border: none;
   }
@@ -49,7 +50,7 @@
 .summaryCheckoutButtons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: px-to-rem(12px);
 }
 
 .subTotalTitle {
@@ -57,8 +58,8 @@
   color: color.$color-black;
   font-size: size.$font-size-16px;
   line-height: 162%;
-  padding-block: 13px;
-  border-bottom: 1px solid color.$color-dark-gray;
+  padding-block: px-to-rem(13px);
+  border-bottom: px-to-rem(1px) solid color.$color-dark-gray;
 }
 
 .totalTitle {
@@ -66,7 +67,7 @@
   font-size: size.$font-size-20px;
   font-weight: 600;
   line-height: 160%;
-  margin-block-end: 16px;
+  margin-block-end: px-to-rem(16px);
 }
 
 .checkoutButton {
@@ -76,8 +77,8 @@
   letter-spacing: -0.02em;
   text-align: center;
   color: color.$color-white;
-  border-radius: 8px;
-  padding: 10px 26px;
+  border-radius: px-to-rem(8px);
+  padding: px-to-rem(10px) px-to-rem(26px);
   background: color.$color-black;
   border: none;
   cursor: pointer;
@@ -100,9 +101,9 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid color.$color-product-title;
+  width: px-to-rem(20px);
+  height: px-to-rem(20px);
+  border: px-to-rem(1.5px) solid color.$color-product-title;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,25 +120,26 @@
 .radio:checked + span::after {
   content: '';
   position: absolute;
-  left: 5px;
+  left: px-to-rem(5px);
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
+  width: px-to-rem(10px);
+  height: px-to-rem(10px);
   border-radius: 50%;
   background: color.$color-product-title;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: px-to-rem(1240px)) {
   .title {
     font-size: size.$font-size-18px;
   }
-  .radio + span, .price {
+  .radio + span,
+  .price {
     font-size: size.$font-size-14px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: px-to-rem(1024px)) {
   .cartSummary > .summaryContainer {
     max-width: 100%;
   }
@@ -146,7 +148,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: px-to-rem(400px)) {
   .summaryButton,
   .price {
     font-weight: 600;

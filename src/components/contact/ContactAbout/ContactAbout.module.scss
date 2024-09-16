@@ -1,13 +1,13 @@
+@use '../../../styles/functions/functions' as *;
+
 .contactBlock {
   width: 100%;
   max-width: 100%;
-  max-width: 560px;
+  max-width: px-to-rem(560px);
 }
 
-
-@media (max-width: 900px) {
+@media (max-width: px-to-rem(900px)) {
   .contactBlock {
     max-width: 100%;
   }
 }
-

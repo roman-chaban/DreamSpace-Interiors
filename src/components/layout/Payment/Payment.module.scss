@@ -1,16 +1,17 @@
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
 @use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
 
 .paymentForm {
   position: relative;
 }
 
 .formContainer {
-  padding: 40px 24px;
+  padding: px-to-rem(40px) px-to-rem(24px);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: px-to-rem(24px);
   width: 100%;
 }
 
@@ -24,18 +25,18 @@
 .payBlock {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-block-end: 32px;
-  border-bottom: 1.5px solid color.$color-input-border-secondary;
+  gap: px-to-rem(24px);
+  padding-block-end: px-to-rem(32px);
+  border-bottom: px-to-rem(1.5px) solid color.$color-input-border-secondary;
 }
 
 .paymentBlock {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1.5px solid color.$color-input-border-secondary;
-  padding: 13px 16px;
-  border-radius: 4px;
+  border: px-to-rem(1.5px) solid color.$color-input-border-secondary;
+  padding: px-to-rem(13px) px-to-rem(16px);
+  border-radius: px-to-rem(4px);
 }
 
 .radio {
@@ -55,13 +56,13 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid color.$color-product-title;
+  width: px-to-rem(20px);
+  height: px-to-rem(20px);
+  border: px-to-rem(1.5px) solid color.$color-product-title;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100px;
+  border-radius: px-to-rem(100px);
   background: color.$color-white;
   transition: background 0.3s, border-color 0.3s;
 }
@@ -77,8 +78,8 @@
   left: 5px;
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
+  width: px-to-rem(10px);
+  height: px-to-rem(10px);
   border-radius: 50%;
   background: color.$color-product-title;
 }
@@ -87,7 +88,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: px-to-rem(12px);
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
@@ -97,14 +98,14 @@
 
 .input {
   width: 100%;
-  padding-inline: 16px;
-  border-radius: 4px;
-  min-height: 40px;
-  border: 1.5px solid color.$color-input-border-secondary;
+  padding-inline: px-to-rem(16px);
+  border-radius: px-to-rem(4px);
+  min-height: px-to-rem(40px);
+  border: px-to-rem(1.5px) solid color.$color-input-border-secondary;
   caret-color: color.$color-dark-gray;
   color: color.$color-dark-gray;
   &:focus {
-    outline: 1.5px solid color.$color-success;
+    outline: px-to-rem(1.5px) solid color.$color-success;
     border: none;
   }
   &::placeholder {
@@ -116,17 +117,17 @@
 .dateCvcBlock {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .placeOrderButton {
   width: 100%;
   position: absolute;
   bottom: -70px;
-  border-radius: 8px;
-  padding: 12px 40px;
-  max-width: 643px;
-  height: 52px;
+  border-radius: px-to-rem(8px);
+  padding: px-to-rem(12px) px-to-rem(40px);
+  max-width: px-to-rem(643px);
+  height: px-to-rem(52px);
   border: none;
   background: color.$color-black;
   color: color.$color-white;
@@ -144,10 +145,9 @@
   }
 }
 
-
-@media (max-width: 1200px) {
+@media (max-width: px-to-rem(1200px)) {
   .formContainer {
-    padding: 30px 20px;
+    padding: px-to-rem(30px) px-to-rem(20px);
   }
   .formTitle {
     font-size: size.$font-size-18px;

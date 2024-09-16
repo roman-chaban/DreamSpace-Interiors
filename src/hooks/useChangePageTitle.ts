@@ -1,7 +1,16 @@
-import { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useRef } from 'react';
 
-export const useChangePageTitle = (title: string) => {
+export const useChangePageTitle = (title?: string) => {
+  const defaultTitle = useRef(document.title);
+
   useEffect(() => {
-    document.title = title;
+    if (title && document.title !== title) {
+      document.title = title;
+    }
+
+    return () => {
+      document.title = defaultTitle.current;
+    };
   }, [title]);
 };

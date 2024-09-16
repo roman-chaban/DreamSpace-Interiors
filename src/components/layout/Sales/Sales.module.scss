@@ -1,6 +1,7 @@
 @use '../../../styles/colors/colors' as color;
 @use '../../../styles/abstracts/globals' as size;
 @use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/functions/functions' as *;
 
 .sales {
   display: flex;
@@ -25,18 +26,18 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  max-width: 720px;
-  height: 532px;
+  max-width: px-to-rem(720px);
+  height: px-to-rem(532px);
   background: color.$color-light-gray;
-  gap: 24px;
+  gap: px-to-rem(24px);
 }
 
 .salesUpItems {
   width: 100%;
-  max-width: 452px;
+  max-width: px-to-rem(452px);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: px-to-rem(16px);
 }
 
 .saleUpTitle {
@@ -52,7 +53,7 @@
   font-weight: 500;
   line-height: 110%;
   letter-spacing: -0.01em;
-  max-width: 350px;
+  max-width: px-to-rem(350px);
 }
 
 .saleSubTitle {
@@ -67,8 +68,8 @@
   align-items: center;
   width: fit-content;
   position: relative;
-  gap: 4px;
-  margin-top: 8px;
+  gap: px-to-rem(4px);
+  margin-top: px-to-rem(8px);
   color: color.$color-black;
   text-decoration: none;
   font-size: clamp(
@@ -95,19 +96,19 @@
   }
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: px-to-rem(1250px)) {
   .salesUpItems {
-    padding-inline: 30px;
+    padding-inline: px-to-rem(30px);
   }
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: px-to-rem(1150px)) {
   .salesInfoBlock {
-    max-height: 380px;
-    max-width: 550px;
+    max-height: px-to-rem(380px);
+    max-width: px-to-rem(550px);
   }
   .image {
-    max-height: 380px;
+    max-height: px-to-rem(380px);
     aspect-ratio: 21 / 9;
   }
 
@@ -122,7 +123,7 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: px-to-rem(900px)) {
   .salesContainer {
     flex-direction: column;
   }
@@ -131,23 +132,23 @@
     align-items: start;
   }
   .salesUpItems {
-    max-width: 380px;
-    margin-left: 50px;
+    max-width: px-to-rem(380px);
+    margin-left: px-to-rem(50px);
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: px-to-rem(500px)) {
   .salesInfoBlock {
-    max-height: 367px;
+    max-height: px-to-rem(367px);
   }
   .image,
   .salesImage {
-    max-height: 367px;
+    max-height: px-to-rem(367px);
   }
 
   .salesUpItems {
-    margin-left: 25px;
-    max-width: 295px;
+    margin-left: px-to-rem(25px);
+    max-width: px-to-rem(295px);
     padding-inline: 0;
   }
 
@@ -162,7 +163,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: px-to-rem(400px)) {
   .saleTitle {
     font-size: size.$font-size-20px;
   }
@@ -173,7 +174,7 @@
     margin-left: 0;
   }
   .salesInfoBlock {
-    max-height: 311px;
-    padding: 16px;
+    max-height: px-to-rem(311px);
+    padding: px-to-rem(16px);
   }
 }
