@@ -27,17 +27,6 @@ export const ArrivalProducts: FC = () => {
     setProducts(currentProducts);
   }, []);
 
-  // Use JavaScript to apply the scrollbar background color based on the theme
-  useEffect(() => {
-    const scrollbar = document.querySelector('.swiper-scrollbar-drag');
-    if (scrollbar) {
-      scrollbar.setAttribute(
-        'style',
-        `background-color: ${theme === 'dark' ? '#333' : '#ccc'}`
-      );
-    }
-  }, [theme]); // Re-run when the theme changes
-
   return (
     <section className={`${styles.products} ${inter.className}`}>
       <div className={styles.productsContainer}>

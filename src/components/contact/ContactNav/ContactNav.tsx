@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { NavPaths } from '@/enums/navPaths';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
+import { Next } from 'grommet-icons';
 
 export const ContactNav: FC = () => {
-
   const theme = useAppSelector((state) => state.theme.theme);
-  
+
   return (
     <nav className={styles.contactNav}>
       <div className={styles.navContainer}>
@@ -20,21 +20,10 @@ export const ContactNav: FC = () => {
               style={{ color: theme === 'dark' ? '' : colors.white }}
             >
               Home{' '}
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.58423 3L7.58423 6L4.58423 9"
-                  stroke="#605F5F"
-                  strokeWidth="0.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Next
+                color={theme === 'dark' ? colors.darkGray : colors.white}
+                style={{ width: 12, height: 10 }}
+              />
             </Link>
           </li>
           <li

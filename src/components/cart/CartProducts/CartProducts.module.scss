@@ -39,9 +39,9 @@
 }
 
 .productGrid {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .emptyTitle {
@@ -52,9 +52,6 @@
 }
 
 @media (max-width: px-to-rem(1230px)) {
-  .productGrid {
-    max-width: px-to-rem(600px);
-  }
   .cartProductsTitle {
     max-width: px-to-rem(305px);
   }
@@ -62,6 +59,12 @@
     gap: px-to-rem(56.5px);
   }
   .menuListItem:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: px-to-rem(520px)) {
+  .productsMenu {
     display: none;
   }
 }

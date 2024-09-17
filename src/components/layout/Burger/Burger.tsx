@@ -47,13 +47,26 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
   const listVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: {
+      opacity: 0,
+      y: -30,
+      scale: 0.95,
+      transition: {
+        type: 'spring',
+        stiffness: 50,
+        damping: 10,
+      },
+    },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         delay: i * 0.1,
-        duration: 0.5,
+        type: 'spring',
+        stiffness: 60,
+        damping: 12,
+        duration: 0.6,
       },
     }),
   };
@@ -106,7 +119,7 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
                 key={item.id}
                 custom={index}
                 initial="hidden"
-                animate="visible"
+                animate={isActive ? 'visible' : 'hidden'}
                 variants={listVariants}
               >
                 <Link
@@ -122,8 +135,14 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
         </div>
         <div className={styles.burgerFooter}>
           <div className={styles.cart}>
-            <h5 className={styles.title} style={getBurgerLinkStyle(theme)}>
-              Cart{' '}
+            <h5 className={styles.title}>
+              <Link
+                href={NavPaths.CART}
+                className={styles.link}
+                style={getBurgerLinkStyle(theme)}
+              >
+                Cart
+              </Link>
               <div className={styles.icons}>
                 <Link href={NavPaths.CART} className={styles.cartLink}>
                   <Basket
@@ -141,8 +160,14 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
             </h5>
           </div>
           <div className={styles.wishlist}>
-            <h5 className={styles.title} style={getBurgerLinkStyle(theme)}>
-              Wishlist
+            <h5 className={styles.title}>
+              <Link
+                href={NavPaths.FAVORITE}
+                className={styles.link}
+                style={getBurgerLinkStyle(theme)}
+              >
+                Wishlist
+              </Link>
               <div className={styles.icons}>
                 <Link href={NavPaths.FAVORITE} className={styles.favoriteLink}>
                   <Favorite
@@ -168,13 +193,13 @@ export const Burger: FC<BurgerProps> = ({ isActive, onClose }) => {
           </Button>
           <div className={styles.burgerSocials}>
             <Link href="">
-              <Instagram color="#141718" />
+              <Instagram color={theme === 'dark' ? '#141718"' : colors.white} />
             </Link>
             <Link href="">
-              <Github color="#141718" />
+              <Github color={theme === 'dark' ? '#141718"' : colors.white} />
             </Link>
             <Link href="">
-              <Linkedin color="#141718" />
+              <Linkedin color={theme === 'dark' ? '#141718"' : colors.white} />
             </Link>
           </div>
         </div>

@@ -35,7 +35,7 @@
 .burgerHeader {
   display: flex;
   flex-direction: column;
-  gap: px-to-rem(40px);
+  gap: px-to-rem(20px);
 }
 
 .menuList {
@@ -123,7 +123,7 @@
 .burgerList {
   display: flex;
   flex-direction: column;
-  gap: px-to-rem(16px);
+  gap: px-to-rem(8px);
   margin: 0;
   margin-top: px-to-rem(16px);
   padding: 0;
@@ -208,11 +208,32 @@
   display: flex;
   align-items: center;
   gap: px-to-rem(24px);
-  display: none;
 }
 
 .favoriteLink,
 .cartLink {
   display: flex;
   align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: color.$color-black;
+}
+
+@media (max-width: px-to-rem(992px)) {
+  .burgerHeader,
+  .burgerList {
+    gap: px-to-rem(40px);
+  }
+}
+
+@media (max-width: px-to-rem(450px)) {
+  .burgerHeader,
+  .burgerList {
+    gap: px-to-rem(20px);
+  }
+  .listItem {
+    padding-block-end: px-to-rem(12px);
+  }
 }

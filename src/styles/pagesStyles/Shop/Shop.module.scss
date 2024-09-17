@@ -73,7 +73,7 @@
 .shopProductsNav {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -132,16 +132,14 @@
 }
 
 .navSelectFeatures {
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: px-to-rem(32px);
+  justify-content: flex-end;
+  gap: px-to-rem(25px);
+  width: 100%;
 }
 
 .selectContainer {
-  width: 100%;
-  max-width: px-to-rem(300px);
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -165,11 +163,11 @@
 .select {
   display: flex;
   align-items: center;
-  width: px-to-rem(130px);
+  width: px-to-rem(120px);
   border-radius: px-to-rem(8px);
   padding: px-to-rem(8px);
   height: px-to-rem(48px);
-  background-position: right -px-to-rem(10px) center;
+  background-position: right -13px center;
   background-size: px-to-rem(40px) px-to-rem(40px);
   background-image: url('/icons/select-appearance.svg');
   background-repeat: no-repeat;
@@ -278,7 +276,7 @@
     padding-inline: px-to-rem(50px);
   }
   .productsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
   .navSelectFeatures {
@@ -287,7 +285,6 @@
 
   .shopProductsNav {
     max-width: 100%;
-    justify-content: start;
   }
   .shopFeaturesProducts {
     flex-direction: column;
@@ -297,7 +294,7 @@
   }
 
   .navSelectFeatures {
-    max-width: 100%;
+    max-width: 50%;
     justify-content: space-between;
   }
 }
@@ -305,6 +302,10 @@
 @media only screen and (max-width: px-to-rem(768px)) {
   .shopContainer {
     padding-inline: px-to-rem(32px);
+  }
+  .shopProductsNav {
+    flex-direction: column;
+    align-items: start;
   }
   .productsGrid {
     justify-items: flex-start;
@@ -316,14 +317,27 @@
     flex-direction: row;
     align-items: flex-end;
   }
-  .shopProductsNav {
-    align-items: center;
-  }
+
   .navSelectFeatures {
-    justify-content: start;
+    max-width: 100%;
+    justify-content: space-between;
   }
   .selectContainer {
     max-width: px-to-rem(150px);
+  }
+  .optionsContainer {
+    left: px-to-rem(5px);
+    top: px-to-rem(60px);
+  }
+}
+
+@media (max-width: px-to-rem(500px)) {
+  .shopNavItem:nth-child(4),
+  .shopNavItem:nth-child(3) {
+    display: none;
+  }
+  .shopNavItem:nth-child(2) {
+    border-right: px-to-rem(1.5px) solid color.$color-gray;
   }
 }
 
@@ -340,5 +354,8 @@
   .starIcon {
     max-width: px-to-rem(14px);
     max-height: px-to-rem(14px);
+  }
+  .productsGrid {
+    grid-template-columns: 1fr;
   }
 }

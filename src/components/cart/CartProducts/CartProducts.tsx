@@ -1,10 +1,7 @@
 import { FC } from 'react';
 import styles from './CartProducts.module.scss';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import {
-  getContainerThemeBorderBottom,
-  getListItemThemeStyle,
-} from '@/components/themeStyles/cartProductsStyles/cartProductsStyles';
+import { getListItemThemeStyle } from '@/components/themeStyles/cartProductsStyles/cartProductsStyles';
 import { Product } from '../Product/Product';
 import { productTitle } from '@/components/themeStyles/productStyles/productStyles';
 

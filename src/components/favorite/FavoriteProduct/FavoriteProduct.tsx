@@ -126,7 +126,7 @@ export const FavoriteProduct: FC<FavoriteProductProps> = ({ good }) => {
             <button onClick={handleDeleteGood} className={styles.closeButton}>
               <Close
                 style={{ width: 18, height: 18 }}
-                color={theme === 'dark' ? '' : colors.white}
+                color={theme === 'dark' ? 'plain' : colors.white}
               />
             </button>
           </div>

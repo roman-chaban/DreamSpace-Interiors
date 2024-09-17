@@ -226,3 +226,10 @@
     font-size: size.$font-size-12px;
   }
 }
+
+
+@media (max-width: px-to-rem(376px)) {
+  .productItem {
+    max-height: px-to-rem(400px);
+  }
+}

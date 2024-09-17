@@ -329,6 +329,7 @@
 @media only screen and (max-width: px-to-rem(1000px)) {
   .footerInformation {
     padding-inline: px-to-rem(50px);
+    padding-block: px-to-rem(25px);
   }
   .footerJoinBlockTitles {
     align-items: center;
@@ -351,7 +352,6 @@
 
 @media only screen and (max-width: px-to-rem(750px)) {
   .footerContainer {
-    margin-block: px-to-rem(25px);
     gap: px-to-rem(10px);
   }
   .footerJoinBlock {
@@ -371,7 +371,7 @@
     max-width: 100%;
     flex-direction: column;
     align-items: start;
-    gap: px-to-rem(25px);
+    gap: px-to-rem(15px);
   }
   .copyrightItemBlock {
     justify-content: space-between;

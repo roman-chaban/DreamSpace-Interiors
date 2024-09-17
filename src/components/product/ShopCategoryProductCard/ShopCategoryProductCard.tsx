@@ -8,7 +8,6 @@ import type { FC } from 'react';
 import styles from '@/components/product/ShopCategoriesPrices/ShopCategoriesPrices.module.scss';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Favorite } from 'grommet-icons';
-import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getButtonStyle,
@@ -17,6 +16,7 @@ import {
 } from '@/components/themeStyles/productCard/productCard';
 import { Stars } from '@/fixtures/productRating/productRating';
 import { useProductActions } from '@/hooks/useProductActions';
+import { colors } from '@/theme/theme-variables';
 
 export interface ShopCategoryProductCardProps {
   product: Product;
@@ -102,7 +102,15 @@ export const ShopCategoryProductCard: FC<ShopCategoryProductCardProps> = ({
               style={getProductTitleStyle(theme)}
               onClick={handleAddFavorite}
             >
-              <Favorite color={isAddedFavorite ? 'white' : 'plain'} />
+              <Favorite
+                color={
+                  isAddedFavorite
+                    ? 'white'
+                    : 'plain' && theme === 'dark'
+                    ? 'plain'
+                    : colors.white
+                }
+              />
               Wishlist
             </WishlistButton>
           </div>

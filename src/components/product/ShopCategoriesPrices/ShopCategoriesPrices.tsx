@@ -22,13 +22,7 @@ export const ShopCategoriesPrices: FC<ShopCategoriesPricesProps> = ({
       setLoading(false);
     };
 
-    console.log('Received Products:', products);
-
     fetchData();
-  }, [products]);
-
-  useEffect(() => {
-    console.log('Received Products:', products);
   }, [products]);
 
   return (

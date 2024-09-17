@@ -12,3 +12,4 @@ export const burgerButtonStyle = (theme: 'dark' | 'light') => ({
   backgroundColor: theme === 'dark' ? '' : colors.white,
   color: theme === 'dark' ? '' : colors.black,
 });
+

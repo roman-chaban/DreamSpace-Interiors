@@ -24,6 +24,8 @@
   max-width: px-to-rem(200px);
   object-fit: cover;
   border-radius: px-to-rem(5px);
+  aspect-ratio: 3 / 3;
+  height: 100%;
 }
 
 .productInfo {
@@ -95,4 +97,36 @@
 
 .active {
   background: color.$color-success;
+}
+
+@media (max-width: px-to-rem(900px)) {
+  .productSubTitle {
+    font-size: size.$font-size-14px;
+  }
+  .productImage {
+    aspect-ratio: 2.8 / 3;
+  }
+}
+
+@media (max-width: px-to-rem(700px)) {
+  .productSubTitle {
+    max-width: px-to-rem(300px);
+  }
+  .productImage {
+    aspect-ratio: 2.5 / 3;
+  }
+}
+
+@media (max-width: px-to-rem(540px)) {
+  .productContainer {
+    flex-direction: column;
+  }
+  .productImage {
+    max-width: px-to-rem(400px);
+    aspect-ratio: 2.5 / 2;
+  }
+  .closeButton {
+    right: 22px;
+    top: 22px;
+  }
 }

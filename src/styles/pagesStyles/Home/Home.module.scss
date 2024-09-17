@@ -11,7 +11,6 @@
 
 .valuesContainer {
   @include container;
-  padding-block: px-to-rem(48px);
   display: flex;
   align-items: center;
   justify-content: space-between;

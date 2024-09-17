@@ -5,7 +5,7 @@ import styles from './Hero.module.scss';
 import type { FC } from 'react';
 import { Swiper as HeroSwiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import './Swiper.scss';
+import '../../../styles/swiper/Swiper.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -38,7 +38,7 @@ export const Hero: FC = () => {
               alt="Slide Image"
               width={1120}
               height={536}
-              className="sliderImage"
+              className="sliderImage sliderImagePosition"
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -48,7 +48,7 @@ export const Hero: FC = () => {
               alt="Slide Image"
               width={1120}
               height={536}
-              className="sliderImage"
+              className="sliderImage sliderImagePosition"
             />
           </SwiperSlide>
           <SwiperSlide>
