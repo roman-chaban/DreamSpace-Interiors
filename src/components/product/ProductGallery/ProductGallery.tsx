@@ -11,15 +11,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './ProductSwiper.scss';
-import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export type ProductGalleryType = {
   product: Product;
 };
 
 export const ProductGallery: FC<ProductGalleryType> = ({ product }) => {
-  const theme = useAppSelector((state) => state.theme.theme);
-
   return (
     <div className={styles.gallery}>
       <div className={styles.galleryMainImage}>

@@ -26,7 +26,7 @@ export type ProductInfoType = {
 };
 
 const ProductInfo: FC<ProductInfoType> = ({ product }) => {
-  const endDate = new Date('2024-09-18T00:00:00Z');
+  const endDate = new Date('2024-10-18T00:00:00Z');
   const timeRemaining = useCountdown(endDate);
   const { productItemNumber, onAddProduct, onDeleteProduct } =
     useProductItemCounter({ productItem: 1 });

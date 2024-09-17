@@ -1,3 +1,6 @@
+@use '../../../styles/colors/colors' as color;
+
+
 .swiper {
   width: 100%;
   max-width: 100%;
@@ -27,8 +30,40 @@
   max-height: 40px;
 }
 
+.swiper-button-prev::before,
+.swiper-button-next::before {
+  max-width: 18px;
+  max-height: 18px;
+}
 
-.swiper-button-prev::before, .swiper-button-next::before {
-    max-width: 18px;
-    max-height: 18px;
+.swiper-button-prev,
+.swiper-button-next {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 100%;
+  background: color.$color-white;
+  box-shadow: color.$color-slider-buttons-box-shadow;
+  &::after {
+    display: none;
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.swiper-button-prev::before {
+  background-image: url('/images/slider/arrow-left.svg') !important;
+}
+
+.swiper-button-next::before {
+  background-image: url('/images/slider/arrow-right.svg') !important;
 }

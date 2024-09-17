@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { colors } from '@/theme/theme-variables';
 import { getFeedbackPanelStyles } from '@/components/themeStyles/feedbackPanelStyles/feedbackPanelStyles';
+import { Like } from 'grommet-icons';
 
 export type FeedbackPanelType = {
   comment: ReviewComment;
@@ -33,6 +34,7 @@ export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
         <div className={styles.commentInfo}>
           <h4 className={styles.authorTitle} style={colorThemeStyle}>
             {comment.author}
+            <span className={styles.authorDate}>Date: {comment.date}</span>
           </h4>
           <div className={styles.commentStars}>
             {comment.ratingStars.map((icon, indx) => (
@@ -48,21 +50,27 @@ export const FeedbackPanel: FC<FeedbackPanelType> = ({ comment }) => {
           <p className={styles.comment} style={colorThemeStyle}>
             {comment.comment}
           </p>
-          <div className={styles.likesBlock}>
-            <Button
-              type="button"
-              className={styles.commentLike}
-              style={colorThemeStyle}
-            >
-              {comment.like}
-            </Button>
-            <Button
-              type="button"
-              className={styles.commentReply}
-              style={colorThemeStyle}
-            >
-              {comment.reply}
-            </Button>
+          <div className={styles.commentLikes}>
+            <div className={styles.likesBlock}>
+              <Button
+                type="button"
+                className={styles.commentLike}
+                style={colorThemeStyle}
+              >
+                {comment.like}
+              </Button>
+              <Button
+                type="button"
+                className={styles.commentReply}
+                style={colorThemeStyle}
+              >
+                {comment.reply}
+              </Button>
+            </div>
+            <h5 className={styles.likes}>
+              {comment.rating}{' '}
+              <Like color="#121212" style={{ width: 14, height: 14 }} />
+            </h5>
           </div>
         </div>
       </div>

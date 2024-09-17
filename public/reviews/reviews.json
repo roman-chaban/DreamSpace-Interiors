@@ -12,7 +12,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-09-01"
     },
     {
         "commentId": 2,
@@ -27,12 +29,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-09-03"
     },
     {
         "commentId": 3,
         "author": "Jane Smith",
-       "authorImage": "/images/feedback-profile/avatar-tertiary.svg",
+        "authorImage": "/images/feedback-profile/avatar-tertiary.svg",
         "comment": "I had some issues with delivery, but the product itself is fantastic. Worth the wait!",
         "like": "Like",
         "reply": "Reply",
@@ -42,7 +46,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-09-05"
     },
     {
         "commentId": 4,
@@ -57,7 +63,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-09-07"
     },
     {
         "commentId": 5,
@@ -72,7 +80,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-09-10"
     },
     {
         "commentId": 6,
@@ -87,7 +97,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 2,
+        "date": "2024-09-12"
     },
     {
         "commentId": 7,
@@ -102,7 +114,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-09-14"
     },
     {
         "commentId": 8,
@@ -117,7 +131,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-09-16"
     },
     {
         "commentId": 9,
@@ -132,7 +148,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-09-18"
     },
     {
         "commentId": 10,
@@ -147,7 +165,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-09-20"
     },
     {
         "commentId": 11,
@@ -162,7 +182,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 2,
+        "date": "2024-09-22"
     },
     {
         "commentId": 12,
@@ -177,7 +199,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-09-24"
     },
     {
         "commentId": 13,
@@ -192,7 +216,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-09-26"
     },
     {
         "commentId": 14,
@@ -207,7 +233,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-03-15"
     },
     {
         "commentId": 15,
@@ -222,7 +250,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-04-10"
     },
     {
         "commentId": 16,
@@ -237,7 +267,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2023-12-20"
     },
     {
         "commentId": 17,
@@ -252,7 +284,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-05"
     },
     {
         "commentId": 18,
@@ -267,7 +301,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-12"
     },
     {
         "commentId": 19,
@@ -282,7 +318,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-04-07"
     },
     {
         "commentId": 20,
@@ -297,7 +335,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-23"
     },
     {
         "commentId": 21,
@@ -312,7 +352,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-03-10"
     },
     {
         "commentId": 22,
@@ -327,7 +369,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-05-01"
     },
     {
         "commentId": 23,
@@ -342,7 +386,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-03-27"
     },
     {
         "commentId": 24,
@@ -357,7 +403,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-02-14"
     },
     {
         "commentId": 25,
@@ -372,7 +420,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-04-30"
     },
     {
         "commentId": 26,
@@ -387,7 +437,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2023-12-17"
     },
     {
         "commentId": 27,
@@ -402,7 +454,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-22"
     },
     {
         "commentId": 28,
@@ -417,7 +471,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-03-13"
     },
     {
         "commentId": 29,
@@ -432,7 +488,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-05-05"
     },
     {
         "commentId": 30,
@@ -447,7 +505,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-12"
     },
     {
         "commentId": 31,
@@ -462,7 +522,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-02-04"
     },
     {
         "commentId": 32,
@@ -477,7 +539,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-03-22"
     },
     {
         "commentId": 33,
@@ -492,7 +556,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-04-18"
     },
     {
         "commentId": 34,
@@ -507,7 +573,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-28"
     },
     {
         "commentId": 35,
@@ -522,7 +590,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-03-05"
     },
     {
         "commentId": 36,
@@ -537,7 +607,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-12"
     },
     {
         "commentId": 37,
@@ -552,7 +624,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-10"
     },
     {
         "commentId": 38,
@@ -567,7 +641,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-02-08"
     },
     {
         "commentId": 39,
@@ -582,7 +658,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-07"
     },
     {
         "commentId": 40,
@@ -597,7 +675,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-02-06"
     },
     {
         "commentId": 41,
@@ -612,12 +692,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-02-05"
     },
     {
         "commentId": 42,
         "author": "Sebastian Young",
-       "authorImage": "/images/feedback-profile/avatar-secondary.svg",
+        "authorImage": "/images/feedback-profile/avatar-secondary.svg",
         "comment": "The quality is great, but the packaging was damaged upon arrival.",
         "like": "Like",
         "reply": "Reply",
@@ -627,12 +709,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-02-03"
     },
     {
         "commentId": 43,
         "author": "Mia Brown",
-       "authorImage": "/images/feedback-profile/avatar-primary.svg",
+        "authorImage": "/images/feedback-profile/avatar-primary.svg",
         "comment": "Decent quality but not exactly what I was looking for. Overall, it’s okay.",
         "like": "Like",
         "reply": "Reply",
@@ -642,7 +726,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-02-01"
     },
     {
         "commentId": 44,
@@ -657,7 +743,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-29"
     },
     {
         "commentId": 45,
@@ -672,12 +760,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-27"
     },
     {
         "commentId": 46,
         "author": "Jack White",
-       "authorImage": "/images/feedback-profile/avatar-tertiary.svg",
+        "authorImage": "/images/feedback-profile/avatar-tertiary.svg",
         "comment": "The product is fine but had some minor defects. The customer service was helpful in sorting it out.",
         "like": "Like",
         "reply": "Reply",
@@ -687,12 +777,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-01-25"
     },
     {
         "commentId": 47,
         "author": "Olivia Thompson",
-       "authorImage": "/images/feedback-profile/avatar-fourth.svg",
+        "authorImage": "/images/feedback-profile/avatar-fourth.svg",
         "comment": "I’m very satisfied with this product. It’s well-made and works as expected.",
         "like": "Like",
         "reply": "Reply",
@@ -702,7 +794,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-24"
     },
     {
         "commentId": 48,
@@ -717,7 +811,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-01-22"
     },
     {
         "commentId": 49,
@@ -732,12 +828,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-20"
     },
     {
         "commentId": 50,
         "author": "Evelyn Allen",
-       "authorImage": "/images/feedback-profile/avatar-five.svg",
+        "authorImage": "/images/feedback-profile/avatar-five.svg",
         "comment": "The product is good, but it didn’t quite meet my expectations. Some improvements are needed.",
         "like": "Like",
         "reply": "Reply",
@@ -747,12 +845,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-18"
     },
     {
         "commentId": 51,
         "author": "Liam Martin",
-       "authorImage": "/images/feedback-profile/avatar-secondary.svg",
+        "authorImage": "/images/feedback-profile/avatar-secondary.svg",
         "comment": "Fantastic quality. I am very pleased with this purchase and would recommend it to others.",
         "like": "Like",
         "reply": "Reply",
@@ -762,7 +862,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-16"
     },
     {
         "commentId": 52,
@@ -777,12 +879,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-01-14"
     },
     {
         "commentId": 53,
         "author": "James Harris",
-       "authorImage": "/images/feedback-profile/avatar-secondary.svg",
+        "authorImage": "/images/feedback-profile/avatar-secondary.svg",
         "comment": "The product is fine. It works but has some minor issues. Overall, it’s acceptable.",
         "like": "Like",
         "reply": "Reply",
@@ -792,7 +896,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-12"
     },
     {
         "commentId": 54,
@@ -807,7 +913,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 5,
+        "date": "2024-01-10"
     },
     {
         "commentId": 55,
@@ -822,12 +930,14 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 4,
+        "date": "2024-01-08"
     },
     {
         "commentId": 56,
         "author": "Mia Walker",
-       "authorImage": "/images/feedback-profile/avatar-five.svg",
+        "authorImage": "/images/feedback-profile/avatar-five.svg",
         "comment": "Okay product but it didn’t fully meet my expectations. The quality is average.",
         "like": "Like",
         "reply": "Reply",
@@ -837,7 +947,9 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
+        ],
+        "rating": 3,
+        "date": "2024-01-06"
     },
     {
         "commentId": 57,
@@ -852,96 +964,8 @@
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"},
             {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 58,
-        "author": "Grace Turner",
-       "authorImage": "/images/feedback-profile/avatar-fourth.svg",
-        "comment": "The product quality is good, but the shipping was delayed. Customer service was helpful.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 59,
-        "author": "Aden White",
-       "authorImage": "/images/feedback-profile/avatar-tertiary.svg",
-        "comment": "Good product overall but not without its issues. The quality could be improved.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 60,
-        "author": "Sophia Martin",
-       "authorImage": "/images/feedback-profile/avatar-five.svg",
-        "comment": "Excellent product! It works perfectly and I’m very satisfied with the purchase.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 61,
-        "author": "Noah Green",
-        "authorImage": "/images/feedback-profile/avatar-secondary.svg",
-        "comment": "Good value for money. The product is decent, though it could use some improvements.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 62,
-        "author": "Ella Davis",
-       "authorImage": "/images/feedback-profile/avatar-five.svg",
-        "comment": "The product is fine but had a few minor issues. The quality is acceptable.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    },
-    {
-        "commentId": 63,
-        "author": "Lucas Young",
-        "authorImage": "/images/feedback-profile/avatar-secondary.svg",
-        "comment": "Great quality product. It exceeded my expectations and I’m very happy with it.",
-        "like": "Like",
-        "reply": "Reply",
-        "ratingStars": [
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"},
-            {"star": "/products/icon/star-fill.svg"}
-        ]
-    }
+        ],
+        "rating": 5,
+        "date": "2024-01-04"
+    }    
 ]

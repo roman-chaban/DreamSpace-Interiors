@@ -24,12 +24,6 @@ export const CustomSelect: FC<SelectProps> = ({
     }
   };
 
-  const isSortBy = defaultValue === 'Sort by';
-
-  const style = {
-    color: isSortBy ? (theme === 'dark' ? colors.black : colors.white) : '',
-  };
-
   return (
     <div className={classNames.selectContainer}>
       <label
@@ -44,7 +38,6 @@ export const CustomSelect: FC<SelectProps> = ({
         id="customSelect"
         className={classNames.select}
         onClick={() => setIsOpen((prev) => !prev)}
-        style={style}
       >
         {selectedValue || defaultValue || 'Choose an option'}
       </div>

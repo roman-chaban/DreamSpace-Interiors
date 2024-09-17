@@ -9,5 +9,7 @@ export interface ReviewComment {
   comment: string;
   like: string;
   reply: string;
-  ratingStars: { star: string }[];
+  ratingStars: RatingStar[];
+  date: string;
+  rating: number;
 }
