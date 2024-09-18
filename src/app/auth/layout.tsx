@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import styles from '@/styles/pagesStyles/Auth/Auth.module.scss';
 
 export const metadata: Metadata = {
   title: 'DreamSpace Interiors | Auth Layout',
@@ -12,7 +13,5 @@ export default function AuthLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-      <main>{children}</main>
-  );
+  return <main className={styles.authLayout}>{children}</main>;
 }

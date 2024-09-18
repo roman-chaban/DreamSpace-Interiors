@@ -13,51 +13,27 @@ interface ProductRating {
 export type ProductRatingStars = ProductRating[];
 
 export const Stars: FC = () => {
+  const starColor = 'gold';
   const theme = useAppSelector((state) => state.theme.theme);
   const rating: ProductRatingStars = [
     {
-      icon: (
-        <Star
-          style={{ width: 18, height: 18 }}
-          color={theme === 'dark' ? 'plain' : colors.white}
-        />
-      ),
+      icon: <Star style={{ width: 18, height: 18 }} color={starColor} />,
       id: 1,
     },
     {
-      icon: (
-        <Star
-          style={{ width: 18, height: 18 }}
-          color={theme === 'dark' ? 'plain' : colors.white}
-        />
-      ),
+      icon: <Star style={{ width: 18, height: 18 }} color={starColor} />,
       id: 2,
     },
     {
-      icon: (
-        <Star
-          style={{ width: 18, height: 18 }}
-          color={theme === 'dark' ? 'plain' : colors.white}
-        />
-      ),
+      icon: <Star style={{ width: 18, height: 18 }} color={starColor} />,
       id: 3,
     },
     {
-      icon: (
-        <Star
-          style={{ width: 18, height: 18 }}
-          color={theme === 'dark' ? 'plain' : colors.white}
-        />
-      ),
+      icon: <Star style={{ width: 18, height: 18 }} color={starColor} />,
       id: 4,
     },
     {
-      icon: (
-        <Star
-          style={{ width: 18, height: 18 }}
-          color={theme === 'dark' ? 'plain' : colors.white}
-        />
-      ),
+      icon: <Star style={{ width: 18, height: 18 }} color={starColor} />,
       id: 5,
     },
   ];

@@ -13,10 +13,12 @@ import {
 } from '@/components/themeStyles/cartSummaryStyles/cartSummaryStyles';
 
 interface FormValues {
-  option: string;
+  option?: string;
+  total: number;
+  subTotal: number;
 }
 
-export const CartSummary: FC = () => {
+export const CartSummary: FC<FormValues> = ({ subTotal, total }) => {
   const { register, watch, handleSubmit, setValue } = useForm<FormValues>({
     defaultValues: {
       option: '',
@@ -30,7 +32,6 @@ export const CartSummary: FC = () => {
     console.log(data);
   };
 
-  
   return (
     <form className={styles.cartSummary} onSubmit={handleSubmit(onSubmitRadio)}>
       <div
@@ -106,13 +107,14 @@ export const CartSummary: FC = () => {
           className={styles.subTotalTitle}
           style={getSummaryTitleThemeStyle(theme)}
         >
-          Subtotal
+          Subtotal: <span>{subTotal.toFixed(2)}$</span>
         </h5>
         <h3
           className={styles.totalTitle}
           style={getSummaryTitleThemeStyle(theme)}
         >
-          Total
+          Total:{' '}
+          {total < 0 ? <span>0.00$</span> : <span>{total.toFixed(2)}$</span>}
         </h3>
         <Button
           type="submit"

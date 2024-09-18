@@ -1,0 +1,24 @@
+@use '../../../styles/abstracts/globals' as size;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/colors/colors' as color;
+@use '../../../styles/functions/functions' as *;
+
+.complete {
+  position: relative;
+}
+
+.completeCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -7px;
+  right: 5px;
+  color: color.$color-white;
+  background: color.$color-black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: size.$font-size-12px;
+}

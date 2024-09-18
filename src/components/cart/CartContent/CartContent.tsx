@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 import { motion } from 'framer-motion';
 import { CartProducts } from '../CartProducts/CartProducts';
 import { CartSummary } from '../CartSummary/CartSummary';
@@ -9,6 +9,7 @@ import { Payment } from '@/components/layout/Payment/Payment';
 import { OrderSummary } from '../OrderSummary/OrderSummary';
 import { OrderComplete } from '../OrderComplete/OrderComplete';
 import styles from '@/components/cart/CartProcess/CartProcess.module.scss';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 interface CartContent {
   activeTab: number;
@@ -21,6 +22,15 @@ const tabVariants = {
 };
 
 export const CartContent: FC<CartContent> = ({ activeTab }) => {
+  const cartProducts = useAppSelector((state) => state.cart.goods);
+  const subTotal = useMemo(() => {
+    return cartProducts.reduce((acc, good) => acc + good.originalPrice, 0);
+  }, [cartProducts]);
+
+  const discount = 0.25;
+  const shipping = 0.0;
+  const total = subTotal - discount + shipping;
+
   switch (activeTab) {
     case 1:
       return (
@@ -35,7 +45,7 @@ export const CartContent: FC<CartContent> = ({ activeTab }) => {
         >
           <div className={styles.productsCartBlock}>
             <CartProducts />
-            <CartSummary />
+            <CartSummary total={total} subTotal={subTotal} />
           </div>
           <Coupon />
         </motion.div>
@@ -56,7 +66,7 @@ export const CartContent: FC<CartContent> = ({ activeTab }) => {
             <ShippingAddress />
             <Payment />
           </div>
-          <OrderSummary />
+          <OrderSummary total={total} subTotal={subTotal} />
         </motion.div>
       );
     case 3:
@@ -69,7 +79,7 @@ export const CartContent: FC<CartContent> = ({ activeTab }) => {
           exit="exit"
           transition={{ duration: 0.3 }}
         >
-          <OrderComplete />
+          <OrderComplete total={total} />
         </motion.div>
       );
     default:

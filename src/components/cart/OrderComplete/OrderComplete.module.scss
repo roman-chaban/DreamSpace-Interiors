@@ -64,7 +64,18 @@
     font-weight: 600;
     list-style-type: none;
     line-height: 157%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: px-to-rem(50px);
   }
+}
+
+.orderListMark {
+  font-weight: 600;
+  color: color.$color-black;
+  font-size: size.$font-size-14px;
+  line-height: 157%;
 }
 
 .orderButton {
@@ -72,7 +83,7 @@
   border-radius: px-to-rem(80px);
   padding: px-to-rem(12px) px-to-rem(40px);
   width: 100%;
-  max-width: px-to-rem(203px);
+  max-width: fit-content;
   height: px-to-rem(52px);
   border: none;
   font-weight: 500;
@@ -82,6 +93,18 @@
   font-size: size.$font-size-16px;
   color: color.$color-natural-white;
   background: color.$color-black;
+  cursor: pointer;
+  transition: background 0.4s ease-in-out 0s;
+  &:hover {
+    background: color.$color-success;
+  }
+}
+
+.orderProducts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: px-to-rem(14px);
 }
 
 @media (max-width: px-to-rem(1200px)) {

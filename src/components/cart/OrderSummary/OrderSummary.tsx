@@ -1,11 +1,10 @@
 'use client';
 
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 import styles from './OrderSummary.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { TextInput } from '@/components/auth/TextInput/TextInput';
 import { useForm } from 'react-hook-form';
-import Image from 'next/image';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import {
   getFormButtonStyles,
@@ -14,22 +13,37 @@ import {
 } from '@/components/themeStyles/contactInformationStyles/contactInformationStyles';
 import { Ticket } from 'grommet-icons';
 import { colors } from '@/theme/theme-variables';
+import { OrderProduct } from '../OrderProduct/OrderProduct';
 
-export const OrderSummary: FC = () => {
+interface OrderSummaryProps {
+  total: number;
+  subTotal: number;
+}
+
+export const OrderSummary: FC<OrderSummaryProps> = ({ total, subTotal }) => {
   const { register } = useForm();
-
   const theme = useAppSelector((state) => state.theme.theme);
+  const cartProducts = useAppSelector((state) => state.cart.goods);
 
   return (
-    <div className={styles.orderSummary} style={getFormContainerStyle(theme)}>
-      <div className={styles.orderSummaryContainer}>
+    <div className={styles.orderSummary}>
+      <div
+        className={styles.orderSummaryContainer}
+        style={getFormContainerStyle(theme)}
+      >
         <div className={styles.orderHeader}>
           <h3 className={styles.summaryTitle} style={getFormTitleStyle(theme)}>
             Order summary
           </h3>
         </div>
         <div className={styles.orderMain} style={getFormTitleStyle(theme)}>
-          main
+          {cartProducts.length > 0 ? (
+            cartProducts.map((good) => (
+              <OrderProduct key={good.productId} good={good} />
+            ))
+          ) : (
+            <h4>No goods yet</h4>
+          )}
         </div>
         <div className={styles.orderFooter}>
           <div className={styles.applyBlock}>
@@ -71,7 +85,7 @@ export const OrderSummary: FC = () => {
                 className={styles.shippingTitle}
                 style={getFormTitleStyle(theme)}
               >
-                Shipping
+                Shipping:
               </h5>
               <strong
                 className={styles.freeTitle}
@@ -85,18 +99,25 @@ export const OrderSummary: FC = () => {
                 className={styles.subtotalTitle}
                 style={getFormTitleStyle(theme)}
               >
-                Subtotal
+                Subtotal:
               </h5>
-              <strong className={styles.price}></strong>
+              <strong className={styles.price} style={getFormTitleStyle(theme)}>
+                {subTotal.toFixed(2)}$
+              </strong>
             </div>
             <div className={styles.totalField}>
               <h5
                 className={styles.totalTitle}
                 style={getFormTitleStyle(theme)}
               >
-                Total
+                Total:
               </h5>
-              <strong className={styles.totalPrice}></strong>
+              <strong
+                className={styles.totalPrice}
+                style={getFormTitleStyle(theme)}
+              >
+                {total < 0 ? '0.00$' : total.toFixed(2)}$
+              </strong>
             </div>
           </div>
         </div>

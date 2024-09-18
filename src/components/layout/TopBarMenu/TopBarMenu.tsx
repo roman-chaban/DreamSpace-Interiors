@@ -15,6 +15,7 @@ import {
   getThemeClass,
   getTitle,
 } from '@/components/themeStyles/topBarMenuStyles/topBarMenuStyles';
+import { NavPaths } from '@/enums/navPaths';
 
 export const TopBarMenu: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -46,7 +47,7 @@ export const TopBarMenu: FC = () => {
             <li className={`${styles.topBarItem} ${getThemeClass(theme)}`}>
               <Link
                 className={`${styles.showLink} ${getThemeClass(theme)}`}
-                href={''}
+                href={NavPaths.SHOP}
                 style={getLink(theme)}
               >
                 Shop Now

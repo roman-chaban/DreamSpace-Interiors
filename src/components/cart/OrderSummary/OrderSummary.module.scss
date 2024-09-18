@@ -6,9 +6,7 @@
 .orderSummary {
   width: 100%;
   max-width: px-to-rem(413px);
-  height: px-to-rem(862px);
-  border: px-to-rem(1.5px) solid color.$color-dark-gray;
-  border-radius: px-to-rem(6px);
+  height: 100%;
 }
 
 .orderSummaryContainer {
@@ -16,11 +14,17 @@
   display: flex;
   flex-direction: column;
   gap: px-to-rem(16px);
-  min-height: 100%;
+  border: px-to-rem(1.5px) solid color.$color-dark-gray;
+  border-radius: px-to-rem(6px);
+  margin-block-end: px-to-rem(40px);
 }
 
 .orderMain {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(24px);
+  min-height: px-to-rem(200px);
 }
 
 .orderFooter {
