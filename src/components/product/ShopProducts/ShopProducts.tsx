@@ -11,6 +11,8 @@ import { motion } from 'framer-motion';
 import { productVariants } from '@/animations/productCard/productCard';
 import { Spinner } from '@/components/ui/Spinner/Spinner';
 import { sortProducts } from '@/components/sortProducts/sortProducts';
+import { filterProductsByPrice } from '../filterProductsByPrice/filterProductsByPrice';
+import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 
 export interface ShopProductsProps {
   items: ShopNavItems;
@@ -36,27 +38,31 @@ export const ShopProducts: FC<ShopProductsProps> = ({
   const [loading, setLoading] = useState<boolean>(true);
   const [visibleCount, setVisibleCount] = useState<number>(3);
   const [sortOption, setSortOption] = useState<string>('');
-
-  const observer = useRef<IntersectionObserver | null>(null);
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const selectedPrices = useAppSelector((state) => state.filter.selectedPrices);
 
   useEffect(() => {
     const loadProducts = async () => {
       const data = await fetchProducts();
       setProducts(data);
-      setVisibleProducts(data.slice(0, visibleCount));
       setLoading(false);
     };
     loadProducts();
   }, []);
 
+  useEffect(() => {
+    const filtered = filterProductsByPrice(products, selectedPrices);
+    const sorted = sortProducts(filtered, sortOption);
+    setVisibleProducts(sorted.slice(0, visibleCount));
+  }, [products, selectedPrices, sortOption, visibleCount]);
+
   const handleSortChange = (option: string) => {
     setSortOption(option);
   };
 
-  useEffect(() => {
-    if (!sentinelRef.current) return;
+  const observer = useRef<IntersectionObserver | null>(null);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
 
+  useEffect(() => {
     const handleLoadMore = () => {
       setVisibleCount((prevCount) => prevCount + 3);
     };
@@ -85,13 +91,6 @@ export const ShopProducts: FC<ShopProductsProps> = ({
       }
     };
   }, [visibleCount]);
-
-  useEffect(() => {
-    if (products.length > 0) {
-      const sortedProducts = sortProducts(products, sortOption);
-      setVisibleProducts(sortedProducts.slice(0, visibleCount));
-    }
-  }, [products, visibleCount, sortOption]);
 
   return (
     <div className={styles.shopProducts}>

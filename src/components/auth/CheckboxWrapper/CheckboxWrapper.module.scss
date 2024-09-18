@@ -32,7 +32,7 @@
   margin-right: px-to-rem(10px);
   box-sizing: border-box;
   flex-shrink: 0;
-  left: px-to-rem(-1.5px);
+  left: px-to-rem(-1.7px);
   bottom: px-to-rem(-2.5px);
 }
 
@@ -76,5 +76,18 @@
 @media only screen and (max-width: px-to-rem(1100px)) {
   .authCheckBoxSubTitle {
     font-size: size.$font-size-14px;
+  }
+}
+
+@media only screen and (max-width: px-to-rem(500px)) {
+  .authCheckBoxSubTitle {
+    font-size: px-to-rem(12px);
+  }
+  .authCheckBox {
+    align-items: center;
+  }
+  .formCheckBox {
+    max-width: px-to-rem(18px);
+    max-height: px-to-rem(18px);
   }
 }

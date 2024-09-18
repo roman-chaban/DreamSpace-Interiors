@@ -19,17 +19,15 @@ import currentProducts from '@/services/products/products.json';
 import { Products } from '@/types/products';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { sortedFeaturesProducts } from '@/components/sortedFeaturesProducts/sortedFeaturesProducts';
 import { sortProducts } from '@/components/sortProducts/sortProducts';
+import { filterProductsByPrice } from '@/components/product/filterProductsByPrice/filterProductsByPrice';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
   const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
   const [products, setProducts] = useState<Products>(currentProducts);
   const [sortOption, setSortOption] = useState<string>('');
-
   const theme = useAppSelector((state) => state.theme.theme);
-
   const handleSelectTab = (id: number) => setSelectedTab(id);
   const handleSortChange = (option: string) => setSortOption(option);
 

@@ -123,6 +123,16 @@
   .completeContainer {
     padding-inline: px-to-rem(32px);
   }
+  .orderTitle {
+    font-size: size.$font-size-34px;
+  }
+  .thanksTitle {
+    font-size: size.$font-size-22px;
+  }
+  .orderBlock {
+    padding-inline: px-to-rem(20px);
+    max-height: px-to-rem(600px);
+  }
 }
 
 @media (max-width: px-to-rem(560px)) {
@@ -133,12 +143,14 @@
   .orderTitle {
     text-align: left;
     text-align-last: left;
-    font-size: size.$font-size-34px;
+    font-size: size.$font-size-26px;
   }
   .thanksTitle {
     font-size: size.$font-size-18px;
   }
   .orderButton {
     max-width: 100%;
+    font-size: size.$font-size-14px;
+    padding-inline: px-to-rem(15px);
   }
 }

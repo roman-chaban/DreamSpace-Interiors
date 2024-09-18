@@ -157,3 +157,21 @@
     font-size: size.$font-size-10px;
   }
 }
+
+@media (max-width: px-to-rem(500px)) {
+  .formUserInfo {
+    flex-direction: column;
+  }
+  .paymentForm {
+    max-height: px-to-rem(650px) !important;
+  }
+  .input {
+    max-width: 100%;
+  }
+  .formTitle {
+    font-size: size.$font-size-22px;
+  }
+  .dateCvcBlock {
+    flex-direction: column;
+  }
+}

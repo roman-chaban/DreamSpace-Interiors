@@ -71,3 +71,18 @@
     font-size: size.$font-size-10px;
   }
 }
+
+@media (max-width: px-to-rem(500px)) {
+  .formUserInfo {
+    flex-direction: column;
+  }
+  .contactForm {
+    max-height: px-to-rem(550px) !important;
+  }
+  .input {
+    max-width: 100%;
+  }
+  .formTitle {
+    font-size: size.$font-size-22px;
+  }
+}
