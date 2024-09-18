@@ -158,6 +158,13 @@
   }
 }
 
+.notGoodsTitle {
+  font-size: size.$font-size-22px;
+  font-weight: 400;
+  text-align: center;
+  margin-block-start: px-to-rem(25px);
+}
+
 @media (max-width: px-to-rem(1024px)) {
   .orderSummary {
     max-width: 100%;

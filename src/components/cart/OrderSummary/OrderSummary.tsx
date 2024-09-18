@@ -42,7 +42,7 @@ export const OrderSummary: FC<OrderSummaryProps> = ({ total, subTotal }) => {
               <OrderProduct key={good.productId} good={good} />
             ))
           ) : (
-            <h4>No goods yet</h4>
+            <h4 className={styles.notGoodsTitle} >No goods yet</h4>
           )}
         </div>
         <div className={styles.orderFooter}>
