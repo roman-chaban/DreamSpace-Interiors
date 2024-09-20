@@ -20,29 +20,36 @@ import { Products } from '@/types/products';
 import { colors } from '@/theme/theme-variables';
 import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
 import { sortProducts } from '@/components/sortProducts/sortProducts';
-import { filterProductsByPrice } from '@/components/product/filterProductsByPrice/filterProductsByPrice';
+import { filterFeaturesProductsByPrice } from '@/components/product/filterProductsByPrice/filterProductsByPrice';
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
   const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
   const [products, setProducts] = useState<Products>(currentProducts);
   const [sortOption, setSortOption] = useState<string>('');
+  const [sortPriceRange, setSortPriceRange] = useState<string>('');
   const theme = useAppSelector((state) => state.theme.theme);
   const handleSelectTab = (id: number) => setSelectedTab(id);
   const handleSortChange = (option: string) => setSortOption(option);
+  const onPriceChange = (selectedPrice: string) =>
+    setSortPriceRange(selectedPrice);
 
   useEffect(() => {
+    let filteredProducts = currentProducts;
+
     if (sortOption) {
-      const sortedProducts = sortProducts(products, sortOption);
-      setProducts(sortedProducts);
-    } else {
-      setProducts(currentProducts);
+      filteredProducts = sortProducts(filteredProducts, sortOption);
     }
-  }, [sortOption]);
 
-  useEffect(() => {
-    setProducts(currentProducts);
-  }, []);
+    if (sortPriceRange) {
+      filteredProducts = filterFeaturesProductsByPrice(
+        filteredProducts,
+        sortPriceRange
+      );
+    }
+
+    setProducts(filteredProducts);
+  }, [sortOption, sortPriceRange]);
 
   const contentMap: Record<number, ReactNode> = {
     1: (
@@ -67,7 +74,10 @@ export default function Shop() {
     3: (
       <div className={styles.shopFeatures}>
         <div className={styles.shopFeaturesProducts}>
-          <ShopFeatures onSortChange={handleSortChange} />
+          <ShopFeatures
+            onSortChange={handleSortChange}
+            onPriceChange={onPriceChange}
+          />
           <ShopNav
             items={shopNavItems}
             onSelectContent={handleSelectTab}

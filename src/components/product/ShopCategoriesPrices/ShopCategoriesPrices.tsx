@@ -5,6 +5,7 @@ import { useEffect, useState, type FC } from 'react';
 import styles from './ShopCategoriesPrices.module.scss';
 import { ShopCategoryProductCard } from '../ShopCategoryProductCard/ShopCategoryProductCard';
 import { Spinner } from '@/components/ui/Spinner/Spinner';
+import { filterProductsByPrice } from '../filterProductsByPrice/filterProductsByPrice';
 
 interface ShopCategoriesPricesProps {
   products: Products;

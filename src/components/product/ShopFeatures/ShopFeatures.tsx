@@ -29,12 +29,19 @@ const classNames: SelectClassNames = {
 
 interface IShopFeatures {
   onSortChange: (option: string) => void;
+  onPriceChange: (priceRange: string) => void;
 }
 
-export const ShopFeatures: FC<IShopFeatures> = ({ onSortChange }) => {
+export const ShopFeatures: FC<IShopFeatures> = ({
+  onSortChange,
+  onPriceChange,
+}) => {
   const handleSortChange = (selectedOption: string) => {
     onSortChange(selectedOption);
-    console.log(selectedOption);
+  };
+
+  const handlePriceChange = (selectedPrice: string) => {
+    onPriceChange(selectedPrice);
   };
 
   return (
@@ -51,6 +58,7 @@ export const ShopFeatures: FC<IShopFeatures> = ({ onSortChange }) => {
         selectLabel="PRICE"
         classNames={classNames}
         defaultValue="All Price"
+        onChange={handlePriceChange}
       />
     </div>
   );

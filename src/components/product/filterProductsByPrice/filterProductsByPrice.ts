@@ -25,3 +25,29 @@ export const filterProductsByPrice = (
     return false;
   });
 };
+
+export const filterFeaturesProductsByPrice = (
+  products: Products,
+  selectedPrice: string
+) => {
+  if (products.length === 0) {
+    return products;
+  }
+
+  return products.filter((product) => {
+    const price = product.originalPrice;
+
+    switch (selectedPrice) {
+      case '0-50':
+        return price <= 0;
+      case '50-100':
+        return price > 50 && price <= 100;
+      case '100-200':
+        return price > 100 && price <= 200;
+      case '200+':
+        return price > 200;
+      default:
+        return true;
+    }
+  });
+};
