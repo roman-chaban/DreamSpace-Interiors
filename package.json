@@ -36,6 +36,9 @@
     "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/node-sass": "^4.11.7",
     "@types/react": "^18",
@@ -43,6 +46,8 @@
     "@types/sass": "^1.43.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
     "typescript": "^5",
     "webpack-cli": "^5.1.4"
   }

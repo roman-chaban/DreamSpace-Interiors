@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import type { FC } from 'react';
-import Image from 'next/image';
-import { useScreenResize } from '@/hooks/useScreenResize';
-import { BlogArticle } from '@/fixtures/blogArticles/blogArticles';
-import styles from '@/components/blog/CurrentArticle/CurrentArticle.module.scss';
-import { useAppSelector } from '@/hooks/redux-hooks/useAppSelector';
-import { getNavTitleLinkStyle } from '@/components/themeStyles/articleNav/articleNav';
+import type { FC } from "react";
+import Image from "next/image";
+import { useScreenResize } from "@/hooks/useScreenResize";
+import { BlogArticle } from "@/fixtures/blogArticles/blogArticles";
+import styles from "@/components/blog/CurrentArticle/CurrentArticle.module.scss";
+import { useAppSelector } from "@/hooks/redux-hooks/useAppSelector";
+import { getNavTitleLinkStyle } from "@/components/themeStyles/articleNav/articleNav";
 
 interface ArticleBlog {
   article: BlogArticle;

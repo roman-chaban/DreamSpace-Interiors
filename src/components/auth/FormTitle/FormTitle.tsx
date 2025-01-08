@@ -3,8 +3,6 @@ import styles from './FormTitle.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { FormTitleProps } from '@/types/form-title';
 
-
-
 export const FormTitle: FC<FormTitleProps> = ({
   title,
   subTitle,

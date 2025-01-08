@@ -24,13 +24,21 @@ import { filterFeaturesProductsByPrice } from '@/components/product/filterProduc
 
 export default function Shop() {
   useChangePageTitle('DreamSpace Interiors | Shop');
+
   const [selectedTab, setSelectedTab] = useState<number>(shopNavItems[0].id);
+
   const [products, setProducts] = useState<Products>(currentProducts);
+
   const [sortOption, setSortOption] = useState<string>('');
+
   const [sortPriceRange, setSortPriceRange] = useState<string>('');
+
   const theme = useAppSelector((state) => state.theme.theme);
+
   const handleSelectTab = (id: number) => setSelectedTab(id);
+
   const handleSortChange = (option: string) => setSortOption(option);
+
   const onPriceChange = (selectedPrice: string) =>
     setSortPriceRange(selectedPrice);
 
